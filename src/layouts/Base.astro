@@ -31,7 +31,6 @@ const business = {
   founder: { '@id': site.url + '/#inhaber' },
   employee: undefined,
   numberOfEmployees: { '@type': 'QuantitativeValue', value: site.employees },
-  knowsLanguage: ['de', 'ru'],
   knowsAbout: ['Kernbohrung', 'Diamantbohren', 'Wanddurchbruch', 'Betonsägen', 'Wandsägen', 'Fugenschneiden', 'Schlitze fräsen in Beton', 'Betonrückbau', 'Wärmepumpe Mauerdurchführung', 'Klimagerät Kernbohrung'],
   priceRange: '1,20–11,00 € je cm Bohrtiefe, Mindestpreis 250 €',
   currenciesAccepted: 'EUR',
@@ -50,7 +49,6 @@ const business = {
     contactType: 'customer service',
     telephone: site.phoneTel,
     email: site.email,
-    availableLanguage: ['German', 'Russian'],
     hoursAvailable: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -85,7 +83,6 @@ const inhaber = {
   name: site.owner,
   jobTitle: 'Inhaber',
   worksFor: { '@id': site.url + '/#business' },
-  knowsLanguage: ['de', 'ru'],
 };
 const website = {
   '@context': 'https://schema.org',

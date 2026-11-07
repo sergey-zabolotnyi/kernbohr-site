@@ -16,6 +16,5 @@ export const site = {
   hoursText: '24/7 erreichbar, Einsätze auch abends, am Wochenende und an Feiertagen nach Absprache',  // [Inhaber bestätigen]
   sinceBranche: '2006',                // Inhaber in der Baubranche seit 2006 (Firma gegründet 2017)
   employees: 8,                        // [Inhaber bestätigen]
-  languages: ['Deutsch', 'Russisch'],  // [Inhaber bestätigen]
   areas: ['Dresden', 'Pirna', 'Radebeul', 'Meißen', 'Sachsen'],
 };

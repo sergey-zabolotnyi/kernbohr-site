@@ -24,8 +24,8 @@ export const regeln = {
   minDurchmesser: 14,
   maxDurchmesser: 501,
   maxTiefeCm: 200, // Inhaber: maximale Bohrtiefe 2 m
-  mindestpreis: 250, // Inhaber: "Minimale Preis 250 €" [Annahme: Mindest-Auftragswert, bestätigen]
-  anfahrt: 85, // Inhaber-Nachricht: 85 €; gedruckte Preisliste nennt 80 € [bestätigen]
+  mindestpreis: 250, // vom Inhaber bestätigt: Mindestauftragswert
+  anfahrt: 85, // vom Inhaber bestätigt (gestiegen, gedruckte Liste nennt noch 80 €): gilt im Umkreis ca. 20–30 km um Dresden
   zuschlagUeberkopf: 0.5,
   zuschlagSchraeg: 0.5,
   wassersaugerTag: 55,
@@ -42,7 +42,7 @@ export const zuschlagTabelle = [
   ['Wassersauger mit Bediener', '55,00 € pro Tag'],
   ['Stahl ab 1,5 cm (Einzelschnitt)', '1,00 € pro cm'],
   ['Gerüststellung', '65,00 € pro Tag'],
-  ['Anfahrt / Baustelleneinrichtung', '85,00 €'],
+  ['Anfahrt / Baustelleneinrichtung (Umkreis bis ca. 30 km um Dresden)', '85,00 €'],
   ['Wartezeit', '55,00 € pro Stunde'],
 ];
 
