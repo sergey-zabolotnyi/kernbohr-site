@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { faqs } from '../data/services.js';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema, faqSchema } from '../lib/schema.js';
+---
+<Base
+  title="Häufige Fragen zu Kernbohrung & Betonbearbeitung | Kernbohr-Expert"
+  description="Antworten zu Kernbohrung, Durchmessern, Materialien, Statik, Strom, Wasser, Kosten und Einsatzgebiet in Dresden und bundesweit."
+  path="/faq/"
+  schema={[crumbSchema([['FAQ', '/faq/']]), faqSchema(faqs)]}
+>
+  <Breadcrumbs items={[['FAQ']]} />
+  <section class="hero small" style={heroStyle()}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">FAQ</span>
+        <h1>Häufig gestellte Fragen</h1>
+        <p class="lead">Die wichtigsten Antworten zu Kernbohrung, Betonsägen, Schlitzen und Rückbau.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="prose">
+        {faqs.map(([q, a]) => (
+          <details>
+            <summary>{q}</summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CtaBand title="Noch eine Frage?" text="Rufen Sie uns an oder schreiben Sie per WhatsApp. Wir antworten persönlich." />
+</Base>

@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema } from '../lib/schema.js';
+
+const stadtteile = ['Altstadt', 'Neustadt', 'Pieschen', 'Striesen', 'Blasewitz', 'Loschwitz', 'Johannstadt', 'Plauen', 'Löbtau', 'Cotta', 'Gorbitz', 'Prohlis', 'Leuben', 'Klotzsche', 'Lockwitz'];
+const umland = ['Radebeul', 'Coswig', 'Meißen', 'Pirna', 'Heidenau', 'Freital', 'Radeberg', 'Dippoldiswalde', 'Rabenau', 'Glashütte', 'Bad Gottleuba-Berggießhübel'];
+const bundesweit = ['Sachsen', 'Thüringen', 'Bayern', 'Brandenburg'];
+---
+<Base
+  title="Einsatzgebiet: Kernbohrung in Dresden, Radebeul, Meißen, Pirna & Sachsen"
+  description="Kernbohrung und Betonbearbeitung in allen Dresdner Stadtteilen, im Umland (Radebeul, Meißen, Pirna, Freital, Radeberg) und bundesweit für größere Projekte."
+  path="/einsatzgebiet/"
+  schema={[crumbSchema([['Einsatzgebiet', '/einsatzgebiet/']])]}
+>
+  <Breadcrumbs items={[['Einsatzgebiet']]} />
+  <section class="hero small" style={heroStyle()}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Einsatzgebiet</span>
+        <h1>Kernbohrung in Dresden, im Umland und bundesweit</h1>
+        <p class="lead">Unser Sitz ist Dresden. Von hier aus erreichen wir alle Stadtteile und das Umland schnell, für größere Projekte sind wir deutschlandweit im Einsatz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cards">
+        <div class="card">
+          <div class="ico"><Icon name="pin" size={28} /></div>
+          <h3>Dresden</h3>
+          <p>Wir arbeiten in allen Stadtteilen, unter anderem:</p>
+          <ul class="chips">{stadtteile.map((s) => <li>{s}</li>)}</ul>
+        </div>
+        <div class="card">
+          <div class="ico"><Icon name="truck" size={28} /></div>
+          <h3>Umland</h3>
+          <p>Im Raum Dresden und Ostsachsen unter anderem:</p>
+          <ul class="chips">{umland.map((s) => <li>{s}</li>)}</ul>
+        </div>
+        <div class="card">
+          <div class="ico"><Icon name="map" size={28} /></div>
+          <h3>Bundesweit</h3>
+          <p>Für größere Projekte insbesondere in:</p>
+          <ul class="chips">{bundesweit.map((s) => <li>{s}</li>)}</ul>
+          <p>Weitere Einsätze auf Anfrage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Gut zu wissen</span>
+      <h2>Besonderheiten in Dresden</h2>
+      <p class="lead">Altbau, Plattenbau, Denkmalschutz: Was dabei zu beachten ist, haben wir im Ratgeber zusammengefasst.</p>
+      <div class="btns"><a class="btn btn-main" href="/ratgeber/kernbohrung-dresden-altbau-plattenbau/">Zum Ratgeber <Icon name="arrow" size={18} /></a></div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

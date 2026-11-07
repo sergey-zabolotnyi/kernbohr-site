@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site.js';
+const { title = 'Foto senden, Angebot erhalten', text = 'Schicken Sie uns ein Foto der Baustelle. Wir beraten kostenlos und unverbindlich.' } = Astro.props;
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage. Foto der Baustelle sende ich gleich mit.')}`;
+---
+<section class="cta-band">
+  <div class="wrap cta-in">
+    <div>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> WhatsApp</a>
+      <a class="btn btn-dark" href={`tel:${site.phoneTel}`}><Icon name="phone" size={20} /> {site.phoneDisplay}</a>
+    </div>
+  </div>
+</section>

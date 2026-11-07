@@ -1,0 +1,206 @@
+---
+import Base from '../layouts/Base.astro';
+import Rechner from '../components/Rechner.astro';
+import Icon from '../components/Icon.astro';
+import Photo from '../components/Photo.astro';
+import Gallery from '../components/Gallery.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site } from '../data/site.js';
+import { services, faqs as allFaqs } from '../data/services.js';
+import { articles } from '../data/articles.js';
+import { image, heroStyle } from '../lib/media.js';
+import { faqSchema } from '../lib/schema.js';
+
+const faqs = allFaqs.slice(0, 6);
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage für eine Kernbohrung. Foto der Baustelle sende ich gleich mit.')}`;
+const leistungen = services.filter((s) => s.group === 'Leistung');
+const anwendungen = services.filter((s) => s.group === 'Anwendung');
+const hasPhoto = !!image('werk-wand-gross');
+
+const werte = [
+  ['hardhat', 'Fachkompetenz', 'Wir arbeiten präzise und professionell, mit moderner Technik.'],
+  ['clock', 'Zuverlässigkeit', 'Wir halten Termine und Absprachen.'],
+  ['shield', 'Saubere Arbeit', 'Wir verlassen Ihre Baustelle aufgeräumt.'],
+  ['user', 'Erreichbarkeit', 'Immer ein persönlicher Ansprechpartner.'],
+];
+const ablauf = [
+  ['camera', 'Anfrage', 'Rechner nutzen oder Foto der Baustelle per WhatsApp senden.'],
+  ['euro', 'Angebot', 'Sie erhalten ein konkretes, kostenloses Angebot.'],
+  ['calendar', 'Termin', 'Wir klären Termin, Strom, Wasser und Zugang vorab.'],
+  ['check', 'Ausführung', 'Wir bohren, saugen ab und übergeben aufgeräumt.'],
+];
+---
+<Base
+  title="Kernbohrung & Wanddurchbruch in Dresden | Betonsägen, Schlitze fräsen"
+  description="Kernbohrung, Wanddurchbruch, Betonsägen, Fugenschneiden und Schlitze fräsen in Dresden, Radebeul, Meißen, Pirna und Sachsen. Richtpreis online, Angebot per WhatsApp."
+  path="/"
+  schema={[faqSchema(faqs)]}
+>
+  <section class={`hero ${hasPhoto ? '' : 'no-photo'}`} style={heroStyle()}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Kernbohr-Expert · Dresden</span>
+        <h1>Kernbohrung &amp; Wanddurchbruch in Dresden und Sachsen</h1>
+        <p class="lead">Präzise Kernbohrungen von Ø 14 bis 500 mm und bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk, mit Hilti-Profitechnik, staubarm und erschütterungsarm. Richtpreis in 30 Sekunden oder Foto per WhatsApp senden.</p>
+        <div class="btns">
+          <a class="btn btn-main" href="#kb-rechner"><Icon name="euro" size={20} /> Richtpreis berechnen</a>
+          <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> Foto senden</a>
+        </div>
+        <ul class="hero-points">
+          <li><Icon name="calendar" size={18} /> Seit 2006 in der Baubranche</li>
+          <li><Icon name="shield" size={18} /> Mitglied der Handwerkskammer Dresden</li>
+          <li><Icon name="map" size={18} /> Bundesweit im Einsatz</li>
+        </ul>
+      </div>
+      {hasPhoto && <Photo id="werk-wand-gross" eager class="hero-photo" sizes="(max-width: 860px) 100vw, 480px" />}
+    </div>
+  </section>
+
+  <section class="strip-sec">
+    <div class="wrap strip">
+      <div><Icon name="drill" size={30} /><span>Ø 14–500 mm<small>bis 2 m Tiefe, auch über Kopf</small></span></div>
+      <div><Icon name="drop" size={30} /><span>Staubarm<small>nass und mit Schutzmaßnahmen</small></span></div>
+      <div><Icon name="home" size={30} /><span>Bewohnte Gebäude<small>lärm- und vibrationsarm</small></span></div>
+      <div><Icon name="euro" size={30} /><span>Kostenloses Angebot<small>unverbindlich, nach Foto</small></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Leistungen</span>
+      <h2>Was wir für Sie tun</h2>
+      <p class="lead">Von der einzelnen Leitungsdurchführung bis zum Rückbau: Betonbearbeitung aus einer Hand.</p>
+      <div class="cards">
+        {leistungen.map((s) => (
+          <a class="card" href={`/${s.slug}/`}>
+            <div class="ico"><Icon name={s.icon} size={28} /></div>
+            <h3>{s.name}</h3>
+            <p>{s.intro.split('.')[0]}.</p>
+            <span class="more">Mehr erfahren <Icon name="arrow" size={16} /></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Anwendungen</span>
+      <h2>Typische Aufträge im Haus</h2>
+      <div class="cards">
+        {anwendungen.map((s) => (
+          <a class="card" href={`/${s.slug}/`}>
+            <div class="ico"><Icon name={s.icon} size={28} /></div>
+            <h3>{s.name}</h3>
+            <p>{s.intro.split('.')[0]}.</p>
+            <span class="more">Mehr erfahren <Icon name="arrow" size={16} /></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Gallery
+    eyebrow="Einblick"
+    title="So arbeiten wir"
+    ids={['werk-bohrstaender', 'video-kernbohr-schiene', 'werk-ueberkopf-1', 'video-wandsaege', 'werk-wand-gross', 'video-fugenschneider']}
+  />
+
+  <section>
+    <div class="wrap"><Rechner /></div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Unsere Werte</span>
+      <h2>Wofür wir stehen</h2>
+      <div class="cards">
+        {werte.map(([icon, t, d]) => (
+          <div class="card">
+            <div class="ico"><Icon name={icon} size={28} /></div>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Ablauf</span>
+      <h2>In vier Schritten zur fertigen Bohrung</h2>
+      <ol class="steps">
+        {ablauf.map(([icon, t, d]) => (
+          <li><strong><Icon name={icon} size={22} /> {t}</strong>{d}</li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Ratgeber</span>
+      <h2>Wissen für Ihr Bauvorhaben</h2>
+      <div class="cards">
+        {articles.slice(0, 3).map((a) => (
+          <a class="card" href={`/ratgeber/${a.slug}/`}>
+            <div class="ico"><Icon name={a.icon} size={28} /></div>
+            <h3>{a.title}</h3>
+            <p>{a.short}</p>
+            <span class="more">Lesen <Icon name="arrow" size={16} /></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Technische Daten</span>
+      <h2>Auf einen Blick</h2>
+      <div class="table-scroll">
+        <table class="facts">
+          <tbody>
+            <tr><th>Durchmesser</th><td>14–500 mm, größere Durchmesser auf Anfrage</td></tr>
+            <tr><th>Bohrtiefe</th><td>bis 2 m</td></tr>
+            <tr><th>Technik</th><td>Hilti-Kernbohrtechnik auf Bohrständer oder Schiene</td></tr>
+            <tr><th>Materialien</th><td>Beton, Stahlbeton, Ziegelmauerwerk, Naturstein</td></tr>
+            <tr><th>Verfahren</th><td>Nass- und Trockenbohrung, horizontal, vertikal und über Kopf</td></tr>
+            <tr><th>Strom</th><td>230 V, bei großen Durchmessern 400 V [Inhaber bestätigen]</td></tr>
+            <tr><th>Wasser</th><td>Wasseranschluss oder eigener Tank [Inhaber bestätigen]</td></tr>
+            <tr><th>Einsatzgebiet</th><td>Dresden, Radebeul, Meißen, Pirna, Sachsen; bundesweit für größere Projekte</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">FAQ</span>
+      <h2>Häufige Fragen</h2>
+      {faqs.map(([q, a]) => (
+        <details>
+          <summary>{q}</summary>
+          <p>{a}</p>
+        </details>
+      ))}
+      <div class="btns"><a class="btn btn-main" href="/faq/">Alle Fragen ansehen</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Einsatzgebiet</span>
+      <h2>Dresden, Radebeul, Meißen, Pirna und ganz Sachsen</h2>
+      <p class="lead">Unser Sitz ist Dresden. Für größere Projekte sind wir bundesweit im Einsatz.</p>
+      <ul class="chips">
+        {['Dresden', 'Radebeul', 'Coswig', 'Meißen', 'Pirna', 'Heidenau', 'Freital', 'Radeberg', 'Dippoldiswalde'].map((c) => <li>{c}</li>)}
+      </ul>
+      <a class="btn btn-line" href="/einsatzgebiet/">Zum Einsatzgebiet</a>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

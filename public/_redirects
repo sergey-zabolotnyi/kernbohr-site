@@ -1,0 +1,9 @@
+# 301-Weiterleitungen (Cloudflare Pages / Netlify). Format: ALT NEU 301
+# Nur aktiv nutzen, wenn die Zielseiten existieren (alle unten existieren im Projekt).
+/contact/     /kontakt/     301
+/about/       /ueber-uns/   301
+/services/    /leistungen/  301
+/projects/    /referenzen/  301
+/beratung/    /kontakt/     301
+/hallo-welt/  /             301
+# Unverändert bleiben: /faq/, /impressum/, /datenschutzerklaerung/

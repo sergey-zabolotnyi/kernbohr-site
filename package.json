@@ -1,0 +1,20 @@
+{
+  "name": "kernbohr-expert",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:prod": "cross-env PUBLIC_NOINDEX=false astro build",
+    "preview": "astro preview",
+    "media": "node scripts/prepare-media.mjs"
+  },
+  "dependencies": {
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
+}

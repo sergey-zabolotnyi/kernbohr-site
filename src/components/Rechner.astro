@@ -1,0 +1,151 @@
+---
+import { regeln } from '../data/preisliste.js';
+import { site } from '../data/site.js';
+---
+<section id="kb-rechner" class="kb-rechner" aria-labelledby="kb-title" data-wa={site.whatsapp} data-mail={site.email}>
+  <h2 id="kb-title">Kernbohr-Rechner: Richtpreis in 30 Sekunden</h2>
+  <p class="kb-lead">Basiert auf unserer Preisliste 2026. Unverbindliche Schätzung, den genauen Festpreis erhalten Sie nach einem Foto der Baustelle.</p>
+
+  <form id="kb-form" novalidate>
+    <div class="kb-field">
+      <label for="kb-material">Material</label>
+      <select id="kb-material">
+        <option value="beton">Beton / Stahlbeton</option>
+        <option value="mauerwerk">Mauerwerk (Ziegel, Kalksandstein)</option>
+      </select>
+    </div>
+
+    <div class="kb-field">
+      <label for="kb-dia">Durchmesser: <output id="kb-dia-out">82</output> mm</label>
+      <input type="range" id="kb-dia" min={regeln.minDurchmesser} max={regeln.maxDurchmesser} step="1" value="82">
+    </div>
+
+    <div class="kb-field">
+      <label for="kb-depth">Bohrtiefe / Wandstärke (cm, max. {regeln.maxTiefeCm})</label>
+      <input type="number" id="kb-depth" min="1" max={regeln.maxTiefeCm} step="1" value="24" inputmode="numeric">
+    </div>
+
+    <div class="kb-field">
+      <label for="kb-count">Anzahl der Bohrungen</label>
+      <input type="number" id="kb-count" min="1" max="200" step="1" value="1" inputmode="numeric">
+    </div>
+
+    <div class="kb-field">
+      <label for="kb-dir">Bohrrichtung</label>
+      <select id="kb-dir">
+        <option value="normal">Waagerecht oder senkrecht (Standard)</option>
+        <option value="ueberkopf">Überkopf (+50 %)</option>
+        <option value="schraeg">Schräg (+50 %)</option>
+      </select>
+    </div>
+
+    <fieldset class="kb-field">
+      <legend>Zusatzleistungen</legend>
+      <label class="kb-check"><input type="checkbox" id="kb-water"> Wassersauger mit Bediener ({regeln.wassersaugerTag} €/Tag)</label>
+      <label class="kb-check"><input type="checkbox" id="kb-scaffold"> Gerüststellung ({regeln.gerueststellungTag} €/Tag)</label>
+    </fieldset>
+
+    <div class="kb-field" id="kb-days-wrap" hidden>
+      <label for="kb-days">Einsatztage</label>
+      <input type="number" id="kb-days" min="1" max="30" step="1" value="1" inputmode="numeric">
+    </div>
+  </form>
+
+  <div class="kb-result" role="status" aria-live="polite">
+    <div class="kb-price"><span id="kb-total">–</span></div>
+    <ul class="kb-break" id="kb-break"></ul>
+    <div class="kb-min" id="kb-min" hidden>Mindestpreis {regeln.mindestpreis} € je Auftrag angewendet.</div>
+    <p class="kb-note">Richtwert, unverbindlich. Preise laut Preisliste 2026 [Inhaber: netto/brutto bestätigen]. Stahlbewehrung ab 1,5 cm (1 €/cm), Pilotbohrung und Wartezeit werden bei Bedarf gesondert berechnet. Bohrtiefe bis {regeln.maxTiefeCm / 100} m.</p>
+  </div>
+
+  <div class="kb-actions">
+    <a id="kb-wa" class="kb-btn kb-btn-wa" href="#" rel="noopener">Per WhatsApp anfragen</a>
+    <a id="kb-mail" class="kb-btn kb-btn-mail" href="#">Per E-Mail anfragen</a>
+  </div>
+  <p class="kb-note">Tipp: Senden Sie uns ein Foto der Baustelle per WhatsApp. Wir melden uns mit einem konkreten Angebot.</p>
+</section>
+
+<style is:global>
+  .kb-rechner{--kb-accent:#e8590c;--kb-bg:#f6f7f8;--kb-text:#1b1f23;max-width:640px;margin:2rem auto;padding:1.25rem;background:var(--kb-bg);color:var(--kb-text);border-radius:12px;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  .kb-rechner h2{margin:0 0 .25rem;font-size:1.4rem}
+  .kb-lead,.kb-note{font-size:.9rem;opacity:.8}
+  .kb-field{margin:1rem 0;border:0;padding:0}
+  .kb-field label,.kb-field legend{display:block;font-weight:600;margin-bottom:.35rem}
+  .kb-field select,.kb-field input[type=number]{width:100%;min-height:48px;padding:.5rem .75rem;font-size:1rem;border:1px solid #c5cad0;border-radius:8px;background:#fff}
+  .kb-field input[type=range]{width:100%;accent-color:var(--kb-accent);min-height:32px}
+  .kb-check{display:flex;gap:.6rem;align-items:center;font-weight:400!important;min-height:44px}
+  .kb-check input{width:22px;height:22px;accent-color:var(--kb-accent)}
+  .kb-result{background:#fff;border-left:5px solid var(--kb-accent);border-radius:8px;padding:1rem;margin:1.25rem 0}
+  .kb-price{font-size:1.7rem;font-weight:800}
+  .kb-sub{font-size:.9rem;margin-top:.25rem}
+  .kb-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+  .kb-btn{flex:1 1 220px;text-align:center;padding:.9rem 1rem;border-radius:8px;font-weight:700;text-decoration:none;min-height:48px;box-sizing:border-box}
+  .kb-btn-wa{background:#25d366;color:#052e16}
+  .kb-btn-mail{background:var(--kb-accent);color:#fff}
+  .kb-btn:focus-visible,.kb-field :focus-visible{outline:3px solid #1c7ed6;outline-offset:2px}
+  .kb-break{list-style:none;margin:.6rem 0 0;padding:0;font-size:.92rem}
+  .kb-break li{display:flex;justify-content:space-between;gap:1rem;padding:.25rem 0;border-bottom:1px solid #e6e8eb}
+  .kb-break li span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+  .kb-min{font-weight:600;color:#b34700;margin-top:.5rem;font-size:.9rem}
+</style>
+
+<script>
+  import { berechne, regeln, eur } from '../data/preisliste.js';
+
+  const root = document.getElementById('kb-rechner');
+  const $ = (id) => document.getElementById(id);
+  const el = {
+    material: $('kb-material'), dia: $('kb-dia'), diaOut: $('kb-dia-out'), depth: $('kb-depth'),
+    count: $('kb-count'), dir: $('kb-dir'), water: $('kb-water'), scaffold: $('kb-scaffold'),
+    days: $('kb-days'), daysWrap: $('kb-days-wrap'), total: $('kb-total'), list: $('kb-break'),
+    min: $('kb-min'), wa: $('kb-wa'), mail: $('kb-mail'),
+  };
+
+  const clamp = (v, min, max, def) => {
+    v = parseFloat(v);
+    return Number.isNaN(v) ? def : Math.min(max, Math.max(min, v));
+  };
+
+  function update() {
+    const d = Math.round(clamp(el.dia.value, regeln.minDurchmesser, regeln.maxDurchmesser, 82));
+    const tiefe = Math.round(clamp(el.depth.value, 1, regeln.maxTiefeCm, 24));
+    const anzahl = Math.round(clamp(el.count.value, 1, 200, 1));
+    const tage = Math.round(clamp(el.days.value, 1, 30, 1));
+    el.daysWrap.hidden = !(el.water.checked || el.scaffold.checked);
+
+    const r = berechne({
+      d, tiefe, anzahl, tage,
+      material: el.material.value,
+      richtung: el.dir.value,
+      wasser: el.water.checked,
+      geruest: el.scaffold.checked,
+    });
+
+    el.diaOut.textContent = d;
+    el.total.textContent = 'ca. ' + eur(r.total);
+    el.list.textContent = '';
+    r.posten.forEach((p) => {
+      const li = document.createElement('li');
+      const a = document.createElement('span');
+      const b = document.createElement('span');
+      a.textContent = p.t;
+      b.textContent = eur(p.v);
+      li.append(a, b);
+      el.list.append(li);
+    });
+    el.min.hidden = !r.mindestpreisGreift;
+
+    const text = r.posten.map((p) => p.t).join('; ');
+    const msg = 'Hallo, ich interessiere mich für eine Kernbohrung:\n' + text +
+      '\nRichtpreis laut Rechner: ca. ' + eur(r.total) +
+      '\nObjekt-PLZ/Ort: \nGern sende ich ein Foto der Baustelle.';
+    el.wa.href = 'https://wa.me/' + root.dataset.wa + '?text=' + encodeURIComponent(msg);
+    el.mail.href = 'mailto:' + root.dataset.mail + '?subject=' + encodeURIComponent('Anfrage Kernbohrung') +
+      '&body=' + encodeURIComponent(msg);
+  }
+
+  const form = $('kb-form');
+  ['input', 'change'].forEach((ev) => form.addEventListener(ev, update));
+  form.addEventListener('submit', (e) => e.preventDefault());
+  update();
+</script>

@@ -1,0 +1,20 @@
+---
+import { image } from '../lib/media.js';
+const { id, sizes = '(max-width: 768px) 100vw, 50vw', eager = false, class: cls = '' } = Astro.props;
+const m = image(id);
+const largest = m ? m.widths[m.widths.length - 1] : 0;
+---
+{m && (
+  <img
+    class={cls}
+    src={`/images/${id}-${largest}.webp`}
+    srcset={m.widths.map((w) => `/images/${id}-${w}.webp ${w}w`).join(', ')}
+    sizes={sizes}
+    width={m.w}
+    height={m.h}
+    alt={m.alt}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    fetchpriority={eager ? 'high' : undefined}
+  />
+)}

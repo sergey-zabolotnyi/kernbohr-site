@@ -1,0 +1,218 @@
+// Inhalte der Leistungsseiten (Basis: bisherige Texte des Inhabers). [ ] = bitte bestätigen.
+const areas = 'Dresden, Pirna, Radebeul, Meißen, Sachsen; bundesweit für größere Projekte';
+
+export const services = [
+  {
+    slug: 'kernbohrung',
+    group: 'Leistung',
+    name: 'Kernbohrungen',
+    title: 'Kernbohrung in Dresden & Sachsen, Ø 14–500 mm',
+    description: 'Kernbohrungen von Ø 14 bis 500 mm in Beton, Stahlbeton, Mauerwerk und Naturstein in Dresden und bundesweit. Staubarm, erschütterungsarm, mit kostenlosem Angebot.',
+    h1: 'Kernbohrung in Dresden und Sachsen',
+    intro: 'Wir bohren millimetergenau in Beton, Stahlbeton, Mauerwerk und Naturstein, staubarm und erschütterungsarm, in allen Lagen. Ideal für Elektro-, Sanitär-, Lüftungs- und Heizungsinstallationen.',
+    facts: [
+      ['Durchmesser', '14–500 mm, größere Durchmesser auf Anfrage'],
+      ['Bohrtiefe', 'bis 2 m'],
+      ['Materialien', 'Beton, Stahlbeton, Ziegelmauerwerk, Naturstein'],
+      ['Verfahren', 'Nass- und Trockenbohrung, horizontal, vertikal und über Kopf'],
+      ['Einsatzbereiche', 'Elektro, Sanitär, Lüftung, Heizung'],
+      ['Einsatzgebiet', areas],
+    ],
+    faqs: [
+      ['Was ist eine Kernbohrung?', 'Kernbohrungen sind präzise, runde Öffnungen, die mit diamantbesetzten Bohrkronen in Beton, Stahlbeton oder Mauerwerk erstellt werden. Sie werden meist für Leitungen (Elektro, Sanitär, Lüftung) benötigt.'],
+      ['Wie groß können die Bohrdurchmesser sein?', 'Von Ø 14 mm bis Ø 500 mm, größere Durchmesser auf Anfrage. Die Bohrtiefe beträgt bis zu 2 m. Die Bohrungen können horizontal, vertikal oder über Kopf erfolgen.'],
+    ],
+    calculator: true,
+  },
+  {
+    slug: 'wanddurchbruch',
+    group: 'Leistung',
+    name: 'Durchbrüche & Öffnungen',
+    title: 'Wanddurchbruch & Deckenöffnung in Dresden',
+    description: 'Wand- und Deckendurchbrüche, auch tragend mit Statik-Zusammenarbeit, in Dresden und bundesweit. Für Umbau, Sanierung und Grundrissänderung.',
+    h1: 'Wanddurchbruch und statische Öffnungen',
+    intro: 'Für neue Raumlösungen oder Nutzungsänderungen schaffen wir gezielt Wand- und Deckendurchbrüche, auf Wunsch mit statischer Prüfung und Absicherung in Zusammenarbeit mit Architekten und Statikern.',
+    facts: [
+      ['Einsatz', 'Umbau, Sanierung, Grundrissänderung, Öffnungen für Türen, Fenster und Versorgungsleitungen'],
+      ['Materialien', 'Mauerwerk, Beton, Stahlbeton'],
+      ['Hinweis', 'Bei tragenden Wänden und Decken ist eine statische Prüfung durch einen Statiker erforderlich'],
+      ['Einsatzgebiet', areas],
+    ],
+    faqs: [
+      ['Ist eine statische Prüfung vor einem Wanddurchbruch notwendig?', 'Bei tragenden Wänden oder Decken ist eine statische Prüfung durch einen Statiker unbedingt erforderlich. Gerne arbeiten wir mit Ihrem Architekten oder Statiker zusammen.'],
+    ],
+  },
+  {
+    slug: 'betonsaegen',
+    group: 'Leistung',
+    name: 'Betonsägen',
+    title: 'Betonsägen in Dresden & Sachsen',
+    description: 'Betonsägen für Wand- und Deckenöffnungen und Teilrückbau in Dresden und Sachsen. Exakte Schnitte, geräusch- und vibrationsarm, auch in bewohnten Gebäuden.',
+    h1: 'Betonsägen in Dresden und Sachsen',
+    intro: 'Mit moderner Betonsägetechnik entstehen exakte, gerade Schnitte für Öffnungen und Rückbau, geräusch- und vibrationsarm und mit wirksamem Staubschutz.',
+    facts: [
+      ['Einsatz', 'Wandöffnungen, Deckenöffnungen, Teilrückbau von Innenwänden'],
+      ['Materialien', 'Beton, Stahlbeton, Mauerwerk'],
+      ['Besonderheit', 'Geräusch- und vibrationsarmes Arbeiten, auch in bewohnten Gebäuden'],
+      ['Schnitttiefe', '[bis X cm, Inhaber ergänzen]'],
+      ['Einsatzgebiet', areas],
+    ],
+    faqs: [
+      ['Arbeiten Sie auch in bewohnten Gebäuden?', 'Ja. Wir setzen auf lärmreduzierte, staubarme Technik und passende Schutzmaßnahmen, ideal für Sanierungen oder Umbauten in bewohnten Gebäuden.'],
+    ],
+  },
+  {
+    slug: 'fugenschneiden',
+    group: 'Leistung',
+    name: 'Fugenschneiden',
+    title: 'Fugenschneiden in Dresden & Sachsen',
+    description: 'Fugenschneiden in Beton für Dehn- und Trennfugen in Dresden und Sachsen. Saubere Schnitte, schnelle Terminvergabe.',
+    h1: 'Fugenschneiden in Dresden und Sachsen',
+    intro: 'Mit dem Fugenschneiden setzen wir Dehn-, Scheinfugen und Trennschnitte in Bodenplatten und Flächen, damit der Beton kontrolliert arbeiten kann und keine wilden Risse entstehen.',
+    facts: [
+      ['Einsatz', 'Dehnfugen, Scheinfugen, Trennschnitte [Inhaber bestätigen]'],
+      ['Untergründe', 'Beton [weitere Untergründe bestätigen]'],
+      ['Schnitttiefe und -breite', '[Inhaber ergänzen]'],
+      ['Einsatzgebiet', areas],
+    ],
+    faqs: [
+      ['Wann sollte man Fugen schneiden?', 'Fugen werden meist kurz nach dem Aushärten des Betons geschnitten, damit er dort reißt, wo er soll. Den passenden Zeitpunkt klären wir mit Ihnen. [Inhaber bestätigen]'],
+    ],
+  },
+  {
+    slug: 'schlitzfraesen',
+    group: 'Leistung',
+    name: 'Schlitze in Beton fräsen',
+    title: 'Schlitze in Beton fräsen in Dresden',
+    description: 'Präzises Fräsen von Schlitzen in Beton und Stahlbeton für Elektro-, Wasser- und Heizungsinstallationen in Dresden und Sachsen. Staubarm und zeitsparend.',
+    h1: 'Schlitze in Beton fräsen',
+    intro: 'Für Elektro-, Wasser- oder Heizungsleitungen fräsen wir exakte und saubere Schlitze in Beton und Stahlbeton, ganz nach Plan, staubarm, präzise und zeitsparend, ideal für Sanierungen und Neubauten.',
+    facts: [
+      ['Einsatz', 'Elektro-, Wasser- und Heizungsleitungen, vorbereitende Rückbauarbeiten'],
+      ['Materialien', 'Beton, Stahlbeton, Mauerwerk'],
+      ['Schlitzbreite und -tiefe', '[Inhaber ergänzen]'],
+      ['Einsatzgebiet', areas],
+    ],
+    faqs: [
+      ['Wie tief und breit darf ein Schlitz sein?', 'Das hängt von der Wand und der Statik ab. Bei tragenden Wänden ist die zulässige Schlitztiefe begrenzt, bitte vorab klären. [Rechtlichen Hinweis prüfen lassen]'],
+    ],
+  },
+  {
+    slug: 'rueckbau-teilabbruch',
+    group: 'Leistung',
+    name: 'Rückbau & Teilabbrüche',
+    title: 'Rückbau & Teilabbrüche in Dresden',
+    description: 'Selektiver Rückbau und Teilabbrüche im Bestand, staubarm und lärmreduziert, auch bei laufendem Betrieb. Dresden, Sachsen und bundesweit.',
+    h1: 'Rückbau und Teilabbrüche',
+    intro: 'Selektiver Rückbau von Innen- und Außenbereichen, ideal für Umbauten im Bestand oder Entkernungen. Staubarm und lärmreduziert, auch bei laufendem Betrieb oder in bewohnten Objekten.',
+    facts: [
+      ['Einsatz', 'Umbauten im Bestand, Entkernung, Teilrückbau von Wänden'],
+      ['Besonderheit', 'Staubarme, lärmreduzierte Durchführung bei laufendem Betrieb'],
+      ['Leistungsumfang', 'Fachgerechte Entsorgung und Schutzmaßnahmen [Inhaber bestätigen]'],
+      ['Einsatzgebiet', areas],
+    ],
+    faqs: [
+      ['Arbeiten Sie auch in bewohnten Gebäuden?', 'Ja. Wir setzen auf lärmreduzierte, staubarme Technik und passende Schutzmaßnahmen.'],
+    ],
+  },
+  {
+    slug: 'kernbohrung-waermepumpe-klimaanlage',
+    group: 'Anwendung',
+    name: 'Wärmepumpe & Klimaanlage',
+    title: 'Kernbohrung für Wärmepumpe & Klimaanlage in Dresden',
+    description: 'Saubere Kernbohrung für Wärmepumpen und Klimageräte in Dresden, Pirna, Radebeul und Meißen. Staubarm, Festpreis nach Foto.',
+    h1: 'Kernbohrung für Wärmepumpe und Klimaanlage',
+    intro: 'Für Wärmepumpe, Split- oder Multisplit-Klimagerät braucht Ihr Haus eine saubere Durchführung durch die Außenwand. Wir bohren passend, damit Kältemittel-, Strom- und Kondensatleitungen sicher nach draußen geführt werden.',
+    facts: [
+      ['Durchmesser', '60–82 mm bei Klimageräten, 100–200 mm bei Wärmepumpen (je nach Hersteller)'],
+      ['Materialien', 'Beton, Stahlbeton, Ziegel, Kalksandstein, Porenbeton'],
+      ['Wandstärke', 'üblich 24–50 cm, tiefer auf Anfrage'],
+      ['Verfahren', 'Nassbohrung, staubarm [Wasserabsaugung bestätigen]'],
+      ['Einsatzgebiet', areas],
+    ],
+    faqs: [
+      ['Welchen Durchmesser brauche ich für die Wärmepumpe?', 'Das hängt von Hersteller und Leitungsführung ab. Schicken Sie uns Datenblatt oder Foto, wir empfehlen den passenden Durchmesser.'],
+      ['Wird mein Haus dabei verschmutzt?', 'Wir arbeiten staubarm und decken den Arbeitsbereich ab. Der Bereich wird aufgeräumt übergeben.'],
+      ['Wie lange dauert die Bohrung?', 'Eine Standardbohrung dauert in der Regel wenige Minuten bis etwa eine Stunde inklusive Aufbau. [Inhaber bestätigen]'],
+    ],
+    calculator: true,
+  },
+  {
+    slug: 'wanddurchbruch-dunstabzugshaube',
+    group: 'Anwendung',
+    name: 'Dunstabzugshaube',
+    title: 'Wanddurchbruch für Dunstabzugshaube in Dresden',
+    description: 'Wanddurchbruch für Abluft und Dunstabzugshaube in Dresden und Umgebung. Sauber gebohrt, passender Durchmesser, schnelle Terminvergabe.',
+    h1: 'Wanddurchbruch für die Dunstabzugshaube',
+    intro: 'Eine Abluft-Dunstabzugshaube braucht einen Durchbruch nach draußen. Mit der Kernbohrung entsteht ein exakt runder, glatter Durchbruch ohne Risse und ohne großen Schutt.',
+    facts: [
+      ['Typische Durchmesser', '125 mm (DN 125) oder 150 mm (DN 150), je nach Haube'],
+      ['Materialien', 'Mauerwerk, Beton, Stahlbeton'],
+      ['Hinweis', 'Bohrung mit leichtem Gefälle nach außen, damit kein Regenwasser eindringt'],
+      ['Verfahren', 'Staubarm, wenig Schmutz in der Küche'],
+    ],
+    faqs: [
+      ['Welcher Durchmesser passt für meine Dunstabzugshaube?', 'Prüfen Sie das Abluftrohr Ihrer Haube: DN 125 oder DN 150 sind üblich. Wir bohren entsprechend etwas größer für Mauerkasten oder Futterrohr.'],
+      ['Brauche ich eine Genehmigung?', 'Bei Mietwohnungen und Eigentümergemeinschaften klären Sie bitte vorher die Zustimmung. Bei tragenden Wänden und Fassaden ist Rücksprache wichtig. [Rechtlichen Hinweis prüfen lassen]'],
+    ],
+    calculator: true,
+  },
+  {
+    slug: 'kamin-sanitaer-anschluesse',
+    group: 'Anwendung',
+    name: 'Kamin & Sanitär',
+    title: 'Kernbohrung für Kamin- & Sanitäranschlüsse in Dresden',
+    description: 'Kernbohrungen für Kaminanschluss, Abwasser, Lüftung und Sanitär in Dresden, Pirna, Radebeul, Meißen. Präzise, sauber, mit kostenlosem Angebot.',
+    h1: 'Kernbohrung für Kamin- und Sanitäranschlüsse',
+    intro: 'Ob Ofenrohr zum Schornstein, Abwasserrohr, Lüftung oder Wasserleitung: Wir schaffen präzise Durchführungen in Wänden und Decken.',
+    facts: [
+      ['Durchmesser', '130–200 mm für Ofenrohranschlüsse, 50–125 mm für Abwasser und Sanitär'],
+      ['Materialien', 'Ziegel, Kalksandstein, Beton, Stahlbeton, Schornsteinmauerwerk'],
+      ['Besonderheit', 'Bei Schornsteinen ist Rücksprache mit dem Bezirksschornsteinfeger Pflicht'],
+      ['Verfahren', 'Nassbohrung oder Trockenbohrung, je nach Situation'],
+    ],
+    faqs: [
+      ['Darf ich einen Kaminanschluss herstellen lassen?', 'Den Anschluss an einen Schornstein muss der Bezirksschornsteinfeger abnehmen. Die Bohrung führen wir fachgerecht aus, die Abnahme klären Sie bitte vorab.'],
+      ['Können Sie auch Deckenbohrungen machen?', 'Ja, Bohrungen über Kopf sind möglich. Bitte bei der Anfrage angeben.'],
+    ],
+    calculator: true,
+  },
+];
+
+// Allgemeine FAQ (Startseite, FAQ-Seite, FAQPage-Schema). Basis: bisherige FAQ des Inhabers.
+export const faqs = [
+  ['Was ist eine Kernbohrung?', 'Kernbohrungen sind präzise, runde Öffnungen, die mit diamantbesetzten Bohrkronen in Beton, Stahlbeton oder Mauerwerk erstellt werden. Sie werden meist für Leitungen (Elektro, Sanitär, Lüftung) benötigt.'],
+  ['In welchen Materialien führen Sie Bohrungen und Schnitte durch?', 'Wir bearbeiten Beton, Stahlbeton, Ziegelmauerwerk, Naturstein und andere feste Baustoffe, staubarm, erschütterungsarm und mit hoher Präzision.'],
+  ['Wie groß können die Bohrdurchmesser sein?', 'Unsere Kernbohrungen sind von Ø 14 mm bis Ø 500 mm möglich, größere Durchmesser auf Anfrage. Die Bohrtiefe beträgt bis zu 2 m. Die Bohrungen können horizontal, vertikal oder über Kopf erfolgen.'],
+  ['Ist eine statische Prüfung vor einem Wanddurchbruch notwendig?', 'Bei tragenden Wänden oder Decken ist eine statische Prüfung durch einen Statiker unbedingt erforderlich. Gerne arbeiten wir mit Ihrem Architekten oder Statiker zusammen.'],
+  ['Arbeiten Sie auch in bewohnten Gebäuden?', 'Ja. Wir setzen auf lärmreduzierte, staubarme Technik und passende Schutzmaßnahmen, ideal für Sanierungen oder Umbauten in bewohnten Gebäuden.'],
+  ['In welchen Regionen sind Sie tätig?', 'Wir sind bundesweit im Einsatz, insbesondere in Sachsen, Thüringen, Bayern und Brandenburg. Für größere Projekte sind auch weiter entfernte Einsätze möglich. Unser Sitz ist Dresden.'],
+  ['Wie schnell kann ein Auftrag durchgeführt werden?', 'Wir bieten flexible Terminvereinbarungen. In dringenden Fällen sind kurzfristige Einsätze möglich, kontaktieren Sie uns einfach telefonisch oder per E-Mail.'],
+  ['Was kostet eine Kernbohrung oder ein Rückbau?', 'Die Preise hängen ab von Material, Durchmesser, Anzahl, Zugänglichkeit und Aufwand. Mit dem Kernbohr-Rechner erhalten Sie einen ersten Richtwert, gerne erstellen wir Ihnen außerdem ein kostenloses und unverbindliches Angebot.'],
+  ['Welche Unterlagen oder Informationen benötigen Sie zur Angebotserstellung?', 'Ideal sind Grundrisse, Fotos der Einsatzstelle und Angaben zu Materialstärke, Durchmesser, Zugangsmöglichkeiten und Zeitfenster. Ein Foto per WhatsApp genügt oft schon.'],
+  ['Arbeiten Sie staubfrei?', 'Wir arbeiten staubarm und erschütterungsarm, decken den Arbeitsbereich ab und hinterlassen die Baustelle aufgeräumt. Vollständig ohne Staub ist bei Arbeiten an Beton kein Verfahren, durch Nassbohren und Absaugung bleibt er aber auf ein Minimum begrenzt. [Absaugung bestätigen]'],
+  ['Welchen Stromanschluss benötigen Sie vor Ort?', 'Für kleine und mittlere Durchmesser genügt in der Regel eine Steckdose mit 230 V. Für große Durchmesser oder stark bewehrten Beton nutzen wir leistungsstärkere Geräte mit 400 V (Drehstrom). [Inhaber bestätigen] Wir klären das vorab mit Ihnen.'],
+  ['Brauchen Sie Wasser auf der Baustelle?', 'Für die Nassbohrung benötigen wir in der Regel Wasser. Bei Bedarf bringen wir einen eigenen Wassertank mit. [Inhaber bestätigen]'],
+];
+
+// Icons, Medien (IDs aus media.config.mjs) und passende Ratgeber pro Seite.
+// Medien erscheinen nur, wenn die Dateien vorhanden sind (npm run media).
+faqs.push(
+  ['Wie tief können Sie bohren?', 'Wir bohren bis zu 2 m tief. Ein Beispiel aus der Praxis: Kernbohrung Ø 80 mm mit 1 m Tiefe in Stahlbeton.'],
+  ['Können Sie schräg bohren oder nur im 90°-Winkel?', 'Wir bohren waagerecht, senkrecht, über Kopf und im Winkel. Überkopf- und Schrägbohrungen berechnen wir mit 50 % Zuschlag.'],
+  ['Wie stellen Sie sicher, dass keine versteckten Leitungen beschädigt werden?', 'Wir klären vor der Bohrung Bestandspläne und Leitungsverläufe mit dem Auftraggeber und markieren die Bohrstelle gemeinsam. [Inhaber: Ortungsgerät / Vorgehen ergänzen]'],
+  ['Wie lange dauert ein typischer Auftrag?', 'Eine einzelne Bohrung für Wärmepumpe oder Klimagerät dauert in der Regel nur kurze Zeit. Bei Privatkunden schaffen wir mehrere Wärmepumpen-Termine pro Tag [Inhaber: Zahl bestätigen]. Größere Projekte planen wir nach Aufwand.'],
+);
+
+const extra = {
+  kernbohrung: { icon: 'drill', media: ['werk-bohrstaender', 'video-bohrkern-80', 'video-kernbohr-schiene', 'werk-wand-gross'] },
+  wanddurchbruch: { icon: 'opening', media: ['werk-oeffnung-schiene', 'werk-oeffnung-geruest', 'video-wandsaege', 'werk-bohrkrone-152'], guide: 'wanddurchbruch-tragende-wand' },
+  betonsaegen: { icon: 'saw', media: ['video-wandsaege', 'video-fugenschneider'] },
+  fugenschneiden: { icon: 'joint', media: ['video-fugenschneider'] },
+  schlitzfraesen: { icon: 'slot', media: [] },
+  'rueckbau-teilabbruch': { icon: 'hammer', media: ['video-markierung', 'video-wandsaege'] },
+  'kernbohrung-waermepumpe-klimaanlage': { icon: 'fan', media: ['werk-fassade', 'werk-durchfuehrung-decke', 'werk-bohrstaender'], guide: 'waermepumpe-kernbohrung' },
+  'wanddurchbruch-dunstabzugshaube': { icon: 'hood', media: ['werk-wand-125', 'werk-unterzug', 'video-kernbohr-schiene'] },
+  'kamin-sanitaer-anschluesse': { icon: 'flame', media: [] },
+};
+services.forEach((s) => Object.assign(s, extra[s.slug] ?? { icon: 'drill', media: [] }));

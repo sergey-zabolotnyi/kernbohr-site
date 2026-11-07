@@ -1,0 +1,138 @@
+---
+import Base from '../layouts/Base.astro';
+import Rechner from '../components/Rechner.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { faktoren, richtwerte, preisFaqs } from '../data/preise.js';
+import { staffel, zuschlagTabelle, berechne, eur, stand, regeln } from '../data/preisliste.js';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema, faqSchema } from '../lib/schema.js';
+const beispiele = [
+  ['Klimagerät, 1 Bohrung', { d: 82, tiefe: 36, anzahl: 1, material: 'mauerwerk' }],
+  ['Lüftung, 6 Bohrungen in Beton', { d: 152, tiefe: 25, anzahl: 6, material: 'beton' }],
+  ['3 große Bohrungen über Kopf', { d: 202, tiefe: 30, anzahl: 3, material: 'beton', richtung: 'ueberkopf' }],
+].map(([t, p]) => ({ t, r: berechne(p), desc: `${p.anzahl}× Ø ${p.d} mm, ${p.tiefe} cm ${p.material === 'mauerwerk' ? 'Mauerwerk' : 'Beton'}${p.richtung ? ', Überkopf' : ''}` }));
+---
+<Base
+  title="Kernbohrung Kosten in Dresden: Preisfaktoren & Richtwert | Kernbohr-Expert"
+  description="Kernbohrung Preisliste 2026: 1,20–11,00 € je cm Bohrtiefe, Anfahrt 85 €, Mindestpreis 250 €. Mit Richtpreis-Rechner. Dresden und Sachsen."
+  path="/preise/"
+  schema={[crumbSchema([['Kosten & Preise', '/preise/']]), faqSchema(preisFaqs)]}
+>
+  <Breadcrumbs items={[['Kosten & Preise']]} />
+  <section class="hero small" style={heroStyle()}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Kosten &amp; Preise</span>
+        <h1>Was kostet eine Kernbohrung in Dresden?</h1>
+        <p class="lead">Wir rechnen transparent nach Durchmesser und Bohrtiefe. Unten finden Sie unsere komplette Preisliste 2026 und den Rechner für einen ersten Richtwert. Mindestpreis 250 € je Auftrag.</p>
+        <div class="btns"><a class="btn btn-main" href="#kb-rechner"><Icon name="euro" size={20} /> Richtpreis berechnen</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Preisliste 2026</span>
+      <h2>Kernbohrung: Preis je cm Bohrtiefe</h2>
+      <div class="callout"><strong>Kurze Antwort</strong> Eine Kernbohrung kostet in Beton und Stahlbeton 1,20 € bis 11,00 € je cm Bohrtiefe, in Mauerwerk 1,10 € bis 9,50 €, je nach Durchmesser (14–501 mm). Dazu kommen Anfahrt (85 €), Mindestpreis 250 € je Auftrag, Bohrtiefe bis 2 m.</div>
+      <div class="table-scroll">
+        <table class="facts">
+          <thead><tr><th>Durchmesser (mm)</th><th>Beton / Stahlbeton</th><th>Mauerwerk</th></tr></thead>
+          <tbody>
+            {staffel.map(([lo, hi, b, m]) => (
+              <tr><td>{lo}–{hi}</td><td>{eur(b)} / cm</td><td>{eur(m)} / cm</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <h3>Sonderzuschläge und Nebenleistungen</h3>
+      <div class="table-scroll">
+        <table class="facts">
+          <thead><tr><th>Position</th><th>Preis</th></tr></thead>
+          <tbody>
+            {zuschlagTabelle.map(([pos, pr]) => (<tr><td>{pos}</td><td>{pr}</td></tr>))}
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Stand: {stand}. Preise laut Preisliste 2026 [Inhaber: netto oder brutto bestätigen]. Mindestpreis {eur(regeln.mindestpreis)} je Auftrag. Größere Durchmesser und besondere Bedingungen auf Anfrage.</p>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Beispiele</span>
+      <h2>Beispielrechnungen</h2>
+      <div class="cards">
+        {beispiele.map((b) => (
+          <div class="card">
+            <h3>{b.t}</h3>
+            <p>{b.desc}</p>
+            <p><strong>ca. {eur(b.r.total)}</strong>{b.r.mindestpreisGreift ? ` (Mindestpreis, Rechenwert ${eur(b.r.summe)})` : ''}<br />inkl. Anfahrt {eur(regeln.anfahrt)}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Preisfaktoren</span>
+      <h2>Das bestimmt den Preis</h2>
+      <div class="cards">
+        {faktoren.map((f) => (
+          <div class="card">
+            <div class="ico"><Icon name={f.icon} size={28} /></div>
+            <h3>{f.t}</h3>
+            <p>{f.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Übersicht</span>
+      <h2>Typische Anwendungen im Überblick</h2>
+      <div class="table-scroll">
+        <table class="facts">
+          <thead>
+            <tr><th>Anwendung</th><th>Typischer Durchmesser</th><th>Beispiel-Bohrung</th><th>Bohrpreis je Bohrung</th></tr>
+          </thead>
+          <tbody>
+            {richtwerte.map((r) => (
+              <tr>
+                <td><a href={r.link}>{r.anwendung}</a></td>
+                <td>{r.d}</td>
+                <td>{r.beispiel}</td>
+                <td>{r.preis}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Beispielrechnung nach Preisliste 2026, ohne Anfahrt (85 €) und Mindestpreis (250 € je Auftrag). Den verbindlichen Festpreis erhalten Sie nach Foto und kurzer Rücksprache.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><Rechner /></div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">FAQ</span>
+      <h2>Fragen zu den Kosten</h2>
+      {preisFaqs.map(([q, a]) => (
+        <details open>
+          <summary>{q}</summary>
+          <p>{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand title="Festpreis nach Foto" text="Senden Sie uns ein Foto der Bohrstelle und den gewünschten Durchmesser. Wir melden uns mit einem konkreten Angebot." />
+</Base>

@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Gallery from '../components/Gallery.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { allIds, items, heroStyle } from '../lib/media.js';
+import { crumbSchema } from '../lib/schema.js';
+
+// Dekor-Bild (hero-bg) nicht in der Galerie zeigen.
+const ids = allIds().filter((id) => id !== 'hero-bg');
+const hasMedia = items(ids).length > 0;
+---
+<Base
+  title="Referenzen & Einblicke | Kernbohr-Expert Dresden"
+  description="Einblick in unsere Arbeiten: Kernbohrungen, Betonsägen und Öffnungen in Beton und Mauerwerk in Dresden und Umgebung."
+  path="/referenzen/"
+  schema={[crumbSchema([['Referenzen', '/referenzen/']])]}
+>
+  <Breadcrumbs items={[['Referenzen']]} />
+  <section class="hero small" style={heroStyle()}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Referenzen</span>
+        <h1>Einblicke in unsere Arbeit</h1>
+        <p class="lead">Echte Fotos und Videos von unseren Baustellen: präzise ausgeführt und aufgeräumt übergeben.</p>
+      </div>
+    </div>
+  </section>
+
+  {hasMedia ? (
+    <Gallery ids={ids} />
+  ) : (
+    <section>
+      <div class="wrap">
+        <p>Aktuelle Projektfotos folgen in Kürze. Gern zeigen wir Ihnen auf Anfrage passende Beispiele für Ihr Vorhaben.</p>
+      </div>
+    </section>
+  )}
+
+  <CtaBand title="Ihr Projekt besprechen" text="Beschreiben Sie uns Ihr Vorhaben oder senden Sie ein Foto. Wir beraten kostenlos und unverbindlich." />
+</Base>

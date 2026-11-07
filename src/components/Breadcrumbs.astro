@@ -1,0 +1,11 @@
+---
+const { items = [] } = Astro.props; // [[Name, Pfad], ...], letzter Eintrag ohne Link
+const all = [['Start', '/'], ...items];
+---
+<nav class="crumbs" aria-label="Brotkrumen">
+  <ol>
+    {all.map(([name, p], i) => (
+      <li>{i < all.length - 1 ? <a href={p}>{name}</a> : <span aria-current="page">{name}</span>}</li>
+    ))}
+  </ol>
+</nav>

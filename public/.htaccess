@@ -1,0 +1,8 @@
+# 301-Weiterleitungen für Apache-Hosting (IONOS, Strato, All-Inkl u. a.)
+# ACHTUNG: Diese Datei ersetzt auf dem Server eine vorhandene .htaccess (z. B. von WordPress). Vorher sichern!
+RedirectMatch 301 ^/contact/?$ /kontakt/
+RedirectMatch 301 ^/about/?$ /ueber-uns/
+RedirectMatch 301 ^/services/?$ /leistungen/
+RedirectMatch 301 ^/projects/?$ /referenzen/
+RedirectMatch 301 ^/beratung/?$ /kontakt/
+RedirectMatch 301 ^/hallo-welt/?$ /

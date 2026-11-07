@@ -1,0 +1,71 @@
+// Preisliste 2026 (Stand 05.01.2026) von Ion Salcutan. Einzige Quelle für Rechner und /preise/.
+// Preise in € je cm Bohrtiefe. [lo mm, hi mm, Beton/Stahlbeton, Mauerwerk]
+export const stand = '05.01.2026';
+
+export const staffel = [
+  [14, 31, 1.2, 1.1],
+  [32, 51, 1.2, 1.1],
+  [52, 81, 1.2, 1.1],
+  [82, 101, 1.2, 1.1],
+  [102, 131, 1.3, 1.2],
+  [132, 151, 1.45, 1.2],
+  [152, 181, 1.65, 1.5],
+  [182, 201, 2.2, 2.0],
+  [202, 251, 3.0, 2.5],
+  [252, 275, 3.5, 3.0],
+  [276, 301, 4.25, 3.9],
+  [302, 351, 4.85, 3.95],
+  [352, 401, 6.0, 5.1],
+  [402, 451, 6.5, 5.6],
+  [452, 501, 11.0, 9.5],
+];
+
+export const regeln = {
+  minDurchmesser: 14,
+  maxDurchmesser: 501,
+  maxTiefeCm: 200, // Inhaber: maximale Bohrtiefe 2 m
+  mindestpreis: 250, // Inhaber: "Minimale Preis 250 €" [Annahme: Mindest-Auftragswert, bestätigen]
+  anfahrt: 85, // Inhaber-Nachricht: 85 €; gedruckte Preisliste nennt 80 € [bestätigen]
+  zuschlagUeberkopf: 0.5,
+  zuschlagSchraeg: 0.5,
+  wassersaugerTag: 55,
+  gerueststellungTag: 65,
+  stahlProCm: 1.0, // Stahl ab 1,5 cm, Einzelschnitt, € je cm
+  pilotbohrung: 0.75, // Einheit laut Liste "Preis €/Stck." [bestätigen]
+  wartezeitStunde: 55,
+};
+
+export const zuschlagTabelle = [
+  ['Schrägbohrung', '+ 50 %'],
+  ['Überkopfbohrung', '+ 50 %'],
+  ['Pilotbohrung', '0,75 €'],
+  ['Wassersauger mit Bediener', '55,00 € pro Tag'],
+  ['Stahl ab 1,5 cm (Einzelschnitt)', '1,00 € pro cm'],
+  ['Gerüststellung', '65,00 € pro Tag'],
+  ['Anfahrt / Baustelleneinrichtung', '85,00 €'],
+  ['Wartezeit', '55,00 € pro Stunde'],
+];
+
+export const eur = (v) =>
+  new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(v);
+
+export function satz(durchmesser, material) {
+  const b = staffel.find(([lo, hi]) => durchmesser >= lo && durchmesser <= hi);
+  if (!b) return null;
+  return material === 'mauerwerk' ? b[3] : b[2];
+}
+
+// Gemeinsame Rechenlogik (Rechner und Beispiele auf /preise/ nutzen dasselbe).
+export function berechne({ d, tiefe, anzahl = 1, material = 'beton', richtung = 'normal', wasser = false, geruest = false, tage = 1 }) {
+  const s = satz(d, material);
+  const bohr = s * tiefe * anzahl;
+  const zuschlag = richtung === 'ueberkopf' || richtung === 'schraeg' ? bohr * regeln.zuschlagUeberkopf : 0;
+  const posten = [{ t: `${anzahl}× Ø ${d} mm, ${tiefe} cm, ${material === 'mauerwerk' ? 'Mauerwerk' : 'Beton/Stahlbeton'} (${eur(s)}/cm)`, v: bohr }];
+  if (zuschlag) posten.push({ t: richtung === 'ueberkopf' ? 'Zuschlag Überkopf (+50 %)' : 'Zuschlag Schrägbohrung (+50 %)', v: zuschlag });
+  if (wasser) posten.push({ t: `Wassersauger mit Bediener (${tage} Tag${tage > 1 ? 'e' : ''})`, v: regeln.wassersaugerTag * tage });
+  if (geruest) posten.push({ t: `Gerüststellung (${tage} Tag${tage > 1 ? 'e' : ''})`, v: regeln.gerueststellungTag * tage });
+  posten.push({ t: 'Anfahrt / Baustelleneinrichtung', v: regeln.anfahrt });
+  const summe = posten.reduce((a, p) => a + p.v, 0);
+  const total = Math.max(summe, regeln.mindestpreis);
+  return { posten, summe, total, mindestpreisGreift: summe < regeln.mindestpreis };
+}

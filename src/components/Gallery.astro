@@ -1,0 +1,26 @@
+---
+import Photo from './Photo.astro';
+import { items } from '../lib/media.js';
+const { ids = [], title = '', eyebrow = '' } = Astro.props;
+const list = items(ids);
+---
+{list.length > 0 && (
+  <section class="gallery-sec">
+    <div class="wrap">
+      {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+      {title && <h2>{title}</h2>}
+      <div class="gallery">
+        {list.map((m) => (
+          <figure>
+            {m.type === 'image' ? (
+              <Photo id={m.id} sizes="(max-width: 600px) 100vw, 33vw" />
+            ) : (
+              <video controls preload="metadata" playsinline poster={`/posters/${m.id}.jpg`} src={`/videos/${m.id}.mp4`} aria-label={m.alt}></video>
+            )}
+            {m.caption && <figcaption>{m.caption}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

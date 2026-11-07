@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { articles } from '../../data/articles.js';
+import { site } from '../../data/site.js';
+import { heroStyle } from '../../lib/media.js';
+import { crumbSchema, faqSchema, articleSchema } from '../../lib/schema.js';
+
+export function getStaticPaths() {
+  return articles.map((a) => ({ params: { slug: a.slug }, props: { a } }));
+}
+const { a } = Astro.props;
+const date = new Date(a.date).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
+const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
+---
+<Base
+  title={`${a.title} | ${site.company}`}
+  description={a.description}
+  path={`/ratgeber/${a.slug}/`}
+  schema={[crumbSchema([['Ratgeber', '/ratgeber/'], [a.title, `/ratgeber/${a.slug}/`]]), articleSchema(a), faqSchema(a.faqs)]}
+>
+  <Breadcrumbs items={[['Ratgeber', '/ratgeber/'], [a.title]]} />
+  <section class="hero small" style={heroStyle()}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><Icon name={a.icon} size={18} /> Ratgeber</span>
+        <h1>{a.h1}</h1>
+        <p class="lead">Von {site.company}, Dresden · Stand: {date}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <article class="prose">
+        <div class="callout"><strong>Kurze Antwort</strong>{a.answer}</div>
+
+        {a.sections.map((s) => (
+          <>
+            <h2>{s.h}</h2>
+            {s.p && s.p.map((t) => <p set:html={t} />)}
+            {s.ul && <ul>{s.ul.map((t) => <li set:html={t} />)}</ul>}
+            {s.ol && <ol>{s.ol.map((t) => <li set:html={t} />)}</ol>}
+            {s.checks && (
+              <ul class="checks">{s.checks.map((t) => <li><Icon name="check" size={18} /><span set:html={t} /></li>)}</ul>
+            )}
+          </>
+        ))}
+
+        <h2>Häufige Fragen</h2>
+        {a.faqs.map(([q, ans]) => (
+          <details>
+            <summary>{q}</summary>
+            <p>{ans}</p>
+          </details>
+        ))}
+
+        <p class="note" style="margin-top:2rem">Hinweis: Dieser Ratgeber gibt allgemeine Fachinformationen und ersetzt keine Statik, Rechts- oder Steuerberatung.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Weiterlesen</span>
+      <h2>Weitere Ratgeber</h2>
+      <div class="cards">
+        {more.map((m) => (
+          <a class="card" href={`/ratgeber/${m.slug}/`}>
+            <div class="ico"><Icon name={m.icon} size={28} /></div>
+            <h3>{m.title}</h3>
+            <p>{m.short}</p>
+            <span class="more">Lesen <Icon name="arrow" size={16} /></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

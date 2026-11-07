@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import Rechner from '../components/Rechner.astro';
+import Icon from '../components/Icon.astro';
+import Gallery from '../components/Gallery.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site } from '../data/site.js';
+import { services } from '../data/services.js';
+import { articles } from '../data/articles.js';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema, faqSchema } from '../lib/schema.js';
+
+export function getStaticPaths() {
+  return services.map((s) => ({ params: { slug: s.slug }, props: { s } }));
+}
+
+const { s } = Astro.props;
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hallo, ich interessiere mich für: ${s.name}. Foto der Baustelle sende ich gleich mit.`)}`;
+const others = services.filter((x) => x.slug !== s.slug && x.group === s.group).slice(0, 3);
+const guide = s.guide ? articles.find((a) => a.slug === s.guide) : null;
+
+const schema = [
+  crumbSchema([['Leistungen', '/leistungen/'], [s.name, `/${s.slug}/`]]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: s.name,
+    provider: { '@id': site.url + '/#business' },
+    areaServed: { '@type': 'AdministrativeArea', name: 'Dresden und Sachsen' },
+    description: s.description,
+  },
+  faqSchema(s.faqs),
+];
+---
+<Base title={`${s.title} | ${site.company}`} description={s.description} path={`/${s.slug}/`} schema={schema}>
+  <Breadcrumbs items={[['Leistungen', '/leistungen/'], [s.name]]} />
+
+  <section class="hero small" style={heroStyle()}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><Icon name={s.icon} size={18} /> {s.group === 'Anwendung' ? 'Anwendung' : 'Leistung'}</span>
+        <h1>{s.h1}</h1>
+        <p class="lead">{s.intro}</p>
+        <div class="btns">
+          <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> Foto senden</a>
+          <a class="btn btn-main" href="/kontakt/"><Icon name="mail" size={20} /> Angebot anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Auf einen Blick</span>
+      <h2>Das Wichtigste zu {s.name}</h2>
+      <div class="table-scroll">
+        <table class="facts">
+          <tbody>
+            {s.facts.map(([k, v]) => <tr><th>{k}</th><td>{v}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+      {guide && (
+        <div class="callout">
+          <strong>Mehr dazu im Ratgeber</strong>
+          <a href={`/ratgeber/${guide.slug}/`}>{guide.title}</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <Gallery ids={s.media} eyebrow="Einblick" title="Aus unserer Arbeit" />
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">FAQ</span>
+      <h2>Häufige Fragen</h2>
+      {s.faqs.map(([q, a]) => (
+        <details open>
+          <summary>{q}</summary>
+          <p>{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  {s.calculator && (
+    <section>
+      <div class="wrap"><Rechner /></div>
+    </section>
+  )}
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Weitere Themen</span>
+      <h2>Das könnte Sie auch interessieren</h2>
+      <div class="cards">
+        {others.map((o) => (
+          <a class="card" href={`/${o.slug}/`}>
+            <div class="ico"><Icon name={o.icon} size={28} /></div>
+            <h3>{o.name}</h3>
+            <span class="more">Mehr erfahren <Icon name="arrow" size={16} /></span>
+          </a>
+        ))}
+        <a class="card" href="/preise/">
+          <div class="ico"><Icon name="euro" size={28} /></div>
+          <h3>Kosten &amp; Preise</h3>
+          <span class="more">Preisfaktoren ansehen <Icon name="arrow" size={16} /></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

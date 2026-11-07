@@ -1,0 +1,148 @@
+---
+import '@fontsource/barlow-condensed/600.css';
+import '@fontsource/barlow-condensed/700.css';
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site.js';
+import { services } from '../data/services.js';
+
+const { title, description, path = '/', schema = [] } = Astro.props;
+
+// Staging-Schutz: standardmäßig noindex. Nur `npm run build:prod` entfernt es.
+const noindex = import.meta.env.PUBLIC_NOINDEX !== 'false';
+const canonical = new URL(path, site.url).href;
+
+const business = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+  '@id': site.url + '/#business',
+  name: site.company,
+  url: site.url + '/',
+  image: site.url + '/apple-touch-icon.png',
+  description: 'Kernbohrung, Betonsägen, Fugenschneiden, Schlitze fräsen, Durchbrüche und Rückbau in Dresden und Sachsen. Bundesweit im Einsatz.',
+  foundingDate: site.founded,
+  vatID: site.vatId,
+  founder: { '@type': 'Person', name: site.owner },
+  telephone: site.phoneDisplay,
+  email: site.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.street,
+    postalCode: site.zip,
+    addressLocality: site.city,
+    addressRegion: site.region,
+    addressCountry: 'DE',
+  },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '14:00' },
+  ],
+  areaServed: [
+    ...['Dresden', 'Radebeul', 'Meißen', 'Pirna', 'Freital', 'Heidenau', 'Radeberg', 'Coswig'].map((n) => ({ '@type': 'City', name: n })),
+    { '@type': 'AdministrativeArea', name: 'Sachsen' },
+    { '@type': 'Country', name: 'Deutschland' },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Leistungen',
+    itemListElement: services
+      .filter((s) => s.group === 'Leistung')
+      .map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name } })),
+  },
+};
+const jsonld = [business, ...schema];
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage für eine Kernbohrung.')}`;
+
+const nav = [
+  ['/leistungen/', 'Leistungen', 'drill'],
+  ['/preise/', 'Preise', 'euro'],
+  ['/ratgeber/', 'Ratgeber', 'book'],
+  ['/referenzen/', 'Referenzen', 'camera'],
+  ['/ueber-uns/', 'Über uns', 'user'],
+  ['/kontakt/', 'Kontakt', 'mail'],
+];
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#14181c" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {noindex && <meta name="robots" content="noindex, nofollow, noarchive" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.company} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="de_DE" />
+    {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap bar">
+        <a class="brand" href="/"><img src="/favicon.svg" width="34" height="34" alt="" />{site.company}</a>
+        <nav aria-label="Hauptnavigation" class="nav">
+          {nav.map(([href, label]) => <a href={href}>{label}</a>)}
+        </nav>
+        <a class="tel" href={`tel:${site.phoneTel}`}><Icon name="phone" size={18} /> {site.phoneDisplay}</a>
+        <details class="menu">
+          <summary aria-label="Menü öffnen"><Icon name="menu" size={24} /></summary>
+          <div class="menu-list">
+            {nav.map(([href, label, icon]) => <a href={href}><Icon name={icon} size={20} /> {label}</a>)}
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <main><slot /></main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <h3>{site.company}</h3>
+            <p>Kernbohrung, Betonsägen, Schlitze fräsen und Rückbau. Seit {site.founded} in Dresden, bundesweit im Einsatz.</p>
+          </div>
+          <div>
+            <h3>Leistungen</h3>
+            <ul>
+              {services.filter((s) => s.group === 'Leistung').map((s) => <li><a href={`/${s.slug}/`}>{s.name}</a></li>)}
+            </ul>
+          </div>
+          <div>
+            <h3>Wissen</h3>
+            <ul>
+              <li><a href="/preise/">Kosten &amp; Preise</a></li>
+              <li><a href="/ratgeber/">Ratgeber</a></li>
+              <li><a href="/faq/">Häufige Fragen</a></li>
+              <li><a href="/einsatzgebiet/">Einsatzgebiet</a></li>
+              <li><a href="/referenzen/">Referenzen</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Kontakt</h3>
+            <div class="row"><Icon name="pin" size={18} /><span>{site.street}<br />{site.zip} {site.city}</span></div>
+            <div class="row"><Icon name="phone" size={18} /><a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a></div>
+            <div class="row"><Icon name="mail" size={18} /><a href={`mailto:${site.email}`}>{site.email}</a></div>
+            <div class="row"><Icon name="clock" size={18} /><span>Mo–Fr 08–17 Uhr<br />Sa 09–14 Uhr</span></div>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <a href="/impressum/">Impressum</a> · <a href="/datenschutzerklaerung/">Datenschutz</a> · © {new Date().getFullYear()} {site.company}
+        </div>
+      </div>
+    </footer>
+
+    <nav class="sticky" aria-label="Schnellkontakt">
+      <a href={`tel:${site.phoneTel}`}><Icon name="phone" size={18} /> Anrufen</a>
+      <a class="s-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={18} /> WhatsApp</a>
+      <a class="s-offer" href="/#kb-rechner"><Icon name="euro" size={18} /> Angebot</a>
+    </nav>
+  </body>
+</html>

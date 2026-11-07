@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site } from '../data/site.js';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema } from '../lib/schema.js';
+
+const werte = [
+  ['hardhat', 'Fachkompetenz', 'Wir arbeiten präzise und professionell.'],
+  ['clock', 'Zuverlässigkeit', 'Wir halten Termine und Absprachen.'],
+  ['shield', 'Saubere Arbeit', 'Wir verlassen Ihre Baustelle aufgeräumt.'],
+  ['user', 'Erreichbarkeit', 'Immer ein persönlicher Ansprechpartner.'],
+];
+---
+<Base
+  title="Über uns | Kernbohr-Expert, Kernbohrung seit 2017 in Dresden"
+  description="Kernbohr-Expert mit Sitz in Dresden: seit 2017 Ihr Partner für Kernbohrungen, Schlitze in Beton, Wanddurchbrüche und Rückbau. Inhaber Ion Salcutan."
+  path="/ueber-uns/"
+  schema={[crumbSchema([['Über uns', '/ueber-uns/']])]}
+>
+  <Breadcrumbs items={[['Über uns']]} />
+  <section class="hero small" style={heroStyle()}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Über uns</span>
+        <h1>Kernbohrung mit Erfahrung, seit {site.founded}</h1>
+        <p class="lead">Wir sind Ihr zuverlässiger Partner für Kernbohrungen, das Fräsen von Schlitzen in Beton, Wanddurchbrüche und Rückbau im privaten sowie gewerblichen Bereich.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="prose">
+        <p>Mit moderner Technik und einem hohen Anspruch an Qualität stehen wir für präzise Ausführung, termingerechte Planung und kompetente Beratung. Ob Neubau, Umbau oder Sanierung: Wir finden für jedes Projekt die passende Lösung.</p>
+        <p>Unser Inhaber ist seit 2006 in der Baubranche tätig. Heute arbeiten wir mit einem Team von 8 Mitarbeitern [Inhaber bestätigen] für Privatkunden, Handwerksbetriebe und Bauunternehmen.</p>
+        <p>{site.company} wird geführt von {site.owner}. Unser Sitz ist {site.city}, im Einsatz sind wir bundesweit. Wir sind Mitglied der Handwerkskammer Dresden.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Weiterbildung</span>
+      <h2>Fachlich auf dem neuesten Stand</h2>
+      <div class="prose">
+        <p>{site.owner} hat im September 2026 am Lehrgang <strong>BBS Basismodul Dresden 2026</strong> des Fachverbands Betonbohren und -sägen Deutschland e.V. teilgenommen (Überbetriebliches Ausbildungszentrum Dresden, Bau Bildung Sachsen e.V.). Praxisunterricht mit Technik von Hilti, Kern-Deudiam, Hydro-Tec, ICS, Husqvarna, Tyrolit und Lissmac, Theorie zu Diamantwerkzeugen, Kernbohrgeräten und Arbeitsschutz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Kunden</span>
+      <h2>Für diese Unternehmen waren wir tätig</h2>
+      <p class="lead">[Inhaber: Freigabe zur Nennung einholen]</p>
+      <ul class="chips">
+        {['Züblin', 'FAE Elektrofirma', 'BIC Bau Ingenieur Konsulting', 'Litmeyer', 'Maßdach Dachdecker', 'Henrich Schmid', 'SMARTHaus Sachsen GmbH'].map((c) => <li>{c}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Unsere Werte</span>
+      <h2>Wofür wir stehen</h2>
+      <div class="cards">
+        {werte.map(([icon, t, d]) => (
+          <div class="card">
+            <div class="ico"><Icon name={icon} size={28} /></div>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Was wir tun</span>
+      <h2>Betonbearbeitung aus einer Hand</h2>
+      <p class="lead">Von der einfachen Kernbohrung bis zum komplexen Rückbau.</p>
+      <div class="btns"><a class="btn btn-main" href="/leistungen/">Unsere Leistungen <Icon name="arrow" size={18} /></a></div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

@@ -1,0 +1,141 @@
+{
+  "images": {
+    "werk-bohrstaender": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 900,
+      "h": 1600,
+      "alt": "Hilti-Kernbohrgerät auf Bohrständer beim Nassbohren in einer Betonbodenplatte",
+      "caption": "Kernbohren mit Bohrständer und Wasserkühlung"
+    },
+    "werk-fassade": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1080,
+      "h": 1920,
+      "alt": "Fertige, saubere Kernbohrung in einer verputzten Fassade",
+      "caption": "Fertige Bohrung durch die Außenwand"
+    },
+    "werk-ueberkopf-1": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Mitarbeiter bohrt von der Leiter mit einem Kernbohrgerät auf Schiene in der Ecke zwischen Wand und Decke",
+      "caption": "Kernbohrung an der Decke"
+    },
+    "werk-ueberkopf-2": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1600,
+      "h": 1200,
+      "alt": "Mitarbeiter führt auf der Leiter eine Kernbohrung an der Decke mit Wasserführung aus",
+      "caption": "Überkopfbohrung mit Wasserführung"
+    },
+    "werk-wand-gross": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1502,
+      "h": 1600,
+      "alt": "Kernbohrgerät auf Schiene an einer Betonwand mit zwei großen fertigen Bohrungen",
+      "caption": "Große Durchmesser in der Betonwand"
+    },
+    "werk-wand-125": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Fertige Bohrung mit Maßangabe 125 in einer Wand über verlegten Leitungen",
+      "caption": "Bohrung Ø 125 mm für Leitungsdurchführung"
+    },
+    "werk-unterzug": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Fertige Kernbohrung in einem Betonunterzug über einer Wohnungstür im Treppenhaus",
+      "caption": "Bohrung im Betonunterzug"
+    },
+    "werk-durchfuehrung-decke": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 899,
+      "h": 1599,
+      "alt": "Fertige Kernbohrung in einer Betonwand direkt unter der Decke",
+      "caption": "Durchführung unter der Decke"
+    },
+    "werk-oeffnung-schiene": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1536,
+      "h": 2040,
+      "alt": "Kernbohrgerät auf Schiene vor einer Wandöffnung aus mehreren überlappenden Bohrungen",
+      "caption": "Große Öffnung aus überlappenden Kernbohrungen"
+    },
+    "werk-bohrkrone-152": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1536,
+      "h": 2040,
+      "alt": "Bohrkrone Ø 152 mm in einer Öffnung aus überlappenden Kernbohrungen",
+      "caption": "Bohrkrone Ø 152 mm in der Öffnung"
+    },
+    "werk-oeffnung-geruest": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1536,
+      "h": 2048,
+      "alt": "Hilti-Kernbohrgerät auf Schiene am Gerüst vor einer Öffnung aus drei überlappenden Bohrungen",
+      "caption": "Öffnung aus drei Bohrungen, Arbeit am Gerüst"
+    }
+  },
+  "videos": {
+    "video-markierung": {
+      "alt": "Markierte Schnitt- und Bohrstellen an Wand und Decke in einem Altbauraum",
+      "caption": "Vorbereitung: Bohr- und Schnittstellen markieren",
+      "size": 6110661
+    },
+    "video-wandsaege": {
+      "alt": "Wandsäge auf Führungsschiene an einer nassen Betonwand",
+      "caption": "Wandsäge im Einsatz",
+      "size": 4240080
+    },
+    "video-fugenschneider": {
+      "alt": "Fugenschneider mit Wassertank auf einer gepflasterten Fläche",
+      "caption": "Fugenschneider mit Wasserkühlung",
+      "size": 4342293
+    },
+    "video-kernbohr-schiene": {
+      "alt": "Hilti-Kernbohrgerät auf Schiene vor einer Mauerwerkswand am Fenster",
+      "caption": "Kernbohrgerät auf Schiene in der Mauerwerkswand",
+      "size": 2831545
+    },
+    "video-bohrkern-80": {
+      "alt": "Betonbohrkern Ø 80 mm, 1 m lang, mit Bewehrungsstahl",
+      "caption": "Bohrkern Ø 80 mm, 1 m tief, mit Bewehrung",
+      "size": 4467233
+    }
+  }
+}
