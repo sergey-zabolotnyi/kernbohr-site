@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import Rechner from '../components/Rechner.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site } from '../data/site.js';
+import { orte } from '../data/orte.js';
+import { services } from '../data/services.js';
+import { crumbSchema, faqSchema } from '../lib/schema.js';
+
+export function getStaticPaths() {
+  return orte.map((o) => ({ params: { ort: o.slug }, props: { o } }));
+}
+const { o } = Astro.props;
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hallo, ich suche eine Kernbohrung in ${o.name}. Foto der Baustelle sende ich gleich mit.`)}`;
+const path = `/kernbohrung-in-${o.slug}/`;
+const faqs = [
+  [`Was kostet eine Kernbohrung in ${o.name}?`, `Wir rechnen nach Preisliste 2026 je cm Bohrtiefe ab: in Beton und Stahlbeton 1,20 € bis 11,00 € je cm, in Mauerwerk 1,10 € bis 9,50 € je cm, je nach Durchmesser. Dazu kommen Anfahrt und Baustelleneinrichtung (85 €). Der Mindestpreis liegt bei 250 € je Auftrag.`],
+  ...o.faq,
+];
+const schema = [
+  crumbSchema([['Einsatzgebiet', '/einsatzgebiet/'], [`Kernbohrung ${o.name}`, path]]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Kernbohrung',
+    name: `Kernbohrung in ${o.name}`,
+    provider: { '@id': site.url + '/#business' },
+    areaServed: { '@type': 'City', name: o.name },
+    description: o.kurz,
+  },
+  faqSchema(faqs),
+];
+const weitere = orte.filter((x) => x.slug !== o.slug);
+---
+<Base
+  title={`Kernbohrung ${o.name} ab 1,20 €/cm, 24/7`}
+  description={`Kernbohrung und Wanddurchbruch in ${o.name}: Ø 14–500 mm, bis 2 m tief, Preisliste ab 1,20 € je cm. 24/7 erreichbar, Angebot per WhatsApp.`}
+  path={path}
+  schema={schema}
+>
+  <Breadcrumbs items={[['Einsatzgebiet', '/einsatzgebiet/'], [`Kernbohrung ${o.name}`]]} />
+  <section class="hero small">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><Icon name="pin" size={18} /> {o.name}</span>
+        <h1>Kernbohrung in {o.name}</h1>
+        <p class="lead">{o.intro}</p>
+        <div class="btns">
+          <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> Foto senden</a>
+          <a class="btn btn-main" href={`tel:${site.phoneTel}`}><Icon name="phone" size={20} /> {site.phoneDisplay}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="callout"><strong>Kurze Antwort</strong> {o.kurz}</div>
+      <span class="eyebrow">Aufträge in {o.name}</span>
+      <h2>Typische Bohrungen in {o.name}</h2>
+      <div class="cards">
+        {o.typisch.map(([t, d]) => (
+          <div class="card"><h3>{t}</h3><p>{d}</p></div>
+        ))}
+      </div>
+      <p class="note">Wir arbeiten in {o.lage}.</p>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">FAQ</span>
+      <h2>Fragen zur Kernbohrung in {o.name}</h2>
+      {faqs.map(([q, a]) => (
+        <details open><summary>{q}</summary><p>{a}</p></details>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><Rechner /></div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Weitere Orte</span>
+      <h2>Wir arbeiten auch hier</h2>
+      <ul class="chips">
+        {weitere.map((x) => <li><a href={`/kernbohrung-in-${x.slug}/`}>{x.name}</a></li>)}
+        <li><a href="/einsatzgebiet/">Alle Einsatzgebiete</a></li>
+      </ul>
+      <p class="note">Mehr zu unseren Leistungen: <a href="/kernbohrung/">Kernbohrung</a>, <a href="/wanddurchbruch/">Wanddurchbruch</a>, <a href="/betonsaegen/">Betonsägen</a>, <a href="/preise/">Preise</a>.</p>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

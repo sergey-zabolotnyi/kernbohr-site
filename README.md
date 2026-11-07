@@ -28,3 +28,7 @@ Dann http://localhost:4321 öffnen. (Auf Mac/Linux: `npm` statt `npm.cmd`.)
 
 ## Livegang
 Backup der alten Seite, Weiterleitungen (`public/.htaccess` für Apache oder `public/_redirects` für Cloudflare/Netlify), Impressum und Datenschutz juristisch prüfen.
+
+## Prüfung vor Livegang
+`npm.cmd run check` baut die Live-Version und prüft alle Seiten (Titel, Beschreibungen, canonical, JSON-LD, Links, Sitemap, robots.txt, llms.txt, Preise, Keywords). Muss mit "OK: keine Fehler" enden.
+KI-Dateien: `/llms.txt`, `/llms-full.txt`, `/firmendaten.json` (werden aus den Datendateien erzeugt, Preise nur in `src/data/preisliste.js` ändern).

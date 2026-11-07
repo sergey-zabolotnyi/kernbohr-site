@@ -5,13 +5,14 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema } from '../lib/schema.js';
+import { orte } from '../data/orte.js';
 
 const stadtteile = ['Altstadt', 'Neustadt', 'Pieschen', 'Striesen', 'Blasewitz', 'Loschwitz', 'Johannstadt', 'Plauen', 'Löbtau', 'Cotta', 'Gorbitz', 'Prohlis', 'Leuben', 'Klotzsche', 'Lockwitz'];
 const umland = ['Radebeul', 'Coswig', 'Meißen', 'Pirna', 'Heidenau', 'Freital', 'Radeberg', 'Dippoldiswalde', 'Rabenau', 'Glashütte', 'Bad Gottleuba-Berggießhübel'];
 const bundesweit = ['Sachsen', 'Thüringen', 'Bayern', 'Brandenburg'];
 ---
 <Base
-  title="Einsatzgebiet: Kernbohrung in Dresden, Radebeul, Meißen, Pirna & Sachsen"
+  title="Einsatzgebiet: Kernbohrung Dresden, Umland, bundesweit"
   description="Kernbohrung und Betonbearbeitung in allen Dresdner Stadtteilen, im Umland (Radebeul, Meißen, Pirna, Freital, Radeberg) und bundesweit für größere Projekte."
   path="/einsatzgebiet/"
   schema={[crumbSchema([['Einsatzgebiet', '/einsatzgebiet/']])]}
@@ -40,14 +41,14 @@ const bundesweit = ['Sachsen', 'Thüringen', 'Bayern', 'Brandenburg'];
           <div class="ico"><Icon name="truck" size={28} /></div>
           <h3>Umland</h3>
           <p>Im Raum Dresden und Ostsachsen unter anderem:</p>
-          <ul class="chips">{umland.map((s) => <li>{s}</li>)}</ul>
+          <ul class="chips">{umland.map((s) => { const o = orte.find((x) => x.name === s); return <li>{o ? <a href={`/kernbohrung-in-${o.slug}/`}>{s}</a> : s}</li>; })}</ul>
         </div>
         <div class="card">
           <div class="ico"><Icon name="map" size={28} /></div>
           <h3>Bundesweit</h3>
           <p>Für größere Projekte insbesondere in:</p>
           <ul class="chips">{bundesweit.map((s) => <li>{s}</li>)}</ul>
-          <p>Weitere Einsätze auf Anfrage.</p>
+          <p>Weitere Einsätze auf Anfrage. Anfahrt, Übernachtung und Einsatzdauer vereinbaren wir individuell.</p>
         </div>
       </div>
     </div>

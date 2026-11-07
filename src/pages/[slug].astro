@@ -9,7 +9,7 @@ import { site } from '../data/site.js';
 import { services } from '../data/services.js';
 import { articles } from '../data/articles.js';
 import { heroStyle } from '../lib/media.js';
-import { crumbSchema, faqSchema } from '../lib/schema.js';
+import { crumbSchema, faqSchema, preisAngebot } from '../lib/schema.js';
 
 export function getStaticPaths() {
   return services.map((s) => ({ params: { slug: s.slug }, props: { s } }));
@@ -27,13 +27,16 @@ const schema = [
     '@type': 'Service',
     serviceType: s.name,
     provider: { '@id': site.url + '/#business' },
-    areaServed: { '@type': 'AdministrativeArea', name: 'Dresden und Sachsen' },
+    name: s.name,
+    url: `${site.url}/${s.slug}/`,
+    areaServed: [{ '@type': 'City', name: 'Dresden' }, { '@type': 'AdministrativeArea', name: 'Sachsen' }, { '@type': 'Country', name: 'Deutschland' }],
     description: s.description,
+    ...(preisAngebot(s.slug) ? { offers: preisAngebot(s.slug) } : {}),
   },
   faqSchema(s.faqs),
 ];
 ---
-<Base title={`${s.title} | ${site.company}`} description={s.description} path={`/${s.slug}/`} schema={schema}>
+<Base title={s.title} description={s.description} path={`/${s.slug}/`} schema={schema}>
   <Breadcrumbs items={[['Leistungen', '/leistungen/'], [s.name]]} />
 
   <section class="hero small" style={heroStyle()}>
