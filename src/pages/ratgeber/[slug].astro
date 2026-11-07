@@ -16,7 +16,7 @@ const date = new Date(a.date).toLocaleDateString('de-DE', { day: '2-digit', mont
 const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
 ---
 <Base
-  title={`${a.title} | ${site.company}`}
+  title={a.title}
   description={a.description}
   path={`/ratgeber/${a.slug}/`}
   schema={[crumbSchema([['Ratgeber', '/ratgeber/'], [a.title, `/ratgeber/${a.slug}/`]]), articleSchema(a), faqSchema(a.faqs)]}

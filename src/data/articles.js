@@ -59,7 +59,7 @@ export const articles = [
     date: '2026-11-07',
     title: 'Wanddurchbruch: tragende Wand, Statik und Ablauf',
     h1: 'Wanddurchbruch: Wann ist eine Statik nötig und wie läuft er ab?',
-    description: 'Tragende oder nichttragende Wand? Wann ein Statiker nötig ist, wie ein Wanddurchbruch abläuft, welche Verfahren es gibt und was Mieter und Eigentümer beachten müssen.',
+    description: 'Tragende oder nichttragende Wand? Wann ein Statiker nötig ist, wie ein Wanddurchbruch abläuft und was Eigentümer und Mieter beachten müssen.',
     short: 'Tragend oder nicht? Statik, Verfahren, Ablauf und Zustimmungen.',
     answer: 'Ob ein Wanddurchbruch möglich ist, hängt davon ab, ob die Wand tragend ist. Bei tragenden Wänden ist immer eine statische Berechnung nötig, meist wird vor dem Öffnen ein Träger (Sturz) eingebaut. Wir arbeiten dafür mit Ihrem Statiker oder Architekten zusammen.',
     sections: [
@@ -131,7 +131,7 @@ export const articles = [
     date: '2026-11-07',
     title: 'Kernbohrung in Dresden: Altbau, Plattenbau und Neubau',
     h1: 'Kernbohrung in Dresden: Worauf es bei Altbau, Plattenbau und Neubau ankommt',
-    description: 'Ziegelwände im Gründerzeit-Altbau, Betonfertigteile im Plattenbau, Stahlbeton im Neubau: So unterscheiden sich Kernbohrungen in Dresdner Gebäuden. Mit Hinweisen zu Denkmalschutz.',
+    description: 'Gründerzeit-Altbau, Plattenbau oder Neubau: So unterscheiden sich Kernbohrungen in Dresdner Gebäuden, mit Hinweisen zum Denkmalschutz.',
     short: 'Ziegel, Betonfertigteile oder Stahlbeton: Jedes Material verlangt ein eigenes Vorgehen.',
     answer: 'In Dresden bohren wir in sehr unterschiedlichen Gebäuden: dicke Ziegelwände im Altbau, tragende Betonfertigteile im Plattenbau und bewehrten Stahlbeton im Neubau. Jedes Material verlangt andere Technik, Vorsicht und Abstimmung, bei denkmalgeschützten Häusern zusätzlich die Denkmalschutzbehörde.',
     sections: [

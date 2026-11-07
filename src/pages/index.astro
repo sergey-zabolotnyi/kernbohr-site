@@ -8,10 +8,12 @@ import CtaBand from '../components/CtaBand.astro';
 import { site } from '../data/site.js';
 import { services, faqs as allFaqs } from '../data/services.js';
 import { articles } from '../data/articles.js';
+import { orte } from '../data/orte.js';
 import { image, heroStyle } from '../lib/media.js';
 import { faqSchema } from '../lib/schema.js';
 
-const faqs = allFaqs.slice(0, 6);
+const pick = ['Was kostet eine Kernbohrung', 'Arbeiten Sie auch am Wochenende', 'Wie tief können Sie bohren', 'Wie groß können die Bohrdurchmesser', 'Arbeiten Sie staubfrei', 'In welchen Regionen'];
+const faqs = pick.map((p) => allFaqs.find(([q]) => q.startsWith(p))).filter(Boolean);
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage für eine Kernbohrung. Foto der Baustelle sende ich gleich mit.')}`;
 const leistungen = services.filter((s) => s.group === 'Leistung');
 const anwendungen = services.filter((s) => s.group === 'Anwendung');
@@ -21,7 +23,7 @@ const werte = [
   ['hardhat', 'Fachkompetenz', 'Wir arbeiten präzise und professionell, mit moderner Technik.'],
   ['clock', 'Zuverlässigkeit', 'Wir halten Termine und Absprachen.'],
   ['shield', 'Saubere Arbeit', 'Wir verlassen Ihre Baustelle aufgeräumt.'],
-  ['user', 'Erreichbarkeit', 'Immer ein persönlicher Ansprechpartner.'],
+  ['user', 'Erreichbarkeit', 'Rund um die Uhr erreichbar, auch am Wochenende.'],
 ];
 const ablauf = [
   ['camera', 'Anfrage', 'Rechner nutzen oder Foto der Baustelle per WhatsApp senden.'],
@@ -31,8 +33,8 @@ const ablauf = [
 ];
 ---
 <Base
-  title="Kernbohrung & Wanddurchbruch in Dresden | Betonsägen, Schlitze fräsen"
-  description="Kernbohrung, Wanddurchbruch, Betonsägen, Fugenschneiden und Schlitze fräsen in Dresden, Radebeul, Meißen, Pirna und Sachsen. Richtpreis online, Angebot per WhatsApp."
+  title="Kernbohrung Dresden ab 1,20 €/cm | Kernbohr-Expert"
+  description="Kernbohrung und Wanddurchbruch in Dresden und Sachsen: Ø 14–500 mm, bis 2 m tief, Preisliste ab 1,20 € je cm. 24/7 erreichbar, auch am Wochenende."
   path="/"
   schema={[faqSchema(faqs)]}
 >
@@ -49,6 +51,7 @@ const ablauf = [
         <ul class="hero-points">
           <li><Icon name="calendar" size={18} /> Seit 2006 in der Baubranche</li>
           <li><Icon name="shield" size={18} /> Mitglied der Handwerkskammer Dresden</li>
+          <li><Icon name="clock" size={18} /> 24/7, auch am Wochenende</li>
           <li><Icon name="map" size={18} /> Bundesweit im Einsatz</li>
         </ul>
       </div>
@@ -61,7 +64,7 @@ const ablauf = [
       <div><Icon name="drill" size={30} /><span>Ø 14–500 mm<small>bis 2 m Tiefe, auch über Kopf</small></span></div>
       <div><Icon name="drop" size={30} /><span>Staubarm<small>nass und mit Schutzmaßnahmen</small></span></div>
       <div><Icon name="home" size={30} /><span>Bewohnte Gebäude<small>lärm- und vibrationsarm</small></span></div>
-      <div><Icon name="euro" size={30} /><span>Kostenloses Angebot<small>unverbindlich, nach Foto</small></span></div>
+      <div><Icon name="clock" size={30} /><span>24/7 erreichbar<small>auch Wochenende und Feiertag</small></span></div>
     </div>
   </section>
 
@@ -96,6 +99,18 @@ const ablauf = [
             <span class="more">Mehr erfahren <Icon name="arrow" size={16} /></span>
           </a>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Einsatzbereitschaft</span>
+      <h2>Wir kommen auch, wenn andere Pause machen</h2>
+      <p class="lead">Wir sind rund um die Uhr erreichbar und fahren auch abends, am Wochenende und an Feiertagen zu Ihnen, soweit Ruhezeiten und Hausordnung das zulassen. Für größere Projekte auch in anderen Bundesländern.</p>
+      <div class="btns">
+        <a class="btn btn-main" href="/kernbohrung-notdienst-wochenende/"><Icon name="clock" size={20} /> Einsatz am Wochenende</a>
+        <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> Foto senden</a>
       </div>
     </div>
   </section>
@@ -196,7 +211,8 @@ const ablauf = [
       <h2>Dresden, Radebeul, Meißen, Pirna und ganz Sachsen</h2>
       <p class="lead">Unser Sitz ist Dresden. Für größere Projekte sind wir bundesweit im Einsatz.</p>
       <ul class="chips">
-        {['Dresden', 'Radebeul', 'Coswig', 'Meißen', 'Pirna', 'Heidenau', 'Freital', 'Radeberg', 'Dippoldiswalde'].map((c) => <li>{c}</li>)}
+        {['Dresden', 'Coswig', 'Heidenau', 'Dippoldiswalde'].map((c) => <li>{c}</li>)}
+        {orte.map((o) => <li><a href={`/kernbohrung-in-${o.slug}/`}>{o.name}</a></li>)}
       </ul>
       <a class="btn btn-line" href="/einsatzgebiet/">Zum Einsatzgebiet</a>
     </div>

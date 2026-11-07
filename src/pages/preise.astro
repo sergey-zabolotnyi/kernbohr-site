@@ -7,7 +7,7 @@ import CtaBand from '../components/CtaBand.astro';
 import { faktoren, richtwerte, preisFaqs } from '../data/preise.js';
 import { staffel, zuschlagTabelle, berechne, eur, stand, regeln } from '../data/preisliste.js';
 import { heroStyle } from '../lib/media.js';
-import { crumbSchema, faqSchema } from '../lib/schema.js';
+import { crumbSchema, faqSchema, preisAngebot } from '../lib/schema.js';
 const beispiele = [
   ['Klimagerät, 1 Bohrung', { d: 82, tiefe: 36, anzahl: 1, material: 'mauerwerk' }],
   ['Lüftung, 6 Bohrungen in Beton', { d: 152, tiefe: 25, anzahl: 6, material: 'beton' }],
@@ -15,10 +15,10 @@ const beispiele = [
 ].map(([t, p]) => ({ t, r: berechne(p), desc: `${p.anzahl}× Ø ${p.d} mm, ${p.tiefe} cm ${p.material === 'mauerwerk' ? 'Mauerwerk' : 'Beton'}${p.richtung ? ', Überkopf' : ''}` }));
 ---
 <Base
-  title="Kernbohrung Kosten in Dresden: Preisfaktoren & Richtwert | Kernbohr-Expert"
+  title="Kernbohrung Kosten Dresden: Preisliste 2026"
   description="Kernbohrung Preisliste 2026: 1,20–11,00 € je cm Bohrtiefe, Anfahrt 85 €, Mindestpreis 250 €. Mit Richtpreis-Rechner. Dresden und Sachsen."
   path="/preise/"
-  schema={[crumbSchema([['Kosten & Preise', '/preise/']]), faqSchema(preisFaqs)]}
+  schema={[crumbSchema([['Kosten & Preise', '/preise/']]), faqSchema(preisFaqs), { '@context': 'https://schema.org', '@type': 'Service', name: 'Kernbohrung', serviceType: 'Kernbohrung', provider: { '@id': 'https://kernbohr-expert.de/#business' }, areaServed: { '@type': 'City', name: 'Dresden' }, offers: preisAngebot('kernbohrung') }]}
 >
   <Breadcrumbs items={[['Kosten & Preise']]} />
   <section class="hero small" style={heroStyle()}>

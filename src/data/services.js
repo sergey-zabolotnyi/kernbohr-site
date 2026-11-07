@@ -83,7 +83,7 @@ export const services = [
     slug: 'schlitzfraesen',
     group: 'Leistung',
     name: 'Schlitze in Beton fräsen',
-    title: 'Schlitze in Beton fräsen in Dresden',
+    title: 'Schlitze fräsen in Dresden: Beton & Mauerwerk',
     description: 'Präzises Fräsen von Schlitzen in Beton und Stahlbeton für Elektro-, Wasser- und Heizungsinstallationen in Dresden und Sachsen. Staubarm und zeitsparend.',
     h1: 'Schlitze in Beton fräsen',
     intro: 'Für Elektro-, Wasser- oder Heizungsleitungen fräsen wir exakte und saubere Schlitze in Beton und Stahlbeton, ganz nach Plan, staubarm, präzise und zeitsparend, ideal für Sanierungen und Neubauten.',
@@ -177,6 +177,30 @@ export const services = [
     ],
     calculator: true,
   },
+  {
+    slug: 'kernbohrung-notdienst-wochenende',
+    group: 'Anwendung',
+    name: 'Einsatz am Wochenende & Notdienst',
+    title: 'Kernbohrung am Wochenende & Notdienst in Dresden',
+    description: 'Kernbohrung, Wanddurchbruch und Betonsägen auch abends, am Wochenende und an Feiertagen in Dresden und Sachsen. 24/7 erreichbar, Angebot per WhatsApp.',
+    h1: 'Kernbohrung am Wochenende und im Notfall',
+    intro: 'Wenn der Termin drängt: Wir sind rund um die Uhr erreichbar und fahren auch abends, am Wochenende und an Feiertagen zu Ihnen, soweit das am Objekt zulässig ist. In Dresden, Sachsen und bei größeren Projekten bundesweit.',
+    facts: [
+      ['Erreichbarkeit', '24 Stunden, 7 Tage die Woche per Telefon und WhatsApp'],
+      ['Einsatzzeiten', 'Auch abends, an Wochenenden und Feiertagen nach Absprache'],
+      ['Typische Fälle', 'Terminprojekte, Umbau im laufenden Betrieb, Gewerbe und Industrie, Baustellen mit engem Zeitplan'],
+      ['Zuschläge', 'Für Abend, Nacht, Wochenende und Feiertag nach Angebot [Inhaber: Zuschläge nennen]'],
+      ['Wichtig', 'Ruhezeiten, Lärmschutz und Hausordnung gelten auch bei uns. Wir klären vorab, was am Objekt möglich ist'],
+      ['Einsatzgebiet', areas],
+    ],
+    faqs: [
+      ['Arbeiten Sie auch am Wochenende und an Feiertagen?', 'Ja, nach Absprache. Wir sind rund um die Uhr erreichbar und führen Aufträge auch an Wochenenden und Feiertagen aus. Ob das am Objekt zulässig ist, hängt von Ruhezeiten, Lärmschutz und Hausordnung ab. Wir klären das vor dem Termin mit Ihnen oder der Hausverwaltung.'],
+      ['Wie schnell können Sie bei einem dringenden Auftrag kommen?', 'Das hängt von Auslastung und Entfernung ab. Rufen Sie an oder senden Sie ein Foto per WhatsApp, dann nennen wir Ihnen einen konkreten Termin. [Inhaber: typische Reaktionszeit ergänzen]'],
+      ['Kostet der Einsatz am Wochenende extra?', 'Für Einsätze außerhalb üblicher Zeiten berechnen wir Zuschläge nach Absprache. Die Grundpreise stehen in unserer Preisliste 2026. [Inhaber: Zuschläge nennen]'],
+      ['Fahren Sie auch in andere Bundesländer?', 'Ja, bei größeren Projekten sind wir bundesweit im Einsatz. Anfahrt, Übernachtung und Einsatzdauer vereinbaren wir individuell im Angebot.'],
+    ],
+    calculator: true,
+  },
 ];
 
 // Allgemeine FAQ (Startseite, FAQ-Seite, FAQPage-Schema). Basis: bisherige FAQ des Inhabers.
@@ -198,6 +222,7 @@ export const faqs = [
 // Icons, Medien (IDs aus media.config.mjs) und passende Ratgeber pro Seite.
 // Medien erscheinen nur, wenn die Dateien vorhanden sind (npm run media).
 faqs.push(
+  ['Arbeiten Sie auch am Wochenende und an Feiertagen?', 'Ja, nach Absprache. Wir sind rund um die Uhr erreichbar und führen Aufträge auch abends, am Wochenende und an Feiertagen aus, soweit Ruhezeiten, Lärmschutz und Hausordnung das zulassen. Zuschläge nennen wir im Angebot.'],
   ['Wie tief können Sie bohren?', 'Wir bohren bis zu 2 m tief. Ein Beispiel aus der Praxis: Kernbohrung Ø 80 mm mit 1 m Tiefe in Stahlbeton.'],
   ['Können Sie schräg bohren oder nur im 90°-Winkel?', 'Wir bohren waagerecht, senkrecht, über Kopf und im Winkel. Überkopf- und Schrägbohrungen berechnen wir mit 50 % Zuschlag.'],
   ['Wie stellen Sie sicher, dass keine versteckten Leitungen beschädigt werden?', 'Wir klären vor der Bohrung Bestandspläne und Leitungsverläufe mit dem Auftraggeber und markieren die Bohrstelle gemeinsam. [Inhaber: Ortungsgerät / Vorgehen ergänzen]'],
@@ -214,5 +239,6 @@ const extra = {
   'kernbohrung-waermepumpe-klimaanlage': { icon: 'fan', media: ['werk-fassade', 'werk-durchfuehrung-decke', 'werk-bohrstaender'], guide: 'waermepumpe-kernbohrung' },
   'wanddurchbruch-dunstabzugshaube': { icon: 'hood', media: ['werk-wand-125', 'werk-unterzug', 'video-kernbohr-schiene'] },
   'kamin-sanitaer-anschluesse': { icon: 'flame', media: [] },
+  'kernbohrung-notdienst-wochenende': { icon: 'clock', media: ['werk-bohrstaender', 'video-kernbohr-schiene'] },
 };
 services.forEach((s) => Object.assign(s, extra[s.slug] ?? { icon: 'drill', media: [] }));

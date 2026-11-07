@@ -4,17 +4,18 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Gallery from '../components/Gallery.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { allIds, items, heroStyle } from '../lib/media.js';
-import { crumbSchema } from '../lib/schema.js';
+import { crumbSchema, videoSchema } from '../lib/schema.js';
 
 // Dekor-Bild (hero-bg) nicht in der Galerie zeigen.
 const ids = allIds().filter((id) => id !== 'hero-bg');
 const hasMedia = items(ids).length > 0;
+const videos = items(ids).filter((m) => m.type === 'video');
 ---
 <Base
   title="Referenzen & Einblicke | Kernbohr-Expert Dresden"
   description="Einblick in unsere Arbeiten: Kernbohrungen, Betonsägen und Öffnungen in Beton und Mauerwerk in Dresden und Umgebung."
   path="/referenzen/"
-  schema={[crumbSchema([['Referenzen', '/referenzen/']])]}
+  schema={[crumbSchema([['Referenzen', '/referenzen/']]), ...videos.map((v) => videoSchema(v))]}
 >
   <Breadcrumbs items={[['Referenzen']]} />
   <section class="hero small" style={heroStyle()}>
