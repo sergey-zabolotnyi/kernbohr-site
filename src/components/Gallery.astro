@@ -1,11 +1,11 @@
 ---
 import Photo from './Photo.astro';
 import { items } from '../lib/media.js';
-const { ids = [], title = '', eyebrow = '' } = Astro.props;
+const { ids = [], title = '', eyebrow = '', dark = false } = Astro.props;
 const list = items(ids);
 ---
 {list.length > 0 && (
-  <section class="gallery-sec">
+  <section class={`gallery-sec${dark ? ' dark' : ''}`}>
     <div class="wrap">
       {eyebrow && <span class="eyebrow">{eyebrow}</span>}
       {title && <h2>{title}</h2>}
