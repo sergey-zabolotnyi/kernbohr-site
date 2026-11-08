@@ -381,3 +381,12 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
 .foot-bottom .made-by{display:block;margin-top:6px;font-size:.78rem;opacity:.55}
 .foot-bottom .made-by a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .foot-bottom .made-by a:hover{opacity:1}
+
+/* Desktop: Hero vertikal kompakter */
+@media (min-width:861px){
+  .hero.has-bg .wrap{padding-top:2rem;padding-bottom:1.3rem}
+  .hero.small .wrap{padding-top:1.6rem;padding-bottom:1.6rem}
+  .hero .lead{margin-bottom:.9rem}
+  .hero.has-bg .hero-points{margin-top:.9rem;padding-top:.8rem}
+  .strip>div{padding:.75rem 1rem}
+}
