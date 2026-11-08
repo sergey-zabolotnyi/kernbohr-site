@@ -32,7 +32,7 @@ export const regeln = {
   gerueststellungTag: 65,
   stahlProCm: 1.0, // Stahl ab 1,5 cm, Einzelschnitt, € je cm
   pilotbohrung: 0.75, // Inhaber: je Bohrung 1 Stück (Dübel zur Befestigung des Bohrständers an der Wand)
-  zuschlagNacht: 0.75, // Inhaber: nachts +75 %
+  zuschlagNacht: 0.75, // Inhaber: nachts +75 % (Nachtzeit wie ArbZG §2: 23–6 Uhr)
   zuschlagWochenende: 1.0, // Inhaber: Samstag/Sonntag/Feiertag +100 % (auf den Bohrpreis)
   wartezeitStunde: 55,
 };
@@ -41,8 +41,8 @@ export const zuschlagTabelle = [
   ['Schrägbohrung', '+ 50 %'],
   ['Überkopfbohrung', '+ 50 %'],
   ['Pilotbohrung (Dübel für den Bohrständer), je Bohrung', '0,75 €'],
-  ['Einsatz nachts', '+ 75 % auf den Bohrpreis'],
-  ['Einsatz am Wochenende oder Feiertag', '+ 100 % auf den Bohrpreis'],
+  ['Einsatz nachts (23 bis 6 Uhr)', '+ 75 % auf den Bohrpreis'],
+  ['Einsatz am Samstag, Sonntag oder Feiertag', '+ 100 % auf den Bohrpreis'],
   ['Wassersauger mit Bediener', '55,00 € pro Tag'],
   ['Stahl ab 1,5 cm (Einzelschnitt)', '1,00 € pro cm'],
   ['Gerüststellung', '65,00 € pro Tag'],
