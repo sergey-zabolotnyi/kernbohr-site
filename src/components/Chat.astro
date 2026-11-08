@@ -10,7 +10,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
     <span>Kerni fragen</span>
   </button>
   <section id="kc-panel" class="kc-panel" aria-label="Chat mit Kerni, dem Kernbohr-Expert Assistenten" hidden>
-    <header><span><b>Kerni</b> <small>(Kernbohr-Expert Assistent)</small></span><button type="button" class="kc-x" aria-label="Chat schließen">×</button></header>
+    <header><span class="kc-title"><b>Kerni</b> <small>(Kernbohr-Expert Assistent)</small></span><button type="button" class="kc-x" aria-label="Chat schließen">×</button></header>
     <div class="kc-consent">
       <p>Kerni ist ein digitaler KI-Assistent, kein Mensch. Ihre Eingaben werden dafür an einen Anbieter in den USA übermittelt. Bitte geben Sie keine persönlichen Daten ein. Der Assistent gibt unverbindliche Auskünfte. Details in der <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</p>
       <button type="button" class="kc-ok">Einverstanden, Chat starten</button>
@@ -37,7 +37,8 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-panel[hidden]{display:none}
   @keyframes kc-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   .kc-panel header{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;background:#171c20;color:#fff;border-bottom:3px solid #e8590c}
-  .kc-panel header small{font-weight:400;opacity:.8;font-size:.78rem}
+  .kc-panel header .kc-title{font:inherit;font-size:.95rem}
+  .kc-panel header small{font:inherit;font-weight:400;opacity:.8;font-size:.85rem;margin-left:.35rem}
   .kc-x{background:none;border:0;color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;width:36px;height:36px}
   .kc-consent{padding:1rem;font-size:.9rem;overflow:auto}
   .kc-consent p{margin:0 0 .8rem}
