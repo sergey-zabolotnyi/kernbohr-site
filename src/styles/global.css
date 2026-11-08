@@ -302,3 +302,78 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
 
 .hero-bg{object-position:center 46%}
 .hero.small::before{background:linear-gradient(95deg,rgba(14,17,20,.96) 0%,rgba(14,17,20,.8) 50%,rgba(14,17,20,.42) 100%)}
+
+/* ===== MOBILE-FIRST Feinschliff (≤768px) ===== */
+@media (max-width:768px){
+  body{font-size:16px}
+  section{padding:1.5rem 0}
+  .wrap{padding:0 16px}
+  h1{font-size:clamp(1.85rem,8vw,2.3rem);line-height:1.08}
+  h2{font-size:1.45rem;margin-bottom:.4rem}
+  .lead{font-size:1rem;margin-bottom:.8rem}
+  .eyebrow{font-size:.78rem;margin-bottom:.4rem}
+  /* Kopf: Telefon immer sichtbar */
+  .bar{gap:.5rem;min-height:56px}
+  .brand{font-size:1.05rem;gap:.45rem}
+  .brand img{width:30px;height:30px}
+  .tel{display:inline-flex;margin-left:auto;padding:.5rem .7rem;font-size:.9rem;border-radius:10px;gap:.35rem}
+  .menu{margin-left:0}
+  .menu summary{width:44px;height:44px}
+  .menu-list{animation:menu-in .22s ease-out}
+  .menu[open] summary{background:var(--accent);border-color:var(--accent)}
+  @keyframes menu-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .menu-list a{padding:.8rem 0}
+  /* Hero kompakt */
+  .hero.has-bg .wrap{padding-top:1.6rem;padding-bottom:1.4rem}
+  .hero.small .wrap{padding-top:1.3rem;padding-bottom:1.3rem}
+  .hero .lead{font-size:.98rem;line-height:1.45}
+  .hero .btns{margin-top:.9rem;gap:.5rem}
+  .hero .btn{flex:1 1 150px;width:auto;min-height:48px;padding:.7rem .8rem;font-size:.95rem}
+  .hero.has-bg .hero-points{flex-wrap:nowrap;overflow-x:auto;gap:.4rem;margin-top:.9rem;padding:.8rem 0 .2rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .hero-points::-webkit-scrollbar{display:none}
+  .hero-points li{flex:0 0 auto;padding:.35rem .7rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:.82rem;white-space:nowrap}
+  .hero-points li:first-child{padding-left:.7rem;border-left:1px solid rgba(255,255,255,.2)}
+  /* Vorteile: 2x2 */
+  .strip{display:grid;grid-template-columns:1fr 1fr;padding:0}
+  .strip>div{padding:.7rem .6rem;gap:.55rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.88rem;line-height:1.2}
+  .strip>div:nth-child(2n){border-right:0}
+  .strip>div:nth-last-child(-n+2){border-bottom:0}
+  .strip .icon{width:24px;height:24px;flex:0 0 auto}
+  .strip small{display:block;font-size:.72rem;font-weight:400;color:var(--muted);line-height:1.2;margin-top:.1rem}
+  /* Leistungskarten: Foto links, Text rechts */
+  .cards{gap:.6rem}
+  .card.has-img{display:grid;grid-template-columns:104px 1fr;align-items:stretch}
+  .card.has-img .card-img{height:100%;aspect-ratio:auto;min-height:104px}
+  .card.has-img .card-body{padding:.65rem .8rem}
+  .card.has-img .ico{display:none}
+  .card.has-img h3{margin:0;font-size:1.02rem}
+  .card.has-img p{font-size:.85rem;line-height:1.35;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .card.has-img .more{margin-top:.25rem;font-size:.85rem}
+  .card:not(.has-img){padding:1rem}
+  /* Ablauf: horizontales Wischen */
+  .timeline{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.7rem;margin:.9rem -16px 0;padding:0 16px .6rem;scrollbar-width:none}
+  .timeline::-webkit-scrollbar{display:none}
+  .timeline li{flex:0 0 80%;scroll-snap-align:start;padding:1rem}
+  .tl-ico{width:42px;height:42px}
+  .tl-body p{font-size:.9rem}
+  .timeline+.btns{margin-top:.6rem}
+  .timeline+.btns .btn{flex:1 1 100%}
+  /* Sonstiges */
+  .cta-band{padding:1.5rem 0}
+  .callout{padding:.9rem 1rem;margin:.9rem 0}
+  details{padding:0 .9rem;margin:.45rem 0}
+  summary{padding:.8rem 1.4rem .8rem 0}
+  .foot{padding:1.6rem 0 5.5rem}
+  .foot-grid{gap:1.1rem}
+  .gallery{gap:.6rem}
+  table.facts th,table.facts td{padding:.6rem .7rem}
+}
+@media (max-width:400px){.brand{font-size:0}.brand img{width:34px;height:34px}}
+@media (max-width:768px){
+  .card.has-img{min-height:100px;grid-template-columns:100px 1fr}
+  .card.has-img .card-img{height:0;min-height:100%;width:100%;aspect-ratio:auto}
+  .card:not(.has-img){display:grid;grid-template-columns:44px 1fr;gap:.1rem .8rem;padding:.8rem .9rem;align-items:center}
+  .card:not(.has-img) .ico{grid-row:1 / span 3;width:44px;height:44px;border-radius:12px}
+  .card:not(.has-img) h3{margin:0;font-size:1.02rem}
+  .card:not(.has-img) p{margin:0;font-size:.88rem}
+}

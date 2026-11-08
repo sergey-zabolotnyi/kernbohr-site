@@ -10,6 +10,9 @@ import { site } from '../data/site.js';
 
   <div class="kb-layout">
     <form id="kb-form" novalidate>
+      <details class="kb-step" open>
+        <summary><span class="kb-n">1</span> Material und Maße</summary>
+        <div class="kb-step-body">
       <div class="kb-field">
         <span class="kb-label">Material</span>
         <div class="kb-seg" role="radiogroup" aria-label="Material">
@@ -42,6 +45,12 @@ import { site } from '../data/site.js';
         </div>
       </div>
 
+        </div>
+      </details>
+
+      <details class="kb-step" open>
+        <summary><span class="kb-n">2</span> Ausführung</summary>
+        <div class="kb-step-body">
       <div class="kb-cols">
         <div class="kb-field">
           <span class="kb-label">Bohrrichtung</span>
@@ -61,6 +70,12 @@ import { site } from '../data/site.js';
         </div>
       </div>
 
+        </div>
+      </details>
+
+      <details class="kb-step" open>
+        <summary><span class="kb-n">3</span> Zusatzleistungen <small>optional</small></summary>
+        <div class="kb-step-body">
       <div class="kb-field">
         <span class="kb-label">Zusatzleistungen</span>
         <div class="kb-toggles">
@@ -73,13 +88,18 @@ import { site } from '../data/site.js';
         <label class="kb-label" for="kb-days">Einsatztage</label>
         <input type="number" id="kb-days" min="1" max="30" step="1" value="1" inputmode="numeric">
       </div>
+        </div>
+      </details>
     </form>
 
     <aside class="kb-result" role="status" aria-live="polite">
-      <div class="kb-result-top">Ihr Richtpreis</div>
+      <div class="kb-result-top">Ihr Richtpreis · brutto, unverbindlich</div>
       <div class="kb-price"><span id="kb-total">–</span></div>
-      <ul class="kb-break" id="kb-break"></ul>
-      <div class="kb-min" id="kb-min" hidden>Mindestauftragswert {regeln.mindestpreis} € angewendet.</div>
+      <details class="kb-details" open>
+        <summary>Berechnung anzeigen</summary>
+        <ul class="kb-break" id="kb-break"></ul>
+        <div class="kb-min" id="kb-min" hidden>Mindestauftragswert {regeln.mindestpreis} € angewendet.</div>
+      </details>
       <div class="kb-actions">
         <a id="kb-wa" class="kb-btn kb-btn-wa" href="#" rel="noopener">Per WhatsApp anfragen</a>
         <a id="kb-mail" class="kb-btn kb-btn-mail" href="#">Per E-Mail anfragen</a>
@@ -160,6 +180,51 @@ import { site } from '../data/site.js';
     .kb-cols,.kb-toggles{grid-template-columns:1fr}
     .kb-pair{grid-template-columns:1fr 80px}
   }
+  /* Schritte: am Desktop alle offen und als Überschrift, am Handy Akkordeon */
+  .kb-step{border:0;padding:0;margin:0 0 .4rem;background:none}
+  .kb-step>summary{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.02rem;padding:.2rem 0 .6rem;list-style:none;cursor:default;position:relative}
+  .kb-step>summary::-webkit-details-marker{display:none}
+  .kb-step>summary::after{display:none}
+  .kb-step>summary small{font-weight:500;color:#6b747c;font-size:.8rem}
+  .kb-n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--kb-accent);color:#fff;font-size:.85rem;font-weight:800}
+  .kb-details>summary{list-style:none;font-size:.82rem;color:#f8a66e;cursor:pointer;margin:.2rem 0 .3rem;display:none}
+  .kb-details>summary::-webkit-details-marker{display:none}
+  @media (max-width:860px){
+    .kb-rechner{padding:.9rem;margin:.8rem 0;border-radius:14px}
+    .kb-head h2{font-size:1.25rem}
+    .kb-lead{font-size:.85rem;margin-bottom:.6rem}
+    .kb-step{border:1px solid #e3e6e9;border-radius:12px;margin-bottom:.55rem;background:#fff}
+    .kb-step>summary{cursor:pointer;padding:.75rem .9rem;min-height:48px}
+    .kb-step>summary::after{display:block;content:"";position:static;font-size:0;margin-left:auto;margin-top:-4px;width:9px;height:9px;border:solid var(--kb-accent);border-width:0 2.5px 2.5px 0;transform:rotate(45deg);transition:transform .2s}
+    .kb-step[open]>summary::after{transform:rotate(-135deg)}
+    .kb-step[open]>summary{border-bottom:1px solid #eef0f2}
+    .kb-step-body{padding:.8rem .9rem .3rem}
+    .kb-field{margin-bottom:.8rem}
+    .kb-rechner input[type=range]{height:44px}
+    .kb-rechner input[type=range]::-webkit-slider-runnable-track{height:10px}
+    .kb-rechner input[type=range]::-webkit-slider-thumb{width:32px;height:32px;margin-top:-11px}
+    .kb-rechner input[type=range]::-moz-range-thumb{width:24px;height:24px}
+    .kb-pair{grid-template-columns:1fr 78px;gap:.6rem}
+    .kb-cols{grid-template-columns:1fr}
+    .kb-seg-v{grid-auto-flow:column;grid-auto-columns:1fr}
+    .kb-seg-v span{flex-direction:column;align-items:flex-start;gap:0;font-size:.8rem;padding:.4rem .5rem;min-height:50px;justify-content:center}
+    .kb-result{position:sticky;bottom:56px;top:auto;z-index:20;padding:.8rem .9rem;border-radius:14px 14px 0 0;margin:.7rem -.9rem -.9rem}
+    .kb-result::before{display:none}
+    .kb-price{font-size:1.7rem;margin:0}
+    .kb-result-top{font-size:.68rem}
+    .kb-details{border:0;background:none;padding:0;margin:.1rem 0 0}
+    .kb-details>summary{display:block;padding:.2rem 0;margin:0;font-weight:600}
+    .kb-details>summary::after{display:none}
+    .kb-result-top{display:none}
+    .kb-price{display:flex;align-items:baseline;gap:.5rem}
+    .kb-price::after{content:"brutto, unverbindlich";font-size:.7rem;font-weight:500;color:#f8a66e}
+    .kb-details:not([open])>.kb-break,.kb-details:not([open])>.kb-min{display:none}
+    .kb-actions{grid-template-columns:1fr 1fr;margin:.6rem 0 .3rem;gap:.5rem}
+    .kb-btn{padding:.6rem .4rem;font-size:.85rem;min-height:44px}
+    .kb-note{display:none}
+    .kb-details[open]~.kb-actions~.kb-note{display:block}
+    .kb-toggles{grid-template-columns:1fr}
+  }
 </style>
 
 <script>
@@ -229,6 +294,17 @@ import { site } from '../data/site.js';
       '&body=' + encodeURIComponent(msg);
   }
 
+  // Handy: Akkordeon (nur Schritt 1 offen). Desktop: alle offen, nicht einklappbar.
+  const steps = [...form.querySelectorAll('.kb-step')];
+  const details = root.querySelector('.kb-details');
+  const mq = window.matchMedia('(max-width: 860px)');
+  const layout = () => {
+    steps.forEach((d, i) => { d.open = mq.matches ? i === 0 : true; });
+    if (details) details.open = !mq.matches;
+  };
+  steps.forEach((d) => d.querySelector('summary').addEventListener('click', (e) => { if (!mq.matches) e.preventDefault(); }));
+  mq.addEventListener('change', layout);
+  layout();
   ['input', 'change'].forEach((ev) => form.addEventListener(ev, update));
   form.addEventListener('submit', (e) => e.preventDefault());
   update();
