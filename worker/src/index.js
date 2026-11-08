@@ -100,14 +100,20 @@ export default {
     if (!history.length || history[history.length - 1].role !== 'user') return json({ error: 'bad request' }, 400);
 
     const messages = [{ role: 'system', content: SYSTEM() }, ...history];
+    let tools = TOOLS;
     try {
       for (let i = 0; i < 3; i++) {
         const r = await fetch(`${env.PROVIDER_URL}/chat/completions`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${env.API_KEY}` },
-          body: JSON.stringify({ model: env.MODEL, messages, tools: TOOLS, tool_choice: 'auto', max_tokens: 450, temperature: 0.2 }),
+          body: JSON.stringify({ model: env.MODEL, messages, ...(tools ? { tools, tool_choice: 'auto' } : {}), max_tokens: 450, temperature: 0.2 }),
         });
-        if (!r.ok) throw new Error('provider ' + r.status);
+        if (!r.ok) {
+          const t = (await r.text()).slice(0, 300);
+          // Groq lehnt Tool-Aufrufe manchmal ab (400): einmal ohne Preis-Tool erneut versuchen.
+          if (r.status === 400 && tools) { tools = null; i--; continue; }
+          throw new Error(`provider ${r.status}: ${t}`);
+        }
         const msg = (await r.json()).choices?.[0]?.message;
         if (msg?.tool_calls?.length) {
           messages.push(msg);
@@ -121,8 +127,9 @@ export default {
         return json({ reply: (msg?.content || '').trim() || 'Dazu rufen Sie uns bitte kurz an.' });
       }
       return json({ reply: 'Dazu rufen Sie uns bitte kurz an oder schreiben per WhatsApp.' });
-    } catch {
-      return json({ reply: `Der Assistent ist gerade nicht erreichbar. Bitte rufen Sie uns an: ${site.phoneDisplay} (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.` }, 200);
+    } catch (e) {
+      console.error(String(e));
+      return json({ reply: `Der Assistent ist gerade nicht erreichbar. Bitte rufen Sie uns an: ${site.phoneDisplay} (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.`, debug: String(e.message).slice(0, 300) }, 200);
     }
   },
 };
