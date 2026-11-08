@@ -19,7 +19,7 @@ export function items(ids = []) {
 export const allIds = () => [...Object.keys(manifest.images), ...Object.keys(manifest.videos)];
 
 // CSS-Variable für den Hero-Hintergrund (leer, falls kein Hintergrundbild vorhanden ist)
-export const heroStyle = () => {
-  const b = image('hero-bg');
-  return b ? `--hero-bg:url(/images/hero-bg-${b.widths[b.widths.length - 1]}.webp)` : '';
+export const heroStyle = (id = 'werk-bohrstaender') => {
+  const b = image(id) || image('werk-bohrstaender');
+  return b ? `--hero-bg:url(/images/${b.id}-${b.widths[b.widths.length - 1]}.webp)` : '';
 };

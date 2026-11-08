@@ -66,7 +66,7 @@ export const artikel = [
       {
         h2: 'Auf der Baustelle bereithalten',
         list: [
-          'Strom: eine Steckdose mit 230 V in der Nähe, für große Geräte ggf. 400 V (bitte vorab absprechen)',
+          'Strom: eine Steckdose mit 230 V in der Nähe, für große Geräte alternativ 400 V (Adapter auf 16 A, bitte vorab absprechen)',
           'Wasser: ein Wasseranschluss oder Kanister für die Nassbohrung',
           'Zugang und Platz: freie Fläche für Bohrständer und Gerät, Möbel zur Seite räumen',
           'Schutz: Boden und Möbel abdecken, auf Wunsch übernehmen wir das',

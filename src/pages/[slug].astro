@@ -9,6 +9,7 @@ import { site } from '../data/site.js';
 import { services } from '../data/services.js';
 import { articles } from '../data/articles.js';
 import { heroStyle } from '../lib/media.js';
+import { heroBilder } from '../data/heroBilder.js';
 import { crumbSchema, faqSchema, preisAngebot } from '../lib/schema.js';
 
 export function getStaticPaths() {
@@ -39,7 +40,7 @@ const schema = [
 <Base title={s.title} description={s.description} path={`/${s.slug}/`} schema={schema}>
   <Breadcrumbs items={[['Leistungen', '/leistungen/'], [s.name]]} />
 
-  <section class="hero small" style={heroStyle()}>
+  <section class="hero small" style={heroStyle(heroBilder[s.slug])}>
     <div class="wrap">
       <div>
         <span class="eyebrow"><Icon name={s.icon} size={18} /> {s.group === 'Anwendung' ? 'Anwendung' : 'Leistung'}</span>

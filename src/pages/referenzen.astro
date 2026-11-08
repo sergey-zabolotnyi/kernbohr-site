@@ -20,7 +20,7 @@ const videos = items(ids).filter((m) => m.type === 'video');
   schema={[crumbSchema([['Referenzen', '/referenzen/']]), ...videos.map((v) => videoSchema(v))]}
 >
   <Breadcrumbs items={[['Referenzen']]} />
-  <section class="hero small" style={heroStyle()}>
+  <section class="hero small" style={heroStyle('werk-oeffnung-schiene')}>
     <div class="wrap">
       <div>
         <span class="eyebrow">Referenzen</span>

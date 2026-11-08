@@ -21,7 +21,7 @@ const beispiele = [
   schema={[crumbSchema([['Kosten & Preise', '/preise/']]), faqSchema(preisFaqs), { '@context': 'https://schema.org', '@type': 'Service', name: 'Kernbohrung', serviceType: 'Kernbohrung', provider: { '@id': 'https://kernbohr-expert.de/#business' }, areaServed: { '@type': 'City', name: 'Dresden' }, offers: preisAngebot('kernbohrung') }]}
 >
   <Breadcrumbs items={[['Kosten & Preise']]} />
-  <section class="hero small" style={heroStyle()}>
+  <section class="hero small" style={heroStyle('werk-wand-gross')}>
     <div class="wrap">
       <div>
         <span class="eyebrow">Kosten &amp; Preise</span>

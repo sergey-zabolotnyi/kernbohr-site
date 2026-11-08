@@ -273,3 +273,32 @@ table.compare tbody th{width:26%}
 @media (max-width:560px){.kb-form .row2{grid-template-columns:1fr}}
 /* Autor-Hinweis */
 .byline{display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+
+/* ===== Kompakter, dichter, mehr Tiefe ===== */
+section{padding:2.5rem 0}
+.hero.has-bg .wrap{padding-top:3.4rem;padding-bottom:3.2rem;grid-template-columns:minmax(0,800px)}
+.hero.small .wrap{padding-top:2.2rem;padding-bottom:2.2rem}
+.hero.small{background-position:center 45%}
+.hero.small::before{background:linear-gradient(95deg,rgba(14,17,20,.97) 0%,rgba(14,17,20,.86) 48%,rgba(14,17,20,.55) 100%)}
+.hero h1{margin-bottom:.7rem}
+.hero .lead{margin-bottom:1.1rem}
+.hero.has-bg .hero-points{flex-wrap:wrap;gap:0;margin-top:1.1rem;padding-top:1rem}
+.hero-points li{padding:0 1.1rem;border-left:1px solid rgba(255,255,255,.22)}
+.hero-points li:first-child{padding-left:0;border-left:0}
+@media (min-width:1000px){.hero.has-bg .hero-points{flex-wrap:nowrap}.hero-points li{white-space:nowrap;font-size:.93rem}}
+@media (max-width:700px){.hero-points li{border-left:0;padding:.2rem 1rem .2rem 0}}
+.strip>div{padding:.9rem 1rem}
+.cta-band{padding:2rem 0}
+.foot{padding:2.4rem 0 6rem}
+h2{margin-bottom:.6rem}
+.card,.faq details,details{box-shadow:0 1px 3px rgba(20,24,28,.05)}
+.card:not(.has-img){border-top:3px solid transparent;transition:transform .2s,box-shadow .2s,border-color .2s}
+a.card:not(.has-img):hover{border-top-color:var(--accent)}
+.crumbs{background:#f2f4f6}
+.review-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.6rem;padding:.45rem .8rem;border:1px solid #3a454e;border-radius:999px;color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;transition:border-color .2s,background .2s}
+.review-link:hover{border-color:var(--accent);background:rgba(232,89,12,.14)}
+.review-link .icon{color:#f5b301}
+@media (max-width:860px){section{padding:1.9rem 0}.hero.small .wrap{padding-top:1.6rem;padding-bottom:1.6rem}}
+
+.hero-bg{object-position:center 46%}
+.hero.small::before{background:linear-gradient(95deg,rgba(14,17,20,.96) 0%,rgba(14,17,20,.8) 50%,rgba(14,17,20,.42) 100%)}

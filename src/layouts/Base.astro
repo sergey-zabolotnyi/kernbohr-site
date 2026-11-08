@@ -62,6 +62,7 @@ const business = {
     opens: '07:00',
     closes: '19:00',
   },
+  hasMap: site.googleMaps,
   areaServed: [
     ...['Dresden', 'Radebeul', 'Meißen', 'Pirna', 'Freital', 'Heidenau', 'Radeberg', 'Coswig'].map((n) => ({ '@type': 'City', name: n })),
     { '@type': 'AdministrativeArea', name: 'Sachsen' },
@@ -186,6 +187,7 @@ const nav = [
             <div class="row"><Icon name="phone" size={18} /><a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a></div>
             <div class="row"><Icon name="mail" size={18} /><a href={`mailto:${site.email}`}>{site.email}</a></div>
             <div class="row"><Icon name="clock" size={18} /><span>Telefon Mo–Sa 7–19 Uhr<br />Einsätze nach Absprache 24/7</span></div>
+            <a class="review-link" href={site.googleReview} target="_blank" rel="noopener"><Icon name="star" size={16} /> Bewerten Sie uns auf Google</a>
           </div>
         </div>
         <div class="foot-bottom">

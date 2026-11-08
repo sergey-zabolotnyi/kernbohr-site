@@ -22,7 +22,7 @@ const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
   schema={[crumbSchema([['Ratgeber', '/ratgeber/'], [a.title, `/ratgeber/${a.slug}/`]]), articleSchema(a), faqSchema(a.faqs)]}
 >
   <Breadcrumbs items={[['Ratgeber', '/ratgeber/'], [a.title]]} />
-  <section class="hero small" style={heroStyle()}>
+  <section class="hero small" style={heroStyle('werk-durchfuehrung-decke')}>
     <div class="wrap">
       <div>
         <span class="eyebrow"><Icon name={a.icon} size={18} /> Ratgeber</span>

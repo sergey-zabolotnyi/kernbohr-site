@@ -3,99 +3,163 @@ import { regeln, eur } from '../data/preisliste.js';
 import { site } from '../data/site.js';
 ---
 <section id="kb-rechner" class="kb-rechner" aria-labelledby="kb-title" data-wa={site.whatsapp} data-mail={site.email}>
-  <h2 id="kb-title">Kernbohr-Rechner: Richtpreis in 30 Sekunden</h2>
-  <p class="kb-lead">Basiert auf unserer Preisliste 2026. Unverbindliche Schätzung, den genauen Festpreis erhalten Sie nach einem Foto der Baustelle.</p>
-
-  <form id="kb-form" novalidate>
-    <div class="kb-field">
-      <label for="kb-material">Material</label>
-      <select id="kb-material">
-        <option value="beton">Beton / Stahlbeton</option>
-        <option value="mauerwerk">Mauerwerk (Ziegel, Kalksandstein)</option>
-      </select>
-    </div>
-
-    <div class="kb-field">
-      <label for="kb-dia">Durchmesser: <output id="kb-dia-out">82</output> mm</label>
-      <input type="range" id="kb-dia" min={regeln.minDurchmesser} max={regeln.maxDurchmesser} step="1" value="82">
-    </div>
-
-    <div class="kb-field">
-      <label for="kb-depth">Bohrtiefe / Wandstärke (cm, max. {regeln.maxTiefeCm})</label>
-      <input type="number" id="kb-depth" min="1" max={regeln.maxTiefeCm} step="1" value="24" inputmode="numeric">
-    </div>
-
-    <div class="kb-field">
-      <label for="kb-count">Anzahl der Bohrungen</label>
-      <input type="number" id="kb-count" min="1" max="200" step="1" value="1" inputmode="numeric">
-    </div>
-
-    <div class="kb-field">
-      <label for="kb-dir">Bohrrichtung</label>
-      <select id="kb-dir">
-        <option value="normal">Waagerecht oder senkrecht (Standard)</option>
-        <option value="ueberkopf">Überkopf (+50 %)</option>
-        <option value="schraeg">Schräg (+50 %)</option>
-      </select>
-    </div>
-
-    <div class="kb-field">
-      <label for="kb-zeit">Einsatzzeit</label>
-      <select id="kb-zeit">
-        <option value="tag">Tagsüber, Werktag (Standard)</option>
-        <option value="nacht">Nachts, 23–6 Uhr (+75 %)</option>
-        <option value="wochenende">Samstag, Sonntag oder Feiertag (+100 %)</option>
-      </select>
-    </div>
-
-    <fieldset class="kb-field">
-      <legend>Zusatzleistungen</legend>
-      <label class="kb-check"><input type="checkbox" id="kb-water"> Wassersauger mit Bediener ({regeln.wassersaugerTag} €/Tag)</label>
-      <label class="kb-check"><input type="checkbox" id="kb-scaffold"> Gerüststellung ({regeln.gerueststellungTag} €/Tag)</label>
-    </fieldset>
-
-    <div class="kb-field" id="kb-days-wrap" hidden>
-      <label for="kb-days">Einsatztage</label>
-      <input type="number" id="kb-days" min="1" max="30" step="1" value="1" inputmode="numeric">
-    </div>
-  </form>
-
-  <div class="kb-result" role="status" aria-live="polite">
-    <div class="kb-price"><span id="kb-total">–</span></div>
-    <ul class="kb-break" id="kb-break"></ul>
-    <div class="kb-min" id="kb-min" hidden>Mindestauftragswert {regeln.mindestpreis} € angewendet.</div>
-    <p class="kb-note">Richtwert, unverbindlich. Alle Preise sind Endpreise (brutto) laut Preisliste 2026. Die Pilotbohrung (Dübel für den Bohrständer, {eur(regeln.pilotbohrung)} je Bohrung) ist enthalten. Stahlbewehrung ab 1,5 cm (1 €/cm) und Wartezeit werden bei Bedarf gesondert berechnet. Bohrtiefe bis {regeln.maxTiefeCm / 100} m. Anfahrt gilt im Umkreis von ca. 20–30 km um Dresden, darüber hinaus nach Vereinbarung.</p>
+  <div class="kb-head">
+    <h2 id="kb-title">Kernbohr-Rechner: Richtpreis in 30 Sekunden</h2>
+    <p class="kb-lead">Basiert auf unserer Preisliste 2026. Unverbindliche Schätzung, den Festpreis erhalten Sie nach einem Foto der Baustelle.</p>
   </div>
 
-  <div class="kb-actions">
-    <a id="kb-wa" class="kb-btn kb-btn-wa" href="#" rel="noopener">Per WhatsApp anfragen</a>
-    <a id="kb-mail" class="kb-btn kb-btn-mail" href="#">Per E-Mail anfragen</a>
+  <div class="kb-layout">
+    <form id="kb-form" novalidate>
+      <div class="kb-field">
+        <span class="kb-label">Material</span>
+        <div class="kb-seg" role="radiogroup" aria-label="Material">
+          <label><input type="radio" name="material" value="beton" checked><span>Beton / Stahlbeton</span></label>
+          <label><input type="radio" name="material" value="mauerwerk"><span>Mauerwerk</span></label>
+        </div>
+      </div>
+
+      <div class="kb-field">
+        <label class="kb-label" for="kb-dia-n">Durchmesser <small>mm</small></label>
+        <div class="kb-pair">
+          <input type="range" id="kb-dia" min={regeln.minDurchmesser} max={regeln.maxDurchmesser} step="1" value="82" aria-label="Durchmesser Regler">
+          <input type="number" id="kb-dia-n" min={regeln.minDurchmesser} max={regeln.maxDurchmesser} step="1" value="82" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="kb-field">
+        <label class="kb-label" for="kb-depth-n">Bohrtiefe / Wandstärke <small>cm, max. {regeln.maxTiefeCm}</small></label>
+        <div class="kb-pair">
+          <input type="range" id="kb-depth" min="1" max={regeln.maxTiefeCm} step="1" value="24" aria-label="Bohrtiefe Regler">
+          <input type="number" id="kb-depth-n" min="1" max={regeln.maxTiefeCm} step="1" value="24" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="kb-field">
+        <label class="kb-label" for="kb-count-n">Anzahl der Bohrungen</label>
+        <div class="kb-pair">
+          <input type="range" id="kb-count" min="1" max="50" step="1" value="1" aria-label="Anzahl Regler">
+          <input type="number" id="kb-count-n" min="1" max="200" step="1" value="1" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="kb-cols">
+        <div class="kb-field">
+          <span class="kb-label">Bohrrichtung</span>
+          <div class="kb-seg kb-seg-v" role="radiogroup" aria-label="Bohrrichtung">
+            <label><input type="radio" name="richtung" value="normal" checked><span>Standard</span></label>
+            <label><input type="radio" name="richtung" value="ueberkopf"><span>Überkopf <em>+50 %</em></span></label>
+            <label><input type="radio" name="richtung" value="schraeg"><span>Schräg <em>+50 %</em></span></label>
+          </div>
+        </div>
+        <div class="kb-field">
+          <span class="kb-label">Einsatzzeit</span>
+          <div class="kb-seg kb-seg-v" role="radiogroup" aria-label="Einsatzzeit">
+            <label><input type="radio" name="zeit" value="tag" checked><span>Werktag, tagsüber</span></label>
+            <label><input type="radio" name="zeit" value="nacht"><span>Nachts 23–6 Uhr <em>+75 %</em></span></label>
+            <label><input type="radio" name="zeit" value="wochenende"><span>Sa, So, Feiertag <em>+100 %</em></span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="kb-field">
+        <span class="kb-label">Zusatzleistungen</span>
+        <div class="kb-toggles">
+          <label class="kb-toggle"><input type="checkbox" id="kb-water"><span><span class="kb-t"><b>Wassersauger</b> mit Bediener</span><em>{regeln.wassersaugerTag} €/Tag</em></span></label>
+          <label class="kb-toggle"><input type="checkbox" id="kb-scaffold"><span><span class="kb-t"><b>Gerüststellung</b></span><em>{regeln.gerueststellungTag} €/Tag</em></span></label>
+        </div>
+      </div>
+
+      <div class="kb-field kb-days" id="kb-days-wrap" hidden>
+        <label class="kb-label" for="kb-days">Einsatztage</label>
+        <input type="number" id="kb-days" min="1" max="30" step="1" value="1" inputmode="numeric">
+      </div>
+    </form>
+
+    <aside class="kb-result" role="status" aria-live="polite">
+      <div class="kb-result-top">Ihr Richtpreis</div>
+      <div class="kb-price"><span id="kb-total">–</span></div>
+      <ul class="kb-break" id="kb-break"></ul>
+      <div class="kb-min" id="kb-min" hidden>Mindestauftragswert {regeln.mindestpreis} € angewendet.</div>
+      <div class="kb-actions">
+        <a id="kb-wa" class="kb-btn kb-btn-wa" href="#" rel="noopener">Per WhatsApp anfragen</a>
+        <a id="kb-mail" class="kb-btn kb-btn-mail" href="#">Per E-Mail anfragen</a>
+      </div>
+      <p class="kb-note">Richtwert, unverbindlich. Alle Preise sind Endpreise (brutto) laut Preisliste 2026. Die Pilotbohrung (Dübel für den Bohrständer, {eur(regeln.pilotbohrung)} je Bohrung) ist enthalten. Stahlbewehrung ab 1,5 cm (1 €/cm) und Wartezeit werden bei Bedarf gesondert berechnet. Anfahrt gilt im Umkreis von ca. 20–30 km um Dresden, darüber hinaus nach Vereinbarung. Tipp: Ein Foto der Baustelle per WhatsApp beschleunigt das Angebot.</p>
+    </aside>
   </div>
-  <p class="kb-note">Tipp: Senden Sie uns ein Foto der Baustelle per WhatsApp. Wir melden uns mit einem konkreten Angebot.</p>
 </section>
 
 <style is:global>
-  .kb-rechner{--kb-accent:#e8590c;--kb-bg:#f6f7f8;--kb-text:#1b1f23;max-width:640px;margin:2rem auto;padding:1.25rem;background:var(--kb-bg);color:var(--kb-text);border-radius:12px;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-  .kb-rechner h2{margin:0 0 .25rem;font-size:1.4rem}
-  .kb-lead,.kb-note{font-size:.9rem;opacity:.8}
-  .kb-field{margin:1rem 0;border:0;padding:0}
-  .kb-field label,.kb-field legend{display:block;font-weight:600;margin-bottom:.35rem}
-  .kb-field select,.kb-field input[type=number]{width:100%;min-height:48px;padding:.5rem .75rem;font-size:1rem;border:1px solid #c5cad0;border-radius:8px;background:#fff}
-  .kb-field input[type=range]{width:100%;accent-color:var(--kb-accent);min-height:32px}
-  .kb-check{display:flex;gap:.6rem;align-items:center;font-weight:400!important;min-height:44px}
-  .kb-check input{width:22px;height:22px;accent-color:var(--kb-accent)}
-  .kb-result{background:#fff;border-left:5px solid var(--kb-accent);border-radius:8px;padding:1rem;margin:1.25rem 0}
-  .kb-price{font-size:1.7rem;font-weight:800}
-  .kb-sub{font-size:.9rem;margin-top:.25rem}
-  .kb-actions{display:flex;flex-wrap:wrap;gap:.75rem}
-  .kb-btn{flex:1 1 220px;text-align:center;padding:.9rem 1rem;border-radius:8px;font-weight:700;text-decoration:none;min-height:48px;box-sizing:border-box}
+  .kb-rechner{--kb-accent:#e8590c;--kb-accent-d:#c2410c;--kb-text:#1b1f23;max-width:1020px;margin:1.6rem auto;padding:1.5rem;background:#fff;color:var(--kb-text);border:1px solid #e3e6e9;border-top:4px solid var(--kb-accent);border-radius:16px;box-shadow:0 18px 50px rgba(20,24,28,.1);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  .kb-head h2{margin:0 0 .2rem;font-size:1.5rem}
+  .kb-lead{margin:0 0 1rem;font-size:.92rem;color:#5b646c}
+  .kb-layout{display:grid;gap:1.4rem;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:start}
+  .kb-field{margin:0 0 1rem;border:0;padding:0;min-width:0}
+  .kb-label{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:.92rem;margin-bottom:.4rem}
+  .kb-label small{font-weight:500;color:#6b747c}
+  .kb-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+  /* Slider + Zahl */
+  .kb-pair{display:grid;grid-template-columns:1fr 92px;gap:.9rem;align-items:center}
+  .kb-rechner input[type=number]{width:100%;min-height:44px;padding:.4rem .6rem;font:700 1rem system-ui;text-align:center;border:1.5px solid #cfd5da;border-radius:10px;background:#f7f8f9;color:inherit;transition:border-color .15s,box-shadow .15s}
+  .kb-rechner input[type=number]:focus{outline:0;border-color:var(--kb-accent);box-shadow:0 0 0 3px rgba(232,89,12,.2);background:#fff}
+  .kb-rechner input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;--pct:0%;cursor:pointer}
+  .kb-rechner input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:99px;background:linear-gradient(90deg,var(--kb-accent) var(--pct),#e3e6e9 var(--pct))}
+  .kb-rechner input[type=range]::-moz-range-track{height:8px;border-radius:99px;background:#e3e6e9}
+  .kb-rechner input[type=range]::-moz-range-progress{height:8px;border-radius:99px;background:var(--kb-accent)}
+  .kb-rechner input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-9px;border-radius:50%;background:#fff;border:4px solid var(--kb-accent);box-shadow:0 3px 10px rgba(232,89,12,.4);transition:transform .15s}
+  .kb-rechner input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--kb-accent);box-shadow:0 3px 10px rgba(232,89,12,.4)}
+  .kb-rechner input[type=range]:active::-webkit-slider-thumb{transform:scale(1.18)}
+  .kb-rechner input[type=range]:focus-visible{outline:0}
+  .kb-rechner input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(232,89,12,.3)}
+  /* Segmentierte Auswahl statt Dropdown */
+  .kb-seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;padding:4px;background:#eef0f2;border-radius:12px}
+  .kb-seg-v{grid-auto-flow:row}
+  .kb-seg label{position:relative;cursor:pointer}
+  .kb-seg input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer}
+  .kb-seg span{display:flex;justify-content:space-between;align-items:center;gap:.4rem;min-height:42px;padding:.45rem .7rem;border-radius:9px;font-weight:600;font-size:.9rem;color:#46505a;transition:background .2s,color .2s,box-shadow .2s;text-align:left}
+  .kb-seg em{font-style:normal;font-size:.78rem;font-weight:700;color:var(--kb-accent-d)}
+  .kb-seg label:hover span{background:rgba(255,255,255,.7)}
+  .kb-seg input:checked+span{background:#fff;color:var(--kb-text);box-shadow:0 2px 8px rgba(20,24,28,.14),inset 0 0 0 2px var(--kb-accent)}
+  .kb-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(28,126,214,.5)}
+  /* Zusatzleistungen */
+  .kb-toggles{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+  .kb-toggle{position:relative;cursor:pointer}
+  .kb-toggle input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer}
+  .kb-toggle>input+span{display:flex;flex-direction:column;gap:.1rem;padding:.65rem .8rem .65rem 2.5rem;border:1.5px solid #cfd5da;border-radius:12px;font-size:.88rem;position:relative;transition:border-color .2s,background .2s}
+  .kb-toggle>input+span::before{content:"";position:absolute;left:.8rem;top:50%;width:20px;height:20px;margin-top:-10px;border-radius:6px;border:2px solid #aab2b9;background:#fff;transition:all .2s}
+  .kb-toggle>input+span::after{content:"";position:absolute;left:1.15rem;top:50%;width:6px;height:11px;margin-top:-7px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) scale(0);transition:transform .2s}
+  .kb-toggle em{font-style:normal;font-size:.8rem;color:var(--kb-accent-d);font-weight:700}
+  .kb-toggle:hover>input+span{border-color:var(--kb-accent)}
+  .kb-toggle input:checked+span{border-color:var(--kb-accent);background:#fff4ec}
+  .kb-toggle input:checked+span::before{background:var(--kb-accent);border-color:var(--kb-accent)}
+  .kb-toggle input:checked+span::after{transform:rotate(45deg) scale(1)}
+  .kb-toggle input:focus-visible+span{box-shadow:0 0 0 3px rgba(28,126,214,.5)}
+  .kb-days{max-width:140px}
+  /* Ergebnis */
+  .kb-result{position:sticky;top:84px;background:linear-gradient(160deg,#171c20,#232b32);color:#fff;border-radius:14px;padding:1.2rem;box-shadow:0 14px 34px rgba(20,24,28,.3);overflow:hidden}
+  .kb-result::before{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 14px,rgba(232,89,12,.28) 14px 16px);pointer-events:none}
+  .kb-result-top{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#f8a66e;font-weight:700}
+  .kb-price{font-size:2.3rem;font-weight:800;line-height:1.15;margin:.2rem 0 .5rem}
+  .kb-break{list-style:none;margin:0;padding:0;font-size:.86rem;color:#d3d9de}
+  .kb-break li{display:flex;justify-content:space-between;gap:1rem;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .kb-break li span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums;color:#fff}
+  .kb-min{font-weight:600;color:#ffb784;margin-top:.5rem;font-size:.86rem}
+  .kb-actions{display:grid;gap:.6rem;margin:1rem 0 .7rem}
+  .kb-btn{text-align:center;padding:.8rem 1rem;border-radius:10px;font-weight:700;text-decoration:none;min-height:46px;box-sizing:border-box;transition:transform .15s,filter .15s}
+  .kb-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
   .kb-btn-wa{background:#25d366;color:#052e16}
   .kb-btn-mail{background:var(--kb-accent);color:#fff}
-  .kb-btn:focus-visible,.kb-field :focus-visible{outline:3px solid #1c7ed6;outline-offset:2px}
-  .kb-break{list-style:none;margin:.6rem 0 0;padding:0;font-size:.92rem}
-  .kb-break li{display:flex;justify-content:space-between;gap:1rem;padding:.25rem 0;border-bottom:1px solid #e6e8eb}
-  .kb-break li span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
-  .kb-min{font-weight:600;color:#b34700;margin-top:.5rem;font-size:.9rem}
+  .kb-btn:focus-visible{outline:3px solid #74c0fc;outline-offset:2px}
+  .kb-note{font-size:.76rem;line-height:1.4;color:#aab4bc;margin:0}
+  @media (max-width:860px){
+    .kb-layout{grid-template-columns:1fr}
+    .kb-result{position:static}
+  }
+  @media (max-width:520px){
+    .kb-rechner{padding:1rem;margin:1rem -.2rem}
+    .kb-cols,.kb-toggles{grid-template-columns:1fr}
+    .kb-pair{grid-template-columns:1fr 80px}
+  }
 </style>
 
 <script>
@@ -103,9 +167,11 @@ import { site } from '../data/site.js';
 
   const root = document.getElementById('kb-rechner');
   const $ = (id) => document.getElementById(id);
+  const form = $('kb-form');
+  const radio = (name) => form.querySelector(`input[name="${name}"]:checked`).value;
   const el = {
-    material: $('kb-material'), dia: $('kb-dia'), diaOut: $('kb-dia-out'), depth: $('kb-depth'),
-    count: $('kb-count'), dir: $('kb-dir'), zeit: $('kb-zeit'), water: $('kb-water'), scaffold: $('kb-scaffold'),
+    dia: $('kb-dia'), diaN: $('kb-dia-n'), depth: $('kb-depth'), depthN: $('kb-depth-n'),
+    count: $('kb-count'), countN: $('kb-count-n'), water: $('kb-water'), scaffold: $('kb-scaffold'),
     days: $('kb-days'), daysWrap: $('kb-days-wrap'), total: $('kb-total'), list: $('kb-break'),
     min: $('kb-min'), wa: $('kb-wa'), mail: $('kb-mail'),
   };
@@ -115,23 +181,32 @@ import { site } from '../data/site.js';
     return Number.isNaN(v) ? def : Math.min(max, Math.max(min, v));
   };
 
+  // Slider und Zahlenfeld halten sich gegenseitig synchron; --pct färbt die Spur orange.
+  const pairs = [[el.dia, el.diaN], [el.depth, el.depthN], [el.count, el.countN]];
+  const paint = (r) => r.style.setProperty('--pct', ((r.value - r.min) / (r.max - r.min)) * 100 + '%');
+  pairs.forEach(([r, n]) => {
+    r.addEventListener('input', () => { n.value = r.value; });
+    n.addEventListener('input', () => { if (n.value !== '') r.value = n.value; });
+    n.addEventListener('blur', () => { const v = Math.round(clamp(n.value, +n.min, +n.max, +r.value)); n.value = v; r.value = Math.min(v, +r.max); update(); });
+  });
+
   function update() {
-    const d = Math.round(clamp(el.dia.value, regeln.minDurchmesser, regeln.maxDurchmesser, 82));
-    const tiefe = Math.round(clamp(el.depth.value, 1, regeln.maxTiefeCm, 24));
-    const anzahl = Math.round(clamp(el.count.value, 1, 200, 1));
+    pairs.forEach(([r]) => paint(r));
+    const d = Math.round(clamp(el.diaN.value, regeln.minDurchmesser, regeln.maxDurchmesser, 82));
+    const tiefe = Math.round(clamp(el.depthN.value, 1, regeln.maxTiefeCm, 24));
+    const anzahl = Math.round(clamp(el.countN.value, 1, 200, 1));
     const tage = Math.round(clamp(el.days.value, 1, 30, 1));
     el.daysWrap.hidden = !(el.water.checked || el.scaffold.checked);
 
     const r = berechne({
       d, tiefe, anzahl, tage,
-      material: el.material.value,
-      richtung: el.dir.value,
-      zeit: el.zeit.value,
+      material: radio('material'),
+      richtung: radio('richtung'),
+      zeit: radio('zeit'),
       wasser: el.water.checked,
       geruest: el.scaffold.checked,
     });
 
-    el.diaOut.textContent = d;
     el.total.textContent = 'ca. ' + eur(r.total);
     el.list.textContent = '';
     r.posten.forEach((p) => {
@@ -154,7 +229,6 @@ import { site } from '../data/site.js';
       '&body=' + encodeURIComponent(msg);
   }
 
-  const form = $('kb-form');
   ['input', 'change'].forEach((ev) => form.addEventListener(ev, update));
   form.addEventListener('submit', (e) => e.preventDefault());
   update();

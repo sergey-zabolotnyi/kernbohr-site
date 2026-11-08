@@ -145,7 +145,7 @@ export const articles = [
         'Grundriss oder Leitungsplan bereitlegen, falls vorhanden',
         'Bei tragenden Wänden: Statik oder Freigabe bereithalten' ] },
       { h: 'Vor dem Termin', checks: [
-        'Stromanschluss in der Nähe: 230 V Steckdose, bei großen Durchmessern ggf. 400 V [Inhaber bestätigen]',
+        'Stromanschluss in der Nähe: 230-V-Steckdose, alternativ 400 V (Adapter auf 16 A)',
         'Wasseranschluss in der Nähe oder Hinweis, dass wir einen Tank mitbringen sollen [Inhaber bestätigen]',
         'Bohrstelle und Umgebung freiräumen, Möbel und Böden abdecken',
         'Bohrstelle markieren, genaue Position und Höhe abstimmen',
@@ -162,7 +162,7 @@ export const articles = [
     ],
     faqs: [
       ['Brauchen Sie Wasser vor Ort?', 'Für die Nassbohrung benötigen wir in der Regel Wasser. Bei Bedarf bringen wir einen Tank mit. [Inhaber bestätigen]'],
-      ['Welchen Strom brauchen Sie?', 'Meist genügt eine 230-V-Steckdose, bei großen Durchmessern ggf. 400 V. Wir klären das vorab mit Ihnen. [Inhaber bestätigen]'],
+      ['Welchen Strom brauchen Sie?', 'Wir arbeiten mit 230 V oder 400 V (Drehstrom, per Adapter auf 16 A). Meist genügt eine 230-V-Steckdose. Wir klären das vorab mit Ihnen.'],
     ],
   },
   {
