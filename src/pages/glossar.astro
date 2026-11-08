@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { glossar } from '../data/glossar.js';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema } from '../lib/schema.js';
+const termSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  name: 'Glossar Kernbohrung und Betonbearbeitung',
+  hasDefinedTerm: glossar.map(([name, d]) => ({ '@type': 'DefinedTerm', name, description: d })),
+};
+---
+<Base
+  title="Glossar Kernbohrung: Begriffe einfach erklärt"
+  description="Kernbohrung, Nassbohrung, Pilotbohrung, Wanddurchbruch und mehr: wichtige Fachbegriffe der Betonbearbeitung kurz und verständlich erklärt."
+  path="/glossar/"
+  schema={[crumbSchema([['Ratgeber', '/ratgeber/'], ['Glossar', '/glossar/']]), termSchema]}
+>
+  <Breadcrumbs items={[['Ratgeber', '/ratgeber/'], ['Glossar']]} />
+  <section class="hero small" style={heroStyle()}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Glossar</span>
+        <h1>Kernbohrung: Begriffe einfach erklärt</h1>
+        <p class="lead">Die wichtigsten Fachbegriffe rund um Kernbohrung, Betonsägen und Wanddurchbruch, kurz und verständlich.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <ul class="pills pills-index">
+        {glossar.map(([t]) => <li><a class="pill pill-line" href={`#${t.toLowerCase().replace(/[^a-zäöüß]+/g, '-')}`}>{t}</a></li>)}
+      </ul>
+      <div class="terms">
+        {glossar.map(([t, d, icon]) => (
+          <article class="term" id={t.toLowerCase().replace(/[^a-zäöüß]+/g, '-')}>
+            <div class="ico"><Icon name={icon} size={24} /></div>
+            <div>
+              <h2>{t}</h2>
+              <p>{d}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CtaBand title="Fragen zu Ihrem Vorhaben?" text="Senden Sie uns ein Foto oder rufen Sie an. Wir erklären Ihnen gern, was für Ihr Projekt nötig ist." />
+</Base>

@@ -1,0 +1,72 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site.js';
+---
+<form class="kb-form" id="anfrage" novalidate>
+  <div class="row2">
+    <div><label for="af-name">Name</label><input id="af-name" name="name" autocomplete="name" required></div>
+    <div><label for="af-tel">Telefonnummer</label><input id="af-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required></div>
+  </div>
+  <div class="row2">
+    <div>
+      <label for="af-was">Was brauchen Sie?</label>
+      <select id="af-was" name="was">
+        <option>Kernbohrung</option>
+        <option>Wanddurchbruch</option>
+        <option>Wärmepumpe / Klimagerät</option>
+        <option>Betonsägen / Fugenschneiden</option>
+        <option>Schlitze fräsen</option>
+        <option>Rückbau / Teilabbruch</option>
+        <option>Etwas anderes</option>
+      </select>
+    </div>
+    <div>
+      <label for="af-wann">Wann dürfen wir anrufen?</label>
+      <select id="af-wann" name="wann">
+        <option>Jederzeit</option>
+        <option>Vormittags</option>
+        <option>Nachmittags</option>
+        <option>Abends</option>
+      </select>
+    </div>
+  </div>
+  <fieldset>
+    <legend>Wie sollen wir antworten?</legend>
+    <div class="kb-radio">
+      <label><input type="radio" name="weg" value="rueckruf" checked> Rückruf</label>
+      <label><input type="radio" name="weg" value="whatsapp"> WhatsApp</label>
+      <label><input type="radio" name="weg" value="mail"> E-Mail</label>
+    </div>
+  </fieldset>
+  <div>
+    <label for="af-text">Ihre Nachricht (Ø, Tiefe, Material, Ort)</label>
+    <textarea id="af-text" name="text" rows="4" placeholder="z. B. 2 Bohrungen Ø 82 mm, Außenwand, Dresden-Plauen"></textarea>
+  </div>
+  <p class="note">Foto der Baustelle? Senden Sie es nach dem Absenden direkt per WhatsApp. Ihre Angaben werden nicht auf dieser Website gespeichert, sondern über Ihre WhatsApp- oder E-Mail-App an uns gesendet. Mehr in der <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</p>
+  <div class="btns">
+    <button class="btn btn-main" type="submit"><Icon name="phone" size={20} /> Rückruf anfordern</button>
+    <a class="btn btn-wa" href={`https://wa.me/${site.whatsapp}`} rel="noopener"><Icon name="whatsapp" size={20} /> Foto per WhatsApp</a>
+  </div>
+  <p id="af-hint" class="note" role="status" aria-live="polite"></p>
+</form>
+
+<script define:vars={{ wa: site.whatsapp, mail: site.email }}>
+  const f = document.getElementById('anfrage');
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(f));
+    const hint = document.getElementById('af-hint');
+    if (!d.name?.trim() || !d.tel?.trim()) { hint.textContent = 'Bitte Name und Telefonnummer angeben.'; return; }
+    const lines = [
+      d.weg === 'rueckruf' ? 'Bitte um Rückruf.' : 'Anfrage',
+      `Name: ${d.name}`, `Telefon: ${d.tel}`, `Anliegen: ${d.was}`, `Erreichbar: ${d.wann}`,
+      d.text ? `Nachricht: ${d.text}` : '',
+    ].filter(Boolean).join('\n');
+    if (d.weg === 'mail') {
+      location.href = `mailto:${mail}?subject=${encodeURIComponent('Anfrage: ' + d.was)}&body=${encodeURIComponent(lines)}`;
+    } else {
+      window.open(`https://wa.me/${wa}?text=${encodeURIComponent(lines)}`, '_blank', 'noopener');
+    }
+    hint.textContent = 'Danke! Bitte senden Sie die vorbereitete Nachricht in der geöffneten App ab. Wir melden uns schnellstmöglich.';
+  });
+</script>

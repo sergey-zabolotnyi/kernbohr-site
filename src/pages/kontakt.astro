@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import AnfrageForm from '../components/AnfrageForm.astro';
+import Prozess from '../components/Prozess.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site.js';
 import { heroStyle } from '../lib/media.js';
@@ -25,6 +27,15 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich
           <a class="btn btn-main" href={`tel:${site.phoneTel}`}><Icon name="phone" size={20} /> {site.phoneDisplay}</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Anfrage</span>
+      <h2>Rückruf anfordern</h2>
+      <p class="lead">Name und Nummer genügen. Wir rufen Sie zum Wunschzeitpunkt zurück.</p>
+      <AnfrageForm />
     </div>
   </section>
 
@@ -58,4 +69,5 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich
       </div>
     </div>
   </section>
+  <Prozess eyebrow="Ablauf" title="So geht es nach Ihrer Anfrage weiter" />
 </Base>

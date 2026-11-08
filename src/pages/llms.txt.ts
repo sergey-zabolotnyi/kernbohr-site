@@ -27,6 +27,7 @@ Kurzfakten:
 - [Leistungen](${u}/leistungen/)
 - [Einsatzgebiet](${u}/einsatzgebiet/)
 - [Häufige Fragen](${u}/faq/)
+- [Glossar der Fachbegriffe](${u}/glossar/): Kernbohrung, Nassbohrung, Pilotbohrung, Wanddurchbruch und mehr
 - [Kontakt](${u}/kontakt/)
 - [Referenzen](${u}/referenzen/)
 - [Über uns](${u}/ueber-uns/)

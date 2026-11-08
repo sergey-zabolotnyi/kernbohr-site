@@ -3,6 +3,46 @@
 
 export const articles = [
   {
+    slug: 'kernbohrung-oder-meisseln',
+    icon: 'drill',
+    date: '2026-11-08',
+    title: 'Kernbohrung oder Meißeln: Was ist besser für Wand und Decke?',
+    h1: 'Kernbohrung oder Meißeln: der Vergleich',
+    description: 'Kernbohrung oder Meißeln? Vergleich bei Genauigkeit, Staub, Erschütterung, Lärm und Risiko für Risse. Wann welches Verfahren sinnvoll ist.',
+    short: 'Genauigkeit, Staub, Erschütterung und Risiko im direkten Vergleich.',
+    answer: 'Für runde Durchführungen in Beton, Stahlbeton und Mauerwerk ist die Kernbohrung in der Regel die bessere Wahl: Sie liefert eine genaue, saubere Öffnung und belastet das Bauteil weniger als Meißeln oder Stemmen. Meißeln kann bei kleinen Korrekturen im Putz oder Mauerwerk reichen, ist aber ungenauer und erzeugt mehr Staub und Erschütterung.',
+    sections: [
+      { h: 'Die Verfahren im Vergleich', p: ['Die Tabelle zeigt typische Unterschiede. Im Einzelfall hängt es von Bauteil, Material und Umgebung ab.'], table: {
+        head: ['Kriterium', 'Kernbohrung', 'Meißeln / Stemmen'],
+        rows: [
+          ['Form der Öffnung', 'Rund, glatte Kanten, passgenau', 'Unregelmäßig, oft Nacharbeit nötig'],
+          ['Genauigkeit', 'Hoch, Lage und Durchmesser exakt planbar', 'Gering bis mittel'],
+          ['Erschütterung', 'Gering, schonend für das Bauteil', 'Hoch, Risiko für Risse im Umfeld'],
+          ['Staub', 'Gering bei Nassbohrung mit Absaugung', 'Hoch'],
+          ['Lärm', 'Gleichmäßig, meist niedriger', 'Laut und stoßartig'],
+          ['Stahlbeton', 'Gut geeignet, durchtrennt Bewehrung sauber', 'Sehr mühsam und ungenau'],
+          ['Einsatzbereich', 'Leitungen, Rohre, Lüftung, Wärmepumpe', 'Kleine Korrekturen in Putz und weichem Mauerwerk'],
+        ],
+      } },
+      { h: 'Wann Kernbohrung die richtige Wahl ist', ul: [
+        'Für Rohre, Kabel, Lüftungsleitungen und Wärmepumpen-Durchführungen durch Wand oder Decke.',
+        'In Stahlbeton und tragenden Bauteilen, bei denen Erschütterungen vermieden werden sollen.',
+        'In bewohnten Gebäuden, wenn Staub und Lärm gering bleiben sollen.',
+      ] },
+      { h: 'Wann Meißeln genügt', p: ['Kleine Ausbesserungen im Putz oder in weichem Mauerwerk lassen sich oft mit Handwerkzeug lösen. Sobald es um runde, saubere Öffnungen oder Beton geht, lohnt sich die Kernbohrung.'] },
+      { h: 'Vorher klären', checks: [
+        'Ist das Bauteil tragend? Dann vorab den Statiker einbeziehen.',
+        'Verlaufen Leitungen oder Bewehrung an der Stelle? Bohrpunkt markieren und freigeben.',
+        'Welcher Durchmesser wird benötigt? Dann Richtpreis im Rechner berechnen.',
+      ] },
+    ],
+    faqs: [
+      ['Ist Kernbohrung teurer als Meißeln?', 'Pro Öffnung kann die Kernbohrung mehr kosten. Dafür entfallen Nacharbeit, Verputzen und das Risiko von Rissen, sodass sie insgesamt oft günstiger ausfällt. Den genauen Preis zeigt der Kernbohr-Rechner.'],
+      ['Kann man Stahlbeton meißeln?', 'Bei größeren Öffnungen ist das sehr aufwändig und ungenau. Für Stahlbeton ist die Kernbohrung das übliche Verfahren.'],
+      ['Wird bei der Kernbohrung viel Staub erzeugt?', 'Bei der Nassbohrung wird der Staub vom Wasser gebunden. Mit Wassersauger und Abdeckung bleibt der Bereich sauber.'],
+    ],
+  },
+  {
     slug: 'waermepumpe-kernbohrung',
     icon: 'fan',
     date: '2026-11-07',

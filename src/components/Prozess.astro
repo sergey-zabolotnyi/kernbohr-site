@@ -1,0 +1,31 @@
+---
+import Icon from './Icon.astro';
+import { prozess } from '../data/prozess.js';
+import { site } from '../data/site.js';
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage für eine Kernbohrung. Foto sende ich gleich mit.')}`;
+const { eyebrow = 'So arbeiten wir', title = 'In vier Schritten zur fertigen Bohrung' } = Astro.props;
+---
+<section>
+  <div class="wrap">
+    <span class="eyebrow">{eyebrow}</span>
+    <h2>{title}</h2>
+    <ol class="timeline">
+      {prozess.map((s) => (
+        <li>
+          <div class="tl-ico"><Icon name={s.icon} size={24} /></div>
+          <div class="tl-body">
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+            <div class="pills">
+              {(s.badges ?? [s.badge]).map((b) => <span class={`pill ${s.badges ? 'pill-ok' : 'pill-dark'}`}>{s.badges && <Icon name="shield" size={14} />}{b}</span>)}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <div class="btns">
+      <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> Foto per WhatsApp senden</a>
+      <a class="btn btn-main" href="/kontakt/#anfrage"><Icon name="mail" size={20} /> Rückruf anfordern</a>
+    </div>
+  </div>
+</section>
