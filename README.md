@@ -32,3 +32,16 @@ Backup der alten Seite, Weiterleitungen (`public/.htaccess` für Apache oder `pu
 ## Prüfung vor Livegang
 `npm.cmd run check` baut die Live-Version und prüft alle Seiten (Titel, Beschreibungen, canonical, JSON-LD, Links, Sitemap, robots.txt, llms.txt, Preise, Keywords). Muss mit "OK: keine Fehler" enden.
 KI-Dateien: `/llms.txt`, `/llms-full.txt`, `/firmendaten.json` (werden aus den Datendateien erzeugt, Preise nur in `src/data/preisliste.js` ändern).
+
+## Chat-Assistent (optional, Cloudflare Worker)
+
+Код: `worker/` (Worker) и `src/components/Chat.astro` (виджет). Виджет показывается **только** если задана переменная `PUBLIC_CHAT_URL`.
+
+1. `cd worker` → `npx wrangler login` (аккаунт Cloudflare; **переносить DNS домена не нужно**, Worker живёт на адресе `*.workers.dev`).
+2. В `wrangler.toml` проверьте `PROVIDER_URL`/`MODEL` (Groq или xAI Grok) и `ALLOWED_ORIGINS` (добавьте адрес тестового домена).
+3. `npx wrangler secret put API_KEY` → вставьте ключ API (в репозиторий ключ не попадает).
+4. `npx wrangler deploy` → получите адрес вида `https://kernbohr-chat.<аккаунт>.workers.dev`.
+5. В корне сайта создайте файл `.env` со строкой `PUBLIC_CHAT_URL=https://kernbohr-chat.<аккаунт>.workers.dev` и пересоберите сайт.
+6. В Datenschutz автоматически появляется раздел «Chat-Assistent» (нужна юридическая проверка и договор с провайдером).
+
+Цены бот не придумывает: он вызывает `berechne()` из `src/data/preisliste.js`. Лимит расходов задайте в кабинете провайдера API.
