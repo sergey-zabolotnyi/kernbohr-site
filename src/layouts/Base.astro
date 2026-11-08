@@ -138,6 +138,7 @@ const nav = [
     <meta name="geo.placename" content="Dresden" />
     <meta name="author" content={site.company} />
     {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+    <slot name="head" />
   </head>
   <body>
     <header class="top">
