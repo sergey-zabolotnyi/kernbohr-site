@@ -3,17 +3,33 @@ import Base from '../layouts/Base.astro';
 import Rechner from '../components/Rechner.astro';
 import Icon from '../components/Icon.astro';
 import Photo from '../components/Photo.astro';
+import CardMedia from '../components/CardMedia.astro';
 import Gallery from '../components/Gallery.astro';
+import Prozess from '../components/Prozess.astro';
+import { prozess } from '../data/prozess.js';
 import CtaBand from '../components/CtaBand.astro';
 import { site } from '../data/site.js';
 import { services, faqs as allFaqs } from '../data/services.js';
 import { articles } from '../data/articles.js';
 import { orte } from '../data/orte.js';
 import { image, heroStyle } from '../lib/media.js';
-import { faqSchema } from '../lib/schema.js';
+import { faqSchema, howToSchema } from '../lib/schema.js';
 
 const pick = ['Was kostet eine Kernbohrung', 'Arbeiten Sie auch am Wochenende', 'Wie tief können Sie bohren', 'Wie groß können die Bohrdurchmesser', 'Arbeiten Sie staubfrei', 'In welchen Regionen'];
 const faqs = pick.map((p) => allFaqs.find(([q]) => q.startsWith(p))).filter(Boolean);
+// Kartenfotos je Leistung (Foto-ID oder Video-Poster-ID) mit Alt-Text für Poster
+const kartenbild = {
+  kernbohrung: ['werk-bohrstaender'],
+  wanddurchbruch: ['werk-oeffnung-schiene'],
+  betonsaegen: ['video-wandsaege', 'Wandsäge schneidet eine Öffnung in Beton'],
+  fugenschneiden: ['video-fugenschneider', 'Fugenschneider mit Wassertank beim Schneiden einer Betonfläche'],
+  schlitzfraesen: ['werk-unterzug'],
+  'rueckbau-teilabbruch': ['werk-oeffnung-geruest'],
+  'kernbohrung-waermepumpe-klimaanlage': ['werk-fassade'],
+  'wanddurchbruch-dunstabzugshaube': ['werk-wand-125'],
+  'kamin-sanitaer-anschluesse': ['werk-bohrkrone-152'],
+  'kernbohrung-notdienst-wochenende': ['werk-durchfuehrung-decke'],
+};
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage für eine Kernbohrung. Foto der Baustelle sende ich gleich mit.')}`;
 const leistungen = services.filter((s) => s.group === 'Leistung');
 const anwendungen = services.filter((s) => s.group === 'Anwendung');
@@ -25,20 +41,15 @@ const werte = [
   ['shield', 'Saubere Arbeit', 'Wir verlassen Ihre Baustelle aufgeräumt.'],
   ['user', 'Erreichbarkeit', 'Rund um die Uhr erreichbar, auch am Wochenende.'],
 ];
-const ablauf = [
-  ['camera', 'Anfrage', 'Rechner nutzen oder Foto der Baustelle per WhatsApp senden.'],
-  ['euro', 'Angebot', 'Sie erhalten ein konkretes, kostenloses Angebot.'],
-  ['calendar', 'Termin', 'Wir klären Termin, Strom, Wasser und Zugang vorab.'],
-  ['check', 'Ausführung', 'Wir bohren, saugen ab und übergeben aufgeräumt.'],
-];
 ---
 <Base
   title="Kernbohrung Dresden ab 1,20 €/cm | Kernbohr-Expert"
   description="Kernbohrung und Wanddurchbruch in Dresden und Sachsen: Ø 14–500 mm, bis 2 m tief, Preisliste ab 1,20 € je cm. 24/7 erreichbar, auch am Wochenende."
   path="/"
-  schema={[faqSchema(faqs)]}
+  schema={[faqSchema(faqs), howToSchema('Kernbohrung beauftragen und ausführen lassen', prozess.map((s) => [s.t, s.d]))]}
 >
-  <section class={`hero ${hasPhoto ? '' : 'no-photo'}`} style={heroStyle()}>
+  <section class={`hero ${hasPhoto ? 'has-bg' : 'no-photo'}`} style={heroStyle()}>
+    {hasPhoto && <Photo id="werk-wand-gross" eager class="hero-bg" sizes="(max-width: 860px) 100vw, 60vw" />}
     <div class="wrap">
       <div>
         <span class="eyebrow">Kernbohr-Expert · Dresden</span>
@@ -55,7 +66,7 @@ const ablauf = [
           <li><Icon name="map" size={18} /> Bundesweit im Einsatz</li>
         </ul>
       </div>
-      {hasPhoto && <Photo id="werk-wand-gross" eager class="hero-photo" sizes="(max-width: 860px) 100vw, 480px" />}
+      
     </div>
   </section>
 
@@ -75,11 +86,14 @@ const ablauf = [
       <p class="lead">Von der einzelnen Leitungsdurchführung bis zum Rückbau: Betonbearbeitung aus einer Hand.</p>
       <div class="cards">
         {leistungen.map((s) => (
-          <a class="card" href={`/${s.slug}/`}>
-            <div class="ico"><Icon name={s.icon} size={28} /></div>
-            <h3>{s.name}</h3>
-            <p>{s.intro.split('.')[0]}.</p>
-            <span class="more">Mehr erfahren <Icon name="arrow" size={16} /></span>
+          <a class="card has-img" href={`/${s.slug}/`}>
+            {kartenbild[s.slug] && <CardMedia id={kartenbild[s.slug][0]} alt={kartenbild[s.slug][1]} />}
+            <div class="card-body">
+              <div class="ico"><Icon name={s.icon} size={24} /></div>
+              <h3>{s.name}</h3>
+              <p>{s.intro.split('.')[0]}.</p>
+              <span class="more">Mehr erfahren <Icon name="arrow" size={16} /></span>
+            </div>
           </a>
         ))}
       </div>
@@ -92,11 +106,14 @@ const ablauf = [
       <h2>Typische Aufträge im Haus</h2>
       <div class="cards">
         {anwendungen.map((s) => (
-          <a class="card" href={`/${s.slug}/`}>
-            <div class="ico"><Icon name={s.icon} size={28} /></div>
-            <h3>{s.name}</h3>
-            <p>{s.intro.split('.')[0]}.</p>
-            <span class="more">Mehr erfahren <Icon name="arrow" size={16} /></span>
+          <a class="card has-img" href={`/${s.slug}/`}>
+            {kartenbild[s.slug] && <CardMedia id={kartenbild[s.slug][0]} alt={kartenbild[s.slug][1]} />}
+            <div class="card-body">
+              <div class="ico"><Icon name={s.icon} size={24} /></div>
+              <h3>{s.name}</h3>
+              <p>{s.intro.split('.')[0]}.</p>
+              <span class="more">Mehr erfahren <Icon name="arrow" size={16} /></span>
+            </div>
           </a>
         ))}
       </div>
@@ -116,6 +133,7 @@ const ablauf = [
   </section>
 
   <Gallery
+    dark
     eyebrow="Einblick"
     title="So arbeiten wir"
     ids={['werk-bohrstaender', 'video-kernbohr-schiene', 'werk-ueberkopf-1', 'video-wandsaege', 'werk-wand-gross', 'video-fugenschneider']}
@@ -141,17 +159,7 @@ const ablauf = [
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <span class="eyebrow">Ablauf</span>
-      <h2>In vier Schritten zur fertigen Bohrung</h2>
-      <ol class="steps">
-        {ablauf.map(([icon, t, d]) => (
-          <li><strong><Icon name={icon} size={22} /> {t}</strong>{d}</li>
-        ))}
-      </ol>
-    </div>
-  </section>
+  <Prozess />
 
   <section class="soft">
     <div class="wrap">

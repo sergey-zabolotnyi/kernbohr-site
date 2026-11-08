@@ -27,7 +27,7 @@ const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
       <div>
         <span class="eyebrow"><Icon name={a.icon} size={18} /> Ratgeber</span>
         <h1>{a.h1}</h1>
-        <p class="lead">Von {site.company}, Dresden · Stand: {date}</p>
+        <p class="lead byline">Geprüft von {site.owner} <span class="pill pill-ok">Stand: {date}</span></p>
       </div>
     </div>
   </section>
@@ -43,6 +43,12 @@ const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
             {s.p && s.p.map((t) => <p set:html={t} />)}
             {s.ul && <ul>{s.ul.map((t) => <li set:html={t} />)}</ul>}
             {s.ol && <ol>{s.ol.map((t) => <li set:html={t} />)}</ol>}
+            {s.table && (
+              <div class="table-scroll"><table class="facts compare">
+                <thead><tr>{s.table.head.map((h) => <th>{h}</th>)}</tr></thead>
+                <tbody>{s.table.rows.map(([k, ...v]) => <tr><th>{k}</th>{v.map((c) => <td>{c}</td>)}</tr>)}</tbody>
+              </table></div>
+            )}
             {s.checks && (
               <ul class="checks">{s.checks.map((t) => <li><Icon name="check" size={18} /><span set:html={t} /></li>)}</ul>
             )}

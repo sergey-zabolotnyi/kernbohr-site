@@ -20,7 +20,6 @@ Kurzfakten:
 - Technik: Hilti-Kernbohrtechnik, außerdem Wandsäge und Fugenschneider
 - Erfahrung: Inhaber seit 2006 in der Baubranche, Firma seit ${site.founded}, Team von ${site.employees} Mitarbeitern
 - Kunden: Privatkunden, Handwerksbetriebe, Bauunternehmen
-- Sprachen: Deutsch, Russisch
 
 ## Wichtige Seiten
 - [Preise und Preisliste 2026](${u}/preise/): komplette Preise je cm Bohrtiefe, Zuschläge, Beispielrechnungen
@@ -28,6 +27,7 @@ Kurzfakten:
 - [Leistungen](${u}/leistungen/)
 - [Einsatzgebiet](${u}/einsatzgebiet/)
 - [Häufige Fragen](${u}/faq/)
+- [Glossar der Fachbegriffe](${u}/glossar/): Kernbohrung, Nassbohrung, Pilotbohrung, Wanddurchbruch und mehr
 - [Kontakt](${u}/kontakt/)
 - [Referenzen](${u}/referenzen/)
 - [Über uns](${u}/ueber-uns/)

@@ -1,0 +1,22 @@
+---
+// Projekt-Karte: nur mit echten Projektdaten verwenden (siehe src/data/projekte.js).
+const { p } = Astro.props;
+---
+<article class="projekt">
+  {p.vorher && p.nachher ? (
+    <div class="ba">
+      <figure><img src={p.vorher} alt={`${p.titel}: vorher`} loading="lazy" /><figcaption><span class="pill pill-dark">Vorher</span></figcaption></figure>
+      <figure><img src={p.nachher} alt={`${p.titel}: nachher`} loading="lazy" /><figcaption><span class="pill pill-ok">Nachher</span></figcaption></figure>
+    </div>
+  ) : (p.foto && <img class="card-img" src={p.foto} alt={p.titel} loading="lazy" />)}
+  <div class="projekt-body">
+    <h3>{p.titel}</h3>
+    <p class="meta">{p.ort}</p>
+    <div class="pills">
+      <span class="pill pill-accent">Ø {p.durchmesser} mm</span>
+      <span class="pill pill-accent">{p.tiefe} cm tief</span>
+      <span class="pill pill-soft">{p.material}</span>
+      <span class="pill pill-dark">{p.dauer}</span>
+    </div>
+  </div>
+</article>

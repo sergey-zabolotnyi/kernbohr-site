@@ -29,7 +29,8 @@ export const articleSchema = (a) => ({
   datePublished: a.date,
   dateModified: a.date,
   inLanguage: 'de-DE',
-  author: { '@type': 'Organization', name: site.company, url: site.url },
+  author: { '@type': 'Person', '@id': `${site.url}/#inhaber`, name: site.owner, url: `${site.url}/ueber-uns/` },
+  publisher: { '@id': `${site.url}/#business` },
   publisher: { '@id': site.url + '/#business' },
   mainEntityOfPage: `${site.url}/ratgeber/${a.slug}/`,
 });
@@ -47,7 +48,7 @@ export const preisAngebot = (slug) =>
           minPrice: 1.1,
           maxPrice: 11,
           unitText: 'cm Bohrtiefe',
-          description: 'Preisliste 2026: je nach Durchmesser (14–501 mm) und Material. Mindestpreis 250 € je Auftrag, Anfahrt 85 €.',
+          description: 'Preisliste 2026: je nach Durchmesser (14–501 mm) und Material. Mindestauftragswert 250 €, Anfahrt 85 € im Umkreis von ca. 20–30 km um Dresden.',
         },
         seller: { '@id': site.url + '/#business' },
       }
@@ -62,4 +63,12 @@ export const videoSchema = (v, base = site.url) => ({
   contentUrl: `${base}/videos/${v.id}.mp4`,
   uploadDate: '2026-11-07',
   publisher: { '@id': site.url + '/#business' },
+});
+
+// HowTo-Schema für den Ablauf (Schritte als [Name, Text]).
+export const howToSchema = (name, steps) => ({
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name,
+  step: steps.map(([n, t], i) => ({ '@type': 'HowToStep', position: i + 1, name: n, text: t })),
 });
