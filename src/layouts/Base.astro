@@ -24,8 +24,8 @@ const business = {
   url: site.url + '/',
   image: ogImage,
   logo: site.url + '/apple-touch-icon.png',
-  description: 'Kernbohr-Expert in Dresden: Kernbohrung (Ø 14–500 mm, bis 2 m tief), Wanddurchbruch, Betonsägen, Fugenschneiden, Schlitze fräsen und Rückbau. 24/7 erreichbar, auch am Wochenende, in Sachsen und bundesweit.',
-  slogan: 'Kernbohrung in Dresden, 24/7 im Einsatz',
+  description: 'Kernbohr-Expert in Dresden: Kernbohrung (Ø 14–500 mm, bis 2 m tief), Wanddurchbruch, Betonsägen, Fugenschneiden, Schlitze fräsen und Rückbau. Telefonisch Mo–Sa 7–19 Uhr, Einsätze nach Absprache rund um die Uhr, auch am Wochenende, in Sachsen und bundesweit.',
+  slogan: 'Kernbohrung in Dresden, Einsätze rund um die Uhr',
   foundingDate: site.founded,
   vatID: site.vatId,
   founder: { '@id': site.url + '/#inhaber' },
@@ -51,16 +51,16 @@ const business = {
     email: site.email,
     hoursAvailable: {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '07:00',
+      closes: '19:00',
     },
   },
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '00:00',
-    closes: '23:59',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '07:00',
+    closes: '19:00',
   },
   areaServed: [
     ...['Dresden', 'Radebeul', 'Meißen', 'Pirna', 'Freital', 'Heidenau', 'Radeberg', 'Coswig'].map((n) => ({ '@type': 'City', name: n })),
@@ -161,7 +161,7 @@ const nav = [
         <div class="foot-grid">
           <div>
             <h3>{site.company}</h3>
-            <p>Kernbohrung, Betonsägen, Schlitze fräsen und Rückbau. Dresden, bundesweit im Einsatz, 24/7 erreichbar.</p>
+            <p>Kernbohrung, Betonsägen, Schlitze fräsen und Rückbau. Dresden, bundesweit im Einsatz. Einsätze nach Absprache rund um die Uhr.</p>
           </div>
           <div>
             <h3>Leistungen</h3>
@@ -185,7 +185,7 @@ const nav = [
             <div class="row"><Icon name="pin" size={18} /><span>{site.street}<br />{site.zip} {site.city}</span></div>
             <div class="row"><Icon name="phone" size={18} /><a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a></div>
             <div class="row"><Icon name="mail" size={18} /><a href={`mailto:${site.email}`}>{site.email}</a></div>
-            <div class="row"><Icon name="clock" size={18} /><span>24/7 erreichbar<br />Einsatz auch am Wochenende</span></div>
+            <div class="row"><Icon name="clock" size={18} /><span>Telefon Mo–Sa 7–19 Uhr<br />Einsätze nach Absprache 24/7</span></div>
           </div>
         </div>
         <div class="foot-bottom">

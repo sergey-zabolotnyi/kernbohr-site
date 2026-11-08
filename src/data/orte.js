@@ -13,7 +13,7 @@ export const orte = [
       ['Wärmepumpe und Klimagerät', 'Mauerdurchführungen für Wärmepumpen und Split-Klimageräte gehören zu unseren häufigsten Aufträgen.'],
     ],
     faq: [
-      ['Fahren Sie auch kurzfristig nach Radebeul?', 'Ja, Radebeul liegt im Kernbereich unseres Einsatzgebiets. Wir sind 24/7 erreichbar und vereinbaren Termine auch am Wochenende nach Absprache.'],
+      ['Fahren Sie auch kurzfristig nach Radebeul?', 'Ja, Radebeul liegt im Kernbereich unseres Einsatzgebiets. Telefonisch erreichen Sie uns Mo–Sa 7–19 Uhr, Termine auch am Wochenende oder nachts vereinbaren wir nach Absprache.'],
       ['Was kostet die Anfahrt nach Radebeul?', 'Anfahrt und Baustelleneinrichtung berechnen wir mit 85 € je Einsatz. Dieser Satz gilt im Umkreis von ca. 20–30 km um Dresden, also auch für Radebeul.'],
     ],
   },
@@ -29,7 +29,7 @@ export const orte = [
       ['Gewerbe und Industrie', 'Für Gewerbe- und Industrieobjekte im Raum Pirna und Heidenau bohren wir größere Durchmesser und tiefe Bohrungen.'],
     ],
     faq: [
-      ['Arbeiten Sie in Pirna auch an Wochenenden?', 'Ja, nach Absprache. Wir sind 24/7 erreichbar. Ob Arbeiten am Wochenende möglich sind, hängt vom Objekt und von den Ruhezeiten ab, wir klären das vorab mit Ihnen.'],
+      ['Arbeiten Sie in Pirna auch an Wochenenden?', 'Ja, nach Absprache. Einsätze sind rund um die Uhr möglich, telefonisch erreichen Sie uns Mo–Sa 7–19 Uhr. Ob Arbeiten am Wochenende möglich sind, hängt vom Objekt und von den Ruhezeiten ab, wir klären das vorab mit Ihnen.'],
       ['Wie bohren Sie in Sandstein?', 'Mit diamantbesetzten Bohrkronen im Nassverfahren. Wir prüfen vorab Material und Wandstärke anhand Ihrer Fotos.'],
     ],
   },
@@ -61,7 +61,7 @@ export const orte = [
       ['Wärmepumpe', 'Fassadendurchführung für Außengerät und Leitungen: Bohrung, Absaugung und saubere Übergabe.'],
     ],
     faq: [
-      ['Wie schnell sind Sie in Freital?', 'Freital liegt im Kernbereich unseres Einsatzgebiets. Sie erreichen uns 24/7 per Telefon oder WhatsApp, Termine nach Absprache.'],
+      ['Wie schnell sind Sie in Freital?', 'Freital liegt im Kernbereich unseres Einsatzgebiets. Sie erreichen uns Mo–Sa 7–19 Uhr telefonisch und jederzeit per WhatsApp, Einsatztermine nach Absprache auch nachts oder am Wochenende.'],
       ['Welche Durchmesser bohren Sie?', 'Von Ø 14 mm bis Ø 500 mm, größere Durchmesser auf Anfrage.'],
     ],
   },

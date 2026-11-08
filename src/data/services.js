@@ -180,21 +180,21 @@ export const services = [
   {
     slug: 'kernbohrung-notdienst-wochenende',
     group: 'Anwendung',
-    name: 'Einsatz am Wochenende & Notdienst',
-    title: 'Kernbohrung am Wochenende & Notdienst in Dresden',
-    description: 'Kernbohrung, Wanddurchbruch und Betonsägen auch abends, am Wochenende und an Feiertagen in Dresden und Sachsen. 24/7 erreichbar, Angebot per WhatsApp.',
+    name: 'Einsatz nachts & am Wochenende',
+    title: 'Kernbohrung nachts & am Wochenende in Dresden',
+    description: 'Kernbohrung und Betonsägen nachts, am Wochenende und an Feiertagen in Dresden und Sachsen. Einsätze nach Absprache rund um die Uhr, Angebot per WhatsApp.',
     h1: 'Kernbohrung am Wochenende und im Notfall',
-    intro: 'Wenn der Termin drängt: Wir sind rund um die Uhr erreichbar und fahren auch abends, am Wochenende und an Feiertagen zu Ihnen, soweit das am Objekt zulässig ist. In Dresden, Sachsen und bei größeren Projekten bundesweit.',
+    intro: 'Wenn der Termin drängt: Unsere Einsätze sind nach Absprache rund um die Uhr möglich: Wir fahren auch abends, nachts, am Wochenende und an Feiertagen zu Ihnen, soweit das am Objekt zulässig ist. Telefonisch erreichen Sie uns Montag bis Samstag von 7 bis 19 Uhr. In Dresden, Sachsen und bei größeren Projekten bundesweit.',
     facts: [
-      ['Erreichbarkeit', '24 Stunden, 7 Tage die Woche per Telefon und WhatsApp'],
-      ['Einsatzzeiten', 'Auch abends, an Wochenenden und Feiertagen nach Absprache'],
+      ['Telefon', 'Montag bis Samstag, 7 bis 19 Uhr. Nachrichten per WhatsApp oder E-Mail jederzeit'],
+      ['Einsatzzeiten', 'Nach Absprache rund um die Uhr: abends, nachts, an Wochenenden und Feiertagen'],
       ['Typische Fälle', 'Terminprojekte, Umbau im laufenden Betrieb, Gewerbe und Industrie, Baustellen mit engem Zeitplan'],
       ['Zuschläge', 'Nachts (23 bis 6 Uhr) + 75 % auf den Bohrpreis, samstags, sonntags und an Feiertagen + 100 %'],
       ['Wichtig', 'Ruhezeiten, Lärmschutz und Hausordnung gelten auch bei uns. Wir klären vorab, was am Objekt möglich ist'],
       ['Einsatzgebiet', areas],
     ],
     faqs: [
-      ['Arbeiten Sie auch am Wochenende und an Feiertagen?', 'Ja, nach Absprache. Wir sind rund um die Uhr erreichbar und führen Aufträge auch an Wochenenden und Feiertagen aus. Ob das am Objekt zulässig ist, hängt von Ruhezeiten, Lärmschutz und Hausordnung ab. Wir klären das vor dem Termin mit Ihnen oder der Hausverwaltung.'],
+      ['Arbeiten Sie auch am Wochenende und an Feiertagen?', 'Ja, nach Absprache. Unsere Einsätze sind rund um die Uhr möglich, auch an Wochenenden und Feiertagen. Telefonisch erreichen Sie uns Montag bis Samstag von 7 bis 19 Uhr, dort legen wir den Termin fest. Ob das am Objekt zulässig ist, hängt von Ruhezeiten, Lärmschutz und Hausordnung ab. Wir klären das vor dem Termin mit Ihnen oder der Hausverwaltung.'],
       ['Wie schnell können Sie bei einem dringenden Auftrag kommen?', 'Nach Absprache sind wir oft schon am nächsten Tag vor Ort. Das hängt von Auslastung und Entfernung ab. Rufen Sie an oder senden Sie ein Foto per WhatsApp, dann nennen wir Ihnen einen konkreten Termin.'],
       ['Kostet der Einsatz am Wochenende extra?', 'Für Nachteinsätze berechnen wir in der Nachtzeit von 23 bis 6 Uhr 75 % Zuschlag auf den Bohrpreis, samstags, sonntags und an Feiertagen 100 %. Die Grundpreise stehen in unserer Preisliste 2026.'],
       ['Fahren Sie auch in andere Bundesländer?', 'Ja, bei größeren Projekten sind wir bundesweit im Einsatz. Anfahrt, Übernachtung und Einsatzdauer vereinbaren wir individuell im Angebot.'],
@@ -222,7 +222,8 @@ export const faqs = [
 // Icons, Medien (IDs aus media.config.mjs) und passende Ratgeber pro Seite.
 // Medien erscheinen nur, wenn die Dateien vorhanden sind (npm run media).
 faqs.push(
-  ['Arbeiten Sie auch am Wochenende und an Feiertagen?', 'Ja, nach Absprache. Wir sind rund um die Uhr erreichbar und führen Aufträge auch abends, am Wochenende und an Feiertagen aus, soweit Ruhezeiten, Lärmschutz und Hausordnung das zulassen. Zuschläge nennen wir im Angebot.'],
+  ['Wann kann ich Sie anrufen?', 'Telefonisch erreichen Sie uns Montag bis Samstag von 7 bis 19 Uhr. Außerhalb dieser Zeiten senden Sie uns gern eine Nachricht per WhatsApp oder E-Mail, wir melden uns in den Telefonzeiten. Die Einsätze selbst führen wir nach Absprache auch abends, nachts und am Wochenende aus.'],
+  ['Arbeiten Sie auch am Wochenende und an Feiertagen?', 'Ja, nach Absprache. Unsere Einsätze sind rund um die Uhr möglich, auch abends, nachts, am Wochenende und an Feiertagen, soweit Ruhezeiten, Lärmschutz und Hausordnung das zulassen. Zuschläge nennen wir im Angebot.'],
   ['Wie tief können Sie bohren?', 'Wir bohren bis zu 2 m tief. Ein Beispiel aus der Praxis: Kernbohrung Ø 80 mm mit 1 m Tiefe in Stahlbeton.'],
   ['Können Sie schräg bohren oder nur im 90°-Winkel?', 'Wir bohren waagerecht, senkrecht, über Kopf und im Winkel. Überkopf- und Schrägbohrungen berechnen wir mit 50 % Zuschlag.'],
   ['Wie stellen Sie sicher, dass keine versteckten Leitungen beschädigt werden?', 'Wir klären vor der Bohrung Bestandspläne und Leitungsverläufe mit dem Auftraggeber und markieren die Bohrstelle gemeinsam. Wir besitzen ein Ortungsgerät, bohren aber erst an dem Punkt, den der Auftraggeber markiert und freigegeben hat. Er klärt Leitungen, Bewehrung und Statik vorab, bei tragenden Teilen mit dem Statiker. Ohne Markierung und Freigabe bohren wir nicht.'],
