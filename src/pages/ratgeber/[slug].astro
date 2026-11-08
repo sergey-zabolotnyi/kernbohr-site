@@ -27,7 +27,7 @@ const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
       <div>
         <span class="eyebrow"><Icon name={a.icon} size={18} /> Ratgeber</span>
         <h1>{a.h1}</h1>
-        <p class="lead">Von {site.company}, Dresden · Stand: {date}</p>
+        <p class="lead">Von {site.owner}, {site.company}, Dresden · Stand: {date}</p>
       </div>
     </div>
   </section>

@@ -10,7 +10,7 @@ import { services, faqs as allFaqs } from '../data/services.js';
 import { articles } from '../data/articles.js';
 import { orte } from '../data/orte.js';
 import { image, heroStyle } from '../lib/media.js';
-import { faqSchema } from '../lib/schema.js';
+import { faqSchema, howToSchema } from '../lib/schema.js';
 
 const pick = ['Was kostet eine Kernbohrung', 'Arbeiten Sie auch am Wochenende', 'Wie tief können Sie bohren', 'Wie groß können die Bohrdurchmesser', 'Arbeiten Sie staubfrei', 'In welchen Regionen'];
 const faqs = pick.map((p) => allFaqs.find(([q]) => q.startsWith(p))).filter(Boolean);
@@ -28,7 +28,8 @@ const werte = [
 const ablauf = [
   ['camera', 'Anfrage', 'Rechner nutzen oder Foto der Baustelle per WhatsApp senden.'],
   ['euro', 'Angebot', 'Sie erhalten ein konkretes, kostenloses Angebot.'],
-  ['calendar', 'Termin', 'Wir klären Termin, Strom, Wasser und Zugang vorab.'],
+  ['calendar', 'Termin', 'Oft schon am nächsten Tag vor Ort. Strom, Wasser und Zugang klären wir vorab.'],
+  ['pin', 'Markierung und Freigabe', 'Sie markieren die Bohrpunkte und klären Leitungen und Statik vorab, bei tragenden Teilen mit dem Statiker. Erst dann bohren wir.'],
   ['check', 'Ausführung', 'Wir bohren, saugen ab und übergeben aufgeräumt.'],
 ];
 ---
@@ -36,7 +37,7 @@ const ablauf = [
   title="Kernbohrung Dresden ab 1,20 €/cm | Kernbohr-Expert"
   description="Kernbohrung und Wanddurchbruch in Dresden und Sachsen: Ø 14–500 mm, bis 2 m tief, Preisliste ab 1,20 € je cm. 24/7 erreichbar, auch am Wochenende."
   path="/"
-  schema={[faqSchema(faqs)]}
+  schema={[faqSchema(faqs), howToSchema('Kernbohrung beauftragen und ausführen lassen', ablauf.map(([, t, d]) => [t, d]))]}
 >
   <section class={`hero ${hasPhoto ? '' : 'no-photo'}`} style={heroStyle()}>
     <div class="wrap">
@@ -144,7 +145,7 @@ const ablauf = [
   <section>
     <div class="wrap">
       <span class="eyebrow">Ablauf</span>
-      <h2>In vier Schritten zur fertigen Bohrung</h2>
+      <h2>In fünf Schritten zur fertigen Bohrung</h2>
       <ol class="steps">
         {ablauf.map(([icon, t, d]) => (
           <li><strong><Icon name={icon} size={22} /> {t}</strong>{d}</li>
