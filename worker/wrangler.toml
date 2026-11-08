@@ -6,7 +6,8 @@ compatibility_date = "2025-01-01"
 [vars]
 # OpenAI-kompatible Schnittstelle. Groq: https://api.groq.com/openai/v1  | xAI Grok: https://api.x.ai/v1
 PROVIDER_URL = "https://api.groq.com/openai/v1"
-MODEL = "llama-3.3-70b-versatile"
+# Falls ein Modell 'not found' meldet: aktuelle Namen unter https://console.groq.com/docs/models
+MODEL = "openai/gpt-oss-120b"
 # Erlaubte Seiten (durch Komma getrennt). Test-Subdomain hier ergänzen.
 ALLOWED_ORIGINS = "https://kernbohr-expert.de,https://www.kernbohr-expert.de,http://localhost:4321"
 # Der API-Schlüssel kommt NICHT hierher, sondern: npx wrangler secret put API_KEY
