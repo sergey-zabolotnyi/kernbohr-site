@@ -54,7 +54,6 @@ export const services = [
       ['Einsatz', 'Wandöffnungen, Deckenöffnungen, Teilrückbau von Innenwänden'],
       ['Materialien', 'Beton, Stahlbeton, Mauerwerk'],
       ['Besonderheit', 'Geräusch- und vibrationsarmes Arbeiten, auch in bewohnten Gebäuden'],
-      ['Schnitttiefe', '[bis X cm, Inhaber ergänzen]'],
       ['Einsatzgebiet', areas],
     ],
     faqs: [
@@ -70,13 +69,12 @@ export const services = [
     h1: 'Fugenschneiden in Dresden und Sachsen',
     intro: 'Mit dem Fugenschneiden setzen wir Dehn-, Scheinfugen und Trennschnitte in Bodenplatten und Flächen, damit der Beton kontrolliert arbeiten kann und keine wilden Risse entstehen.',
     facts: [
-      ['Einsatz', 'Dehnfugen, Scheinfugen, Trennschnitte [Inhaber bestätigen]'],
+      ['Einsatz', 'Dehnfugen, Scheinfugen, Trennschnitte'],
       ['Untergründe', 'Beton [weitere Untergründe bestätigen]'],
-      ['Schnitttiefe und -breite', '[Inhaber ergänzen]'],
       ['Einsatzgebiet', areas],
     ],
     faqs: [
-      ['Wann sollte man Fugen schneiden?', 'Fugen werden meist kurz nach dem Aushärten des Betons geschnitten, damit er dort reißt, wo er soll. Den passenden Zeitpunkt klären wir mit Ihnen. [Inhaber bestätigen]'],
+      ['Wann sollte man Fugen schneiden?', 'Fugen werden meist kurz nach dem Aushärten des Betons geschnitten, damit er dort reißt, wo er soll. Den passenden Zeitpunkt klären wir mit Ihnen.'],
     ],
   },
   {
@@ -90,7 +88,6 @@ export const services = [
     facts: [
       ['Einsatz', 'Elektro-, Wasser- und Heizungsleitungen, vorbereitende Rückbauarbeiten'],
       ['Materialien', 'Beton, Stahlbeton, Mauerwerk'],
-      ['Schlitzbreite und -tiefe', '[Inhaber ergänzen]'],
       ['Einsatzgebiet', areas],
     ],
     faqs: [
@@ -108,7 +105,7 @@ export const services = [
     facts: [
       ['Einsatz', 'Umbauten im Bestand, Entkernung, Teilrückbau von Wänden'],
       ['Besonderheit', 'Staubarme, lärmreduzierte Durchführung bei laufendem Betrieb'],
-      ['Leistungsumfang', 'Fachgerechte Entsorgung und Schutzmaßnahmen [Inhaber bestätigen]'],
+      ['Leistungsumfang', 'Fachgerechte Entsorgung und Schutzmaßnahmen'],
       ['Einsatzgebiet', areas],
     ],
     faqs: [
@@ -133,7 +130,7 @@ export const services = [
     faqs: [
       ['Welchen Durchmesser brauche ich für die Wärmepumpe?', 'Das hängt von Hersteller und Leitungsführung ab. Schicken Sie uns Datenblatt oder Foto, wir empfehlen den passenden Durchmesser.'],
       ['Wird mein Haus dabei verschmutzt?', 'Wir arbeiten staubarm und decken den Arbeitsbereich ab. Der Bereich wird aufgeräumt übergeben.'],
-      ['Wie lange dauert die Bohrung?', 'Eine Standardbohrung dauert in der Regel wenige Minuten bis etwa eine Stunde inklusive Aufbau. [Inhaber bestätigen]'],
+      ['Wie lange dauert die Bohrung?', 'Eine Standardbohrung dauert in der Regel wenige Minuten bis etwa eine Stunde inklusive Aufbau.'],
     ],
     calculator: true,
   },

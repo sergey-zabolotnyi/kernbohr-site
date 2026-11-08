@@ -41,7 +41,7 @@ export const artikel = [
     faqs: [
       ['Gibt es einen Festpreis pro Bohrung?', 'Ein pauschaler Preis pro Loch ist selten, weil Durchmesser, Tiefe, Material und Zugang den Aufwand bestimmen. Für Standardfälle wie Dunstabzugshaube oder Klimagerät nennen wir gern einen Festpreis nach Foto.'],
       ['Warum ist Stahlbeton teurer als Mauerwerk?', 'Die Bewehrung im Stahlbeton nutzt die Diamantsegmente der Bohrkrone stärker ab, und die Bohrung dauert länger.'],
-      ['Was kostet die Anfahrt?', 'Das hängt von der Entfernung ab und wird im Angebot ausgewiesen. [Inhaber: Anfahrtspauschale für Dresden und Umland ergänzen]'],
+      ['Was kostet die Anfahrt?', 'Im Raum Dresden (ca. 20–30 km) berechnen wir eine Anfahrtspauschale von 85 €. Bei größeren Entfernungen nennen wir den Betrag vorab im Angebot.'],
     ],
     cta: 'Richtpreis im Rechner berechnen',
   },
@@ -85,7 +85,7 @@ export const artikel = [
     ],
     faqs: [
       ['Muss ich bei der Bohrung zu Hause sein?', 'Ja oder eine Vertrauensperson, die den Zugang ermöglicht und die Stelle bestätigt.'],
-      ['Bleiben die Bohrkerne bei mir?', 'Das klären wir vorab. Bohrkerne können mitgenommen und entsorgt werden. [Inhaber bestätigen]'],
+      ['Bleiben die Bohrkerne bei mir?', 'Das klären wir vorab. Bohrkerne können mitgenommen und entsorgt werden.'],
     ],
     cta: 'Foto per WhatsApp senden',
   },

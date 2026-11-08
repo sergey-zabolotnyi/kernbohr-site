@@ -56,7 +56,7 @@ export const articles = [
         'Leitungen für Kältemittel, Heizungsvor- und -rücklauf sowie Strom und Steuerung müssen von der Außeneinheit in das Gebäude geführt werden. Die Kernbohrung liefert eine glatte, runde und passgenaue Öffnung, ohne Erschütterungen, die Risse im Mauerwerk verursachen können.' ] },
       { h: 'Split oder Monoblock: Was geht durch die Wand?', p: [
         'Bei einem Split-Gerät (und bei Klimageräten) laufen in der Regel zwei Kältemittelleitungen plus Strom- und Steuerleitung durch die Wand. Dafür genügen oft kleinere Durchmesser, typisch sind etwa 60–82 mm.',
-        'Bei einem Monoblock-Gerät führen Heizungsvor- und -rücklauf (gedämmt) sowie Strom durch die Wand. Die Bohrung fällt deshalb meist größer aus, typisch sind etwa 100–200 mm. [Inhaber bestätigen] Maßgeblich sind immer die Angaben des Herstellers und die gewählte Dämmung bzw. das Futterrohr.' ] },
+        'Bei einem Monoblock-Gerät führen Heizungsvor- und -rücklauf (gedämmt) sowie Strom durch die Wand. Die Bohrung fällt deshalb meist größer aus, typisch sind etwa 100–200 mm. Maßgeblich sind immer die Angaben des Herstellers und die gewählte Dämmung bzw. das Futterrohr.' ] },
       { h: 'Wandmaterial und Dämmung', p: [
         'Gebohrt wird durch Mauerwerk, Beton oder Stahlbeton, häufig zusätzlich durch ein Wärmedämmverbundsystem. Bei Stahlbeton muss die Bewehrung vorab geortet werden. Die Dämmung wird nach der Durchführung sauber geschlossen, damit keine Wärmebrücke entsteht.' ] },
       { h: 'Die richtige Position', ul: [
@@ -90,7 +90,7 @@ export const articles = [
     faqs: [
       ['Welchen Durchmesser braucht meine Wärmepumpe?', 'Das hängt vom Gerät und der Leitungsführung ab. Senden Sie uns Datenblatt und Foto, wir nennen den passenden Durchmesser.'],
       ['Brauche ich einen Statiker?', 'Bei tragenden Wänden oder mehreren Bohrungen nah beieinander ist eine Abstimmung sinnvoll. Wir beraten Sie dazu gern.'],
-      ['Wie lange dauert die Bohrung?', 'Eine Standardbohrung dauert in der Regel wenige Minuten bis etwa eine Stunde inklusive Aufbau. [Inhaber bestätigen]'],
+      ['Wie lange dauert die Bohrung?', 'Eine Standardbohrung dauert in der Regel wenige Minuten bis etwa eine Stunde inklusive Aufbau.'],
     ],
   },
   {
@@ -176,9 +176,9 @@ export const articles = [
     answer: 'In Dresden bohren wir in sehr unterschiedlichen Gebäuden: dicke Ziegelwände im Altbau, tragende Betonfertigteile im Plattenbau und bewehrten Stahlbeton im Neubau. Jedes Material verlangt andere Technik, Vorsicht und Abstimmung, bei denkmalgeschützten Häusern zusätzlich die Denkmalschutzbehörde.',
     sections: [
       { h: 'Altbau (Gründerzeit und Vorkriegsbauten)', p: [
-        'In Vierteln wie Neustadt, Striesen, Blasewitz oder Plauen stehen viele Gebäude mit massiven Ziegelwänden. Die Wände sind oft deutlich dicker als im Neubau, [typisch etwa 38 cm und mehr, Inhaber bestätigen], das Material ist weich, aber die Bohrtiefe groß. Wichtig sind Staubschutz, empfindliche Putze und Stuck sowie die Beachtung von Holzbalkendecken.' ] },
+        'In Vierteln wie Neustadt, Striesen, Blasewitz oder Plauen stehen viele Gebäude mit massiven Ziegelwänden. Die Wände sind oft deutlich dicker als im Neubau, typisch etwa 38 cm und mehr, das Material ist weich, aber die Bohrtiefe groß. Wichtig sind Staubschutz, empfindliche Putze und Stuck sowie die Beachtung von Holzbalkendecken.' ] },
       { h: 'Plattenbau', p: [
-        'In Plattenbau-Quartieren wie Gorbitz, Prohlis oder Johannstadt bestehen Wände und Decken aus Betonfertigteilen. Viele dieser Bauteile sind tragend. Eingriffe sind nur nach Abstimmung mit Eigentümer bzw. Wohnungsunternehmen und gegebenenfalls Statiker möglich. Für Leitungsdurchführungen, Lüftung oder Klimageräte gibt es oft vorgesehene Bereiche. [Inhaber prüfen]' ] },
+        'In Plattenbau-Quartieren wie Gorbitz, Prohlis oder Johannstadt bestehen Wände und Decken aus Betonfertigteilen. Viele dieser Bauteile sind tragend. Eingriffe sind nur nach Abstimmung mit Eigentümer bzw. Wohnungsunternehmen und gegebenenfalls Statiker möglich. Für Leitungsdurchführungen, Lüftung oder Klimageräte gibt es oft vorgesehene Bereiche.' ] },
       { h: 'Neubau und Stahlbeton', p: [
         'Im Neubau trifft man häufig auf Stahlbeton mit dichter Bewehrung. Die Bewehrung wird vorab geortet, damit tragende Stäbe nicht ohne Freigabe durchtrennt werden. Diamantbohrkronen durchtrennen Bewehrung, der Aufwand und die Zeit steigen dabei.' ] },
       { h: 'Denkmalschutz', p: [
