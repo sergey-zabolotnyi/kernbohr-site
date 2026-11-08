@@ -181,12 +181,15 @@ import { site } from '../data/site.js';
     .kb-pair{grid-template-columns:1fr 80px}
   }
   /* Schritte: am Desktop alle offen und als Überschrift, am Handy Akkordeon */
-  .kb-step{border:0;padding:0;margin:0 0 .4rem;background:none}
+  .kb-step{border:0;padding:0;margin:0 0 .4rem;background:none;box-shadow:none}
   .kb-step>summary{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.02rem;padding:.2rem 0 .6rem;list-style:none;cursor:default;position:relative}
   .kb-step>summary::-webkit-details-marker{display:none}
   .kb-step>summary::after{display:none}
   .kb-step>summary small{font-weight:500;color:#6b747c;font-size:.8rem}
   .kb-n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--kb-accent);color:#fff;font-size:.85rem;font-weight:800}
+  .kb-details{border:0;background:none;padding:0;margin:0;box-shadow:none;border-radius:0}
+  .kb-step{box-shadow:none}
+  .kb-details{border:0;background:none;box-shadow:none;padding:0;margin:0;color:inherit}
   .kb-details>summary{list-style:none;font-size:.82rem;color:#f8a66e;cursor:pointer;margin:.2rem 0 .3rem;display:none}
   .kb-details>summary::-webkit-details-marker{display:none}
   @media (max-width:860px){
