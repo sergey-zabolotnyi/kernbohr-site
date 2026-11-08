@@ -377,3 +377,7 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
   .card:not(.has-img) h3{margin:0;font-size:1.02rem}
   .card:not(.has-img) p{margin:0;font-size:.88rem}
 }
+
+.foot-bottom .made-by{display:block;margin-top:6px;font-size:.78rem;opacity:.55}
+.foot-bottom .made-by a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.foot-bottom .made-by a:hover{opacity:1}

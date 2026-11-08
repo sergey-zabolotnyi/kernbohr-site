@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import CardMedia from '../../components/CardMedia.astro';
+import { artikelBild } from '../../data/kartenbild.js';
 import { articles } from '../../data/articles.js';
 import { heroStyle } from '../../lib/media.js';
 import { crumbSchema } from '../../lib/schema.js';
@@ -27,11 +29,14 @@ import { crumbSchema } from '../../lib/schema.js';
     <div class="wrap">
       <div class="cards">
         {articles.map((a) => (
-          <a class="card" href={`/ratgeber/${a.slug}/`}>
-            <div class="ico"><Icon name={a.icon} size={28} /></div>
-            <h3>{a.title}</h3>
-            <p>{a.short}</p>
-            <span class="more">Lesen <Icon name="arrow" size={16} /></span>
+          <a class="card has-img" href={`/ratgeber/${a.slug}/`}>
+            {artikelBild[a.slug] && <CardMedia id={artikelBild[a.slug]} />}
+            <div class="card-body">
+              <div class="ico"><Icon name={a.icon} size={24} /></div>
+              <h3>{a.title}</h3>
+              <p>{a.short}</p>
+              <span class="more">Lesen <Icon name="arrow" size={16} /></span>
+            </div>
           </a>
         ))}
       </div>

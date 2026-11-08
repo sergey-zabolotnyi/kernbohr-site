@@ -4,6 +4,7 @@ import Rechner from '../components/Rechner.astro';
 import Icon from '../components/Icon.astro';
 import Photo from '../components/Photo.astro';
 import CardMedia from '../components/CardMedia.astro';
+import { kartenbild } from '../data/kartenbild.js';
 import Gallery from '../components/Gallery.astro';
 import Prozess from '../components/Prozess.astro';
 import { prozess } from '../data/prozess.js';
@@ -17,19 +18,6 @@ import { faqSchema, howToSchema } from '../lib/schema.js';
 
 const pick = ['Was kostet eine Kernbohrung', 'Arbeiten Sie auch am Wochenende', 'Wie tief können Sie bohren', 'Wie groß können die Bohrdurchmesser', 'Arbeiten Sie staubfrei', 'In welchen Regionen'];
 const faqs = pick.map((p) => allFaqs.find(([q]) => q.startsWith(p))).filter(Boolean);
-// Kartenfotos je Leistung (Foto-ID oder Video-Poster-ID) mit Alt-Text für Poster
-const kartenbild = {
-  kernbohrung: ['werk-bohrstaender'],
-  wanddurchbruch: ['werk-oeffnung-schiene'],
-  betonsaegen: ['video-wandsaege', 'Wandsäge schneidet eine Öffnung in Beton'],
-  fugenschneiden: ['video-fugenschneider', 'Fugenschneider mit Wassertank beim Schneiden einer Betonfläche'],
-  schlitzfraesen: ['werk-unterzug'],
-  'rueckbau-teilabbruch': ['werk-oeffnung-geruest'],
-  'kernbohrung-waermepumpe-klimaanlage': ['werk-fassade'],
-  'wanddurchbruch-dunstabzugshaube': ['werk-wand-125'],
-  'kamin-sanitaer-anschluesse': ['werk-bohrkrone-152'],
-  'kernbohrung-notdienst-wochenende': ['werk-durchfuehrung-decke'],
-};
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage für eine Kernbohrung. Foto der Baustelle sende ich gleich mit.')}`;
 const leistungen = services.filter((s) => s.group === 'Leistung');
 const anwendungen = services.filter((s) => s.group === 'Anwendung');

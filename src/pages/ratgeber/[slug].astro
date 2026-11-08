@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { articles } from '../../data/articles.js';
 import { site } from '../../data/site.js';
+import { artikelBild } from '../../data/kartenbild.js';
 import { heroStyle } from '../../lib/media.js';
 import { crumbSchema, faqSchema, articleSchema } from '../../lib/schema.js';
 
@@ -22,7 +23,7 @@ const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
   schema={[crumbSchema([['Ratgeber', '/ratgeber/'], [a.title, `/ratgeber/${a.slug}/`]]), articleSchema(a), faqSchema(a.faqs)]}
 >
   <Breadcrumbs items={[['Ratgeber', '/ratgeber/'], [a.title]]} />
-  <section class="hero small" style={heroStyle('werk-durchfuehrung-decke')}>
+  <section class="hero small" style={heroStyle(artikelBild[a.slug] || 'werk-durchfuehrung-decke')}>
     <div class="wrap">
       <div>
         <span class="eyebrow"><Icon name={a.icon} size={18} /> Ratgeber</span>

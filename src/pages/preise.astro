@@ -5,6 +5,7 @@ import Icon from '../components/Icon.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { faktoren, richtwerte, preisFaqs } from '../data/preise.js';
+import CardMedia from '../components/CardMedia.astro';
 import { staffelKompakt, zuschlagTabelle, berechne, eur, stand, regeln } from '../data/preisliste.js';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema, faqSchema, preisAngebot } from '../lib/schema.js';
@@ -65,11 +66,14 @@ const beispiele = [
       <span class="eyebrow">Beispiele</span>
       <h2>Beispielrechnungen</h2>
       <div class="cards">
-        {beispiele.map((b) => (
-          <div class="card">
-            <h3>{b.t}</h3>
-            <p>{b.desc}</p>
-            <p><strong>ca. {eur(b.r.total)}</strong>{b.r.mindestpreisGreift ? ` (Mindestpreis, Rechenwert ${eur(b.r.summe)})` : ''}<br />inkl. Anfahrt {eur(regeln.anfahrt)}</p>
+        {beispiele.map((b, i) => (
+          <div class="card has-img">
+            <CardMedia id={['werk-fassade', 'werk-bohrstaender', 'werk-wand-125'][i % 3]} />
+            <div class="card-body">
+              <h3>{b.t}</h3>
+              <p>{b.desc}</p>
+              <p><strong>ca. {eur(b.r.total)}</strong>{b.r.mindestpreisGreift ? ` (Mindestpreis, Rechenwert ${eur(b.r.summe)})` : ''}<br />inkl. Anfahrt {eur(regeln.anfahrt)}</p>
+            </div>
           </div>
         ))}
       </div>
