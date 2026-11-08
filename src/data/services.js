@@ -189,14 +189,14 @@ export const services = [
       ['Erreichbarkeit', '24 Stunden, 7 Tage die Woche per Telefon und WhatsApp'],
       ['Einsatzzeiten', 'Auch abends, an Wochenenden und Feiertagen nach Absprache'],
       ['Typische Fälle', 'Terminprojekte, Umbau im laufenden Betrieb, Gewerbe und Industrie, Baustellen mit engem Zeitplan'],
-      ['Zuschläge', 'Für Abend, Nacht, Wochenende und Feiertag nach Angebot [Inhaber: Zuschläge nennen]'],
+      ['Zuschläge', 'Nachts + 75 % auf den Bohrpreis, nachts am Wochenende oder Feiertag + 175 %. Tagsüber am Wochenende oder Feiertag auf Anfrage'],
       ['Wichtig', 'Ruhezeiten, Lärmschutz und Hausordnung gelten auch bei uns. Wir klären vorab, was am Objekt möglich ist'],
       ['Einsatzgebiet', areas],
     ],
     faqs: [
       ['Arbeiten Sie auch am Wochenende und an Feiertagen?', 'Ja, nach Absprache. Wir sind rund um die Uhr erreichbar und führen Aufträge auch an Wochenenden und Feiertagen aus. Ob das am Objekt zulässig ist, hängt von Ruhezeiten, Lärmschutz und Hausordnung ab. Wir klären das vor dem Termin mit Ihnen oder der Hausverwaltung.'],
-      ['Wie schnell können Sie bei einem dringenden Auftrag kommen?', 'Das hängt von Auslastung und Entfernung ab. Rufen Sie an oder senden Sie ein Foto per WhatsApp, dann nennen wir Ihnen einen konkreten Termin. [Inhaber: typische Reaktionszeit ergänzen]'],
-      ['Kostet der Einsatz am Wochenende extra?', 'Für Einsätze außerhalb üblicher Zeiten berechnen wir Zuschläge nach Absprache. Die Grundpreise stehen in unserer Preisliste 2026. [Inhaber: Zuschläge nennen]'],
+      ['Wie schnell können Sie bei einem dringenden Auftrag kommen?', 'Nach Absprache sind wir oft schon am nächsten Tag vor Ort. Das hängt von Auslastung und Entfernung ab. Rufen Sie an oder senden Sie ein Foto per WhatsApp, dann nennen wir Ihnen einen konkreten Termin.'],
+      ['Kostet der Einsatz am Wochenende extra?', 'Für Nachteinsätze berechnen wir 75 % Zuschlag auf den Bohrpreis, nachts am Wochenende oder an Feiertagen insgesamt 175 %. Für Einsätze tagsüber am Wochenende oder Feiertag nennen wir Ihnen den Preis auf Anfrage. Die Grundpreise stehen in unserer Preisliste 2026.'],
       ['Fahren Sie auch in andere Bundesländer?', 'Ja, bei größeren Projekten sind wir bundesweit im Einsatz. Anfahrt, Übernachtung und Einsatzdauer vereinbaren wir individuell im Angebot.'],
     ],
     calculator: true,
@@ -225,8 +225,8 @@ faqs.push(
   ['Arbeiten Sie auch am Wochenende und an Feiertagen?', 'Ja, nach Absprache. Wir sind rund um die Uhr erreichbar und führen Aufträge auch abends, am Wochenende und an Feiertagen aus, soweit Ruhezeiten, Lärmschutz und Hausordnung das zulassen. Zuschläge nennen wir im Angebot.'],
   ['Wie tief können Sie bohren?', 'Wir bohren bis zu 2 m tief. Ein Beispiel aus der Praxis: Kernbohrung Ø 80 mm mit 1 m Tiefe in Stahlbeton.'],
   ['Können Sie schräg bohren oder nur im 90°-Winkel?', 'Wir bohren waagerecht, senkrecht, über Kopf und im Winkel. Überkopf- und Schrägbohrungen berechnen wir mit 50 % Zuschlag.'],
-  ['Wie stellen Sie sicher, dass keine versteckten Leitungen beschädigt werden?', 'Wir klären vor der Bohrung Bestandspläne und Leitungsverläufe mit dem Auftraggeber und markieren die Bohrstelle gemeinsam. [Inhaber: Ortungsgerät / Vorgehen ergänzen]'],
-  ['Wie lange dauert ein typischer Auftrag?', 'Eine einzelne Bohrung für Wärmepumpe oder Klimagerät dauert in der Regel nur kurze Zeit. Bei Privatkunden schaffen wir mehrere Wärmepumpen-Termine pro Tag [Inhaber: Zahl bestätigen]. Größere Projekte planen wir nach Aufwand.'],
+  ['Wie stellen Sie sicher, dass keine versteckten Leitungen beschädigt werden?', 'Wir klären vor der Bohrung Bestandspläne und Leitungsverläufe mit dem Auftraggeber und markieren die Bohrstelle gemeinsam. Wir besitzen ein Ortungsgerät, bohren aber erst an dem Punkt, den der Auftraggeber markiert und freigegeben hat. Er klärt Leitungen, Bewehrung und Statik vorab, bei tragenden Teilen mit dem Statiker. Ohne Markierung und Freigabe bohren wir nicht.'],
+  ['Wie lange dauert ein typischer Auftrag?', 'Eine einzelne Bohrung für Wärmepumpe oder Klimagerät dauert in der Regel nur kurze Zeit. Nach Absprache sind wir oft schon am zweiten Tag nach Ihrem Anruf auf der Baustelle. Größere Projekte planen wir nach Aufwand.'],
 );
 
 const extra = {

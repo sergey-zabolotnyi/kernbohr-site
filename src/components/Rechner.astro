@@ -1,5 +1,5 @@
 ---
-import { regeln } from '../data/preisliste.js';
+import { regeln, eur } from '../data/preisliste.js';
 import { site } from '../data/site.js';
 ---
 <section id="kb-rechner" class="kb-rechner" aria-labelledby="kb-title" data-wa={site.whatsapp} data-mail={site.email}>
@@ -39,6 +39,15 @@ import { site } from '../data/site.js';
       </select>
     </div>
 
+    <div class="kb-field">
+      <label for="kb-zeit">Einsatzzeit</label>
+      <select id="kb-zeit">
+        <option value="tag">Tagsüber, Werktag (Standard)</option>
+        <option value="nacht">Nachts (+75 %)</option>
+        <option value="nacht-we">Nachts am Wochenende oder Feiertag (+175 %)</option>
+      </select>
+    </div>
+
     <fieldset class="kb-field">
       <legend>Zusatzleistungen</legend>
       <label class="kb-check"><input type="checkbox" id="kb-water"> Wassersauger mit Bediener ({regeln.wassersaugerTag} €/Tag)</label>
@@ -55,7 +64,7 @@ import { site } from '../data/site.js';
     <div class="kb-price"><span id="kb-total">–</span></div>
     <ul class="kb-break" id="kb-break"></ul>
     <div class="kb-min" id="kb-min" hidden>Mindestauftragswert {regeln.mindestpreis} € angewendet.</div>
-    <p class="kb-note">Richtwert, unverbindlich. Preise laut Preisliste 2026 [Inhaber: netto/brutto bestätigen]. Stahlbewehrung ab 1,5 cm (1 €/cm), Pilotbohrung und Wartezeit werden bei Bedarf gesondert berechnet. Bohrtiefe bis {regeln.maxTiefeCm / 100} m. Anfahrt gilt im Umkreis von ca. 20–30 km um Dresden, darüber hinaus nach Vereinbarung.</p>
+    <p class="kb-note">Richtwert, unverbindlich. Alle Preise sind Endpreise (brutto) laut Preisliste 2026. Die Pilotbohrung (Dübel für den Bohrständer, {eur(regeln.pilotbohrung)} je Bohrung) ist enthalten. Stahlbewehrung ab 1,5 cm (1 €/cm) und Wartezeit werden bei Bedarf gesondert berechnet. Einsätze am Wochenende oder Feiertag tagsüber auf Anfrage. Bohrtiefe bis {regeln.maxTiefeCm / 100} m. Anfahrt gilt im Umkreis von ca. 20–30 km um Dresden, darüber hinaus nach Vereinbarung.</p>
   </div>
 
   <div class="kb-actions">
@@ -96,7 +105,7 @@ import { site } from '../data/site.js';
   const $ = (id) => document.getElementById(id);
   const el = {
     material: $('kb-material'), dia: $('kb-dia'), diaOut: $('kb-dia-out'), depth: $('kb-depth'),
-    count: $('kb-count'), dir: $('kb-dir'), water: $('kb-water'), scaffold: $('kb-scaffold'),
+    count: $('kb-count'), dir: $('kb-dir'), zeit: $('kb-zeit'), water: $('kb-water'), scaffold: $('kb-scaffold'),
     days: $('kb-days'), daysWrap: $('kb-days-wrap'), total: $('kb-total'), list: $('kb-break'),
     min: $('kb-min'), wa: $('kb-wa'), mail: $('kb-mail'),
   };
@@ -117,6 +126,7 @@ import { site } from '../data/site.js';
       d, tiefe, anzahl, tage,
       material: el.material.value,
       richtung: el.dir.value,
+      zeit: el.zeit.value,
       wasser: el.water.checked,
       geruest: el.scaffold.checked,
     });
