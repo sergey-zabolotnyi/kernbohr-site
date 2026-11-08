@@ -1,7 +1,7 @@
 // Ausführliche Faktenfassung für KI-Assistenten, erzeugt aus denselben Daten wie die Website.
 import { site } from '../data/site.js';
 import { services, faqs } from '../data/services.js';
-import { staffel, zuschlagTabelle, regeln, stand, eur } from '../data/preisliste.js';
+import { staffelKompakt, zuschlagTabelle, regeln, stand, eur } from '../data/preisliste.js';
 import { orte } from '../data/orte.js';
 
 export function GET() {
@@ -37,7 +37,7 @@ Telefonische Erreichbarkeit: Montag bis Samstag, 7 bis 19 Uhr (Nachrichten per W
 ## Preisliste 2026 (Stand ${stand}), Preis je cm Bohrtiefe
 | Durchmesser (mm) | Beton / Stahlbeton | Mauerwerk |
 |---|---|---|
-${staffel.map(([lo, hi, b, m]) => `| ${lo}–${hi} | ${eur(b)} | ${eur(m)} |`).join('\n')}
+${staffelKompakt.map(([lo, hi, b, m]) => `| ${lo}–${hi} | ${eur(b)} | ${eur(m)} |`).join('\n')}
 
 Zuschläge und Nebenleistungen:
 ${zuschlagTabelle.map(([a, b]) => `- ${a}: ${b}`).join('\n')}
