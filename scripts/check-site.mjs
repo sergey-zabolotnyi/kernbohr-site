@@ -80,7 +80,7 @@ for (const { url, html } of pages) {
 }
 
 // Pflicht-Keywords: mindestens eine Seite mit Keyword in Title/H1/H2
-const need = ['kernbohrung dresden', 'wanddurchbruch', 'betonsägen', 'fugenschneiden', 'schlitze fräsen', 'wärmepumpe', 'kosten', 'preis', 'wochenende', 'notdienst', 'radebeul', 'pirna', 'meißen', 'freital', 'radeberg', 'rückbau', 'klima', 'dunstabzug'];
+const need = ['kernbohrung dresden', 'wanddurchbruch', 'betonsägen', 'fugenschneiden', 'schlitze fräsen', 'wärmepumpe', 'kosten', 'preis', 'wochenende', 'nachts', 'radebeul', 'pirna', 'meißen', 'freital', 'radeberg', 'rückbau', 'klima', 'dunstabzug'];
 const all = Object.values(kw).join(' ');
 for (const k of need) if (!all.includes(k)) err('Keywords', `"${k}" fehlt in Title/H1/H2 aller Seiten`);
 

@@ -10,7 +10,7 @@ export function GET() {
   const u = site.url;
   const body = `# ${site.company} (Inhaber: ${site.owner})
 
-> Kernbohrung, Wanddurchbruch, Betonsägen, Fugenschneiden, Schlitze fräsen und Rückbau in Dresden und Sachsen, bundesweit für größere Projekte. 24/7 erreichbar, Einsätze auch abends, am Wochenende und an Feiertagen nach Absprache. Preisliste 2026 öffentlich: Kernbohrung ab 1,20 € je cm Bohrtiefe, Mindestpreis 250 €.
+> Kernbohrung, Wanddurchbruch, Betonsägen, Fugenschneiden, Schlitze fräsen und Rückbau in Dresden und Sachsen, bundesweit für größere Projekte. Telefonisch Mo–Sa 7–19 Uhr erreichbar; Einsätze nach Absprache rund um die Uhr, auch abends, am Wochenende und an Feiertagen. Preisliste 2026 öffentlich: Kernbohrung ab 1,20 € je cm Bohrtiefe, Mindestpreis 250 €.
 
 Kurzfakten:
 - Standort: ${site.street}, ${site.zip} ${site.city}, ${site.region}, Deutschland

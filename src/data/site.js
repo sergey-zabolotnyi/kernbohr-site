@@ -13,7 +13,8 @@ export const site = {
   region: 'Sachsen',
   vatId: 'DE329736604',
   founded: '2017',
-  hoursText: '24/7 erreichbar, Einsätze auch abends, am Wochenende und an Feiertagen nach Absprache',  // [Inhaber bestätigen]
+  phoneHours: 'Mo–Sa 7–19 Uhr',          // Inhaber: telefonisch Montag bis Samstag 7 bis 19 Uhr
+  hoursText: 'Telefonisch Mo–Sa 7–19 Uhr. Einsätze nach Absprache rund um die Uhr, auch abends, am Wochenende und an Feiertagen',
   sinceBranche: '2006',                // Inhaber in der Baubranche seit 2006 (Firma gegründet 2017)
   employees: 8,                        // [Inhaber bestätigen]
   areas: ['Dresden', 'Pirna', 'Radebeul', 'Meißen', 'Sachsen'],
