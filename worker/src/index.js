@@ -106,7 +106,7 @@ export default {
         const r = await fetch(`${env.PROVIDER_URL}/chat/completions`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${env.API_KEY}` },
-          body: JSON.stringify({ model: env.MODEL, messages, ...(tools ? { tools, tool_choice: 'auto' } : {}), max_tokens: 450, temperature: 0.2 }),
+          body: JSON.stringify({ model: env.MODEL, messages, ...(tools ? { tools, tool_choice: 'auto' } : {}), max_tokens: 900, temperature: 0.2, ...(String(env.MODEL).startsWith('openai/gpt-oss') ? { reasoning_effort: 'low' } : {}) }),
         });
         if (!r.ok) {
           const t = (await r.text()).slice(0, 300);
