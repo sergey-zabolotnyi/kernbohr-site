@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site.js';
+const chat = !!import.meta.env.PUBLIC_CHAT_URL;
 ---
 <Base title="Datenschutzerklärung | Kernbohr-Expert" description="Datenschutzerklärung von Kernbohr-Expert, Dresden: Welche Daten beim Besuch dieser Website verarbeitet werden und welche Rechte Sie haben." path="/datenschutzerklaerung/">
   <section>
@@ -23,6 +24,11 @@ import { site } from '../data/site.js';
       <h2>5. Kontaktaufnahme</h2>
       <p>Wenn Sie uns per Telefon, E-Mail oder WhatsApp kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Inhalt der Anfrage, ggf. Fotos), um Ihre Anfrage zu bearbeiten (Art. 6 Abs. 1 lit. b bzw. f DSGVO). Die Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
       <p>Die Schaltflächen „WhatsApp" und „E-Mail" sind einfache Links. Erst wenn Sie darauf klicken, öffnet sich die jeweilige App, und es gelten die Datenschutzbestimmungen des jeweiligen Anbieters (z. B. WhatsApp).</p>
+
+      {chat && (<>
+      <h2>5a. Chat-Assistent</h2>
+      <p>Auf dieser Website können Sie einen KI-gestützten Chat-Assistenten nutzen. Er wird erst nach Ihrer ausdrücklichen Zustimmung (Art. 6 Abs. 1 lit. a DSGVO) aktiv. Ihre Eingaben werden über einen Server bei Cloudflare, Inc. (USA) an einen KI-Anbieter (z. B. Groq, Inc. oder xAI Corp., USA) übermittelt, der die Antwort erzeugt. Wir speichern die Chatverläufe nicht und setzen keine Cookies. Bitte geben Sie im Chat keine personenbezogenen Daten ein. Die Übermittlung in die USA stützt sich auf die jeweiligen Datenschutzgarantien der Anbieter (z. B. EU-US Data Privacy Framework oder Standardvertragsklauseln). <strong>[Anbieter, Vertrag zur Auftragsverarbeitung und Rechtsgrundlage vor Livegang prüfen]</strong></p>
+      </>)}
 
       <h2>6. Ihre Rechte</h2>
       <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO).</p>

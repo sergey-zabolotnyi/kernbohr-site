@@ -2,6 +2,7 @@
 import '@fontsource/barlow-condensed/600.css';
 import '@fontsource/barlow-condensed/700.css';
 import '../styles/global.css';
+import Chat from '../components/Chat.astro';
 import Icon from '../components/Icon.astro';
 import { site } from '../data/site.js';
 import { services } from '../data/services.js';
@@ -195,6 +196,8 @@ const nav = [
         </div>
       </div>
     </footer>
+
+    <Chat />
 
     <nav class="sticky" aria-label="Schnellkontakt">
       <a href={`tel:${site.phoneTel}`}><Icon name="phone" size={18} /> Anrufen</a>
