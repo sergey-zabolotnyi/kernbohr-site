@@ -66,7 +66,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
     const chips = $('.kc-chips'), consent = $('.kc-consent');
     const history = [];
     const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    const link = (t) => esc(t).replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)]/g, (u) => `<a href="${u}" target="_blank" rel="noopener">${u.includes('wa.me') ? 'WhatsApp öffnen' : u}</a>`);
+    const link = (t) => esc(t.replace(/\*\*|__/g, '').replace(/[\u202f\u00a0]/g, ' ')).replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)]/g, (u) => `<a href="${u}" target="_blank" rel="noopener">${u.includes('wa.me') ? 'WhatsApp öffnen' : u}</a>`);
     const add = (cls, html) => { const d = document.createElement('div'); d.className = 'kc-m ' + cls; d.innerHTML = html; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; };
     const toggle = (open) => { panel.hidden = !open; fab.setAttribute('aria-expanded', String(open)); if (open && !form.hidden) input.focus(); };
     fab.addEventListener('click', () => toggle(panel.hidden));
