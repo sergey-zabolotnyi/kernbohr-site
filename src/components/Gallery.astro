@@ -15,7 +15,7 @@ const list = items(ids);
             {m.type === 'image' ? (
               <Photo id={m.id} sizes="(max-width: 600px) 100vw, 33vw" />
             ) : (
-              <video controls preload="metadata" playsinline poster={`/posters/${m.id}.jpg`} src={`/videos/${m.id}.mp4`} aria-label={m.alt}></video>
+              <video controls preload="none" playsinline poster={`/posters/${m.id}.jpg`} src={`/videos/${m.id}.mp4`} aria-label={m.alt}></video>
             )}
             {m.caption && <figcaption>{m.caption}</figcaption>}
           </figure>
