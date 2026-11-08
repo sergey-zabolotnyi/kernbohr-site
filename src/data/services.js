@@ -215,7 +215,7 @@ export const faqs = [
   ['Was kostet eine Kernbohrung oder ein Rückbau?', 'Die Preise hängen ab von Material, Durchmesser, Anzahl, Zugänglichkeit und Aufwand. Mit dem Kernbohr-Rechner erhalten Sie einen ersten Richtwert, gerne erstellen wir Ihnen außerdem ein kostenloses und unverbindliches Angebot.'],
   ['Welche Unterlagen oder Informationen benötigen Sie zur Angebotserstellung?', 'Ideal sind Grundrisse, Fotos der Einsatzstelle und Angaben zu Materialstärke, Durchmesser, Zugangsmöglichkeiten und Zeitfenster. Ein Foto per WhatsApp genügt oft schon.'],
   ['Arbeiten Sie staubfrei?', 'Wir arbeiten staubarm und erschütterungsarm, decken den Arbeitsbereich ab und hinterlassen die Baustelle aufgeräumt. Vollständig ohne Staub ist bei Arbeiten an Beton kein Verfahren, durch Nassbohren und Absaugung bleibt er aber auf ein Minimum begrenzt. [Absaugung bestätigen]'],
-  ['Welchen Stromanschluss benötigen Sie vor Ort?', 'Für kleine und mittlere Durchmesser genügt in der Regel eine Steckdose mit 230 V. Für große Durchmesser oder stark bewehrten Beton nutzen wir leistungsstärkere Geräte mit 400 V (Drehstrom). [Inhaber bestätigen] Wir klären das vorab mit Ihnen.'],
+  ['Welchen Stromanschluss benötigen Sie vor Ort?', 'Wir arbeiten wahlweise mit 230 V oder mit 400 V (Drehstrom, per Adapter auf 16 A). Für kleine und mittlere Durchmesser genügt meist eine normale Steckdose mit 230 V. Für große Durchmesser oder stark bewehrten Beton nutzen wir 400 V. Wir klären den Anschluss vorab mit Ihnen.'],
   ['Brauchen Sie Wasser auf der Baustelle?', 'Für die Nassbohrung benötigen wir in der Regel Wasser. Bei Bedarf bringen wir einen eigenen Wassertank mit. [Inhaber bestätigen]'],
 ];
 

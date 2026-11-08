@@ -7,6 +7,7 @@ import CtaBand from '../components/CtaBand.astro';
 import { site } from '../data/site.js';
 import { orte } from '../data/orte.js';
 import { services } from '../data/services.js';
+import { heroStyle } from '../lib/media.js';
 import { crumbSchema, faqSchema } from '../lib/schema.js';
 
 export function getStaticPaths() {
@@ -41,7 +42,7 @@ const weitere = orte.filter((x) => x.slug !== o.slug);
   schema={schema}
 >
   <Breadcrumbs items={[['Einsatzgebiet', '/einsatzgebiet/'], [`Kernbohrung ${o.name}`]]} />
-  <section class="hero small">
+  <section class="hero small" style={heroStyle('werk-fassade')}>
     <div class="wrap">
       <div>
         <span class="eyebrow"><Icon name="pin" size={18} /> {o.name}</span>
