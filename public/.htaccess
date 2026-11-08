@@ -6,3 +6,7 @@ RedirectMatch 301 ^/services/?$ /leistungen/
 RedirectMatch 301 ^/projects/?$ /referenzen/
 RedirectMatch 301 ^/beratung/?$ /kontakt/
 RedirectMatch 301 ^/hallo-welt/?$ /
+
+# Zeichensatz: Textdateien (llms.txt, robots.txt, JSON, XML) immer als UTF-8 ausliefern
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .txt .json .xml .html
