@@ -10,3 +10,17 @@ RedirectMatch 301 ^/hallo-welt/?$ /
 # Zeichensatz: Textdateien (llms.txt, robots.txt, JSON, XML) immer als UTF-8 ausliefern
 AddDefaultCharset UTF-8
 AddCharset UTF-8 .txt .json .xml .html
+
+# Browser-Cache für statische Dateien (Bilder, Videos, Skripte, Schriften)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+</IfModule>
