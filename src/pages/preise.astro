@@ -5,7 +5,7 @@ import Icon from '../components/Icon.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { faktoren, richtwerte, preisFaqs } from '../data/preise.js';
-import { staffel, zuschlagTabelle, berechne, eur, stand, regeln } from '../data/preisliste.js';
+import { staffelKompakt, zuschlagTabelle, berechne, eur, stand, regeln } from '../data/preisliste.js';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema, faqSchema, preisAngebot } from '../lib/schema.js';
 const beispiele = [
@@ -41,7 +41,7 @@ const beispiele = [
         <table class="facts">
           <thead><tr><th>Durchmesser (mm)</th><th>Beton / Stahlbeton</th><th>Mauerwerk</th></tr></thead>
           <tbody>
-            {staffel.map(([lo, hi, b, m]) => (
+            {staffelKompakt.map(([lo, hi, b, m]) => (
               <tr><td>{lo}–{hi}</td><td>{eur(b)} / cm</td><td>{eur(m)} / cm</td></tr>
             ))}
           </tbody>

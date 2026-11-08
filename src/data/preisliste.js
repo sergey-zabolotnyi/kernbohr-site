@@ -20,6 +20,14 @@ export const staffel = [
   [452, 501, 11.0, 9.5],
 ];
 
+// Anzeige: benachbarte Stufen mit gleichen Preisen zusammenfassen (14–101 mm statt vier Zeilen).
+export const staffelKompakt = staffel.reduce((acc, [lo, hi, b, m]) => {
+  const last = acc[acc.length - 1];
+  if (last && last[2] === b && last[3] === m) last[1] = hi;
+  else acc.push([lo, hi, b, m]);
+  return acc;
+}, []);
+
 export const regeln = {
   minDurchmesser: 14,
   maxDurchmesser: 501,
