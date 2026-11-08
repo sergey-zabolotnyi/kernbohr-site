@@ -33,7 +33,7 @@ export const regeln = {
   stahlProCm: 1.0, // Stahl ab 1,5 cm, Einzelschnitt, € je cm
   pilotbohrung: 0.75, // Inhaber: je Bohrung 1 Stück (Dübel zur Befestigung des Bohrständers an der Wand)
   zuschlagNacht: 0.75, // Inhaber: nachts +75 %
-  zuschlagNachtWochenende: 1.75, // Inhaber: nachts +75 % und Samstag/Sonntag/Feiertag weitere +100 % (Annahme: addiert, auf den Bohrpreis)
+  zuschlagWochenende: 1.0, // Inhaber: Samstag/Sonntag/Feiertag +100 % (auf den Bohrpreis)
   wartezeitStunde: 55,
 };
 
@@ -42,7 +42,7 @@ export const zuschlagTabelle = [
   ['Überkopfbohrung', '+ 50 %'],
   ['Pilotbohrung (Dübel für den Bohrständer), je Bohrung', '0,75 €'],
   ['Einsatz nachts', '+ 75 % auf den Bohrpreis'],
-  ['Einsatz nachts am Wochenende oder Feiertag', '+ 175 % auf den Bohrpreis'],
+  ['Einsatz am Wochenende oder Feiertag', '+ 100 % auf den Bohrpreis'],
   ['Wassersauger mit Bediener', '55,00 € pro Tag'],
   ['Stahl ab 1,5 cm (Einzelschnitt)', '1,00 € pro cm'],
   ['Gerüststellung', '65,00 € pro Tag'],
@@ -64,10 +64,10 @@ export function berechne({ d, tiefe, anzahl = 1, material = 'beton', richtung = 
   const s = satz(d, material);
   const bohr = s * tiefe * anzahl;
   const zuschlag = richtung === 'ueberkopf' || richtung === 'schraeg' ? bohr * regeln.zuschlagUeberkopf : 0;
-  const zz = zeit === 'nacht' ? regeln.zuschlagNacht : zeit === 'nacht-we' ? regeln.zuschlagNachtWochenende : 0;
+  const zz = zeit === 'nacht' ? regeln.zuschlagNacht : zeit === 'wochenende' ? regeln.zuschlagWochenende : 0;
   const posten = [{ t: `${anzahl}× Ø ${d} mm, ${tiefe} cm, ${material === 'mauerwerk' ? 'Mauerwerk' : 'Beton/Stahlbeton'} (${eur(s)}/cm)`, v: bohr }];
   if (zuschlag) posten.push({ t: richtung === 'ueberkopf' ? 'Zuschlag Überkopf (+50 %)' : 'Zuschlag Schrägbohrung (+50 %)', v: zuschlag });
-  if (zz) posten.push({ t: zeit === 'nacht' ? 'Zuschlag Nachteinsatz (+75 %)' : 'Zuschlag Nachteinsatz Wochenende/Feiertag (+175 %)', v: bohr * zz });
+  if (zz) posten.push({ t: zeit === 'nacht' ? 'Zuschlag Nachteinsatz (+75 %)' : 'Zuschlag Wochenende/Feiertag (+100 %)', v: bohr * zz });
   posten.push({ t: `Pilotbohrung (${anzahl}× ${eur(regeln.pilotbohrung)})`, v: regeln.pilotbohrung * anzahl });
   if (wasser) posten.push({ t: `Wassersauger mit Bediener (${tage} Tag${tage > 1 ? 'e' : ''})`, v: regeln.wassersaugerTag * tage });
   if (geruest) posten.push({ t: `Gerüststellung (${tage} Tag${tage > 1 ? 'e' : ''})`, v: regeln.gerueststellungTag * tage });
