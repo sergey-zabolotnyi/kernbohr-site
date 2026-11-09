@@ -3,7 +3,7 @@
 Заметки для Sergio на русском, все тексты для копирования на немецком.
 Главное правило: везде одинаковые **NAP-данные** (Name, Adresse, Phone) и один адрес сайта.
 
-## Единые дан 
+## Einheitliche Stammdaten (NAP)
 - **Name:** Kernbohr-Expert (ohne Zusatz wie „Dresden“ oder Schlüsselwörter: Google sperrt Profile mit Keyword-Namen)
 - **Inhaber:** Ion Salcutan
 - **Adresse:** Burkersdorfer Weg 19, 01189 Dresden
