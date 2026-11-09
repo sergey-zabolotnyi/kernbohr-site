@@ -11,3 +11,11 @@ export const heroBilder = {
   'kamin-sanitaer-anschluesse': 'werk-bohrkrone-152',
   'kernbohrung-notdienst-wochenende': 'werk-durchfuehrung-decke',
 };
+
+// Kurze Hero-Videos (nur mobil als Hintergrund; Fotos bleiben am Desktop). Clips ohne erkennbare Personen.
+export const heroVideos = {
+  kernbohrung: 'hero-bohrkern-80',
+  wanddurchbruch: 'hero-kernbohr-schiene',
+  betonsaegen: 'hero-wandsaege',
+  'rueckbau-teilabbruch': 'hero-wandsaege',
+};

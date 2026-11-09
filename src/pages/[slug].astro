@@ -10,7 +10,8 @@ import { services } from '../data/services.js';
 import { articles } from '../data/articles.js';
 import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
-import { heroBilder } from '../data/heroBilder.js';
+import HeroVideo from '../components/HeroVideo.astro';
+import { heroBilder, heroVideos } from '../data/heroBilder.js';
 import { crumbSchema, faqSchema, preisAngebot } from '../lib/schema.js';
 
 export function getStaticPaths() {
@@ -43,6 +44,7 @@ const schema = [
 
   <HeroPreload slot="head" id={heroBilder[s.slug]} />
   <section class="hero small" style={heroStyle(heroBilder[s.slug])}>
+    {heroVideos[s.slug] && <HeroVideo clip={heroVideos[s.slug]} />}
     <div class="wrap">
       <div>
         <span class="eyebrow"><Icon name={s.icon} size={18} /> {s.group === 'Anwendung' ? 'Anwendung' : 'Leistung'}</span>
