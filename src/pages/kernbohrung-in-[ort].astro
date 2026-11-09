@@ -7,6 +7,7 @@ import CtaBand from '../components/CtaBand.astro';
 import { site } from '../data/site.js';
 import { orte } from '../data/orte.js';
 import { services } from '../data/services.js';
+import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema, faqSchema } from '../lib/schema.js';
 
@@ -42,6 +43,7 @@ const weitere = orte.filter((x) => x.slug !== o.slug);
   schema={schema}
 >
   <Breadcrumbs items={[['Einsatzgebiet', '/einsatzgebiet/'], [`Kernbohrung ${o.name}`]]} />
+  <HeroPreload slot="head" id={'werk-fassade'} />
   <section class="hero small" style={heroStyle('werk-fassade')}>
     <div class="wrap">
       <div>

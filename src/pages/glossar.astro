@@ -4,6 +4,7 @@ import Icon from '../components/Icon.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { glossar } from '../data/glossar.js';
+import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema } from '../lib/schema.js';
 const termSchema = {
@@ -20,6 +21,7 @@ const termSchema = {
   schema={[crumbSchema([['Ratgeber', '/ratgeber/'], ['Glossar', '/glossar/']]), termSchema]}
 >
   <Breadcrumbs items={[['Ratgeber', '/ratgeber/'], ['Glossar']]} />
+  <HeroPreload slot="head" id={'werk-bohrkrone-152'} />
   <section class="hero small" style={heroStyle('werk-bohrkrone-152')}>
     <div class="wrap">
       <div>

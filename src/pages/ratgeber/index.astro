@@ -6,6 +6,7 @@ import CtaBand from '../../components/CtaBand.astro';
 import CardMedia from '../../components/CardMedia.astro';
 import { artikelBild } from '../../data/kartenbild.js';
 import { articles } from '../../data/articles.js';
+import HeroPreload from '../../components/HeroPreload.astro';
 import { heroStyle } from '../../lib/media.js';
 import { crumbSchema } from '../../lib/schema.js';
 ---
@@ -16,6 +17,7 @@ import { crumbSchema } from '../../lib/schema.js';
   schema={[crumbSchema([['Ratgeber', '/ratgeber/']])]}
 >
   <Breadcrumbs items={[['Ratgeber']]} />
+  <HeroPreload slot="head" id={'werk-oeffnung-schiene'} />
   <section class="hero small" style={heroStyle('werk-oeffnung-schiene')}>
     <div class="wrap">
       <div>
