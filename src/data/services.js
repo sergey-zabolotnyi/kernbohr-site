@@ -6,8 +6,8 @@ export const services = [
     slug: 'kernbohrung',
     group: 'Leistung',
     name: 'Kernbohrungen',
-    title: 'Kernbohrung in Dresden & Sachsen, Ø 14–500 mm',
-    description: 'Kernbohrungen von Ø 14 bis 500 mm in Beton, Stahlbeton, Mauerwerk und Naturstein in Dresden und bundesweit. Staubarm, erschütterungsarm, mit kostenlosem Angebot.',
+    title: 'Kernbohrung & Betonbohren in Dresden, Ø 14–500 mm',
+    description: 'Kernbohrung und Betonbohren in Dresden: Ø 14–500 mm, bis 2 m tief, in Beton, Stahlbeton und Mauerwerk. Staubarm, Preisliste online, kostenloses Angebot.',
     h1: 'Kernbohrung in Dresden und Sachsen',
     intro: 'Wir bohren millimetergenau in Beton, Stahlbeton, Mauerwerk und Naturstein, staubarm und erschütterungsarm, in allen Lagen. Ideal für Elektro-, Sanitär-, Lüftungs- und Heizungsinstallationen.',
     facts: [
@@ -46,10 +46,10 @@ export const services = [
     slug: 'betonsaegen',
     group: 'Leistung',
     name: 'Betonsägen',
-    title: 'Betonsägen in Dresden & Sachsen',
-    description: 'Betonsägen für Wand- und Deckenöffnungen und Teilrückbau in Dresden und Sachsen. Exakte Schnitte, geräusch- und vibrationsarm, auch in bewohnten Gebäuden.',
-    h1: 'Betonsägen in Dresden und Sachsen',
-    intro: 'Mit moderner Betonsägetechnik entstehen exakte, gerade Schnitte für Öffnungen und Rückbau, geräusch- und vibrationsarm und mit wirksamem Staubschutz.',
+    title: 'Betonsägen & Wandsägen in Dresden',
+    description: 'Betonsägen und Wandsägen für Wand- und Deckenöffnungen in Dresden und Sachsen. Betonschneiden mit exakten Schnitten, geräusch- und vibrationsarm.',
+    h1: 'Betonsägen und Wandsägen in Dresden und Sachsen',
+    intro: 'Mit der Wandsäge auf Führungsschiene (Betonschneiden) entstehen exakte, gerade Schnitte für Öffnungen und Rückbau, geräusch- und vibrationsarm und mit wirksamem Staubschutz.',
     facts: [
       ['Einsatz', 'Wandöffnungen, Deckenöffnungen, Teilrückbau von Innenwänden'],
       ['Materialien', 'Beton, Stahlbeton, Mauerwerk'],
@@ -70,7 +70,7 @@ export const services = [
     intro: 'Mit dem Fugenschneiden setzen wir Dehn-, Scheinfugen und Trennschnitte in Bodenplatten und Flächen, damit der Beton kontrolliert arbeiten kann und keine wilden Risse entstehen.',
     facts: [
       ['Einsatz', 'Dehnfugen, Scheinfugen, Trennschnitte'],
-      ['Untergründe', 'Beton [weitere Untergründe bestätigen]'],
+      ['Untergründe', 'Beton und Stahlbeton'],
       ['Einsatzgebiet', areas],
     ],
     faqs: [
@@ -91,7 +91,7 @@ export const services = [
       ['Einsatzgebiet', areas],
     ],
     faqs: [
-      ['Wie tief und breit darf ein Schlitz sein?', 'Das hängt von der Wand und der Statik ab. Bei tragenden Wänden ist die zulässige Schlitztiefe begrenzt, bitte vorab klären. [Rechtlichen Hinweis prüfen lassen]'],
+      ['Wie tief und breit darf ein Schlitz sein?', 'Das hängt von der Wand und der Statik ab. Bei tragenden Wänden sind Schlitztiefe und -breite nach den Normen für Mauerwerk begrenzt. Bitte klären Sie das vorab mit dem Statiker.'],
     ],
   },
   {
@@ -124,7 +124,7 @@ export const services = [
       ['Durchmesser', '60–82 mm bei Klimageräten, 100–200 mm bei Wärmepumpen (je nach Hersteller)'],
       ['Materialien', 'Beton, Stahlbeton, Ziegel, Kalksandstein, Porenbeton'],
       ['Wandstärke', 'üblich 24–50 cm, tiefer auf Anfrage'],
-      ['Verfahren', 'Nassbohrung, staubarm [Wasserabsaugung bestätigen]'],
+      ['Verfahren', 'Nassbohrung mit Wassersauger, staubarm'],
       ['Einsatzgebiet', areas],
     ],
     faqs: [
@@ -150,7 +150,7 @@ export const services = [
     ],
     faqs: [
       ['Welcher Durchmesser passt für meine Dunstabzugshaube?', 'Prüfen Sie das Abluftrohr Ihrer Haube: DN 125 oder DN 150 sind üblich. Wir bohren entsprechend etwas größer für Mauerkasten oder Futterrohr.'],
-      ['Brauche ich eine Genehmigung?', 'Bei Mietwohnungen und Eigentümergemeinschaften klären Sie bitte vorher die Zustimmung. Bei tragenden Wänden und Fassaden ist Rücksprache wichtig. [Rechtlichen Hinweis prüfen lassen]'],
+      ['Brauche ich eine Genehmigung?', 'Bei Mietwohnungen und Eigentümergemeinschaften klären Sie bitte vorher die Zustimmung. Bei tragenden Wänden und Fassaden ist Rücksprache wichtig, bei denkmalgeschützten Gebäuden mit der Denkmalschutzbehörde.'],
     ],
     calculator: true,
   },
@@ -180,7 +180,7 @@ export const services = [
     name: 'Einsatz nachts & am Wochenende',
     title: 'Kernbohrung nachts & am Wochenende in Dresden',
     description: 'Kernbohrung und Betonsägen nachts, am Wochenende und an Feiertagen in Dresden und Sachsen. Einsätze nach Absprache rund um die Uhr, Angebot per WhatsApp.',
-    h1: 'Kernbohrung am Wochenende und im Notfall',
+    h1: 'Kernbohrung nachts und am Wochenende',
     intro: 'Wenn der Termin drängt: Unsere Einsätze sind nach Absprache rund um die Uhr möglich: Wir fahren auch abends, nachts, am Wochenende und an Feiertagen zu Ihnen, soweit das am Objekt zulässig ist. Telefonisch erreichen Sie uns Montag bis Samstag von 7 bis 19 Uhr. In Dresden, Sachsen und bei größeren Projekten bundesweit.',
     facts: [
       ['Telefon', 'Montag bis Samstag, 7 bis 19 Uhr. Nachrichten per WhatsApp oder E-Mail jederzeit'],
@@ -211,7 +211,7 @@ export const faqs = [
   ['Wie schnell kann ein Auftrag durchgeführt werden?', 'Wir bieten flexible Terminvereinbarungen. In dringenden Fällen sind kurzfristige Einsätze möglich, kontaktieren Sie uns einfach telefonisch oder per E-Mail.'],
   ['Was kostet eine Kernbohrung oder ein Rückbau?', 'Die Preise hängen ab von Material, Durchmesser, Anzahl, Zugänglichkeit und Aufwand. Mit dem Kernbohr-Rechner erhalten Sie einen ersten Richtwert, gerne erstellen wir Ihnen außerdem ein kostenloses und unverbindliches Angebot.'],
   ['Welche Unterlagen oder Informationen benötigen Sie zur Angebotserstellung?', 'Ideal sind Grundrisse, Fotos der Einsatzstelle und Angaben zu Materialstärke, Durchmesser, Zugangsmöglichkeiten und Zeitfenster. Ein Foto per WhatsApp genügt oft schon.'],
-  ['Arbeiten Sie staubfrei?', 'Wir arbeiten staubarm und erschütterungsarm, decken den Arbeitsbereich ab und hinterlassen die Baustelle aufgeräumt. Vollständig ohne Staub ist bei Arbeiten an Beton kein Verfahren, durch Nassbohren und Absaugung bleibt er aber auf ein Minimum begrenzt. [Absaugung bestätigen]'],
+  ['Arbeiten Sie staubfrei?', 'Wir arbeiten staubarm und erschütterungsarm, decken den Arbeitsbereich ab und hinterlassen die Baustelle aufgeräumt. Vollständig ohne Staub ist bei Arbeiten an Beton kein Verfahren, durch Nassbohren und Absaugung bleibt er aber auf ein Minimum begrenzt.'],
   ['Welchen Stromanschluss benötigen Sie vor Ort?', 'Wir arbeiten wahlweise mit 230 V oder mit 400 V (Drehstrom, per Adapter auf 16 A). Für kleine und mittlere Durchmesser genügt meist eine normale Steckdose mit 230 V. Für große Durchmesser oder stark bewehrten Beton nutzen wir 400 V. Wir klären den Anschluss vorab mit Ihnen.'],
   ['Brauchen Sie Wasser auf der Baustelle?', 'Ja. Für die Nassbohrung benötigen wir auf der Baustelle einen normalen Wasseranschluss und Strom. Beides klären wir vorab mit Ihnen.'],
 ];

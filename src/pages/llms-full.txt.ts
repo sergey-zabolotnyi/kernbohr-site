@@ -28,7 +28,7 @@ Telefonische Erreichbarkeit: Montag bis Samstag, 7 bis 19 Uhr (Nachrichten per W
 - Typische Anwendungen: Wärmepumpe, Klimagerät, Dunstabzug, Lüftung, Abwasser, Elektro, Kamin, Gebäudetechnik, Rückbau.
 
 ## Kernbohrung: technische Daten
-- Durchmesser: 14 bis 501 mm in der Preisliste, größere auf Anfrage
+- Durchmesser: 14 bis 500 mm in der Preisliste, größere auf Anfrage
 - Bohrtiefe: bis 2 m (Praxisbeispiel: Ø 80 mm, 1 m tief in Stahlbeton)
 - Materialien: Beton, Stahlbeton, Ziegelmauerwerk, Naturstein
 - Verfahren: Nassbohrung mit Wasserführung und Wassersauger, auch trocken; waagerecht, senkrecht, über Kopf und schräg
