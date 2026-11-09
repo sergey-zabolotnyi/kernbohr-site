@@ -390,3 +390,9 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
   .hero.has-bg .hero-points{margin-top:.9rem;padding-top:.8rem}
   .strip>div{padding:.75rem 1rem}
 }
+
+/* Mobil: Kartenüberschriften größer */
+@media (max-width:768px){
+  .card-body h3,.card.has-img h3{font-size:1.45rem;line-height:1.15}
+  .card-body p{font-size:1rem}
+}
