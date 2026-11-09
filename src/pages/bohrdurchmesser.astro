@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import HeroPreload from '../components/HeroPreload.astro';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema, faqSchema } from '../lib/schema.js';
+import { durchmesserTabelle, durchmesserFaq } from '../data/durchmesser.js';
+---
+<Base
+  title="Bohrdurchmesser: Welcher passt? Tabelle nach Anwendung"
+  description="Welchen Bohrdurchmesser brauche ich? Richtwerte für Dunstabzug, Wärmepumpe, Klimagerät, Abwasser, Lüftung, Elektro und Wasser, plus Faustregel zum Messen."
+  path="/bohrdurchmesser/"
+  schema={[crumbSchema([['Ratgeber', '/ratgeber/'], ['Bohrdurchmesser', '/bohrdurchmesser/']]), faqSchema(durchmesserFaq)]}
+>
+  <Breadcrumbs items={[['Ratgeber', '/ratgeber/'], ['Bohrdurchmesser']]} />
+  <HeroPreload slot="head" id={'werk-wand-125'} />
+  <section class="hero small" style={heroStyle('werk-wand-125')}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Ratgeber</span>
+        <h1>Welchen Bohrdurchmesser brauche ich?</h1>
+        <p class="lead">Richtwerte für die häufigsten Anwendungen und eine einfache Faustregel zum Nachmessen. So bestellen Sie die Kernbohrung gleich richtig.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="callout"><strong>Faustregel</strong> Außendurchmesser des Rohrs oder der Hülse + Dämmung oder Futterrohr + 5 bis 15 mm Luft = Bohrdurchmesser.</div>
+      <h2>Richtwerte nach Anwendung</h2>
+      <div class="table-scroll">
+        <table class="facts">
+          <thead><tr><th>Anwendung</th><th>Was durch die Wand soll</th><th>Typischer Bohrdurchmesser</th><th>Hinweis</th></tr></thead>
+          <tbody>
+            {durchmesserTabelle.map(([a, b, c, d]) => <tr><th scope="row">{a}</th><td>{b}</td><td><strong>{c}</strong></td><td>{d}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+      <p>Richtwerte ohne Gewähr. Die genauen Maße hängen von Hersteller, Dämmung und Einbausituation ab. Wir klären sie gern vorab per Foto.</p>
+
+      <h2>So messen Sie richtig</h2>
+      <ol>
+        <li>Außendurchmesser des Rohrs, der Hülse oder des Mauerkastens messen (nicht den Innendurchmesser).</li>
+        <li>Dämmung oder Schutzrohr dazurechnen, falls vorhanden.</li>
+        <li>5 bis 15 mm Luft ergänzen, damit sich das Rohr einschieben und abdichten lässt.</li>
+        <li>Wandstärke messen (Bohrtiefe) und ein Foto der Bohrstelle mit Maßband machen.</li>
+      </ol>
+      <div class="btns"><a class="btn btn-main" href="/preise/#kb-rechner">Richtpreis berechnen</a></div>
+
+      <h2>Häufige Fragen</h2>
+      <div class="prose">
+        {durchmesserFaq.map(([q, a]) => (
+          <details><summary>{q}</summary><p>{a}</p></details>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CtaBand title="Unsicher, welcher Durchmesser passt?" text="Senden Sie uns ein Foto der Stelle mit Maßband per WhatsApp. Wir nennen Ihnen den passenden Durchmesser und den Preis." />
+</Base>
