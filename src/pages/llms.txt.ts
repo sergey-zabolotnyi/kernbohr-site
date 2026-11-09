@@ -27,6 +27,7 @@ Kurzfakten:
 - [Leistungen](${u}/leistungen/)
 - [Einsatzgebiet](${u}/einsatzgebiet/)
 - [Häufige Fragen](${u}/faq/)
+- [Bohrdurchmesser nach Anwendung](${u}/bohrdurchmesser/): Welcher Durchmesser passt für Dunstabzug, Wärmepumpe, Klimagerät, Abwasser und mehr, mit Faustregel
 - [Glossar der Fachbegriffe](${u}/glossar/): Kernbohrung, Nassbohrung, Pilotbohrung, Wanddurchbruch und mehr
 - [Kontakt](${u}/kontakt/)
 - [Referenzen](${u}/referenzen/)

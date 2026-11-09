@@ -23,7 +23,7 @@ Kernbohrung, Wanddurchbruch und Betonsägen in Dresden und Sachsen. Ø 14–500 
 Kernbohr-Expert aus Dresden bohrt und sägt Beton, Stahlbeton und Mauerwerk: Kernbohrungen von Ø 14 bis 500 mm (bis 2 m tief), Wanddurchbrüche, Betonsägen, Fugenschneiden, Schlitze fräsen und Rückbau. Staubarm und erschütterungsarm, auch in bewohnten Gebäuden. Typische Aufträge: Wärmepumpe, Klimagerät, Dunstabzug, Kamin- und Sanitäranschlüsse. Einsatz in Dresden, Pirna, Radebeul, Meißen, Freital, Radeberg und Sachsen. Transparente Preise: Preisliste 2026 und Richtpreis-Rechner auf kernbohr-expert.de.
 
 **Google Business Profile, Beschreibung (696 von max. 750 Zeichen):**
-Kernbohr-Expert in Dresden: Kernbohrungen von Ø 14 bis 500 mm, bis 2 m tief, in Beton, Stahlbeton und Mauerwerk. Dazu Wanddurchbrüche, Betonsägen und Wandsägen, Fugenschneiden, Schlitze fräsen und Rückbau. Inhaber Ion Salcutan ist seit 2006 in der Baubranche tätig, die Firma besteht seit 2017. Wir arbeiten staubarm und erschütterungsarm mit Hilti-Technik, auch in bewohnten Gebäuden, für Wärmepumpe, Klimagerät, Dunstabzug, Kamin und Sanitär. Einsatzgebiet: Dresden, Pirna, Radebeul, Meißen, Freital, Radeberg und Sachsen, bundesweit bei größeren Projekten. Preisliste und Richtpreis-Rechner auf kernbohr-expert.de. Telefon Mo–Sa 7–19 Uhr, Einsätze nach Absprache auch nachts und am Wochenende.
+Kernbohr-Expert in Dresden: Kernbohrungen von Ø 14 bis 500 mm, bis 2 m tief, in Beton, Stahlbeton und Mauerwerk. Dazu Wanddurchbrüche, Betonsägen und Wandsägen, Fugenschneiden, Schlitze fräsen und Rückbau. Inhaber Ion Salcutan ist seit 2006 in der Baubranche tätig, die Firma besteht seit 2017. Wir arbeiten staubarm und erschütterungsarm mit Hilti-Technik, auch in bewohnten Gebäuden, für Wärmepumpe, Klimagerät, Dunstabzug, Kamin und Sanitär. Einsatzgebiet: Dresden, Pirna, Radebeul, Meißen, Freital, Radeberg und Sachsen, bundesweit bei größeren Projekten. Preisliste und Richtpreis-Rechner finden Sie auf unserer Website. Telefon Mo–Sa 7–19 Uhr, Einsätze nach Absprache auch nachts und am Wochenende.
 
 ## 1. Google Business Profile (business.google.com)
 
@@ -33,7 +33,7 @@ Kernbohr-Expert in Dresden: Kernbohrungen von Ø 14 bis 500 mm, bis 2 m tief, in
 3. **Основная категория:** в поле категории введи «Bohr» / «Beton» / «Abbruch» и выбери самую близкую из предложенных (названия зависят от Google, например Bohrunternehmen, Abbruchunternehmen, Bauunternehmen). Дополнительные: 2–3 близких. Не добавляй категории, которые не про вас.
 4. **Время работы:** Mo–Sa 7:00–19:00. «24/7» не ставить: по телефону вы не доступны круглосуточно.
 5. **Сайт:** https://kernbohr-expert.de/ (кнопка «Termin/Angebot»: https://kernbohr-expert.de/kontakt/).
-6. **Описание:** текст выше (до 750 знаков).
+6. **Описание:** текст выше (до 750 знаков). В описании Google **нельзя** писать URL (адрес сайта), поэтому там «auf unserer Website». Телефон записывать так же, как на сайте: +49 177 190 90 49.
 7. **Услуги (Leistungen)**, каждая с коротким описанием:
    - Kernbohrung Ø 14–500 mm: Bohrungen in Beton, Stahlbeton und Mauerwerk, bis 2 m tief, staubarm.
    - Wanddurchbruch: Wand- und Deckendurchbrüche, bei tragenden Teilen mit Statiker.

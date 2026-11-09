@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Rechner from '../components/Rechner.astro';
 import Icon from '../components/Icon.astro';
 import Photo from '../components/Photo.astro';
+import HeroVideo from '../components/HeroVideo.astro';
 import CardMedia from '../components/CardMedia.astro';
 import { kartenbild } from '../data/kartenbild.js';
 import Gallery from '../components/Gallery.astro';
@@ -38,6 +39,8 @@ const werte = [
 >
   {hasPhoto && <link slot="head" rel="preload" as="image" type="image/webp" imagesrcset={`/images/werk-wand-gross-800.webp 800w, /images/werk-wand-gross-1600.webp 1600w`} imagesizes="(max-width: 860px) 100vw, 60vw" fetchpriority="high" />}
   <section class={`hero ${hasPhoto ? 'has-bg' : 'no-photo'}`} style={heroStyle()}>
+    <HeroVideo clip="hero-kernbohr-schiene" />
+    <HeroVideo clip="hero-kernbohr-schiene" card label="Kurzvideo: Hilti-Kernbohrgerät auf Schiene" />
     {hasPhoto && <Photo id="werk-wand-gross" eager class="hero-bg" sizes="(max-width: 860px) 100vw, 60vw" />}
     <div class="wrap">
       <div>

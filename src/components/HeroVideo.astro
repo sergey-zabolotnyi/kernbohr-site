@@ -1,0 +1,32 @@
+---
+// Kurzes, stummes Loop-Video im Hero. Das Poster-Foto bleibt das LCP-Bild, das Video wird erst nach dem Laden
+// der Seite nachgeladen (nicht bei „Datensparmodus“, langsamer Verbindung oder reduzierter Bewegung).
+const { clip, card = false, label = 'Kurzvideo: Kernbohrung bei der Arbeit' } = Astro.props;
+---
+<video class={`hero-vid${card ? ' hero-vid-card' : ''}`} muted loop playsinline preload="none" poster={`/posters/${clip}.jpg`}
+  data-webm={`/videos/${clip}.webm`} data-mp4={`/videos/${clip}.mp4`} aria-label={label} tabindex="-1"></video>
+
+<script>
+  const vids = [...document.querySelectorAll('video.hero-vid')];
+  const c = navigator.connection || {};
+  const ok = vids.length && !matchMedia('(prefers-reduced-motion: reduce)').matches && !c.saveData && !/(^|-)2g$/.test(c.effectiveType || '');
+  if (ok) {
+    const start = () => vids.forEach((v) => {
+      // Karten-Variante nur auf breiten Bildschirmen, sonst unnötig
+      if (v.classList.contains('hero-vid-card') && !matchMedia('(min-width:1100px)').matches) return;
+      // Hintergrund-Variante nur mobil (am Desktop ausgeblendet, also nicht laden)
+      if (!v.classList.contains('hero-vid-card') && matchMedia('(min-width:861px)').matches) return;
+      ['mp4', 'webm'].forEach((t) => {
+        const s = document.createElement('source');
+        s.src = v.dataset[t];
+        s.type = 'video/' + t;
+        v.append(s);
+      });
+      v.addEventListener('playing', () => v.classList.add('on'), { once: true });
+      v.load();
+      v.play().catch(() => {});
+    });
+    const go = () => ('requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 2500 }) : setTimeout(start, 800));
+    document.readyState === 'complete' ? go() : addEventListener('load', go, { once: true });
+  }
+</script>

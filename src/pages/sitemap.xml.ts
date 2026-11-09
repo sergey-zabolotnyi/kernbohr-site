@@ -6,7 +6,7 @@ export function GET() {
   const base = 'https://kernbohr-expert.de';
   const today = new Date().toISOString().slice(0, 10);
   const paths = [
-    '/', '/leistungen/', '/preise/', '/ratgeber/', '/glossar/', '/referenzen/', '/ueber-uns/', '/faq/', '/einsatzgebiet/', '/kontakt/', '/impressum/', '/datenschutzerklaerung/',
+    '/', '/leistungen/', '/preise/', '/ratgeber/', '/glossar/', '/bohrdurchmesser/', '/referenzen/', '/ueber-uns/', '/faq/', '/einsatzgebiet/', '/kontakt/', '/impressum/', '/datenschutzerklaerung/',
     ...services.map((s) => `/${s.slug}/`),
     ...orte.map((o) => `/kernbohrung-in-${o.slug}/`),
     ...articles.map((a) => `/ratgeber/${a.slug}/`),
