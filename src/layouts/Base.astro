@@ -64,6 +64,9 @@ const business = {
     closes: '19:00',
   },
   hasMap: site.googleMaps,
+  sameAs: [site.googleMaps],
+  foundingDate: site.founded,
+  vatID: site.vatId,
   areaServed: [
     ...['Dresden', 'Radebeul', 'Meißen', 'Pirna', 'Freital', 'Heidenau', 'Radeberg', 'Coswig'].map((n) => ({ '@type': 'City', name: n })),
     { '@type': 'AdministrativeArea', name: 'Sachsen' },
