@@ -7,6 +7,7 @@ import CtaBand from '../components/CtaBand.astro';
 import { faktoren, richtwerte, preisFaqs } from '../data/preise.js';
 import CardMedia from '../components/CardMedia.astro';
 import { staffelKompakt, zuschlagTabelle, berechne, eur, stand, regeln } from '../data/preisliste.js';
+import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema, faqSchema, preisAngebot } from '../lib/schema.js';
 const beispiele = [
@@ -22,6 +23,7 @@ const beispiele = [
   schema={[crumbSchema([['Kosten & Preise', '/preise/']]), faqSchema(preisFaqs), { '@context': 'https://schema.org', '@type': 'Service', name: 'Kernbohrung', serviceType: 'Kernbohrung', provider: { '@id': 'https://kernbohr-expert.de/#business' }, areaServed: { '@type': 'City', name: 'Dresden' }, offers: preisAngebot('kernbohrung') }]}
 >
   <Breadcrumbs items={[['Kosten & Preise']]} />
+  <HeroPreload slot="head" id={'werk-wand-gross'} />
   <section class="hero small" style={heroStyle('werk-wand-gross')}>
     <div class="wrap">
       <div>

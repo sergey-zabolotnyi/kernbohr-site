@@ -8,6 +8,7 @@ import CtaBand from '../components/CtaBand.astro';
 import { site } from '../data/site.js';
 import { services } from '../data/services.js';
 import { articles } from '../data/articles.js';
+import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { heroBilder } from '../data/heroBilder.js';
 import { crumbSchema, faqSchema, preisAngebot } from '../lib/schema.js';
@@ -40,6 +41,7 @@ const schema = [
 <Base title={s.title} description={s.description} path={`/${s.slug}/`} schema={schema}>
   <Breadcrumbs items={[['Leistungen', '/leistungen/'], [s.name]]} />
 
+  <HeroPreload slot="head" id={heroBilder[s.slug]} />
   <section class="hero small" style={heroStyle(heroBilder[s.slug])}>
     <div class="wrap">
       <div>

@@ -1,0 +1,10 @@
+---
+// Lädt das Hero-Hintergrundbild früh (Mobil: 800 px, Desktop: 1600 px). Verbessert LCP.
+import { image } from '../lib/media.js';
+const { id = 'werk-bohrstaender' } = Astro.props;
+const b = image(id) || image('werk-bohrstaender');
+---
+{b && (<>
+  <link rel="preload" as="image" type="image/webp" href={`/images/${b.id}-800.webp`} media="(max-width: 860px)" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" href={`/images/${b.id}-${b.widths[b.widths.length - 1]}.webp`} media="(min-width: 861px)" fetchpriority="high" />
+</>)}

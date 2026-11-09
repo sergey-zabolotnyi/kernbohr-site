@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { faqs } from '../data/services.js';
+import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema, faqSchema } from '../lib/schema.js';
 ---
@@ -13,6 +14,7 @@ import { crumbSchema, faqSchema } from '../lib/schema.js';
   schema={[crumbSchema([['FAQ', '/faq/']]), faqSchema(faqs)]}
 >
   <Breadcrumbs items={[['FAQ']]} />
+  <HeroPreload slot="head" id={'werk-unterzug'} />
   <section class="hero small" style={heroStyle('werk-unterzug')}>
     <div class="wrap">
       <div>

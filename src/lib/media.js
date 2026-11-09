@@ -21,5 +21,5 @@ export const allIds = () => [...Object.keys(manifest.images), ...Object.keys(man
 // CSS-Variable für den Hero-Hintergrund (leer, falls kein Hintergrundbild vorhanden ist)
 export const heroStyle = (id = 'werk-bohrstaender') => {
   const b = image(id) || image('werk-bohrstaender');
-  return b ? `--hero-bg:url(/images/${b.id}-${b.widths[b.widths.length - 1]}.webp)` : '';
+  return b ? `--hero-bg:url(/images/${b.id}-${b.widths[b.widths.length - 1]}.webp);--hero-bg-sm:url(/images/${b.id}-800.webp)` : '';
 };

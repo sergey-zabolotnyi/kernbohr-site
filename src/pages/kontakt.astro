@@ -5,6 +5,7 @@ import AnfrageForm from '../components/AnfrageForm.astro';
 import Prozess from '../components/Prozess.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site.js';
+import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema } from '../lib/schema.js';
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage. Foto der Baustelle sende ich gleich mit.')}`;
@@ -16,6 +17,7 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich
   schema={[crumbSchema([['Kontakt', '/kontakt/']])]}
 >
   <Breadcrumbs items={[['Kontakt']]} />
+  <HeroPreload slot="head" id={'werk-bohrstaender'} />
   <section class="hero small" style={heroStyle('werk-bohrstaender')}>
     <div class="wrap">
       <div>
