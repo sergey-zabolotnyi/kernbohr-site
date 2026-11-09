@@ -399,3 +399,11 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
 
 /* Mobil: kleineres Hero-Hintergrundbild (800 px) */
 @media (max-width:860px){.hero{background-image:var(--hero-bg-sm,var(--hero-bg,none))}}
+
+/* Startseite: Ansprechpartner / Fakten */
+.about-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin:1.2rem 0}
+.about-facts>div{background:#fff;border:1px solid var(--line,#e3e6e9);border-radius:12px;padding:.9rem 1rem}
+.about-facts dt{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#e8590c;margin:0 0 .2rem}
+.about-facts dd{margin:0;font-weight:500}
+.about-links{display:flex;flex-wrap:wrap;gap:.6rem}
+@media (max-width:768px){.about-facts{grid-template-columns:1fr 1fr;gap:.6rem}.about-facts>div{padding:.7rem .8rem;font-size:.92rem}}

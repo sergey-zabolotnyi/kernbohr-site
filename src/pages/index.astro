@@ -147,6 +147,27 @@ const werte = [
     </div>
   </section>
 
+  <section class="about-home">
+    <div class="wrap">
+      <span class="eyebrow">Wer hinter Kernbohr-Expert steht</span>
+      <h2>Ihr Ansprechpartner: {site.owner}</h2>
+      <p class="lead">Ein Betrieb mit Gesicht und festem Standort in Dresden: Sie sprechen direkt mit dem Inhaber, nicht mit einer Vermittlungsplattform.</p>
+      <dl class="about-facts">
+        <div><dt>Inhaber</dt><dd>{site.owner}, in der Baubranche seit {site.sinceBranche}</dd></div>
+        <div><dt>Unternehmen</dt><dd>{site.company}, gegründet {site.founded}</dd></div>
+        <div><dt>Mitgliedschaft</dt><dd>Handwerkskammer Dresden</dd></div>
+        <div><dt>Standort</dt><dd>{site.street}, {site.zip} {site.city}</dd></div>
+        <div><dt>Technik</dt><dd>Hilti-Kernbohrtechnik, Wandsäge, Fugenschneider, Ortungsgerät, Wassersauger</dd></div>
+        <div><dt>USt-IdNr.</dt><dd>{site.vatId}</dd></div>
+      </dl>
+      <p class="about-links">
+        <a class="btn btn-line" href="/ueber-uns/">Mehr über uns</a>
+        <a class="btn btn-line" href={site.googleMaps} target="_blank" rel="noopener">Wir auf Google Maps</a>
+        <a class="btn btn-line" href={site.googleReview} target="_blank" rel="noopener">Bewertung auf Google schreiben</a>
+      </p>
+    </div>
+  </section>
+
   <Prozess />
 
   <section class="soft">
