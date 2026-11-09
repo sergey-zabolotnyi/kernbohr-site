@@ -1,0 +1,9 @@
+# ai.txt – Kernbohr-Expert (kernbohr-expert.de)
+# Inhalte dürfen von KI-Suchsystemen gelesen und mit Quellenangabe zitiert werden.
+User-Agent: *
+Allow: /
+Contact: https://kernbohr-expert.de/kontakt/
+Sitemap: https://kernbohr-expert.de/sitemap.xml
+Summary: https://kernbohr-expert.de/llms.txt
+Details: https://kernbohr-expert.de/llms-full.txt
+Facts: https://kernbohr-expert.de/firmendaten.json
