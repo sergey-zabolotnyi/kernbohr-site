@@ -21,7 +21,7 @@ export const orte = [
     slug: 'pirna',
     name: 'Pirna',
     lage: 'Pirna-Altstadt, Copitz, Sonnenstein, Heidenau und Umgebung',
-    intro: 'Kernbohrung, Durchbrüche und Betonarbeiten in Pirna und im Raum Sächsische Schweiz, mit Sitz in Dresden, schnell erreichbar über die Elbtalstrecke.',
+    intro: 'Kernbohrung, Durchbrüche und Betonarbeiten in Pirna und im Raum Sächsische Schweiz, mit Sitz in Dresden, schnell erreichbar über die B 172.',
     kurz: 'Wir bohren in Pirna und Umgebung Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe, zuzüglich Anfahrt (85 €). Mindestpreis 250 € je Auftrag.',
     typisch: [
       ['Historische Altstadt', 'In der Pirnaer Altstadt treffen wir häufig auf dicke Sandstein- und Ziegelwände. Hierfür verwenden wir passende Diamantbohrkronen und bohren nass, um Staub zu vermeiden.'],
