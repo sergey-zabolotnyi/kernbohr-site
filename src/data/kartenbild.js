@@ -4,7 +4,7 @@ export const kartenbild = {
   wanddurchbruch: ['werk-oeffnung-schiene'],
   betonsaegen: ['video-wandsaege', 'Wandsäge schneidet eine Öffnung in Beton'],
   fugenschneiden: ['video-fugenschneider', 'Fugenschneider mit Wassertank beim Schneiden einer Betonfläche'],
-  schlitzfraesen: ['werk-unterzug'],
+  schlitzfraesen: ['werk-schlitz-bogen'],
   'rueckbau-teilabbruch': ['werk-oeffnung-geruest'],
   'kernbohrung-waermepumpe-klimaanlage': ['werk-fassade'],
   'wanddurchbruch-dunstabzugshaube': ['werk-wand-125'],

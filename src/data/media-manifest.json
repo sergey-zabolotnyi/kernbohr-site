@@ -109,6 +109,56 @@
       "h": 2048,
       "alt": "Hilti-Kernbohrgerät auf Schiene am Gerüst vor einer Öffnung aus drei überlappenden Bohrungen",
       "caption": "Öffnung aus drei Bohrungen, Arbeit am Gerüst"
+    },
+    "werk-schlitz-bogen": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1920,
+      "h": 1080,
+      "alt": "Gefräster Schlitz in einer gewölbten Altbauwand mit markierter Trasse und Durchführungen",
+      "caption": "Schlitz entlang der Trasse im Gewölbe"
+    },
+    "werk-schlitz-gewoelbe": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 2040,
+      "h": 1530,
+      "alt": "Gefräster Schlitz am Rundbogen im Altbau-Treppenhaus entlang der grünen Markierung",
+      "caption": "Schlitz am Rundbogen"
+    },
+    "werk-schlitz-gewoelbe-2": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 2040,
+      "h": 1530,
+      "alt": "Gefräste Schlitze an zwei Gewölbebögen in einem Altbauflur",
+      "caption": "Schlitze im Gewölbeflur"
+    },
+    "werk-schlitz-wand": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 2048,
+      "h": 1536,
+      "alt": "Gefräster Schlitz an einer hohen gebogenen Wand mit Gerüst im Altbau",
+      "caption": "Schlitz an der Bogenwand"
+    },
+    "werk-schlitz-deckenbogen": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 2040,
+      "h": 1530,
+      "alt": "Gefräster Schlitz entlang eines Gewölbebogens mit Abzweig zur Wand",
+      "caption": "Schlitz mit Abzweig"
     }
   },
   "videos": {
@@ -136,6 +186,11 @@
       "alt": "Betonbohrkern Ø 80 mm, 1 m lang, mit Bewehrungsstahl",
       "caption": "Bohrkern Ø 80 mm, 1 m tief, mit Bewehrung",
       "size": 4467233
+    },
+    "video-schlitze-trasse": {
+      "alt": "Rundgang durch einen Altbau mit grün markierten Schlitztrassen und rot markierten Durchführungen an Wand und Gewölbe",
+      "caption": "Vorher: markierte Trassen für die Schlitze",
+      "size": 1476892
     }
   }
 }

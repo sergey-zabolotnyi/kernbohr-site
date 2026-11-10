@@ -232,7 +232,7 @@ const extra = {
   wanddurchbruch: { icon: 'opening', media: ['werk-oeffnung-schiene', 'werk-oeffnung-geruest', 'video-wandsaege', 'werk-bohrkrone-152'], guide: 'wanddurchbruch-tragende-wand' },
   betonsaegen: { icon: 'saw', media: ['video-wandsaege', 'video-fugenschneider'] },
   fugenschneiden: { icon: 'joint', media: ['video-fugenschneider'] },
-  schlitzfraesen: { icon: 'slot', media: [] },
+  schlitzfraesen: { icon: 'slot', media: ['video-schlitze-trasse', 'werk-schlitz-bogen', 'werk-schlitz-gewoelbe', 'werk-schlitz-gewoelbe-2', 'werk-schlitz-wand', 'werk-schlitz-deckenbogen'] },
   'rueckbau-teilabbruch': { icon: 'hammer', media: ['video-markierung', 'video-wandsaege'] },
   'kernbohrung-waermepumpe-klimaanlage': { icon: 'fan', media: ['werk-fassade', 'werk-durchfuehrung-decke', 'werk-bohrstaender'], guide: 'waermepumpe-kernbohrung' },
   'wanddurchbruch-dunstabzugshaube': { icon: 'hood', media: ['werk-wand-125', 'werk-unterzug', 'video-kernbohr-schiene'] },
