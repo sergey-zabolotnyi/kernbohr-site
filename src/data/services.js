@@ -6,10 +6,10 @@ export const services = [
     slug: 'kernbohrung',
     group: 'Leistung',
     name: 'Kernbohrungen',
-    title: 'Kernbohrung & Betonbohren in Dresden, Ø 14–500 mm',
-    description: 'Kernbohrung und Betonbohren in Dresden: Ø 14–500 mm, bis 2 m tief, in Beton, Stahlbeton und Mauerwerk. Staubarm, Preisliste online, kostenloses Angebot.',
-    h1: 'Kernbohrung in Dresden und Sachsen',
-    intro: 'Wir bohren millimetergenau in Beton, Stahlbeton, Mauerwerk und Naturstein, staubarm und erschütterungsarm, in allen Lagen. Ideal für Elektro-, Sanitär-, Lüftungs- und Heizungsinstallationen.',
+    title: 'Kernbohrung & Betonbohrung in Dresden, Ø 14–500 mm',
+    description: 'Kernbohrung und Betonbohrung in Dresden: Ø 14–500 mm, bis 2 m tief, in Beton, Stahlbeton und Mauerwerk. Staubarm, Preisliste online, kostenloses Angebot.',
+    h1: 'Kernbohrung und Betonbohrung in Dresden und Sachsen',
+    intro: 'Betonbohrung vom Profi: Wir bohren millimetergenau in Beton, Stahlbeton, Mauerwerk und Naturstein, staubarm und erschütterungsarm, in allen Lagen. Ideal für Elektro-, Sanitär-, Lüftungs- und Heizungsinstallationen.',
     facts: [
       ['Durchmesser', '14–500 mm, größere Durchmesser auf Anfrage'],
       ['Bohrtiefe', 'bis 2 m'],
@@ -20,6 +20,8 @@ export const services = [
     ],
     faqs: [
       ['Was ist eine Kernbohrung?', 'Kernbohrungen sind präzise, runde Öffnungen, die mit diamantbesetzten Bohrkronen in Beton, Stahlbeton oder Mauerwerk erstellt werden. Sie werden meist für Leitungen (Elektro, Sanitär, Lüftung) benötigt.'],
+      ['Was ist der Unterschied zwischen Betonbohrung und Kernbohrung?', 'Betonbohrung ist der Oberbegriff für Bohrungen in Beton. Für kleine Dübellöcher genügt ein Bohrhammer. Für saubere, runde Öffnungen für Rohre, Leitungen und Lüftung bohren wir mit diamantbesetzten Kronen im Kernbohrverfahren: Ø 14 bis 500 mm, staubarm und erschütterungsarm.'],
+      ['Was kostet eine Betonbohrung?', 'Eine Betonbohrung (Kernbohrung) kostet ab 1,20 € je cm Bohrtiefe (brutto, Ø 14–101 mm in Beton) zuzüglich Anfahrt und Pilotbohrung. Der Mindestauftragswert beträgt 250 €. Konkrete Beispiele finden Sie im Ratgeber zu den Kosten und im Kernbohr-Rechner.'],
       ['Wie groß können die Bohrdurchmesser sein?', 'Von Ø 14 mm bis Ø 500 mm, größere Durchmesser auf Anfrage. Die Bohrtiefe beträgt bis zu 2 m. Die Bohrungen können horizontal, vertikal oder über Kopf erfolgen.'],
     ],
     calculator: true,

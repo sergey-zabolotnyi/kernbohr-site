@@ -19,4 +19,8 @@ export const artikelBild = {
   'wanddurchbruch-tragende-wand': 'werk-oeffnung-schiene',
   'checkliste-termin-vorbereitung': 'werk-unterzug',
   'kernbohrung-dresden-altbau-plattenbau': 'werk-wand-125',
+  'betonbohrung-dresden': 'werk-wand-gross',
+  'kernbohrung-kosten-dresden': 'werk-bohrkrone-152',
+  'kernbohrung-mietwohnung-eigentum': 'werk-durchfuehrung-decke',
+  'handwerkerleistungen-steuer-absetzen-35a': 'werk-oeffnung-geruest',
 };

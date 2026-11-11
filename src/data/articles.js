@@ -329,4 +329,41 @@ export const articles = [
       ['Ist das Steuerberatung?', 'Nein, es sind allgemeine Hinweise. Verbindliche Auskunft gibt Ihr Steuerberater oder das Finanzamt.'],
     ],
   },
+  {
+    slug: 'betonbohrung-dresden',
+    icon: 'drill',
+    date: '2026-11-11',
+    title: 'Betonbohrung in Dresden: Kernbohren, Bohrhammer oder Wandsäge?',
+    h1: 'Betonbohrung in Dresden: Welches Verfahren passt?',
+    description: 'Betonbohrung in Dresden: Wann reicht der Bohrhammer, wann braucht es eine Kernbohrung oder Wandsäge? Durchmesser, Staub, Kosten und Auswahlhilfe vom Fachbetrieb.',
+    short: 'Bohrhammer, Kernbohrung oder Wandsäge: Das passende Verfahren für Ihre Öffnung.',
+    answer: `Für kleine Dübellöcher genügt bei einer Betonbohrung ein Bohrhammer. Sobald eine saubere, runde Öffnung für Rohre, Kabel oder Lüftung nötig ist, ist die Kernbohrung mit diamantbesetzter Krone das passende Verfahren: Ø 14 bis 500 mm, bis 2 m Tiefe, staubarm und erschütterungsarm. Für große, eckige Öffnungen setzt man die Wandsäge ein.`,
+    sections: [
+      { h: 'Drei Verfahren im Überblick', table: {
+        head: ['Verfahren', 'Typischer Einsatz', 'Ergebnis'],
+        rows: [
+          ['Bohrhammer', 'Dübel, Schrauben, kleine Löcher', 'kleines Loch, bei Stahlbeton begrenzt'],
+          ['Kernbohrung', 'Rohre, Leitungen, Lüftung, Wärmepumpe (Ø 14–500 mm)', 'rundes, sauberes Bohrloch, Bohrkern'],
+          ['Wandsäge / Betonschneiden', 'Türen, Fenster, große Durchbrüche, Treppenöffnungen', 'gerade Schnitte, exakte Kanten'],
+        ],
+      } },
+      { h: 'Warum Kernbohrung für Rohr- und Kabeldurchführungen', p: [
+        'Bei der Kernbohrung schneidet eine rotierende Diamantkrone einen runden Zylinder aus dem Beton und lässt ihn als Bohrkern stehen. Das ist präziser und erschütterungsärmer als Schlagbohren oder Stemmen und schont angrenzende Bauteile. Die Bohrung wird in der Regel nass ausgeführt, mit Wassersauger bleibt es sauber.',
+      ] },
+      { h: 'Welcher Durchmesser für welchen Zweck?', p: ['Die Wahl des Durchmessers hängt vom Rohr oder der Leitung ab, plus Platz für Dämmung oder Dichtung. Eine Übersicht finden Sie in unserem Ratgeber zur Wahl des Bohrdurchmessers.'] },
+      { h: 'Was kostet eine Betonbohrung?', p: ['Der Preis richtet sich nach Durchmesser und Bohrtiefe, ab 1,20 € je cm Bohrtiefe (brutto, Ø 14–101 mm in Beton). Dazu kommen Anfahrt und Pilotbohrung, der Mindestauftragswert beträgt 250 €. Details und Beispiele stehen im Kostenratgeber und im Kernbohr-Rechner.'] },
+      { h: 'Vorher klären', ul: [
+        'Leitungen, Rohre und Bewehrung an der Bohrstelle klären und freigeben.',
+        'Bei tragenden Bauteilen den Statiker einbeziehen.',
+        'Strom und Wasseranschluss in der Nähe bereitstellen.',
+        'Bohrstelle markieren und ein Foto per WhatsApp senden.',
+      ] },
+    ],
+    faqs: [
+      ['Ist Betonbohrung dasselbe wie Kernbohrung?', 'Betonbohrung ist der Oberbegriff für Bohrungen in Beton. Die Kernbohrung ist das Verfahren mit Diamantkrone für runde, saubere Öffnungen größerer Durchmesser.'],
+      ['Wann reicht ein Bohrhammer nicht aus?', 'Bei größeren Durchmessern, Stahlbeton mit Bewehrung und überall dort, wo Erschütterungen und Ausbrüche vermieden werden sollen, ist eine Kernbohrung die bessere Wahl.'],
+      ['Wie groß kann eine Betonbohrung werden?', 'Wir bohren Ø 14 bis 500 mm, bis zu 2 m tief. Größere Durchmesser auf Anfrage.'],
+      ['Machen Sie auch Betonbohrungen über Kopf und in Wohnungen?', 'Ja, horizontal, vertikal und über Kopf, in bewohnten Gebäuden staubarm mit Wassersauger.'],
+    ],
+  },
 ];
