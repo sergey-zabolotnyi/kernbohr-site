@@ -81,4 +81,21 @@ export const orte = [
       ['Wie bekomme ich ein Angebot?', 'Foto der Bohrstelle, Durchmesser und Wandstärke per WhatsApp senden. Wir melden uns mit einem konkreten Angebot.'],
     ],
   },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    lage: 'Leipzig-Mitte, Plagwitz, Lindenau, Südvorstadt, Connewitz, Gohlis, Schleußig und Grünau',
+    intro: 'Kernbohrungen, Wanddurchbrüche und Betonarbeiten in Leipzig: vom Gründerzeit-Altbau bis zum Plattenbau, von der einzelnen Bohrung bis zum größeren Projekt. Wir sind regelmäßig in Leipzig im Einsatz.',
+    kurz: 'Wir bohren in Leipzig Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe (ab 1,20 € in Beton). Da Leipzig außerhalb unseres Dresdner Umkreises liegt, berechnen wir die Anfahrt nach Entfernung und nennen sie vorab im Angebot. Mindestpreis 250 € je Auftrag.',
+    typisch: [
+      ['Gründerzeit-Altbau', 'In Plagwitz, Connewitz, der Südvorstadt oder Gohlis stehen viele Altbauten mit dicken Ziegelwänden. Wir bohren erschütterungsarm und nass, damit Putz und Bestand geschont werden.'],
+      ['Plattenbau und Wohnungsbau', 'In Grünau und anderen Wohngebieten bohren wir für Lüftung, Abluft, Leitungen und Wärmepumpen durch Beton- und Plattenwände.'],
+      ['Gewerbe und größere Projekte', 'Für Gewerbeobjekte, Sanierungen und Serien mit vielen Bohrungen planen wir Termine gebündelt, damit sich der Einsatz auch bei längerer Anfahrt lohnt.'],
+    ],
+    faq: [
+      ['Fahren Sie auch für eine einzelne Bohrung nach Leipzig?', 'Ja, auch für eine oder zwei Bohrungen, zum Beispiel für Wärmepumpe oder Lüftung. Die Anfahrt berechnen wir nach Entfernung und nennen sie vorab. Mehrere Bohrungen oder mehrere Aufträge in einem Termin senken den Aufwand je Bohrung.'],
+      ['Was kostet die Anfahrt nach Leipzig?', 'Der Anfahrtssatz von 85 € gilt im Umkreis von ca. 30 km um Dresden. Für Leipzig rechnen wir die Anfahrt nach Entfernung. Den Preis erhalten Sie vor dem Termin im Angebot, ohne Überraschungen.'],
+      ['Arbeiten Sie in Leipzig auch am Wochenende oder abends?', 'Ja, nach Absprache. Telefonisch erreichen Sie uns Mo–Sa 7–19 Uhr, Wochenend- und Nachteinsätze berechnen wir nach unserer Preisliste mit Zuschlag.'],
+    ],
+  },
 ];

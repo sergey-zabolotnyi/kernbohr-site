@@ -46,7 +46,7 @@ const werte = [
       <div>
         <span class="eyebrow">Kernbohr-Expert · Dresden</span>
         <h1>Kernbohrung &amp; Wanddurchbruch in Dresden und Sachsen</h1>
-        <p class="lead">Kernbohr-Expert führt Kernbohrungen und Wanddurchbrüche in Dresden und Sachsen aus: Ø 14 bis 500 mm und bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk, mit Hilti-Profitechnik, staubarm und erschütterungsarm. Der Mindestauftragswert beträgt 250 €, die Anfahrt 85 € (Umkreis bis ca. 30 km). Richtpreis in 30 Sekunden berechnen oder Foto per WhatsApp senden.</p>
+        <p class="lead">Kernbohr-Expert führt Kernbohrungen und Wanddurchbrüche in Dresden, Leipzig und ganz Sachsen aus, bundesweit nach Absprache: Ø 14 bis 500 mm und bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk, mit Hilti-Profitechnik, staubarm und erschütterungsarm. Der Mindestauftragswert beträgt 250 €, die Anfahrt 85 € (Umkreis bis ca. 30 km). Richtpreis in 30 Sekunden berechnen oder Foto per WhatsApp senden.</p>
         <div class="btns">
           <a class="btn btn-main" href="#kb-rechner"><Icon name="euro" size={20} /> Richtpreis berechnen</a>
           <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> Foto senden</a>
@@ -128,7 +128,7 @@ const werte = [
     dark
     eyebrow="Einblick"
     title="So arbeiten wir"
-    ids={['werk-bohrstaender', 'video-kernbohr-schiene', 'werk-ueberkopf-1', 'video-wandsaege', 'werk-wand-gross', 'video-fugenschneider']}
+    ids={['werk-bohrstaender', 'video-kernbohr-schiene', 'werk-oeffnung-schiene', 'video-wandsaege', 'werk-wand-gross', 'video-fugenschneider']}
   />
 
   <section>
@@ -206,7 +206,7 @@ const werte = [
             <tr><th>Materialien</th><td>Beton, Stahlbeton, Ziegelmauerwerk, Naturstein</td></tr>
             <tr><th>Verfahren</th><td>Nass- und Trockenbohrung, horizontal, vertikal und über Kopf</td></tr>
             <tr><th>Strom</th><td>230 V oder 400 V (Adapter auf 16 A)</td></tr>
-            <tr><th>Wasser</th><td>Normaler Wasseranschluss auf der Baustelle</td></tr>
+            <tr><th>Wasser</th><td>Wasseranschluss oder Kanister (bringen wir bei Bedarf mit, im Preis enthalten)</td></tr>
             <tr><th>Einsatzgebiet</th><td>Dresden, Radebeul, Meißen, Pirna, Sachsen; bundesweit für größere Projekte</td></tr>
           </tbody>
         </table>
@@ -231,8 +231,8 @@ const werte = [
   <section>
     <div class="wrap">
       <span class="eyebrow">Einsatzgebiet</span>
-      <h2>Dresden, Radebeul, Meißen, Pirna und ganz Sachsen</h2>
-      <p class="lead">Unser Sitz ist Dresden. Für größere Projekte sind wir bundesweit im Einsatz.</p>
+      <h2>Kernbohrung in Ihrer Nähe: Dresden, Leipzig und ganz Sachsen</h2>
+      <p class="lead">Unser Sitz ist Dresden, in Leipzig sind wir regelmäßig im Einsatz. Für Projekte bis Berlin und bundesweit fahren wir nach Absprache.</p>
       <ul class="chips">
         {['Dresden', 'Coswig', 'Heidenau', 'Dippoldiswalde'].map((c) => <li>{c}</li>)}
         {orte.map((o) => <li><a href={`/kernbohrung-in-${o.slug}/`}>{o.name}</a></li>)}

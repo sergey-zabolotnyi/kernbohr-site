@@ -10,11 +10,11 @@ import { orte } from '../data/orte.js';
 
 const stadtteile = ['Altstadt', 'Neustadt', 'Pieschen', 'Striesen', 'Blasewitz', 'Loschwitz', 'Johannstadt', 'Plauen', 'Löbtau', 'Cotta', 'Gorbitz', 'Prohlis', 'Leuben', 'Klotzsche', 'Lockwitz'];
 const umland = ['Radebeul', 'Coswig', 'Meißen', 'Pirna', 'Heidenau', 'Freital', 'Radeberg', 'Dippoldiswalde', 'Rabenau', 'Glashütte', 'Bad Gottleuba-Berggießhübel'];
-const bundesweit = ['Sachsen', 'Thüringen', 'Bayern', 'Brandenburg'];
+const bundesweit = ['Leipzig', 'Berlin', 'Chemnitz', 'Thüringen', 'Brandenburg', 'Bayern'];
 ---
 <Base
-  title="Einsatzgebiet: Kernbohrung Dresden, Umland, bundesweit"
-  description="Kernbohrung und Betonbearbeitung in allen Dresdner Stadtteilen, im Umland (Radebeul, Meißen, Pirna, Freital, Radeberg) und bundesweit für größere Projekte."
+  title="Einsatzgebiet: Kernbohrung Dresden, Leipzig, bundesweit"
+  description="Kernbohrung und Betonbearbeitung in Dresden und in der Nähe (Radebeul, Meißen, Pirna, Freital, Radeberg), in Leipzig, bis Berlin und bundesweit nach Absprache."
   path="/einsatzgebiet/"
   schema={[crumbSchema([['Einsatzgebiet', '/einsatzgebiet/']])]}
 >
@@ -24,8 +24,8 @@ const bundesweit = ['Sachsen', 'Thüringen', 'Bayern', 'Brandenburg'];
     <div class="wrap">
       <div>
         <span class="eyebrow">Einsatzgebiet</span>
-        <h1>Kernbohrung in Dresden, im Umland und bundesweit</h1>
-        <p class="lead">Unser Sitz ist Dresden. Von hier aus erreichen wir alle Stadtteile und das Umland schnell, für größere Projekte sind wir deutschlandweit im Einsatz.</p>
+        <h1>Kernbohrung in Dresden, Leipzig, Sachsen und bundesweit</h1>
+        <p class="lead">Unser Sitz ist Dresden. Von hier aus erreichen wir alle Stadtteile und das Umland schnell. Auch in Leipzig sind wir regelmäßig im Einsatz, für Projekte bis Berlin und deutschlandweit nach Absprache. Sie suchen eine Kernbohrung in der Nähe? Rufen Sie uns an.</p>
       </div>
     </div>
   </section>
@@ -48,7 +48,7 @@ const bundesweit = ['Sachsen', 'Thüringen', 'Bayern', 'Brandenburg'];
         <div class="card">
           <div class="ico"><Icon name="map" size={28} /></div>
           <h3>Bundesweit</h3>
-          <p>Für größere Projekte insbesondere in:</p>
+          <p>Leipzig, Berlin und größere Projekte deutschlandweit, unter anderem in:</p>
           <ul class="chips">{bundesweit.map((s) => <li>{s}</li>)}</ul>
           <p>Weitere Einsätze auf Anfrage. Anfahrt, Übernachtung und Einsatzdauer vereinbaren wir individuell.</p>
         </div>

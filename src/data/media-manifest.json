@@ -20,26 +20,6 @@
       "alt": "Fertige, saubere Kernbohrung in einer verputzten Fassade",
       "caption": "Fertige Bohrung durch die Außenwand"
     },
-    "werk-ueberkopf-1": {
-      "widths": [
-        800,
-        1600
-      ],
-      "w": 1200,
-      "h": 1600,
-      "alt": "Mitarbeiter bohrt von der Leiter mit einem Kernbohrgerät auf Schiene in der Ecke zwischen Wand und Decke",
-      "caption": "Kernbohrung an der Decke"
-    },
-    "werk-ueberkopf-2": {
-      "widths": [
-        800,
-        1600
-      ],
-      "w": 1600,
-      "h": 1200,
-      "alt": "Mitarbeiter führt auf der Leiter eine Kernbohrung an der Decke mit Wasserführung aus",
-      "caption": "Überkopfbohrung mit Wasserführung"
-    },
     "werk-wand-gross": {
       "widths": [
         800,

@@ -156,7 +156,7 @@ export const articles = [
         'Bei tragenden Wänden: Statik oder Freigabe bereithalten' ] },
       { h: 'Vor dem Termin', checks: [
         'Stromanschluss in der Nähe: 230-V-Steckdose, alternativ 400 V (Adapter auf 16 A)',
-        'Normaler Wasseranschluss in der Nähe der Bohrstelle',
+        'Wasser: Anschluss in der Nähe der Bohrstelle, ohne Anschluss bringen wir es in Kanistern mit (bitte vorab Bescheid geben)',
         'Bohrstelle und Umgebung freiräumen, Möbel und Böden abdecken',
         'Bohrstelle markieren, genaue Position und Höhe abstimmen',
         'Zugang klären: Treppenhaus, Aufzug, Parkplatz für das Fahrzeug',
@@ -171,7 +171,7 @@ export const articles = [
         'Fotos der fertigen Arbeit für Ihre Unterlagen machen' ] },
     ],
     faqs: [
-      ['Brauchen Sie Wasser vor Ort?', 'Ja. Für die Nassbohrung brauchen wir einen normalen Wasseranschluss und Strom auf der Baustelle.'],
+      ['Brauchen Sie Wasser vor Ort?', 'Für die Nassbohrung brauchen wir Wasser. Ist kein Wasseranschluss vorhanden, ist das kein Problem: Sagen Sie uns vorab Bescheid, dann bringen wir das Wasser in Kanistern mit, das ist im Auftragspreis enthalten. Strom muss dagegen vor Ort vorhanden sein.'],
       ['Welchen Strom brauchen Sie?', 'Wir arbeiten mit 230 V oder 400 V (Drehstrom, per Adapter auf 16 A). Meist genügt eine 230-V-Steckdose. Wir klären das vorab mit Ihnen.'],
     ],
   },
@@ -270,7 +270,7 @@ export const articles = [
         'Bei tragenden Bauteilen Statiker einbeziehen.',
         'Bohrstelle markieren, Leitungsverläufe klären und freigeben.',
         'Foto der Stelle per WhatsApp senden und Richtpreis erhalten.',
-        'Termin vereinbaren, Strom und Wasseranschluss bereitstellen.',
+        'Termin vereinbaren und Strom bereitstellen. Wasser bringen wir bei Bedarf in Kanistern mit.',
       ] },
       { h: 'Lärm und Ruhezeiten im Haus', p: [
         'Kernbohren ist deutlich leiser und erschütterungsärmer als Stemmen, trotzdem sollten Nachbarn vorab informiert werden. Wir stimmen die Arbeitszeiten mit Ihnen ab und beachten Ruhezeiten und Hausordnung, soweit sie den Einsatz zulassen.',
@@ -355,7 +355,7 @@ export const articles = [
       { h: 'Vorher klären', ul: [
         'Leitungen, Rohre und Bewehrung an der Bohrstelle klären und freigeben.',
         'Bei tragenden Bauteilen den Statiker einbeziehen.',
-        'Strom und Wasseranschluss in der Nähe bereitstellen.',
+        'Strom in der Nähe bereitstellen. Wasser bringen wir bei Bedarf in Kanistern mit.',
         'Bohrstelle markieren und ein Foto per WhatsApp senden.',
       ] },
     ],
