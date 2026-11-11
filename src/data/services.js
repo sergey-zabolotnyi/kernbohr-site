@@ -1,5 +1,5 @@
 // Inhalte der Leistungsseiten (Basis: bisherige Texte des Inhabers). [ ] = bitte bestätigen.
-const areas = 'Dresden, Pirna, Radebeul, Meißen, Sachsen; bundesweit für größere Projekte';
+const areas = 'Dresden, Pirna, Radebeul, Meißen, Leipzig, Sachsen; Berlin und bundesweit für größere Projekte';
 
 export const services = [
   {
@@ -35,7 +35,7 @@ export const services = [
     group: 'Leistung',
     name: 'Durchbrüche & Öffnungen',
     title: 'Wanddurchbruch & Deckenöffnung in Dresden',
-    description: 'Wand- und Deckendurchbrüche, auch tragend mit Statik-Zusammenarbeit, in Dresden und bundesweit. Für Umbau, Sanierung und Grundrissänderung.',
+    description: 'Wand- und Deckendurchbrüche, auch tragend mit Statik-Zusammenarbeit, in Dresden, Leipzig und bundesweit. Für Umbau, Sanierung und Grundrissänderung.',
     h1: 'Wanddurchbruch und statische Öffnungen',
     intro: 'Für neue Raumlösungen oder Nutzungsänderungen schaffen wir gezielt Wand- und Deckendurchbrüche, auf Wunsch mit statischer Prüfung und Absicherung in Zusammenarbeit mit Architekten und Statikern.',
     facts: [
@@ -53,7 +53,7 @@ export const services = [
     group: 'Leistung',
     name: 'Betonsägen',
     title: 'Betonsägen & Wandsägen in Dresden',
-    description: 'Betonsägen und Wandsägen für Wand- und Deckenöffnungen in Dresden und Sachsen. Betonschneiden mit exakten Schnitten, geräusch- und vibrationsarm.',
+    description: 'Betonsägen und Wandsägen für Wand- und Deckenöffnungen in Dresden, Leipzig und Sachsen. Betonschneiden mit exakten Schnitten, geräusch- und vibrationsarm.',
     h1: 'Betonsägen und Wandsägen in Dresden und Sachsen',
     intro: 'Mit der Wandsäge auf Führungsschiene (Betonschneiden) entstehen exakte, gerade Schnitte für Öffnungen und Rückbau, geräusch- und vibrationsarm und mit wirksamem Staubschutz.',
     facts: [
@@ -71,7 +71,7 @@ export const services = [
     group: 'Leistung',
     name: 'Fugenschneiden',
     title: 'Fugenschneiden in Dresden & Sachsen',
-    description: 'Fugenschneiden in Beton für Dehn- und Trennfugen in Dresden und Sachsen. Saubere Schnitte, schnelle Terminvergabe.',
+    description: 'Fugenschneiden in Beton für Dehn- und Trennfugen in Dresden, Leipzig und Sachsen. Saubere Schnitte, schnelle Terminvergabe.',
     h1: 'Fugenschneiden in Dresden und Sachsen',
     intro: 'Mit dem Fugenschneiden setzen wir Dehn-, Scheinfugen und Trennschnitte in Bodenplatten und Flächen, damit der Beton kontrolliert arbeiten kann und keine wilden Risse entstehen.',
     facts: [
@@ -88,7 +88,7 @@ export const services = [
     group: 'Leistung',
     name: 'Schlitze in Beton fräsen',
     title: 'Schlitze fräsen in Dresden: Beton & Mauerwerk',
-    description: 'Präzises Fräsen von Schlitzen in Beton und Stahlbeton für Elektro-, Wasser- und Heizungsinstallationen in Dresden und Sachsen. Staubarm und zeitsparend.',
+    description: 'Präzises Fräsen von Schlitzen in Beton und Stahlbeton für Elektro-, Wasser- und Heizungsinstallationen in Dresden, Leipzig und Sachsen. Staubarm und zeitsparend.',
     h1: 'Schlitze in Beton fräsen',
     intro: 'Für Elektro-, Wasser- oder Heizungsleitungen fräsen wir exakte und saubere Schlitze in Beton und Stahlbeton, ganz nach Plan, staubarm, präzise und zeitsparend, ideal für Sanierungen und Neubauten.',
     facts: [
@@ -123,7 +123,7 @@ export const services = [
     group: 'Anwendung',
     name: 'Wärmepumpe & Klimaanlage',
     title: 'Kernbohrung für Wärmepumpe & Klimaanlage in Dresden',
-    description: 'Saubere Kernbohrung für Wärmepumpen und Klimageräte in Dresden, Pirna, Radebeul und Meißen. Staubarm, Festpreis nach Foto.',
+    description: 'Saubere Kernbohrung für Wärmepumpen und Klimageräte in Dresden, Pirna, Radebeul, Meißen und Leipzig. Staubarm, Festpreis nach Foto.',
     h1: 'Kernbohrung für Wärmepumpe und Klimaanlage',
     intro: 'Für Wärmepumpe, Split- oder Multisplit-Klimagerät braucht Ihr Haus eine saubere Durchführung durch die Außenwand. Wir bohren passend, damit Kältemittel-, Strom- und Kondensatleitungen sicher nach draußen geführt werden.',
     facts: [
@@ -165,7 +165,7 @@ export const services = [
     group: 'Anwendung',
     name: 'Kamin & Sanitär',
     title: 'Kernbohrung für Kamin- & Sanitäranschlüsse in Dresden',
-    description: 'Kernbohrungen für Kaminanschluss, Abwasser, Lüftung und Sanitär in Dresden, Pirna, Radebeul, Meißen. Präzise, sauber, mit kostenlosem Angebot.',
+    description: 'Kernbohrungen für Kaminanschluss, Abwasser, Lüftung und Sanitär in Dresden, Pirna, Radebeul, Meißen, Leipzig. Präzise, sauber, mit kostenlosem Angebot.',
     h1: 'Kernbohrung für Kamin- und Sanitäranschlüsse',
     intro: 'Ob Ofenrohr zum Schornstein, Abwasserrohr, Lüftung oder Wasserleitung: Wir schaffen präzise Durchführungen in Wänden und Decken.',
     facts: [
@@ -185,7 +185,7 @@ export const services = [
     group: 'Anwendung',
     name: 'Einsatz nachts & am Wochenende',
     title: 'Kernbohrung nachts & am Wochenende in Dresden',
-    description: 'Kernbohrung und Betonsägen nachts, am Wochenende und an Feiertagen in Dresden und Sachsen. Einsätze nach Absprache rund um die Uhr, Angebot per WhatsApp.',
+    description: 'Kernbohrung und Betonsägen nachts, am Wochenende und an Feiertagen in Dresden, Leipzig und Sachsen. Einsätze nach Absprache rund um die Uhr, Angebot per WhatsApp.',
     h1: 'Kernbohrung nachts und am Wochenende',
     intro: 'Wenn der Termin drängt: Unsere Einsätze sind nach Absprache rund um die Uhr möglich: Wir fahren auch abends, nachts, am Wochenende und an Feiertagen zu Ihnen, soweit das am Objekt zulässig ist. Telefonisch erreichen Sie uns Montag bis Samstag von 7 bis 19 Uhr. In Dresden, Sachsen und bei größeren Projekten bundesweit.',
     facts: [
@@ -213,7 +213,7 @@ export const faqs = [
   ['Wie groß können die Bohrdurchmesser sein?', 'Unsere Kernbohrungen sind von Ø 14 mm bis Ø 500 mm möglich, größere Durchmesser auf Anfrage. Die Bohrtiefe beträgt bis zu 2 m. Die Bohrungen können horizontal, vertikal oder über Kopf erfolgen.'],
   ['Ist eine statische Prüfung vor einem Wanddurchbruch notwendig?', 'Bei tragenden Wänden oder Decken ist eine statische Prüfung durch einen Statiker unbedingt erforderlich. Gerne arbeiten wir mit Ihrem Architekten oder Statiker zusammen.'],
   ['Arbeiten Sie auch in bewohnten Gebäuden?', 'Ja. Wir setzen auf lärmreduzierte, staubarme Technik und passende Schutzmaßnahmen, ideal für Sanierungen oder Umbauten in bewohnten Gebäuden.'],
-  ['In welchen Regionen sind Sie tätig?', 'Wir sind bundesweit im Einsatz, insbesondere in Sachsen, Thüringen, Bayern und Brandenburg. Für größere Projekte sind auch weiter entfernte Einsätze möglich. Unser Sitz ist Dresden.'],
+  ['In welchen Regionen sind Sie tätig?', 'Unser Sitz ist Dresden. Wir sind in Dresden, Pirna, Radebeul, Meißen und ganz Sachsen im Einsatz, regelmäßig auch in Leipzig, sowie bis Berlin. Für größere Projekte fahren wir bundesweit, insbesondere nach Thüringen, Bayern und Brandenburg. Anfahrt, Übernachtung und Einsatzdauer vereinbaren wir individuell.'],
   ['Wie schnell kann ein Auftrag durchgeführt werden?', 'Wir bieten flexible Terminvereinbarungen. In dringenden Fällen sind kurzfristige Einsätze möglich, kontaktieren Sie uns einfach telefonisch oder per E-Mail.'],
   ['Was kostet eine Kernbohrung oder ein Rückbau?', 'Die Preise hängen ab von Material, Durchmesser, Anzahl, Zugänglichkeit und Aufwand. Mit dem Kernbohr-Rechner erhalten Sie einen ersten Richtwert, gerne erstellen wir Ihnen außerdem ein kostenloses und unverbindliches Angebot.'],
   ['Welche Unterlagen oder Informationen benötigen Sie zur Angebotserstellung?', 'Ideal sind Grundrisse, Fotos der Einsatzstelle und Angaben zu Materialstärke, Durchmesser, Zugangsmöglichkeiten und Zeitfenster. Ein Foto per WhatsApp genügt oft schon.'],

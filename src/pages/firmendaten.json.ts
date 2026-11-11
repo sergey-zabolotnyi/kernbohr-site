@@ -18,7 +18,7 @@ export function GET() {
     inhaberInBranchenSeit: site.sinceBranche,
     mitarbeiter: site.employees,
     umsatzsteuerId: site.vatId,
-    einsatzgebiet: ['Dresden', 'Radebeul', 'Meißen', 'Pirna', 'Freital', 'Radeberg', 'Coswig', 'Heidenau', 'Sachsen', 'bundesweit für größere Projekte'],
+    einsatzgebiet: ['Dresden', 'Radebeul', 'Meißen', 'Pirna', 'Freital', 'Radeberg', 'Coswig', 'Heidenau', 'Leipzig', 'Sachsen', 'Berlin', 'bundesweit für größere Projekte'],
     kernbohrung: { durchmesserMm: [regeln.minDurchmesser, regeln.maxDurchmesser], maxTiefeCm: regeln.maxTiefeCm, materialien: ['Beton', 'Stahlbeton', 'Mauerwerk'] },
     preisliste: {
       stand,
