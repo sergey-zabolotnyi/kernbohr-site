@@ -18,6 +18,6 @@ export const site = {
   phoneHours: 'Mo–Sa 7–19 Uhr',          // Inhaber: telefonisch Montag bis Samstag 7 bis 19 Uhr
   hoursText: 'Telefonisch Mo–Sa 7–19 Uhr. Einsätze nach Absprache rund um die Uhr, auch abends, am Wochenende und an Feiertagen',
   sinceBranche: '2006',                // Inhaber in der Baubranche seit 2006 (Firma gegründet 2017)
-  employees: 8,                        // [Inhaber bestätigen]
+  employees: 8,                        // vom Inhaber bestätigt
   areas: ['Dresden', 'Pirna', 'Radebeul', 'Meißen', 'Sachsen'],
 };
