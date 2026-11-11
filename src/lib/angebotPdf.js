@@ -164,7 +164,7 @@ export async function erstelleAngebotPdf({ eingabe, ergebnis }) {
   [
     'Dies ist ein unverbindlicher Richtwert. Ein verbindliches Festpreisangebot erstellen wir nach Foto der Bohrstelle sowie Angabe von Durchmesser und Wandstärke.',
     `Anfahrt und Baustelleneinrichtung (${money(regeln.anfahrt)}) gelten im Umkreis von ca. 20–30 km um Dresden, darüber hinaus nach Vereinbarung.`,
-    'Voraussetzung sind Strom (230 V oder 400 V) und ein Wasseranschluss am Einsatzort. Leitungen, Bewehrung und Statik klärt der Auftraggeber vorab. Wir bohren nur an markierten, freigegebenen Punkten.',
+    'Voraussetzung ist Strom (230 V oder 400 V) am Einsatzort. Wasser bringen wir bei Bedarf in Kanistern mit (im Preis enthalten, bitte vorab mitteilen). Leitungen, Bewehrung und Statik klärt der Auftraggeber vorab. Wir bohren nur an markierten, freigegebenen Punkten.',
     `Telefonisch erreichbar ${site.phoneHours}. Einsätze nach Absprache auch abends, nachts und am Wochenende.`,
   ].forEach((t) => {
     const l = doc.splitTextToSize('• ' + t, W - 2 * M - 4);

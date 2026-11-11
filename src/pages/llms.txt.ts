@@ -21,7 +21,7 @@ Kurzfakten:
 - Erfahrung: Inhaber seit 2006 in der Baubranche, Firma seit ${site.founded}, Team von ${site.employees} Mitarbeitern (bei Großprojekten erweiterbar)
 - Versicherung: Betriebshaftpflichtversicherung vorhanden, Versicherungsnachweis auf Anfrage
 - Sauberkeit: staubarm mit Wassersauger, Arbeitsbereich wird aufgeräumt übergeben
-- Voraussetzung vor Ort: Strom (230 V, bei großen Durchmessern ggf. 400 V) und Wasseranschluss
+- Voraussetzung vor Ort: Strom (230 V, bei großen Durchmessern ggf. 400 V). Wasser bringen wir bei Bedarf in Kanistern mit (im Auftragspreis enthalten, bitte vorab Bescheid geben)
 - Kunden: Privatkunden, Handwerksbetriebe, Bauunternehmen
 
 ## Wichtige Seiten
