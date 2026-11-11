@@ -18,7 +18,7 @@ Kurzfakten:
 - E-Mail: ${site.email}
 - Kernbohrung: Ø 14–500 mm, Bohrtiefe bis 2 m, Beton, Stahlbeton, Mauerwerk
 - Technik: Hilti-Kernbohrtechnik, außerdem Wandsäge und Fugenschneider
-- Erfahrung: Inhaber seit 2006 in der Baubranche, Firma seit ${site.founded}, Team von ${site.employees} Mitarbeitern
+- Erfahrung: Inhaber seit 2006 in der Baubranche, Firma seit ${site.founded}, Team von ${site.employees} Mitarbeitern (bei Großprojekten erweiterbar)
 - Kunden: Privatkunden, Handwerksbetriebe, Bauunternehmen
 
 ## Wichtige Seiten

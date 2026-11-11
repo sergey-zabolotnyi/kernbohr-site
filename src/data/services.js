@@ -21,6 +21,7 @@ export const services = [
     faqs: [
       ['Was ist eine Kernbohrung?', 'Kernbohrungen sind präzise, runde Öffnungen, die mit diamantbesetzten Bohrkronen in Beton, Stahlbeton oder Mauerwerk erstellt werden. Sie werden meist für Leitungen (Elektro, Sanitär, Lüftung) benötigt.'],
       ['Was ist der Unterschied zwischen Betonbohrung und Kernbohrung?', 'Betonbohrung ist der Oberbegriff für Bohrungen in Beton. Für kleine Dübellöcher genügt ein Bohrhammer. Für saubere, runde Öffnungen für Rohre, Leitungen und Lüftung bohren wir mit diamantbesetzten Kronen im Kernbohrverfahren: Ø 14 bis 500 mm, staubarm und erschütterungsarm.'],
+      ['Übernehmen Sie auch größere Projekte und Serienbohrungen?', 'Ja. Mit unserem Team von 8 Mitarbeitern führen wir auch größere Projekte und Serienbohrungen aus, in Dresden, Sachsen und bundesweit. Bei Bedarf erweitern wir das Team. Für ein Angebot senden Sie uns Bohrliste oder Plan mit Durchmesser, Tiefe und Anzahl der Bohrungen.'],
       ['Was kostet eine Betonbohrung?', 'Eine Betonbohrung (Kernbohrung) kostet ab 1,20 € je cm Bohrtiefe (brutto, Ø 14–101 mm in Beton) zuzüglich Anfahrt und Pilotbohrung. Der Mindestauftragswert beträgt 250 €. Konkrete Beispiele finden Sie im Ratgeber zu den Kosten und im Kernbohr-Rechner.'],
       ['Wie groß können die Bohrdurchmesser sein?', 'Von Ø 14 mm bis Ø 500 mm, größere Durchmesser auf Anfrage. Die Bohrtiefe beträgt bis zu 2 m. Die Bohrungen können horizontal, vertikal oder über Kopf erfolgen.'],
     ],
