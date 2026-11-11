@@ -1,5 +1,5 @@
 :root{
-  --accent:#e8590c;--accent-d:#c2410c;--accent-soft:#fff1e8;
+  --accent:#c2410c;--accent-d:#9a3412;--accent-l:#ff7a33;--accent-soft:#fff1e8;
   --dark:#14181c;--graphite:#1f262c;--soft:#f3f4f5;--line:#dfe3e6;
   --text:#1b1f23;--muted:#58626b;--radius:14px;
   --font-head:'Barlow Condensed','Arial Narrow',system-ui,sans-serif;
@@ -378,7 +378,7 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
   .card:not(.has-img) p{margin:0;font-size:.88rem}
 }
 
-.foot-bottom .made-by{display:block;margin-top:6px;font-size:.78rem;opacity:.55}
+.foot-bottom .made-by{display:block;margin-top:6px;font-size:.78rem;color:#aab1b8}
 .foot-bottom .made-by a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .foot-bottom .made-by a:hover{opacity:1}
 
@@ -403,7 +403,7 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
 /* Startseite: Ansprechpartner / Fakten */
 .about-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin:1.2rem 0}
 .about-facts>div{background:#fff;border:1px solid var(--line,#e3e6e9);border-radius:12px;padding:.9rem 1rem}
-.about-facts dt{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#e8590c;margin:0 0 .2rem}
+.about-facts dt{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 .2rem}
 .about-facts dd{margin:0;font-weight:500}
 .about-links{display:flex;flex-wrap:wrap;gap:.6rem}
 @media (max-width:768px){.about-facts{grid-template-columns:1fr 1fr;gap:.6rem}.about-facts>div{padding:.7rem .8rem;font-size:.92rem}}
@@ -420,3 +420,13 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
   .hero-vid-card.on{opacity:1}
 }
 @media (prefers-reduced-motion:reduce){.hero-vid{display:none!important}}
+
+/* Barrierefreiheit: Akzentfarbe auf hellem Grund kontrastreich (≥ 4,5:1), helle Variante nur auf dunklem Grund */
+.hero .eyebrow,.dark .eyebrow,.cta-band .eyebrow,.foot .eyebrow{color:var(--accent-l)}
+.hero .eyebrow::before,.dark .eyebrow::before{background:var(--accent-l)}
+.hero-points .icon,.strip .icon,.foot .row .icon,.dark .icon{color:var(--accent-l)}
+.foot-bottom a,.prose p a,.prose li a,.note a,.card-body p a{text-decoration:underline;text-underline-offset:2px}
+.table-scroll:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.hero-points:focus-visible,.timeline:focus-visible{outline:3px solid var(--accent-l);outline-offset:2px}

@@ -31,7 +31,6 @@ export const articleSchema = (a) => ({
   inLanguage: 'de-DE',
   author: { '@type': 'Person', '@id': `${site.url}/#inhaber`, name: site.owner, url: `${site.url}/ueber-uns/` },
   publisher: { '@id': `${site.url}/#business` },
-  publisher: { '@id': site.url + '/#business' },
   mainEntityOfPage: `${site.url}/ratgeber/${a.slug}/`,
 });
 
@@ -62,7 +61,6 @@ export const videoSchema = (v, base = site.url) => ({
   thumbnailUrl: `${base}/posters/${v.id}.jpg`,
   contentUrl: `${base}/videos/${v.id}.mp4`,
   uploadDate: '2026-11-07',
-  publisher: { '@id': site.url + '/#business' },
 });
 
 // HowTo-Schema für den Ablauf (Schritte als [Name, Text]).

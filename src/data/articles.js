@@ -1,6 +1,16 @@
 // Ratgeber-Artikel. Allgemeine Fachinformationen; Angaben mit [ ] vom Inhaber bestätigen.
 // Hinweis: Kein Rechts- oder Steuerrat. Verbindliche Auskünfte gibt der Fachplaner, Statiker oder Steuerberater.
 
+import { berechne, eur, staffelKompakt, regeln, zuschlagTabelle, stand } from './preisliste.js';
+
+const BEISPIELE_KOSTEN = [
+  ['1× Ø 82 mm, 30 cm Beton (Leitung, Rohr)', { d: 82, tiefe: 30 }],
+  ['1× Ø 150 mm, 30 cm Beton (z. B. Wärmepumpe)', { d: 150, tiefe: 30 }],
+  ['1× Ø 200 mm, 40 cm Beton (Lüftung)', { d: 200, tiefe: 40 }],
+  ['10× Ø 100 mm, 25 cm Beton (Serie)', { d: 100, tiefe: 25, anzahl: 10 }],
+  ['1× Ø 300 mm, 40 cm Beton (Schacht)', { d: 300, tiefe: 40 }],
+];
+
 export const articles = [
   {
     slug: 'kernbohrung-oder-meisseln',
@@ -189,6 +199,134 @@ export const articles = [
     faqs: [
       ['Kann ich im Plattenbau einfach eine Leitung durchbohren lassen?', 'Nicht ohne Abstimmung. Viele Platten sind tragend. Klären Sie das mit Eigentümer oder Wohnungsunternehmen und sprechen Sie uns zur Machbarkeit an.'],
       ['Bohren Sie auch in denkmalgeschützten Gebäuden?', 'Ja, nach Abstimmung mit der zuständigen Denkmalschutzbehörde. Wir beraten zu schonenden Verfahren.'],
+    ],
+  },
+  {
+    slug: 'kernbohrung-kosten-dresden',
+    icon: 'euro',
+    date: '2026-11-11',
+    title: 'Was kostet eine Kernbohrung? Preise 2026 in Dresden',
+    h1: 'Was kostet eine Kernbohrung? Preise und Beispiele für Dresden',
+    description: 'Kernbohrung Kosten 2026: Preis je cm Bohrtiefe nach Durchmesser, Mindestauftragswert, Anfahrt, Zuschläge und konkrete Rechenbeispiele aus Dresden.',
+    short: 'Preis je cm, Mindestauftragswert, Zuschläge und Rechenbeispiele nach Preisliste 2026.',
+    answer: `Eine Kernbohrung wird nach Durchmesser und Bohrtiefe berechnet: Bei Ø 14 bis 101 mm in Beton kostet sie ${eur(staffelKompakt[0][2])} je cm Bohrtiefe (brutto). Hinzu kommen die Anfahrt mit ${eur(regeln.anfahrt)} und eine Pilotbohrung mit ${eur(regeln.pilotbohrung)}. Der Mindestauftragswert liegt bei ${eur(regeln.mindestpreis)}, sodass auch eine einzelne kleine Bohrung dort beginnt.`,
+    sections: [
+      { h: 'So setzt sich der Preis zusammen', p: [
+        `Der Bohrpreis ergibt sich aus dem Preis je cm Bohrtiefe (abhängig vom Durchmesser und vom Material) mal Bohrtiefe mal Anzahl der Bohrungen. Dazu kommen die Anfahrt und Baustelleneinrichtung für ${eur(regeln.anfahrt)} (Umkreis bis ca. 30 km um Dresden) sowie je Bohrung ${eur(regeln.pilotbohrung)} für die Pilotbohrung, mit der der Bohrständer an der Wand befestigt wird.`,
+        `Liegt die Summe unter ${eur(regeln.mindestpreis)}, gilt der Mindestauftragswert von ${eur(regeln.mindestpreis)}. Alle Preise sind Bruttopreise nach unserer Preisliste (Stand ${stand}).`,
+      ] },
+      { h: 'Preis je cm Bohrtiefe nach Durchmesser', table: {
+        head: ['Durchmesser', 'Beton / Stahlbeton', 'Mauerwerk'],
+        rows: staffelKompakt.map(([lo, hi, b, m]) => [`Ø ${lo}–${hi} mm`, `${eur(b)} je cm`, `${eur(m)} je cm`]),
+      } },
+      { h: 'Rechenbeispiele aus der Praxis', p: ['Die Beispiele zeigen den Gesamtpreis einschließlich Anfahrt und Pilotbohrung. Die Werte stammen aus demselben Rechner wie der Kernbohr-Rechner auf der Startseite.'], table: {
+        head: ['Beispiel', 'Rechnerische Summe', 'Gesamtpreis (brutto)'],
+        rows: BEISPIELE_KOSTEN.map(([t, a]) => { const r = berechne(a); return [t, eur(r.summe), r.mindestpreisGreift ? `${eur(r.total)} (Mindestauftragswert)` : eur(r.total)]; }),
+      } },
+      { h: 'Zuschläge und Zusatzleistungen', table: {
+        head: ['Position', 'Preis'],
+        rows: zuschlagTabelle,
+      } },
+      { h: 'Was den Preis senkt', ul: [
+        'Mehrere Bohrungen in einem Termin: Anfahrt und Mindestauftragswert fallen nur einmal an.',
+        'Bohrungen am Werktag in der normalen Arbeitszeit statt nachts oder am Wochenende.',
+        'Vorbereitete Baustelle mit Strom, Wasseranschluss und freiem Zugang (siehe Checkliste).',
+        'Klar markierte Bohrpunkte und freigegebene Leitungsverläufe, damit keine Wartezeit entsteht.',
+      ] },
+      { h: 'Verbindlicher Preis', p: ['Der Rechner liefert einen Richtpreis. Den verbindlichen Preis nennen wir nach Ihren Angaben oder Fotos der Bohrstelle. Mit einem Foto per WhatsApp geht das meist am selben Tag.'] },
+    ],
+    faqs: [
+      ['Was kostet eine einzelne Kernbohrung mindestens?', `Der Mindestauftragswert beträgt ${eur(regeln.mindestpreis)} brutto. Er gilt, wenn die berechnete Summe aus Bohrpreis, Pilotbohrung und Anfahrt darunter liegt.`],
+      ['Wird nach Durchmesser oder nach Tiefe abgerechnet?', 'Nach beidem: Der Preis je cm hängt vom Durchmesser ab und wird mit der Bohrtiefe multipliziert. Größere Durchmesser kosten je cm mehr.'],
+      ['Sind die Preise netto oder brutto?', `Alle genannten Preise sind Bruttopreise nach unserer Preisliste (Stand ${stand}).`],
+      ['Kostet die Anfahrt immer extra?', `Ja, die Anfahrt und Baustelleneinrichtung berechnen wir mit ${eur(regeln.anfahrt)} im Umkreis bis ca. 30 km um Dresden. Bei mehreren Bohrungen im selben Termin fällt sie nur einmal an.`],
+      ['Wie viel teurer ist eine Bohrung nachts oder am Wochenende?', 'Nachts (23 bis 6 Uhr) berechnen wir 75 % Zuschlag auf den Bohrpreis, am Samstag, Sonntag und an Feiertagen 100 %.'],
+    ],
+  },
+  {
+    slug: 'kernbohrung-mietwohnung-eigentum',
+    icon: 'building',
+    date: '2026-11-11',
+    title: 'Kernbohrung in Miet- und Eigentumswohnung: Wer muss zustimmen?',
+    h1: 'Kernbohrung in Mietwohnung und Eigentumswohnung: Wer muss zustimmen?',
+    description: 'Darf ich als Mieter oder Wohnungseigentümer eine Kernbohrung in Wand oder Decke machen lassen? Zustimmung, Statik, Gemeinschaftseigentum und praktische Schritte.',
+    short: 'Vermieter, Eigentümergemeinschaft und Statik: Wen Sie vor der Bohrung fragen sollten.',
+    answer: 'Wer in einer Mietwohnung eine Kernbohrung durch Außenwand, tragende Wand oder Decke machen lassen möchte, sollte vorher die schriftliche Zustimmung des Vermieters einholen. In einer Eigentumswohnung gehören Außenwände, tragende Wände und Decken in der Regel zum Gemeinschaftseigentum, hier ist die Eigentümergemeinschaft einzubeziehen. Bei tragenden Bauteilen klärt vorab ein Statiker, ob die Bohrung möglich ist.',
+    sections: [
+      { h: 'Mietwohnung: Vermieter vorher fragen', p: [
+        'Kleine Löcher für Dübel und Schrauben sind im Alltag üblich. Eine Kernbohrung durch Außenwand oder Decke ist dagegen ein Eingriff in die Bausubstanz, etwa für Klimagerät, Dunstabzug oder Leitungen. Dafür sollte der Vermieter vorab schriftlich zustimmen. Bitte nennen Sie in Ihrer Anfrage Ort, Durchmesser und Zweck der Bohrung.',
+        'Ob und unter welchen Bedingungen im Einzelfall ein Anspruch auf Zustimmung besteht, hängt vom Mietvertrag und der Maßnahme ab. Das klären Sie bei Unsicherheit mit dem Mieterverein oder einem Rechtsanwalt.',
+      ] },
+      { h: 'Eigentumswohnung: Gemeinschaftseigentum beachten', p: [
+        'Außenwände, tragende Innenwände und Geschossdecken gehören in der Regel zum Gemeinschaftseigentum. Eingriffe darin sind Sache der Eigentümergemeinschaft. Fragen Sie vorab bei der Hausverwaltung nach, ob ein Beschluss nötig ist und ob es Vorgaben zu Position, Abdichtung oder Optik an der Fassade gibt.',
+        'Innerhalb Ihres Sondereigentums, zum Beispiel in einer nichttragenden Trennwand, ist die Lage oft einfacher. Auch hier gilt: im Zweifel die Teilungserklärung und die Hausverwaltung prüfen.',
+      ] },
+      { h: 'Tragend oder nicht? Statik zuerst', p: [
+        'Unabhängig von der Eigentumsform gilt: Bei tragenden Wänden, Stützen und Unterzügen entscheidet ein Statiker, ob und wo gebohrt werden darf. Wir bohren erst an dem Punkt, den der Auftraggeber markiert und freigegeben hat, nachdem Leitungen, Bewehrung und Statik geklärt sind.',
+      ] },
+      { h: 'So gehen Sie Schritt für Schritt vor', ol: [
+        'Zweck und Durchmesser festlegen (siehe Bohrdurchmesser-Ratgeber).',
+        'Bei Mietwohnung: Vermieter schriftlich um Zustimmung bitten. Bei Eigentumswohnung: Hausverwaltung informieren.',
+        'Bei tragenden Bauteilen Statiker einbeziehen.',
+        'Bohrstelle markieren, Leitungsverläufe klären und freigeben.',
+        'Foto der Stelle per WhatsApp senden und Richtpreis erhalten.',
+        'Termin vereinbaren, Strom und Wasseranschluss bereitstellen.',
+      ] },
+      { h: 'Lärm und Ruhezeiten im Haus', p: [
+        'Kernbohren ist deutlich leiser und erschütterungsärmer als Stemmen, trotzdem sollten Nachbarn vorab informiert werden. Wir stimmen die Arbeitszeiten mit Ihnen ab und beachten Ruhezeiten und Hausordnung, soweit sie den Einsatz zulassen.',
+      ] },
+    ],
+    faqs: [
+      ['Darf ich als Mieter einfach eine Kernbohrung machen lassen?', 'Bei Durchbrüchen durch Außenwand oder Decke sollten Sie vorab die schriftliche Zustimmung des Vermieters einholen. Kleine Dübellöcher sind etwas anderes als eine Kernbohrung.'],
+      ['Wer entscheidet in der Eigentümergemeinschaft?', 'Eingriffe in Gemeinschaftseigentum wie Außenwände und tragende Bauteile klären Sie mit der Eigentümergemeinschaft und der Hausverwaltung. Auskunft gibt die Teilungserklärung.'],
+      ['Brauche ich für die Bohrung einen Statiker?', 'Bei tragenden Wänden, Stützen, Unterzügen und Decken ja. Der Statiker legt fest, ob und wo gebohrt werden darf.'],
+      ['Ist das eine Rechtsberatung?', 'Nein. Dieser Ratgeber gibt allgemeine Hinweise. Verbindliche Auskunft geben Mieterverein, Rechtsanwalt, Hausverwaltung und Statiker.'],
+    ],
+  },
+  {
+    slug: 'handwerkerleistungen-steuer-absetzen-35a',
+    icon: 'clipboard',
+    date: '2026-11-11',
+    title: 'Kernbohrung von der Steuer absetzen: § 35a EStG einfach erklärt',
+    h1: 'Kernbohrung von der Steuer absetzen: § 35a EStG einfach erklärt',
+    description: 'Handwerkerleistungen steuerlich absetzen: 20 % der Arbeitskosten, bis 1.200 € Steuerermäßigung pro Jahr. Voraussetzungen, Rechnung, Überweisung und was nicht zählt.',
+    short: '20 % der Arbeitskosten, bis zu 1.200 € pro Jahr: Voraussetzungen und Rechnung.',
+    answer: 'Für Handwerkerleistungen im eigenen Haushalt können Privatpersonen nach § 35a EStG 20 % der Arbeitskosten (einschließlich Fahrt- und Maschinenkosten) von der Steuerschuld abziehen, höchstens 1.200 € pro Jahr. Voraussetzung sind eine Rechnung mit separat ausgewiesenen Arbeitskosten und eine unbare Zahlung per Überweisung. Materialkosten zählen nicht.',
+    sections: [
+      { h: 'Was ist § 35a EStG?', p: [
+        'Der § 35a Einkommensteuergesetz regelt die Steuerermäßigung für haushaltsnahe Dienstleistungen und Handwerkerleistungen. Die Ermäßigung mindert direkt die Steuerschuld, sie ist also mehr wert als ein reiner Abzug vom Einkommen.',
+      ] },
+      { h: 'Die wichtigsten Zahlen', table: {
+        head: ['Punkt', 'Regelung'],
+        rows: [
+          ['Ermäßigung', '20 % der Arbeitskosten'],
+          ['Höchstbetrag', '1.200 € Steuerermäßigung pro Jahr (bei bis zu 6.000 € Arbeitskosten)'],
+          ['Was zählt', 'Arbeitskosten, Fahrt- und Maschinenkosten'],
+          ['Was nicht zählt', 'Materialkosten und Waren'],
+          ['Zahlung', 'Unbar per Überweisung, nicht bar'],
+          ['Nachweis', 'Rechnung mit separat ausgewiesenen Arbeitskosten'],
+        ],
+      } },
+      { h: 'Wann gilt das für eine Kernbohrung?', p: [
+        'Begünstigt sind Renovierungs-, Erhaltungs- und Modernisierungsarbeiten im eigenen Haushalt, zum Beispiel eine Kernbohrung für Wärmepumpe, Klimagerät, Lüftung oder neue Leitungen im bestehenden Wohnraum. Arbeiten im Rahmen eines Neubaus sind in der Regel nicht begünstigt. Auch Mieter können profitieren, wenn die Kosten in der Nebenkostenabrechnung oder über eine eigene Rechnung nachweisbar sind.',
+        'Werden Maßnahmen öffentlich gefördert, etwa durch Zuschuss oder zinsverbilligtes Darlehen, ist eine zusätzliche Steuerermäßigung für dieselben Kosten ausgeschlossen. Details klärt Ihr Steuerberater.',
+      ] },
+      { h: 'So gehen Sie vor', ol: [
+        'Auftrag erteilen und eine Rechnung mit getrennt ausgewiesenen Arbeits- und Materialkosten verlangen.',
+        'Rechnung per Überweisung bezahlen. Den Kontoauszug oder Überweisungsbeleg aufbewahren.',
+        'In der Steuererklärung die Handwerkerleistungen angeben.',
+        'Rechnung und Zahlungsnachweis für das Finanzamt bereithalten.',
+      ] },
+      { h: 'Unsere Rechnung', p: [
+        'Auf Wunsch weisen wir Arbeits-, Fahrt- und Maschinenkosten auf der Rechnung getrennt aus. Bitte sagen Sie uns das beim Auftrag. Wir erteilen keine Steuerberatung, bitte klären Sie Einzelheiten mit Ihrem Steuerberater oder dem Lohnsteuerhilfeverein.',
+      ] },
+    ],
+    faqs: [
+      ['Wie viel kann ich bei einer Kernbohrung absetzen?', '20 % der Arbeitskosten (inklusive Fahrt- und Maschinenkosten), insgesamt höchstens 1.200 € Steuerermäßigung pro Jahr für alle Handwerkerleistungen zusammen.'],
+      ['Kann ich bar bezahlen und trotzdem absetzen?', 'Nein. Die Zahlung muss unbar per Überweisung erfolgen, und Sie benötigen eine Rechnung.'],
+      ['Zählt das Material mit?', 'Nein. Begünstigt sind die Arbeitskosten, nicht das Material.'],
+      ['Gilt das auch für Mieter?', 'Ja, wenn die Leistung im Haushalt des Mieters erbracht wird und er sie über Rechnung oder Nebenkostenabrechnung nachweisen kann.'],
+      ['Ist das Steuerberatung?', 'Nein, es sind allgemeine Hinweise. Verbindliche Auskunft gibt Ihr Steuerberater oder das Finanzamt.'],
     ],
   },
 ];
