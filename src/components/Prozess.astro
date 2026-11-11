@@ -9,7 +9,7 @@ const { eyebrow = 'So arbeiten wir', title = 'In vier Schritten zur fertigen Boh
   <div class="wrap">
     <span class="eyebrow">{eyebrow}</span>
     <h2>{title}</h2>
-    <ol class="timeline">
+    <ol class="timeline" tabindex="0">
       {prozess.map((s) => (
         <li>
           <div class="tl-ico"><Icon name={s.icon} size={24} /></div>

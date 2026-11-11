@@ -92,7 +92,7 @@ import { site } from '../data/site.js';
       </details>
     </form>
 
-    <aside class="kb-result" role="status" aria-live="polite">
+    <div class="kb-result" aria-live="polite">
       <div class="kb-result-top">Ihr Richtpreis · brutto, unverbindlich</div>
       <div class="kb-price"><span id="kb-total">–</span></div>
       <details class="kb-details" open>
@@ -106,12 +106,12 @@ import { site } from '../data/site.js';
         <button type="button" id="kb-pdf" class="kb-btn kb-btn-pdf">PDF-Angebot herunterladen</button>
       </div>
       <p class="kb-note">Richtwert, unverbindlich. Alle Preise sind Endpreise (brutto) laut Preisliste 2026. Die Pilotbohrung (Dübel für den Bohrständer, {eur(regeln.pilotbohrung)} je Bohrung) ist enthalten. Stahlbewehrung ab 1,5 cm (1 €/cm) und Wartezeit werden bei Bedarf gesondert berechnet. Anfahrt gilt im Umkreis von ca. 20–30 km um Dresden, darüber hinaus nach Vereinbarung. Das PDF wird in Ihrem Browser erstellt, es werden keine Daten übertragen. Tipp: Ein Foto der Baustelle per WhatsApp beschleunigt das Angebot.</p>
-    </aside>
+    </div>
   </div>
 </section>
 
 <style is:global>
-  .kb-rechner{--kb-accent:#e8590c;--kb-accent-d:#c2410c;--kb-text:#1b1f23;max-width:1020px;margin:1.6rem auto;padding:1.5rem;background:#fff;color:var(--kb-text);border:1px solid #e3e6e9;border-top:4px solid var(--kb-accent);border-radius:16px;box-shadow:0 18px 50px rgba(20,24,28,.1);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  .kb-rechner{--kb-accent:#c2410c;--kb-accent-d:#9a3412;--kb-text:#1b1f23;max-width:1020px;margin:1.6rem auto;padding:1.5rem;background:#fff;color:var(--kb-text);border:1px solid #e3e6e9;border-top:4px solid var(--kb-accent);border-radius:16px;box-shadow:0 18px 50px rgba(20,24,28,.1);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
   .kb-head h2{margin:0 0 .2rem;font-size:1.5rem}
   .kb-lead{margin:0 0 1rem;font-size:.92rem;color:#5b646c}
   .kb-layout{display:grid;gap:1.4rem;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:start}

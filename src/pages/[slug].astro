@@ -62,7 +62,7 @@ const schema = [
     <div class="wrap">
       <span class="eyebrow">Auf einen Blick</span>
       <h2>Das Wichtigste zu {s.name}</h2>
-      <div class="table-scroll">
+      <div class="table-scroll" tabindex="0" role="group" aria-label="Tabelle (seitlich scrollbar)">
         <table class="facts">
           <tbody>
             {s.facts.map(([k, v]) => <tr><th>{k}</th><td>{v}</td></tr>)}

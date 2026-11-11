@@ -47,7 +47,7 @@ const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
             {s.ul && <ul>{s.ul.map((t) => <li set:html={t} />)}</ul>}
             {s.ol && <ol>{s.ol.map((t) => <li set:html={t} />)}</ol>}
             {s.table && (
-              <div class="table-scroll"><table class="facts compare">
+              <div class="table-scroll" tabindex="0" role="group" aria-label="Tabelle (seitlich scrollbar)"><table class="facts compare">
                 <thead><tr>{s.table.head.map((h) => <th>{h}</th>)}</tr></thead>
                 <tbody>{s.table.rows.map(([k, ...v]) => <tr><th>{k}</th>{v.map((c) => <td>{c}</td>)}</tr>)}</tbody>
               </table></div>
