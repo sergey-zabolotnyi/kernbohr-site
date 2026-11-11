@@ -21,7 +21,7 @@ export const services = [
     faqs: [
       ['Was ist eine Kernbohrung?', 'Kernbohrungen sind präzise, runde Öffnungen, die mit diamantbesetzten Bohrkronen in Beton, Stahlbeton oder Mauerwerk erstellt werden. Sie werden meist für Leitungen (Elektro, Sanitär, Lüftung) benötigt.'],
       ['Was ist der Unterschied zwischen Betonbohrung und Kernbohrung?', 'Betonbohrung ist der Oberbegriff für Bohrungen in Beton. Für kleine Dübellöcher genügt ein Bohrhammer. Für saubere, runde Öffnungen für Rohre, Leitungen und Lüftung bohren wir mit diamantbesetzten Kronen im Kernbohrverfahren: Ø 14 bis 500 mm, staubarm und erschütterungsarm.'],
-      ['Sind Sie versichert?', 'Ja, Kernbohr-Expert verfügt über eine Betriebshaftpflichtversicherung. Das schützt Sie als Auftraggeber bei Schäden, die bei der Arbeit entstehen könnten.'],
+      ['Sind Sie versichert?', 'Ja, Kernbohr-Expert verfügt über eine Betriebshaftpflichtversicherung. Das schützt Sie als Auftraggeber bei Schäden, die bei der Arbeit entstehen könnten. Den Versicherungsnachweis senden wir Ihnen auf Anfrage gern zu.'],
       ['Hinterlassen Sie die Baustelle sauber?', 'Ja. Wir arbeiten staubarm mit Wassersauger, decken den Arbeitsbereich ab und übergeben den Bereich nach der Arbeit aufgeräumt.'],
       ['Brauchen Sie Strom und Wasser vor Ort?', 'Ja, für die Nassbohrung benötigen wir Strom (230 V, bei großen Durchmessern eventuell 400 V) und einen Wasseranschluss in der Nähe der Bohrstelle. Beides klären wir vorab mit Ihnen. Mehr in unserer Checkliste zur Terminvorbereitung.'],
       ['Übernehmen Sie auch größere Projekte und Serienbohrungen?', 'Ja. Mit unserem Team von 8 Mitarbeitern führen wir auch größere Projekte und Serienbohrungen aus, in Dresden, Sachsen und bundesweit. Bei Bedarf erweitern wir das Team. Für ein Angebot senden Sie uns Bohrliste oder Plan mit Durchmesser, Tiefe und Anzahl der Bohrungen.'],
@@ -219,7 +219,7 @@ export const faqs = [
   ['Welche Unterlagen oder Informationen benötigen Sie zur Angebotserstellung?', 'Ideal sind Grundrisse, Fotos der Einsatzstelle und Angaben zu Materialstärke, Durchmesser, Zugangsmöglichkeiten und Zeitfenster. Ein Foto per WhatsApp genügt oft schon.'],
   ['Arbeiten Sie staubfrei?', 'Wir arbeiten staubarm und erschütterungsarm, decken den Arbeitsbereich ab und hinterlassen die Baustelle aufgeräumt. Vollständig ohne Staub ist bei Arbeiten an Beton kein Verfahren, durch Nassbohren und Absaugung bleibt er aber auf ein Minimum begrenzt.'],
   ['Welchen Stromanschluss benötigen Sie vor Ort?', 'Wir arbeiten wahlweise mit 230 V oder mit 400 V (Drehstrom, per Adapter auf 16 A). Für kleine und mittlere Durchmesser genügt meist eine normale Steckdose mit 230 V. Für große Durchmesser oder stark bewehrten Beton nutzen wir 400 V. Wir klären den Anschluss vorab mit Ihnen.'],
-  ['Sind Sie versichert?', 'Ja, Kernbohr-Expert verfügt über eine Betriebshaftpflichtversicherung.'],
+  ['Sind Sie versichert?', 'Ja, Kernbohr-Expert verfügt über eine Betriebshaftpflichtversicherung. Den Versicherungsnachweis senden wir Ihnen auf Anfrage gern zu.'],
   ['Brauchen Sie Wasser auf der Baustelle?', 'Ja. Für die Nassbohrung benötigen wir auf der Baustelle einen normalen Wasseranschluss und Strom. Beides klären wir vorab mit Ihnen.'],
 ];
 
