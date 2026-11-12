@@ -14,6 +14,7 @@ import { site } from '../data/site.js';
 import { services, faqs as allFaqs } from '../data/services.js';
 import { articles } from '../data/articles.js';
 import { orte } from '../data/orte.js';
+import Partner from '../components/Partner.astro';
 import { image, heroStyle } from '../lib/media.js';
 import { faqSchema, howToSchema } from '../lib/schema.js';
 
@@ -225,6 +226,16 @@ const werte = [
         </details>
       ))}
       <div class="btns"><a class="btn btn-main" href="/faq/">Alle Fragen ansehen</a></div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Partner und Auftraggeber</span>
+      <h2>Diese Firmen vertrauen auf uns</h2>
+      <p class="lead">Bauunternehmen, Dachdecker, Elektrobetriebe und Planungsbüros setzen bei Kernbohrungen und Schlitzfräsarbeiten auf Kernbohr-Expert.</p>
+      <Partner kompakt />
+      <a class="btn btn-line" href="/referenzen/">Alle Referenzen ansehen</a>
     </div>
   </section>
 

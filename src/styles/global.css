@@ -430,3 +430,4 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
 
 .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .hero-points:focus-visible,.timeline:focus-visible{outline:3px solid var(--accent-l);outline-offset:2px}
+.hinweis{font-size:.85rem;color:#4b5058;margin-top:1rem}
