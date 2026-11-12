@@ -18,7 +18,7 @@ const { o } = Astro.props;
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hallo, ich suche eine Kernbohrung in ${o.name}. Foto der Baustelle sende ich gleich mit.`)}`;
 const path = `/kernbohrung-in-${o.slug}/`;
 const faqs = [
-  [`Was kostet eine Kernbohrung in ${o.name}?`, `Wir rechnen nach Preisliste 2026 je cm Bohrtiefe ab: in Beton und Stahlbeton 1,20 € bis 11,00 € je cm, in Mauerwerk 1,10 € bis 9,50 € je cm, je nach Durchmesser. Dazu kommen Anfahrt und Baustelleneinrichtung (85 € im Umkreis von ca. 20–30 km um Dresden). Der Mindestauftragswert liegt bei 250 €.`],
+  [`Was kostet eine Kernbohrung in ${o.name}?`, `Wir rechnen nach Preisliste 2026 je cm Bohrtiefe ab: in Beton und Stahlbeton 1,20 € bis 11,00 € je cm, in Mauerwerk 1,10 € bis 9,50 € je cm, je nach Durchmesser. Dazu kommen Anfahrt und Baustelleneinrichtung (85 € im Umkreis bis ca. 30 km um Dresden). Der Mindestauftragswert liegt bei 250 €.`],
   ...o.faq,
 ];
 const schema = [

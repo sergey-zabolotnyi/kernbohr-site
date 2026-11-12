@@ -26,7 +26,7 @@ export function GET() {
       einheit: 'je cm Bohrtiefe',
       mindestpreisJeAuftrag: regeln.mindestpreis,
       anfahrt: regeln.anfahrt,
-      anfahrtUmkreisKm: '20–30 um Dresden, darüber hinaus nach Vereinbarung',
+      anfahrtUmkreisKm: 'bis 30 um Dresden, darüber hinaus nach Vereinbarung',
       staffel: staffel.map(([von, bis, beton, mauerwerk]) => ({ durchmesserVonMm: von, durchmesserBisMm: bis, betonStahlbeton: beton, mauerwerk })),
       zuschlaege: Object.fromEntries(zuschlagTabelle),
     },
