@@ -8,7 +8,7 @@ export const site = {
   googleMaps: 'https://www.google.com/maps/place/Kernbohr+Expert+Dresden/@51.0180987,13.7248647,17z/data=!3m1!4b1!4m6!3m5!1s0x4709c59e78af0fa3:0x8daa5f61ba78bce8!8m2!3d51.0180954!4d13.727445!16s%2Fg%2F11xmzbpzcw',
   phoneTel: '+491771909049',
   whatsapp: '491771909049',            // PRÜFEN: ist diese Nummer bei WhatsApp aktiv?
-  email: 'info.kernbohrexpert@gmail.com',
+  email: 'info@kernbohr-expert.de',
   street: 'Burkersdorfer Weg 19',
   zip: '01189',
   city: 'Dresden',
