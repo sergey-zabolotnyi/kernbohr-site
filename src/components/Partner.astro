@@ -1,0 +1,34 @@
+---
+import { partner } from '../data/partner.js';
+const { kompakt = false } = Astro.props;
+---
+<ul class={`partner ${kompakt ? 'partner-kompakt' : ''}`} aria-label="Partner und Auftraggeber">
+  {partner.map((p) => (
+    <li>
+      <a href={p.url} target="_blank" rel="noopener noreferrer" aria-label={`${p.name}, ${p.ort} (Website öffnet in neuem Tab)`}>
+        <span class="partner-logo">
+          {p.logo ? (
+            <img src={p.logo} alt="" width={p.w} height={p.h} loading="lazy" decoding="async" />
+          ) : (
+            <span class="partner-text" aria-hidden="true">{p.kurz}</span>
+          )}
+        </span>
+        <span class="partner-name">{p.name}</span>
+        {!kompakt && <span class="partner-meta">{p.ort} · {p.arbeit}</span>}
+      </a>
+    </li>
+  ))}
+</ul>
+<style>
+  .partner{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+  .partner-kompakt{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem}
+  .partner a{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;height:100%;padding:1rem;background:#fff;border:1px solid var(--line);border-radius:12px;color:inherit;text-decoration:none}
+  .partner a:hover,.partner a:focus-visible{border-color:var(--accent);box-shadow:0 6px 18px rgba(20,24,28,.1)}
+  .partner-logo{display:flex;align-items:center;justify-content:center;height:72px;width:100%}
+  .partner-kompakt .partner-logo{height:56px}
+  .partner-logo img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain}
+  .partner-text{font-weight:800;font-size:1.6rem;letter-spacing:.06em;color:#3f4147;border:3px solid #3f4147;border-radius:6px;padding:.1rem .7rem}
+  .partner-name{font-weight:600;font-size:.92rem;line-height:1.3}
+  .partner-meta{font-size:.82rem;color:#4b5058;line-height:1.35}
+  .partner-kompakt .partner-name{font-size:.82rem}
+</style>
