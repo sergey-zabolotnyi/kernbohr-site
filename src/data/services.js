@@ -22,6 +22,8 @@ export const services = [
       ['Was ist eine Kernbohrung?', 'Kernbohrungen sind präzise, runde Öffnungen, die mit diamantbesetzten Bohrkronen in Beton, Stahlbeton oder Mauerwerk erstellt werden. Sie werden meist für Leitungen (Elektro, Sanitär, Lüftung) benötigt.'],
       ['Was ist der Unterschied zwischen Betonbohrung und Kernbohrung?', 'Betonbohrung ist der Oberbegriff für Bohrungen in Beton. Für kleine Dübellöcher genügt ein Bohrhammer. Für saubere, runde Öffnungen für Rohre, Leitungen und Lüftung bohren wir mit diamantbesetzten Kronen im Kernbohrverfahren: Ø 14 bis 500 mm, staubarm und erschütterungsarm.'],
       ['Sind Sie versichert?', 'Ja, Kernbohr-Expert verfügt über eine Betriebshaftpflichtversicherung. Das schützt Sie als Auftraggeber bei Schäden, die bei der Arbeit entstehen könnten. Den Versicherungsnachweis senden wir Ihnen auf Anfrage gern zu.'],
+      ['Was ist der Unterschied zwischen Kernbohrung, Kernlochbohrung und Wandbohrung?', 'Im Alltag meinen die Begriffe meist dasselbe: ein rundes, sauberes Loch durch Wand oder Decke, gebohrt mit einer Diamant-Bohrkrone. Fachlich spricht man von Kernbohrung, weil dabei ein Betonkern aus dem Bauteil herausgelöst wird. Für Dübellöcher reicht eine Schlagbohrmaschine, für Rohr- und Lüftungsdurchführungen in Beton ist die Kernbohrung das passende Verfahren.'],
+      ['Kernbohrgerät mieten oder die Kernbohrung beauftragen?', 'Für einzelne Bohrungen lohnt sich die Miete eines Kernbohrgeräts meist nicht: Bohrständer, Diamantkrone, Wasserversorgung und Absaugung müssen zusammenpassen, und bei Stahlbeton oder tragenden Bauteilen ist Erfahrung nötig. Wir kommen mit Gerät, Wasser und Staubschutz zu Ihnen und übergeben die Baustelle aufgeräumt. Den Preis erfahren Sie vorab im Rechner oder per Foto.'],
       ['Hinterlassen Sie die Baustelle sauber?', 'Ja. Wir arbeiten staubarm mit Wassersauger, decken den Arbeitsbereich ab und übergeben den Bereich nach der Arbeit aufgeräumt.'],
       ['Brauchen Sie Strom und Wasser vor Ort?', 'Strom muss vor Ort vorhanden sein (230 V, bei großen Durchmessern eventuell 400 V). Für die Nassbohrung brauchen wir außerdem Wasser. Ist kein Wasseranschluss vorhanden, ist das kein Problem: Sagen Sie uns vorab Bescheid, dann bringen wir das Wasser in Kanistern mit, das ist im Auftragspreis enthalten. Mehr in unserer Checkliste zur Terminvorbereitung.'],
       ['Übernehmen Sie auch größere Projekte und Serienbohrungen?', 'Ja. Mit unserem Team von 8 Mitarbeitern führen wir auch größere Projekte und Serienbohrungen aus, in Dresden, Sachsen und bundesweit. Bei Bedarf erweitern wir das Team. Für ein Angebot senden Sie uns Bohrliste oder Plan mit Durchmesser, Tiefe und Anzahl der Bohrungen.'],
@@ -64,6 +66,9 @@ export const services = [
     ],
     faqs: [
       ['Arbeiten Sie auch in bewohnten Gebäuden?', 'Ja. Wir setzen auf lärmreduzierte, staubarme Technik und passende Schutzmaßnahmen, ideal für Sanierungen oder Umbauten in bewohnten Gebäuden.'],
+      ['Was ist der Unterschied zwischen Betonsägen, Betonschneiden und Wandsägen?', 'Die Begriffe beschreiben dasselbe Verfahren: Eine Diamant-Säge schneidet Beton, Stahlbeton oder Mauerwerk millimetergenau. Bei der Wandsäge läuft das Sägeblatt auf einer Führungsschiene an der Wand, so entstehen gerade Schnitte für Türöffnungen, Fenster oder Durchbrüche. Kleine runde Löcher bohren wir stattdessen per Kernbohrung.'],
+      ['Wann nehme ich die Wandsäge, wann die Kernbohrung?', 'Für runde Durchführungen (Rohre, Lüftung, Wärmepumpe) ist die Kernbohrung schneller und günstiger. Für große, eckige Öffnungen wie Türen, Fenster oder Deckenöffnungen ist das Betonsägen die richtige Wahl. Beschreiben Sie uns Ihr Vorhaben, wir empfehlen das passende Verfahren.'],
+      ['Was kostet das Betonsägen?', 'Der Preis richtet sich nach Schnittlänge, Tiefe, Material und Zugang. Für Kernbohrungen gilt unsere Preisliste online, für Sägearbeiten erstellen wir nach Foto oder Maßen ein kostenloses Angebot.'],
     ],
   },
   {
@@ -81,6 +86,8 @@ export const services = [
     ],
     faqs: [
       ['Wann sollte man Fugen schneiden?', 'Fugen werden meist kurz nach dem Aushärten des Betons geschnitten, damit er dort reißt, wo er soll. Den passenden Zeitpunkt klären wir mit Ihnen.'],
+      ['Wofür braucht man Fugen im Beton?', 'Beton schwindet beim Aushärten und dehnt sich bei Wärme aus. Geschnittene Fugen geben ihm dafür eine Sollbruchstelle, so entstehen keine unkontrollierten Risse in Bodenplatten, Hallenböden oder Garagenzufahrten.'],
+      ['Was kostet Fugenschneiden?', 'Der Preis hängt von der Fugenlänge, der Schnitttiefe und dem Zugang ab. Senden Sie uns Maße oder ein Foto der Fläche, dann erhalten Sie ein kostenloses Angebot.'],
     ],
   },
   {
@@ -176,6 +183,7 @@ export const services = [
     ],
     faqs: [
       ['Darf ich einen Kaminanschluss herstellen lassen?', 'Den Anschluss an einen Schornstein muss der Bezirksschornsteinfeger abnehmen. Die Bohrung führen wir fachgerecht aus, die Abnahme klären Sie bitte vorab.'],
+      ['Kernbohrung für einen Kaminofen: Was ist zu beachten?', 'Für den Anschluss eines Kaminofens bohren wir die Wanddurchführung für das Ofenrohr, üblich sind 130–200 mm Durchmesser. Vorab muss der Bezirksschornsteinfeger den Anschluss freigeben, und der Abstand zu brennbaren Bauteilen muss stimmen. Schicken Sie uns ein Foto der Stelle samt Maßband, dann nennen wir den passenden Durchmesser und den Preis.'],
       ['Können Sie auch Deckenbohrungen machen?', 'Ja, Bohrungen über Kopf sind möglich. Bitte bei der Anfrage angeben.'],
     ],
     calculator: true,
