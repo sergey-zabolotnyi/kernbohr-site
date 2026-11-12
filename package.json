@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "build:prod": "cross-env PUBLIC_NOINDEX=false astro build",
+    "build": "astro build && node scripts/interlink.mjs",
+    "build:prod": "cross-env PUBLIC_NOINDEX=false astro build && node scripts/interlink.mjs",
     "preview": "astro preview",
     "media": "node scripts/prepare-media.mjs",
     "check": "npm run build:prod && node scripts/check-site.mjs"

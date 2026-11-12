@@ -6,6 +6,7 @@ import Chat from '../components/Chat.astro';
 import Icon from '../components/Icon.astro';
 import { site } from '../data/site.js';
 import { services } from '../data/services.js';
+import { orte } from '../data/orte.js';
 
 const { title, description, path = '/', schema = [] } = Astro.props;
 
@@ -173,6 +174,13 @@ const nav = [
             <h3>Leistungen</h3>
             <ul>
               {services.filter((s) => s.group === 'Leistung').map((s) => <li><a href={`/${s.slug}/`}>{s.name}</a></li>)}
+            </ul>
+          </div>
+          <div>
+            <h3>Einsatzorte</h3>
+            <ul>
+              <li><a href="/kernbohrung/">Kernbohrung Dresden</a></li>
+              {orte.map((o) => <li><a href={`/kernbohrung-in-${o.slug}/`}>Kernbohrung {o.name}</a></li>)}
             </ul>
           </div>
           <div>

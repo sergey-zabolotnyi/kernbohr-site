@@ -14,7 +14,7 @@ export const orte = [
     ],
     faq: [
       ['Fahren Sie auch kurzfristig nach Radebeul?', 'Ja, Radebeul liegt im Kernbereich unseres Einsatzgebiets. Telefonisch erreichen Sie uns Mo–Sa 7–19 Uhr, Termine auch am Wochenende oder nachts vereinbaren wir nach Absprache.'],
-      ['Was kostet die Anfahrt nach Radebeul?', 'Anfahrt und Baustelleneinrichtung berechnen wir mit 85 € je Einsatz. Dieser Satz gilt im Umkreis von ca. 20–30 km um Dresden, also auch für Radebeul.'],
+      ['Was kostet die Anfahrt nach Radebeul?', 'Anfahrt und Baustelleneinrichtung berechnen wir mit 85 € je Einsatz. Dieser Satz gilt im Umkreis bis ca. 30 km um Dresden, also auch für Radebeul.'],
     ],
   },
   {

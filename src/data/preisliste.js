@@ -17,7 +17,7 @@ export const staffel = [
   [302, 351, 4.85, 3.95],
   [352, 401, 6.0, 5.1],
   [402, 451, 6.5, 5.6],
-  [452, 501, 11.0, 9.5],
+  [452, 500, 11.0, 9.5],
 ];
 
 // Anzeige: benachbarte Stufen mit gleichen Preisen zusammenfassen (14–101 mm statt vier Zeilen).
@@ -30,10 +30,10 @@ export const staffelKompakt = staffel.reduce((acc, [lo, hi, b, m]) => {
 
 export const regeln = {
   minDurchmesser: 14,
-  maxDurchmesser: 501,
+  maxDurchmesser: 500,
   maxTiefeCm: 200, // Inhaber: maximale Bohrtiefe 2 m
   mindestpreis: 250, // vom Inhaber bestätigt: Mindestauftragswert
-  anfahrt: 85, // vom Inhaber bestätigt (gestiegen, gedruckte Liste nennt noch 80 €): gilt im Umkreis ca. 20–30 km um Dresden
+  anfahrt: 85, // vom Inhaber bestätigt (gestiegen, gedruckte Liste nennt noch 80 €): gilt im Umkreis bis ca. 30 km um Dresden
   zuschlagUeberkopf: 0.5,
   zuschlagSchraeg: 0.5,
   wassersaugerTag: 55,
