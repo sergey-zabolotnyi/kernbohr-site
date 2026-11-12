@@ -1,0 +1,22 @@
+---
+import { bewertungen } from '../data/bewertungen.js';
+import { site } from '../data/site.js';
+---
+<ul class="bew">
+  {bewertungen.map((b) => (
+    <li>
+      <p class="bew-stars" role="img" aria-label="5 von 5 Sternen">★★★★★</p>
+      <blockquote>„{b.text}“</blockquote>
+      <p class="bew-who">{b.name} · Google-Bewertung</p>
+    </li>
+  ))}
+</ul>
+<p class="bew-link"><a class="btn btn-line" href={site.googleReview} target="_blank" rel="noopener">Bewerten Sie uns auf Google<span class="visually-hidden"> (öffnet in neuem Tab)</span></a></p>
+<style>
+  .bew{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+  .bew li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.1rem;display:flex;flex-direction:column;gap:.5rem}
+  .bew-stars{margin:0;color:#b45309;letter-spacing:.12em;font-size:1.05rem}
+  .bew blockquote{margin:0;font-size:.95rem;line-height:1.5}
+  .bew-who{margin:auto 0 0;font-size:.85rem;color:#4b5058;font-weight:600}
+  .bew-link{margin-top:1.25rem}
+</style>

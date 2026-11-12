@@ -15,6 +15,7 @@ import { services, faqs as allFaqs } from '../data/services.js';
 import { articles } from '../data/articles.js';
 import { orte } from '../data/orte.js';
 import Partner from '../components/Partner.astro';
+import Bewertungen from '../components/Bewertungen.astro';
 import { image, heroStyle } from '../lib/media.js';
 import { faqSchema, howToSchema } from '../lib/schema.js';
 
@@ -226,6 +227,14 @@ const werte = [
         </details>
       ))}
       <div class="btns"><a class="btn btn-main" href="/faq/">Alle Fragen ansehen</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Kundenstimmen</span>
+      <h2>Das sagen unsere Kunden auf Google</h2>
+      <Bewertungen />
     </div>
   </section>
 

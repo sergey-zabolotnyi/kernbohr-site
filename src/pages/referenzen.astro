@@ -5,6 +5,7 @@ import Gallery from '../components/Gallery.astro';
 import ProjektCard from '../components/ProjektCard.astro';
 import { projekte } from '../data/projekte.js';
 import Partner from '../components/Partner.astro';
+import Bewertungen from '../components/Bewertungen.astro';
 import CtaBand from '../components/CtaBand.astro';
 import HeroPreload from '../components/HeroPreload.astro';
 import { allIds, items, heroStyle } from '../lib/media.js';
@@ -42,6 +43,14 @@ const videos = items(ids).filter((m) => m.type === 'video');
       </div>
     </section>
   )}
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Kundenstimmen</span>
+      <h2>Das sagen unsere Kunden auf Google</h2>
+      <Bewertungen />
+    </div>
+  </section>
 
   <section class="soft">
     <div class="wrap">
