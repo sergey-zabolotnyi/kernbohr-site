@@ -5,7 +5,7 @@ const { kompakt = false } = Astro.props;
 <ul class={`partner ${kompakt ? 'partner-kompakt' : ''}`} aria-label="Partner und Auftraggeber">
   {partner.map((p) => (
     <li>
-      <a href={p.url} target="_blank" rel="noopener noreferrer" aria-label={`${p.name}, ${p.ort} (Website öffnet in neuem Tab)`}>
+      <a href={p.url} target="_blank" rel={kompakt ? 'noopener nofollow' : 'noopener'} aria-label={`${p.name}, ${p.ort} (Website öffnet in neuem Tab)`}>
         <span class="partner-logo">
           {p.logo ? (
             <img src={p.logo} alt="" width={p.w} height={p.h} loading="lazy" decoding="async" />
