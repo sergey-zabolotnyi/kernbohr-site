@@ -9,7 +9,7 @@ export const partner = [
   { name: 'maßDach GmbH & Co. KG', ort: 'Bannewitz', url: 'https://massdach.de/', logo: '/images/partner/massdach.webp', w: 155, h: 56, arbeit: 'Kernbohrungen' },
   { name: 'Dachdecker & Zimmerer Stolpen GmbH', ort: 'Stolpen', url: 'https://dzstolpen.de/', logo: '/images/partner/dz-stolpen.svg', w: 359, h: 100, arbeit: 'Kernbohrungen' },
   { name: 'Bau- und Ingenieur-Consulting (BIC) GmbH', ort: 'Dresden', url: 'https://www.bic-dresden.de/', logo: '/images/partner/bic.webp', w: 82, h: 87, arbeit: 'Kernbohrungen' },
-  { name: 'Heinrich Schmid GmbH & Co. KG', ort: 'Dresden', url: 'https://www.heinrich-schmid.com/', logo: '/images/partner/heinrich-schmid.webp', w: 81, h: 112, arbeit: 'Kernbohrungen' },
+  { name: 'Heinrich Schmid GmbH & Co. KG, Niederlassung Dresden', ort: 'Dresden', url: 'https://www.heinrich-schmid.com/', logo: '/images/partner/heinrich-schmid.webp', w: 81, h: 112, arbeit: 'Kernbohrungen' },
   { name: 'FAE Elektrotechnik GmbH & Co. KG', ort: 'Heidenau', url: 'https://www.fae-elektrotechnik.de/', logo: '/images/partner/fae.webp', w: 281, h: 112, arbeit: 'Schlitzfräsarbeiten' },
   // Kein Logo verfügbar (Website der Firma im Umbau): Namensschild als Ersatz.
   { name: 'EBE Bernd Engst GmbH & Co. KG', kurz: 'EBE', ort: 'Dresden', url: 'http://www.ebe-dresden.de/', logo: null, arbeit: 'Schlitzfräsarbeiten' },
