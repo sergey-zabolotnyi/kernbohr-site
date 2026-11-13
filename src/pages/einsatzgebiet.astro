@@ -49,7 +49,7 @@ const bundesweit = ['Leipzig', 'Berlin', 'Chemnitz', 'Thüringen', 'Brandenburg'
           <div class="ico"><Icon name="map" size={28} /></div>
           <h3>Bundesweit</h3>
           <p>Leipzig, Berlin und größere Projekte deutschlandweit, unter anderem in:</p>
-          <ul class="chips">{bundesweit.map((s) => <li>{s}</li>)}</ul>
+          <ul class="chips">{bundesweit.map((s) => { const o = orte.find((x) => x.name === s); return <li>{o ? <a href={`/kernbohrung-in-${o.slug}/`}>{s}</a> : s}</li>; })}</ul>
           <p>Weitere Einsätze auf Anfrage. Anfahrt, Übernachtung und Einsatzdauer vereinbaren wir individuell.</p>
         </div>
       </div>
