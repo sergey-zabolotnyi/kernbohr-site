@@ -394,7 +394,8 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
 
 /* Mobil: Kartenüberschriften größer */
 @media (max-width:768px){
-  .card-body h3,.card.has-img h3{font-size:1.45rem;line-height:1.15}
+  .card-body h3,.card.has-img h3,.card:not(.has-img) h3{font-size:1.45rem;line-height:1.15}
+  .card:not(.has-img) p{line-height:1.4}
   .card-body p{font-size:1rem}
 }
 
