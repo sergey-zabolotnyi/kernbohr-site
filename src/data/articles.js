@@ -58,7 +58,7 @@ export const articles = [
     date: '2026-11-07',
     title: 'Kernbohrung für die Wärmepumpe: Ablauf, Abdichtung, Statik',
     h1: 'Kernbohrung für die Wärmepumpe: Ablauf, Abdichtung und Statik',
-    description: 'Wie läuft die Kernbohrung für Wärmepumpe oder Klimagerät ab? Durchmesser, Position, Abdichtung nach DIN 18533, Statik, typische Fehler und Steuervorteil.',
+    description: 'Wie läuft die Kernbohrung für Wärmepumpe oder Klimagerät ab? Durchmesser, Position, Durchführung durch die Kellerwand, Abdichtung nach DIN 18533, Statik und typische Fehler.',
     short: 'Durchmesser, Position, Abdichtung und die typischen Fehler bei der Wanddurchführung.',
     answer: 'Für die Leitungen von Wärmepumpe oder Klimagerät wird ein runder Durchbruch durch die Außenwand gebohrt. Entscheidend sind die richtige Position, ein passender Durchmesser, ein leichtes Gefälle nach außen und eine dauerhaft dichte Abdichtung. Bei tragenden oder erdberührten Bauteilen sollten Statiker bzw. Fachplaner einbezogen werden.',
     sections: [
@@ -77,6 +77,10 @@ export const articles = [
       { h: 'Abdichtung: Warum Bauschaum allein nicht reicht', p: [
         'Bei Bauteilen, die an das Erdreich grenzen, gilt für die Abdichtung die DIN 18533 (Abdichtung erdberührter Bauteile). Gegen drückendes Wasser kommen Futterrohre mit Ringraumdichtung oder Flanschsysteme zum Einsatz. Bauschaum und Silikon sind dafür kein dauerhafter Ersatz.',
         'Oberhalb des Geländes wird die Durchführung mit geeignetem Futterrohr bzw. Leerrohr, Dichtmanschette und witterungsbeständigem Dichtstoff geschlossen. Die genauen Vorgaben stehen in der Herstellerdokumentation.' ] },
+      { h: 'Durch die Kellerwand oder unter der Kellerdecke bohren', p: [
+        'Bei vielen Häusern führen die Leitungen der Wärmepumpe durch die Kellerwand oder knapp unter der Kellerdecke. Dort liegt die Bohrung teilweise im Erdreich, und von außen kann Sickerwasser oder bei starkem Regen auch drückendes Wasser anliegen. Deshalb reicht ein einfacher Durchbruch mit Bauschaum nicht.',
+        'Üblich sind ein Futterrohr oder eine Mauerdurchführung mit Ringraumdichtung (auch Ringraumabdichtung genannt), die den Spalt zwischen Rohr und Bohrung dauerhaft schließt. Welche Lösung passt, hängt von der Wasserbelastung, vom Bauteil (Mauerwerk, Beton, weiße oder schwarze Wanne) und von den Vorgaben des Herstellers ab. Die Dichtung ist ein eigener Arbeitsschritt, den Fachbetrieb und Planer abstimmen, bevor gebohrt wird.',
+        'Wir bohren die Öffnung passgenau und glatt, damit die gewählte Durchführung sauber sitzt. Bei Wasserdruck, Wannenkonstruktionen oder Bodenplatten stimmen Sie die Abdichtung bitte mit dem Fachplaner ab.' ] },
       { h: 'Statik: Wann ist ein Fachplaner nötig?', p: [
         'In nichttragenden Wänden ist eine einzelne Bohrung meist unkritisch. Bei tragenden Wänden, mehreren Bohrungen dicht beieinander, Bohrungen nahe an Stürzen, Stützen oder Auflagern sowie in Bodenplatten empfehlen wir die Abstimmung mit Statiker oder Tragwerksplaner.' ] },
       { h: 'Ablauf in sechs Schritten', ol: [
@@ -100,6 +104,8 @@ export const articles = [
     faqs: [
       ['Welchen Durchmesser braucht meine Wärmepumpe?', 'Das hängt vom Gerät und der Leitungsführung ab. Senden Sie uns Datenblatt und Foto, wir nennen den passenden Durchmesser.'],
       ['Brauche ich einen Statiker?', 'Bei tragenden Wänden oder mehreren Bohrungen nah beieinander ist eine Abstimmung sinnvoll. Wir beraten Sie dazu gern.'],
+      ['Kann die Leitung der Wärmepumpe durch die Kellerwand geführt werden?', 'Ja, das ist üblich. Bei erdberührten Wänden muss die Durchführung aber dauerhaft abgedichtet werden, zum Beispiel mit Futterrohr und Ringraumdichtung. Die Wahl richtet sich nach Wasserbelastung, Bauteil und Herstellervorgaben und wird vor der Bohrung mit dem Fachplaner geklärt.'],
+      ['Reicht Bauschaum zum Abdichten der Kernbohrung?', 'Bei erdberührten Bauteilen nein. Bauschaum ist weder dauerhaft wasserdicht noch für drückendes Wasser geeignet. Dafür braucht es ein Futterrohr mit geeigneter Abdichtung.'],
       ['Wie lange dauert die Bohrung?', 'Eine Standardbohrung dauert in der Regel wenige Minuten bis etwa eine Stunde inklusive Aufbau.'],
     ],
   },
