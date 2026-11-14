@@ -239,6 +239,8 @@ faqs.push(
   ['Wie tief können Sie bohren?', 'Wir bohren bis zu 2 m tief. Ein Beispiel aus der Praxis: Kernbohrung Ø 80 mm mit 1 m Tiefe in Stahlbeton.'],
   ['Können Sie schräg bohren oder nur im 90°-Winkel?', 'Wir bohren waagerecht, senkrecht, über Kopf und im Winkel. Überkopf- und Schrägbohrungen berechnen wir mit 50 % Zuschlag.'],
   ['Wie stellen Sie sicher, dass keine versteckten Leitungen beschädigt werden?', 'Wir klären vor der Bohrung Bestandspläne und Leitungsverläufe mit dem Auftraggeber und markieren die Bohrstelle gemeinsam. Wir besitzen ein Ortungsgerät, bohren aber erst an dem Punkt, den der Auftraggeber markiert und freigegeben hat. Er klärt Leitungen, Bewehrung und Statik vorab, bei tragenden Teilen mit dem Statiker. Ohne Markierung und Freigabe bohren wir nicht.'],
+  ['Wie lange dauert eine Kernbohrung und entsteht dabei Staub?', 'Eine einzelne Standardbohrung dauert meist nur wenige Minuten bis etwa eine Stunde inklusive Aufbau. Wir bohren nass mit Wasserabsaugung, dadurch entsteht kaum Staub, und der Bohrschlamm wird aufgenommen. Auch in bewohnten Räumen decken wir den Bereich ab und arbeiten erschütterungsarm.'],
+  ['Wer darf einen Wanddurchbruch in einer tragenden Wand machen?', 'Die Statik muss ein Statiker oder Tragwerksplaner berechnen, meist wird dazu ein Träger (Sturz) eingebaut. Die Bohr- und Sägearbeiten führen wir nach dieser Planung aus. Bei Miet- und Eigentumswohnungen ist außerdem die Zustimmung von Vermieter oder Eigentümergemeinschaft nötig.'],
   ['Wie lange dauert ein typischer Auftrag?', 'Eine einzelne Bohrung für Wärmepumpe oder Klimagerät dauert in der Regel nur kurze Zeit. Nach Absprache sind wir oft schon am zweiten Tag nach Ihrem Anruf auf der Baustelle. Größere Projekte planen wir nach Aufwand.'],
 );
 

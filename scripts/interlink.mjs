@@ -24,6 +24,7 @@ const REGELN = [
   ['Fugenschneiden|Fugen schneiden', '/fugenschneiden/'],
   ['Schlitzfräsen|Schlitze fräsen|Schlitzfräsarbeiten', '/schlitzfraesen/'],
   ['Rückbau|Teilabbruch', '/rueckbau-teilabbruch/'],
+  ['Kosten (?:für |eines )?(?:einen |den )?Wanddurchbruchs?|Wanddurchbruch[- ]Kosten|Was kostet ein Wanddurchbruch', '/ratgeber/wanddurchbruch-kosten/'],
   ['tragende[n]? Wand|tragende[n]? Wänd(?:e|en)', '/ratgeber/wanddurchbruch-tragende-wand/'],
   ['Wanddurchbr(?:uch|üche|üchen)', '/wanddurchbruch/'],
   ['Bohrdurchmesser', '/bohrdurchmesser/'],

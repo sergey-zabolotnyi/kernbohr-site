@@ -136,6 +136,8 @@ export const articles = [
       ['Wie breit darf ein Wanddurchbruch sein?', 'Das bestimmt die Statik. Ohne Berechnung durch einen Statiker können wir bei tragenden Wänden keine Maße freigeben.'],
       ['Muss ich während der Arbeiten ausziehen?', 'Nein, in der Regel nicht. Wir arbeiten staub- und lärmreduziert, auch in bewohnten Objekten.'],
       ['Wie lange dauert ein Durchbruch?', 'Das hängt von Größe, Material und Statik ab. Nach Foto und Maßen nennen wir Ihnen einen realistischen Zeitrahmen.'],
+      ['Wer darf einen Wanddurchbruch in einer tragenden Wand planen?', 'Die Statik muss ein Statiker oder Tragwerksplaner berechnen. Wir führen die Bohr- und Sägearbeiten danach nach dieser Planung aus und stimmen uns mit Ihrem Statiker oder Architekten ab.'],
+      ['Was kostet ein Wanddurchbruch?', 'Das hängt von Wandstärke, Material, Größe, Zugang und Statik ab. Die Preisfaktoren erklären wir im Beitrag „Was kostet ein Wanddurchbruch?“.'],
     ],
   },
   {
@@ -241,6 +243,51 @@ export const articles = [
       ['Sind die Preise netto oder brutto?', `Alle genannten Preise sind Bruttopreise nach unserer Preisliste (Stand ${stand}).`],
       ['Kostet die Anfahrt immer extra?', `Ja, die Anfahrt und Baustelleneinrichtung berechnen wir mit ${eur(regeln.anfahrt)} im Umkreis bis ca. 30 km um Dresden. Bei mehreren Bohrungen im selben Termin fällt sie nur einmal an.`],
       ['Wie viel teurer ist eine Bohrung nachts oder am Wochenende?', 'Nachts (23 bis 6 Uhr) berechnen wir 75 % Zuschlag auf den Bohrpreis, am Samstag, Sonntag und an Feiertagen 100 %.'],
+    ],
+  },
+  {
+    slug: 'wanddurchbruch-kosten',
+    icon: 'euro',
+    date: '2026-11-14',
+    title: 'Was kostet ein Wanddurchbruch? Preisfaktoren und Ablauf',
+    h1: 'Was kostet ein Wanddurchbruch? Das bestimmt den Preis',
+    description: 'Wanddurchbruch Kosten: Wovon der Preis abhängt (Wandstärke, Material, Statik, Träger, Entsorgung) und wie Sie ein genaues Angebot in Dresden erhalten.',
+    short: 'Wandstärke, Material, Statik, Träger und Entsorgung: die Preisfaktoren im Überblick.',
+    answer: 'Was ein Wanddurchbruch kostet, hängt vor allem von Wandstärke, Material (Mauerwerk oder Stahlbeton), Größe der Öffnung, Statik und der Entsorgung des Abbruchmaterials ab. Einen pauschalen Preis pro Durchbruch gibt es nicht. Bei tragenden Wänden kommen Statiker und Träger (Sturz) hinzu, die getrennt geplant und berechnet werden. Mit Foto, Maßen und Wandstärke nennen wir Ihnen ein konkretes Angebot.',
+    sections: [
+      { h: 'Aus diesen Bausteinen setzt sich der Preis zusammen', ul: [
+        '<strong>Wandstärke und Material:</strong> Stahlbeton ist aufwändiger als Ziegelmauerwerk, weil die Bewehrung die Diamantwerkzeuge stärker abnutzt. Je dicker die Wand, desto länger der Schnitt.',
+        '<strong>Größe der Öffnung:</strong> Breite, Höhe und Zahl der Schnitte bestimmen den Aufwand beim Betonsägen.',
+        '<strong>Statik bei tragenden Wänden:</strong> Ein Statiker berechnet, wie die Öffnung abgefangen werden muss. Seine Leistung und der Träger (Stahlträger oder Sturz) gehören zur Planung und werden gesondert kalkuliert.',
+        '<strong>Zugang und Lage:</strong> Etage, Aufzug, Gerüst oder enge Räume beeinflussen den Aufwand.',
+        '<strong>Entsorgung:</strong> Abbruchmaterial und Bohrkerne müssen abtransportiert werden. Das hängt von der Menge ab.',
+        '<strong>Schutzmaßnahmen:</strong> Abdecken, Absaugung und Staubschutz in bewohnten Räumen.',
+        '<strong>Anfahrt und Einrichtung:</strong> Aufbau der Technik und Anfahrt fallen einmal pro Einsatz an.',
+      ] },
+      { h: 'Nichttragende Wand oder tragende Wand?', p: [
+        'In einer nichttragenden Trennwand ist der Aufwand meist überschaubar: Öffnung anzeichnen, schneiden, Material abtransportieren. Bei einer tragenden Wand ist vorab eine statische Berechnung nötig, außerdem muss die Öffnung mit einem Träger abgefangen werden. Dadurch steigen Planungsaufwand und Gesamtkosten. Ob eine Wand tragend ist, kann nur ein Fachmann anhand der Bauunterlagen oder vor Ort beurteilen.',
+        'Mehr zu Statik und Ablauf finden Sie im Beitrag <a href="/ratgeber/wanddurchbruch-tragende-wand/">Wanddurchbruch in der tragenden Wand</a>.',
+      ] },
+      { h: 'Kernbohrung statt großem Durchbruch?', p: [
+        'Brauchen Sie nur eine Durchführung für Rohr, Kabel, Abluft oder Wärmepumpe, reicht oft eine Kernbohrung statt eines Durchbruchs. Dafür gibt es feste Preise je cm Bohrtiefe, nachzulesen im Beitrag <a href="/ratgeber/kernbohrung-kosten-dresden/">Was kostet eine Kernbohrung?</a> und in der <a href="/preise/">Preisliste</a>.',
+      ] },
+      { h: 'So erhalten Sie ein genaues Angebot', ol: [
+        'Foto der Wand, Gesamtansicht und Nahaufnahme der gewünschten Stelle',
+        'Gewünschte Breite und Höhe der Öffnung',
+        'Wandstärke (Zollstock an der Türlaibung oder an einer vorhandenen Öffnung fotografieren)',
+        'Material, soweit bekannt, und ob die Wand tragend ist',
+        'Ort, Etage und Zugang',
+        'Bei tragenden Wänden: vorhandene Statik oder Kontakt zu Ihrem Statiker',
+      ] },
+      { h: 'Muss ich mit zusätzlichen Kosten rechnen?', p: [
+        'Möglich sind Kosten für den Statiker, den Träger, das Herrichten der Kanten (Putz, Verkleidung) und gegebenenfalls Genehmigungen. Diese Leistungen gehören nicht zu unseren Bohr- und Sägearbeiten, wir stimmen uns dafür gern mit Ihrem Architekten oder Statiker ab. So lässt sich vorab klären, was zu Ihrem Vorhaben gehört.',
+      ] },
+    ],
+    faqs: [
+      ['Gibt es einen Pauschalpreis für einen Wanddurchbruch?', 'Nein. Der Preis richtet sich nach Wandstärke, Material, Größe, Zugang und Statik. Mit Foto und Maßen nennen wir ein konkretes Angebot.'],
+      ['Was kostet ein Wanddurchbruch in einer tragenden Wand?', 'Hier kommen Statiker und Träger hinzu. Die Gesamtkosten hängen von der Berechnung und der Größe der Öffnung ab und lassen sich erst nach Klärung der Statik seriös beziffern.'],
+      ['Kann ich ein Angebot per Foto bekommen?', 'Ja, in vielen Fällen. Schicken Sie uns per WhatsApp ein Foto, die Wandstärke und die gewünschte Größe der Öffnung.'],
+      ['Wer braucht für einen Wanddurchbruch eine Genehmigung?', 'Ob eine Anzeige oder Genehmigung nötig ist, hängt vom Gebäude und der Landesbauordnung ab. Mieter benötigen die Zustimmung des Vermieters, Wohnungseigentümer meist die der Eigentümergemeinschaft. Klären Sie das bitte vorab mit Bauaufsicht oder Architekt.'],
     ],
   },
   {
