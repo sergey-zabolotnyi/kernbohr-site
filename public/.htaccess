@@ -1,5 +1,13 @@
 # 301-Weiterleitungen für Apache-Hosting (IONOS, Strato, All-Inkl u. a.)
 # ACHTUNG: Diese Datei ersetzt auf dem Server eine vorhandene .htaccess (z. B. von WordPress). Vorher sichern!
+# HTTP -> HTTPS und www -> ohne www (301, Pfad bleibt erhalten: $1)
+# Falls nach dem Hochladen eine Endlosschleife entsteht: Datei sofort durch die gesicherte Version ersetzen.
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://kernbohr-expert.de/$1 [R=301,L]
+
+# Alte WordPress-Adressen
 RedirectMatch 301 ^/contact/?$ /kontakt/
 RedirectMatch 301 ^/about/?$ /ueber-uns/
 RedirectMatch 301 ^/services/?$ /leistungen/
