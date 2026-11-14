@@ -24,6 +24,7 @@ export const services = [
       ['Sind Sie versichert?', 'Ja, Kernbohr-Expert verfügt über eine Betriebshaftpflichtversicherung. Das schützt Sie als Auftraggeber bei Schäden, die bei der Arbeit entstehen könnten. Den Versicherungsnachweis senden wir Ihnen auf Anfrage gern zu.'],
       ['Was ist der Unterschied zwischen Kernbohrung, Kernlochbohrung und Wandbohrung?', 'Im Alltag meinen die Begriffe meist dasselbe: ein rundes, sauberes Loch durch Wand oder Decke, gebohrt mit einer Diamant-Bohrkrone. Fachlich spricht man von Kernbohrung, weil dabei ein Betonkern aus dem Bauteil herausgelöst wird. Für Dübellöcher reicht eine Schlagbohrmaschine, für Rohr- und Lüftungsdurchführungen in Beton ist die Kernbohrung das passende Verfahren.'],
       ['Kernbohrgerät mieten oder die Kernbohrung beauftragen?', 'Für einzelne Bohrungen lohnt sich die Miete eines Kernbohrgeräts meist nicht: Bohrständer, Diamantkrone, Wasserversorgung und Absaugung müssen zusammenpassen, und bei Stahlbeton oder tragenden Bauteilen ist Erfahrung nötig. Wir kommen mit Gerät, Wasser und Staubschutz zu Ihnen und übergeben die Baustelle aufgeräumt. Den Preis erfahren Sie vorab im Rechner oder per Foto.'],
+      ['Bohren Sie ohne Schlag und ohne Abplatzen?', 'Eine Kernbohrung arbeitet drehend mit diamantbesetzter Bohrkrone und ohne Schlagwirkung wie beim Bohrhammer. Dadurch ist sie erschütterungsarm und schont das Bauteil. Ausbrüche an der Austrittsseite lassen sich bei sorgfältiger Ausführung und passendem Vorgehen klein halten. Bei empfindlichem Putz, Fliesen oder Fassaden sagen Sie uns das bitte vorab.'],
       ['Hinterlassen Sie die Baustelle sauber?', 'Ja. Wir arbeiten staubarm mit Wassersauger, decken den Arbeitsbereich ab und übergeben den Bereich nach der Arbeit aufgeräumt.'],
       ['Brauchen Sie Strom und Wasser vor Ort?', 'Strom muss vor Ort vorhanden sein (230 V, bei großen Durchmessern eventuell 400 V). Für die Nassbohrung brauchen wir außerdem Wasser. Ist kein Wasseranschluss vorhanden, ist das kein Problem: Sagen Sie uns vorab Bescheid, dann bringen wir das Wasser in Kanistern mit, das ist im Auftragspreis enthalten. Mehr in unserer Checkliste zur Terminvorbereitung.'],
       ['Übernehmen Sie auch größere Projekte und Serienbohrungen?', 'Ja. Mit unserem Team von 8 Mitarbeitern führen wir auch größere Projekte und Serienbohrungen aus, in Dresden, Sachsen und bundesweit. Bei Bedarf erweitern wir das Team. Für ein Angebot senden Sie uns Bohrliste oder Plan mit Durchmesser, Tiefe und Anzahl der Bohrungen.'],
@@ -35,7 +36,7 @@ export const services = [
   {
     slug: 'wanddurchbruch',
     group: 'Leistung',
-    name: 'Durchbrüche & Öffnungen',
+    name: 'Wanddurchbruch & Deckendurchbruch',
     title: 'Wanddurchbruch & Deckenöffnung in Dresden',
     description: 'Wand- und Deckendurchbrüche, auch tragend mit Statik-Zusammenarbeit, in Dresden, Leipzig und bundesweit. Für Umbau, Sanierung und Grundrissänderung.',
     h1: 'Wanddurchbruch und statische Öffnungen',
@@ -53,7 +54,7 @@ export const services = [
   {
     slug: 'betonsaegen',
     group: 'Leistung',
-    name: 'Betonsägen',
+    name: 'Betonsägen & Betonschneiden',
     title: 'Betonsägen & Wandsägen in Dresden',
     description: 'Betonsägen und Wandsägen für Wand- und Deckenöffnungen in Dresden, Leipzig und Sachsen. Betonschneiden mit exakten Schnitten, geräusch- und vibrationsarm.',
     h1: 'Betonsägen und Wandsägen in Dresden und Sachsen',
@@ -104,6 +105,8 @@ export const services = [
       ['Einsatzgebiet', areas],
     ],
     faqs: [
+      ['Fräsen Sie Schlitze auch im Altbau ohne Stemmen?', 'Ja. Wir fräsen Schlitze mit der Schlitzfräse statt sie mit Hammer und Meißel zu stemmen. Das ist genauer, die Kanten sind sauber, und Wand und Putz werden weniger belastet als beim Stemmen. Im Altbau ist die Prüfung der Wand wichtig, bei Fachwerk, Gewölben oder tragenden Wänden sprechen wir den Umfang vorab ab.'],
+      ['Entsteht beim Schlitzefräsen viel Staub?', 'Beim Fräsen entsteht Staub, den wir mit Absaugung und Abdecken so gering wie möglich halten. Komplett staubfrei ist keine Schlitzarbeit, in bewohnten Räumen planen wir aber Schutzmaßnahmen und Reinigung ein.'],
       ['Wie tief und breit darf ein Schlitz sein?', 'Das hängt von der Wand und der Statik ab. Bei tragenden Wänden sind Schlitztiefe und -breite nach den Normen für Mauerwerk begrenzt. Bitte klären Sie das vorab mit dem Statiker.'],
     ],
   },
