@@ -35,7 +35,7 @@ export const services = [
   {
     slug: 'wanddurchbruch',
     group: 'Leistung',
-    name: 'Durchbrüche & Öffnungen',
+    name: 'Wanddurchbruch & Deckendurchbruch',
     title: 'Wanddurchbruch & Deckenöffnung in Dresden',
     description: 'Wand- und Deckendurchbrüche, auch tragend mit Statik-Zusammenarbeit, in Dresden, Leipzig und bundesweit. Für Umbau, Sanierung und Grundrissänderung.',
     h1: 'Wanddurchbruch und statische Öffnungen',
@@ -53,7 +53,7 @@ export const services = [
   {
     slug: 'betonsaegen',
     group: 'Leistung',
-    name: 'Betonsägen',
+    name: 'Betonsägen & Betonschneiden',
     title: 'Betonsägen & Wandsägen in Dresden',
     description: 'Betonsägen und Wandsägen für Wand- und Deckenöffnungen in Dresden, Leipzig und Sachsen. Betonschneiden mit exakten Schnitten, geräusch- und vibrationsarm.',
     h1: 'Betonsägen und Wandsägen in Dresden und Sachsen',
