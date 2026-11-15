@@ -13,7 +13,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
     <header><span class="kc-av"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e8590c"/><path d="M10 22a14 14 0 0 1 28 0z" fill="#fff"/><rect x="8" y="21" width="32" height="4" rx="2" fill="#f3f4f6"/><rect x="12" y="25" width="24" height="15" rx="6" fill="#171c20"/><circle cx="19" cy="31.5" r="2.6" fill="#7ee0a1"/><circle cx="29" cy="31.5" r="2.6" fill="#7ee0a1"/><path d="M20 36.5q4 2.4 8 0" stroke="#7ee0a1" stroke-width="1.6" fill="none" stroke-linecap="round"/><rect x="22.5" y="6" width="3" height="5" rx="1.5" fill="#fff"/></svg><i class="kc-on"></i></span><span class="kc-title"><span class="kc-name"><b>Kerni</b><em>KI-Assistent</em></span><small>(Kernbohr-Expert Assistent)</small></span><button type="button" class="kc-x" aria-label="Chat schließen">×</button></header>
     <div class="kc-consent">
       <span class="kc-av kc-av-l"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e8590c"/><path d="M10 22a14 14 0 0 1 28 0z" fill="#fff"/><rect x="8" y="21" width="32" height="4" rx="2" fill="#f3f4f6"/><rect x="12" y="25" width="24" height="15" rx="6" fill="#171c20"/><circle cx="19" cy="31.5" r="2.6" fill="#7ee0a1"/><circle cx="29" cy="31.5" r="2.6" fill="#7ee0a1"/><path d="M20 36.5q4 2.4 8 0" stroke="#7ee0a1" stroke-width="1.6" fill="none" stroke-linecap="round"/><rect x="22.5" y="6" width="3" height="5" rx="1.5" fill="#fff"/></svg></span>
-      <p>Kerni ist ein digitaler KI-Assistent, kein Mensch. Ihre Eingaben werden dafür an einen Anbieter in den USA übermittelt. Bitte geben Sie keine persönlichen Daten ein. Der Assistent gibt unverbindliche Auskünfte. Details in der <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</p>
+      <p>Kerni ist ein digitaler KI-Assistent, kein Mensch. Ihre Eingaben werden dafür an einen Anbieter in den USA übermittelt. Bitte geben Sie im Chat keine persönlichen Daten ein, außer Sie möchten eine Anfrage an uns senden (dazu bitten wir Sie vorher um eine gesonderte Bestätigung). Der Assistent gibt unverbindliche Auskünfte. Details in der <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</p>
       <button type="button" class="kc-ok">Einverstanden, Chat starten</button>
     </div>
     <div class="kc-log" role="log" aria-live="polite" hidden></div>
@@ -21,6 +21,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
       <button type="button">Was kostet eine Kernbohrung?</button>
       <button type="button">Arbeiten Sie nachts?</button>
       <button type="button">Wie schnell sind Sie vor Ort?</button>
+      <button type="button">Anfrage online senden</button>
     </div>
     <form class="kc-form" hidden>
       <input type="text" maxlength="500" placeholder="Ihre Frage …" aria-label="Ihre Frage" autocomplete="off" />
@@ -59,6 +60,15 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-bot{align-self:flex-start;background:#fff;border:1px solid #e3e6e9;border-bottom-left-radius:4px}
   .kc-me{align-self:flex-end;background:#c2410c;color:#fff;border-bottom-right-radius:4px}
   .kc-typing{opacity:.6}
+  .kc-lead{align-self:stretch;background:#fff;border:2px solid #e8590c;border-radius:12px;padding:.7rem .8rem;font-size:.88rem}
+  .kc-lead b{display:block;margin-bottom:.3rem}
+  .kc-lead dl{margin:0 0 .6rem;display:grid;grid-template-columns:auto 1fr;gap:.15rem .6rem}
+  .kc-lead dt{font-weight:600;color:#5a6068}.kc-lead dd{margin:0;word-break:break-word}
+  .kc-lead label{display:flex;gap:.5rem;align-items:flex-start;font-size:.8rem;margin:0 0 .6rem;line-height:1.35}
+  .kc-lead input[type=checkbox]{margin-top:.15rem;width:18px;height:18px;flex:none}
+  .kc-lead .kc-send{width:100%;min-height:44px;border:0;border-radius:10px;background:#c2410c;color:#fff;font-weight:700;cursor:pointer}
+  .kc-lead .kc-send:disabled{opacity:.5;cursor:not-allowed}
+  .kc-lead .kc-hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
   .kc-chips{display:flex;gap:.4rem;padding:.5rem .8rem;flex-wrap:wrap;background:#f4f6f8}
   .kc-chips button{border:1px solid #e8590c;background:#fff;color:#c2410c;border-radius:999px;padding:.35rem .7rem;font-size:.8rem;font-weight:600;cursor:pointer}
   .kc-form{display:flex;gap:.4rem;padding:.6rem;border-top:1px solid #e3e6e9;background:#fff}
@@ -84,6 +94,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
     const add = (cls, html) => { const d = document.createElement('div'); d.className = 'kc-m ' + cls; d.innerHTML = html; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; };
     const toggle = (open) => { panel.hidden = !open; fab.setAttribute('aria-expanded', String(open)); if (open && !form.hidden) input.focus(); };
     fab.addEventListener('click', () => toggle(panel.hidden));
+    document.addEventListener('click', (e) => { if (e.target.closest && e.target.closest('[data-open-chat]')) { e.preventDefault(); toggle(true); } });
     $('.kc-x').addEventListener('click', () => { toggle(false); fab.focus(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) toggle(false); });
     $('.kc-ok').addEventListener('click', () => {
@@ -91,6 +102,29 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
       add('kc-bot', 'Hallo, ich bin Kerni, der digitale Assistent von Kernbohr-Expert. Ich beantworte Fragen zu Kernbohrung, Preisen und Ablauf. Wie kann ich helfen?');
       input.focus();
     });
+    const leadCard = (lead) => {
+      const box = document.createElement('div'); box.className = 'kc-m kc-lead';
+      box.innerHTML = `<b>Ihre Anfrage an Herrn Salcutan</b><dl><dt>Name</dt><dd>${esc(lead.name)}</dd><dt>Telefon</dt><dd>${esc(lead.telefon)}</dd><dt>Ort</dt><dd>${esc(lead.ort)}</dd><dt>Anliegen</dt><dd>${esc(lead.anliegen)}</dd></dl>`
+        + '<input class="kc-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">'
+        + '<label><input type="checkbox" class="kc-cb"><span>Ich stimme zu, dass Kernbohr-Expert diese Angaben zur Bearbeitung meiner Anfrage erhält und mich dazu kontaktiert. Die Weiterleitung erfolgt per E-Mail. Siehe <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</span></label>'
+        + '<button type="button" class="kc-send" disabled>Anfrage absenden</button>';
+      log.appendChild(box); log.scrollTop = log.scrollHeight;
+      const cb = box.querySelector('.kc-cb'), btn = box.querySelector('.kc-send'), hp = box.querySelector('.kc-hp');
+      cb.addEventListener('change', () => { btn.disabled = !cb.checked; });
+      btn.addEventListener('click', async () => {
+        btn.disabled = true; btn.textContent = 'Wird gesendet …';
+        try {
+          const r = await fetch(root.dataset.url.replace(/\/+$/, '') + '/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...lead, einwilligung: cb.checked, hp: hp.value }) });
+          const j = await r.json();
+          if (!r.ok || !j.ok) throw new Error('send');
+          box.innerHTML = '<b>Danke, Ihre Anfrage wurde weitergeleitet.</b>Wir melden uns in den Telefonzeiten (Mo–Sa 7–19 Uhr). Fotos der Baustelle können Sie gern per WhatsApp senden.';
+          history.length = 0;
+        } catch {
+          btn.disabled = false; btn.textContent = 'Anfrage absenden';
+          add('kc-bot', 'Das Senden hat leider nicht geklappt. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.');
+        }
+      });
+    };
     async function send(text) {
       text = text.trim(); if (!text) return;
       chips.hidden = true; input.value = '';
@@ -101,6 +135,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         const j = await r.json();
         const reply = j.reply || 'Dazu rufen Sie uns bitte kurz an.';
         wait.remove(); add('kc-bot', link(reply)); history.push({ role: 'assistant', content: reply });
+        if (j.lead) leadCard(j.lead);
       } catch {
         wait.remove(); add('kc-bot', 'Der Assistent ist gerade nicht erreichbar. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.');
       }

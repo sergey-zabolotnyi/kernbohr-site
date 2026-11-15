@@ -8,6 +8,7 @@ import { site } from '../data/site.js';
 import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema } from '../lib/schema.js';
+const chat = !!import.meta.env.PUBLIC_CHAT_URL;
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage. Foto der Baustelle sende ich gleich mit.')}`;
 ---
 <Base
@@ -65,7 +66,13 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich
           <p>Telefon: Montag bis Samstag, 7 bis 19 Uhr.<br />WhatsApp und E-Mail jederzeit.<br />Einsätze nach Absprache rund um die Uhr, auch abends, am Wochenende und an Feiertagen.</p>
         </div>
       </div>
+      {chat && (
       <div class="callout" style="margin-top:2rem">
+        <strong>Anfrage online senden</strong>
+        Unser digitaler Assistent Kerni nimmt Ihre Anfrage in wenigen Minuten auf und leitet sie nach Ihrer Bestätigung per E-Mail direkt an uns weiter. <a href="#kb-chat" data-open-chat>Chat mit Kerni öffnen</a>
+      </div>
+      )}
+      <div class="callout" style="margin-top:1rem">
         <strong>Tipp für ein schnelles Angebot</strong>
         Senden Sie ein Foto der Bohrstelle, den gewünschten Durchmesser und die ungefähre Wandstärke. Mehr dazu in unserer <a href="/ratgeber/checkliste-termin-vorbereitung/">Checkliste</a>.
       </div>

@@ -11,3 +11,7 @@ MODEL = "openai/gpt-oss-120b"
 # Erlaubte Seiten (durch Komma getrennt). Test-Subdomain hier ergänzen.
 ALLOWED_ORIGINS = "https://kernbohr-expert.de,https://www.kernbohr-expert.de,http://localhost:4321"
 # Der API-Schlüssel kommt NICHT hierher, sondern: npx wrangler secret put API_KEY
+# E-Mail-Weiterleitung von Anfragen über Brevo (EU-Anbieter). Absender muss in Brevo bestätigt sein.
+MAIL_TO = "info@kernbohr-expert.de"
+MAIL_FROM = "info@kernbohr-expert.de"
+# Secret: npx wrangler secret put BREVO_API_KEY
