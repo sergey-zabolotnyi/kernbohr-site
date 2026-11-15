@@ -21,6 +21,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
       <button type="button">Was kostet eine Kernbohrung?</button>
       <button type="button">Arbeiten Sie nachts?</button>
       <button type="button">Wie schnell sind Sie vor Ort?</button>
+      <button type="button">Anfrage online senden</button>
     </div>
     <form class="kc-form" hidden>
       <input type="text" maxlength="500" placeholder="Ihre Frage …" aria-label="Ihre Frage" autocomplete="off" />
@@ -93,6 +94,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
     const add = (cls, html) => { const d = document.createElement('div'); d.className = 'kc-m ' + cls; d.innerHTML = html; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; };
     const toggle = (open) => { panel.hidden = !open; fab.setAttribute('aria-expanded', String(open)); if (open && !form.hidden) input.focus(); };
     fab.addEventListener('click', () => toggle(panel.hidden));
+    document.addEventListener('click', (e) => { if (e.target.closest && e.target.closest('[data-open-chat]')) { e.preventDefault(); toggle(true); } });
     $('.kc-x').addEventListener('click', () => { toggle(false); fab.focus(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) toggle(false); });
     $('.kc-ok').addEventListener('click', () => {

@@ -19,7 +19,7 @@ import Bewertungen from '../components/Bewertungen.astro';
 import { image, heroStyle } from '../lib/media.js';
 import { faqSchema, howToSchema } from '../lib/schema.js';
 
-const pick = ['Was kostet eine Kernbohrung', 'Arbeiten Sie auch am Wochenende', 'Wie tief können Sie bohren', 'Wie groß können die Bohrdurchmesser', 'Arbeiten Sie staubfrei', 'In welchen Regionen'];
+const pick = ['Was kostet eine Kernbohrung', 'Kann ich meine Anfrage auch online', 'Arbeiten Sie auch am Wochenende', 'Wie tief können Sie bohren', 'Wie groß können die Bohrdurchmesser', 'Arbeiten Sie staubfrei', 'In welchen Regionen'];
 const faqs = pick.map((p) => allFaqs.find(([q]) => q.startsWith(p))).filter(Boolean);
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage für eine Kernbohrung. Foto der Baustelle sende ich gleich mit.')}`;
 const leistungen = services.filter((s) => s.group === 'Leistung');
