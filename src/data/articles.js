@@ -58,7 +58,7 @@ export const articles = [
     date: '2026-11-07',
     title: 'Kernbohrung für die Wärmepumpe: Ablauf, Abdichtung, Statik',
     h1: 'Kernbohrung für die Wärmepumpe: Ablauf, Abdichtung und Statik',
-    description: 'Wie läuft die Kernbohrung für Wärmepumpe oder Klimagerät ab? Durchmesser, Position, Durchführung durch die Kellerwand, Abdichtung nach DIN 18533, Statik und typische Fehler.',
+    description: 'Kernbohrung für Wärmepumpe oder Klimagerät: Durchmesser, Position, Kellerwand, Abdichtung nach DIN 18533, Statik und typische Fehler.',
     short: 'Durchmesser, Position, Abdichtung und die typischen Fehler bei der Wanddurchführung.',
     answer: 'Für die Leitungen von Wärmepumpe oder Klimagerät wird ein runder Durchbruch durch die Außenwand gebohrt. Entscheidend sind die richtige Position, ein passender Durchmesser, ein leichtes Gefälle nach außen und eine dauerhaft dichte Abdichtung. Bei tragenden oder erdberührten Bauteilen sollten Statiker bzw. Fachplaner einbezogen werden.',
     sections: [
