@@ -193,7 +193,7 @@ export default {
           continue;
         }
         let reply = (msg?.content || '').trim();
-        const offer = /\[\[ANFRAGE\?\]\]/.test(reply) || /Möchten Sie Ihre Anfrage gleich online/.test(reply);
+        const offer = (/\[\[ANFRAGE\?\]\]/.test(reply) || /Möchten Sie Ihre Anfrage gleich online/.test(reply)) && (!!preis || history.length > 1);
         reply = reply.replace(/\s*\[\[ANFRAGE\?\]\]\s*/g, '').trim();
         return json({ reply: reply || (lead ? 'Bitte ergänzen Sie unten Ihre Angaben und senden Sie die Anfrage ab.' : 'Dazu rufen Sie uns bitte kurz an.'), ...(lead ? { lead } : {}), ...(preis ? { preis } : {}), ...(offer ? { offer: true } : {}) });
       }
