@@ -13,18 +13,14 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
     <header><span class="kc-av"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e8590c"/><path d="M10 22a14 14 0 0 1 28 0z" fill="#fff"/><rect x="8" y="21" width="32" height="4" rx="2" fill="#f3f4f6"/><rect x="12" y="25" width="24" height="15" rx="6" fill="#171c20"/><circle cx="19" cy="31.5" r="2.6" fill="#7ee0a1"/><circle cx="29" cy="31.5" r="2.6" fill="#7ee0a1"/><path d="M20 36.5q4 2.4 8 0" stroke="#7ee0a1" stroke-width="1.6" fill="none" stroke-linecap="round"/><rect x="22.5" y="6" width="3" height="5" rx="1.5" fill="#fff"/></svg><i class="kc-on"></i></span><span class="kc-title"><span class="kc-name"><b>Kerni</b><em>KI-Assistent</em></span><small>(Kernbohr-Expert Assistent)</small></span><button type="button" class="kc-x" aria-label="Chat schließen">×</button></header>
     <div class="kc-consent">
       <span class="kc-av kc-av-l"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#e8590c"/><path d="M10 22a14 14 0 0 1 28 0z" fill="#fff"/><rect x="8" y="21" width="32" height="4" rx="2" fill="#f3f4f6"/><rect x="12" y="25" width="24" height="15" rx="6" fill="#171c20"/><circle cx="19" cy="31.5" r="2.6" fill="#7ee0a1"/><circle cx="29" cy="31.5" r="2.6" fill="#7ee0a1"/><path d="M20 36.5q4 2.4 8 0" stroke="#7ee0a1" stroke-width="1.6" fill="none" stroke-linecap="round"/><rect x="22.5" y="6" width="3" height="5" rx="1.5" fill="#fff"/></svg></span>
-      <p>Kerni ist ein digitaler KI-Assistent, kein Mensch. Ihre Eingaben werden dafür an einen Anbieter in den USA übermittelt. Bitte geben Sie im Chat keine persönlichen Daten ein, außer Sie möchten eine Anfrage an uns senden (dazu bitten wir Sie vorher um eine gesonderte Bestätigung). Der Assistent gibt unverbindliche Auskünfte. Details in der <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</p>
+      <p>Kerni ist ein digitaler KI-Assistent, kein Mensch. Ihre Eingaben werden dafür an einen Anbieter in den USA übermittelt. Bitte geben Sie im Chat keine persönlichen Daten ein, außer Sie möchten eine Anfrage an uns senden (dazu bitten wir Sie vorher um eine gesonderte Bestätigung). Kerni versteht auch Englisch, Rumänisch, Russisch und Italienisch. Die optionale Spracheingabe nutzt den Spracherkennungsdienst Ihres Browsers. Der Assistent gibt unverbindliche Auskünfte. Details in der <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</p>
       <button type="button" class="kc-ok">Einverstanden, Chat starten</button>
     </div>
     <div class="kc-log" role="log" aria-live="polite" hidden></div>
-    <div class="kc-chips" hidden>
-      <button type="button">Was kostet eine Kernbohrung?</button>
-      <button type="button">Arbeiten Sie nachts?</button>
-      <button type="button">Wie schnell sind Sie vor Ort?</button>
-      <button type="button">Anfrage online senden</button>
-    </div>
+    <div class="kc-chips" hidden></div>
     <form class="kc-form" hidden>
       <input type="text" maxlength="500" placeholder="Ihre Frage …" aria-label="Ihre Frage" autocomplete="off" />
+      <button type="button" class="kc-mic" aria-label="Spracheingabe" title="Spracheingabe" hidden>🎤</button>
       <button type="submit" aria-label="Senden">➤</button>
     </form>
   </section>
@@ -72,6 +68,25 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-lead .kc-send:disabled{opacity:.5;cursor:not-allowed}
   .kc-lead .kc-hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
   .kc-chips{display:flex;gap:.4rem;padding:.5rem .8rem;flex-wrap:wrap;background:#f4f6f8}
+  .kc-mic{width:44px;border:1.5px solid #cfd5da;border-radius:10px;background:#fff;font-size:1.05rem;cursor:pointer}
+  .kc-mic.on{background:#fee2e2;border-color:#b42318}
+  .kc-mic[hidden]{display:none}
+  .kc-ph{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:.2rem 0 .6rem}
+  .kc-ph label.kc-add{display:inline-block;border:1.5px dashed #c2410c;color:#c2410c;border-radius:8px;padding:.45rem .7rem;font-weight:600;font-size:.82rem;cursor:pointer}
+  .kc-ph input[type=file]{position:absolute;left:-9999px;opacity:0;width:1px;height:1px}
+  .kc-th{position:relative;width:54px;height:54px}
+  .kc-th img{width:100%;height:100%;object-fit:cover;border-radius:8px;border:1px solid #c9ced4}
+  .kc-th button{position:absolute;top:-6px;right:-6px;width:22px;height:22px;border-radius:50%;border:0;background:#171c20;color:#fff;font-size:.9rem;line-height:1;cursor:pointer}
+  .kc-price{align-self:stretch;background:#fff;border:2px solid #171c20;border-radius:12px;padding:.7rem .8rem;font-size:.88rem}
+  .kc-price b{display:block;margin-bottom:.4rem}
+  .kc-pg{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.6rem}
+  .kc-pg label{display:grid;gap:.2rem;font-weight:600;font-size:.78rem;color:#3a3f45}
+  .kc-pg input,.kc-pg select{font:inherit;font-weight:400;font-size:16px;padding:.45rem .5rem;border:1px solid #c9ced4;border-radius:8px;width:100%;box-sizing:border-box;background:#fff}
+  .kc-pt{font-size:1.5rem;font-weight:800;color:#c2410c;margin:.1rem 0}
+  .kc-pl{margin:.2rem 0 .5rem;padding-left:1.1rem;font-size:.78rem;color:#4a5057}
+  .kc-pn{font-size:.76rem;color:#5a6068;margin:0 0 .6rem}
+  .kc-price .kc-pdf{width:100%;min-height:44px;border:0;border-radius:10px;background:#171c20;color:#fff;font-weight:700;cursor:pointer}
+  .kc-price .kc-pdf:disabled{opacity:.6;cursor:wait}
   .kc-chips button{border:1px solid #e8590c;background:#fff;color:#c2410c;border-radius:999px;padding:.35rem .7rem;font-size:.8rem;font-weight:600;cursor:pointer}
   .kc-form{display:flex;gap:.4rem;padding:.6rem;border-top:1px solid #e3e6e9;background:#fff}
   .kc-form input{flex:1;min-height:44px;border:1.5px solid #cfd5da;border-radius:10px;padding:0 .7rem;font:inherit}
@@ -84,88 +99,320 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   }
 </style>
 
+
 <script>
+  import { berechne, eur, regeln } from '../data/preisliste.js';
+
   const root = document.getElementById('kb-chat');
   if (root) {
+    const T = {
+      de: {
+        ph: 'Ihre Frage …', greet: 'Hallo, ich bin Kerni, der digitale Assistent von Kernbohr-Expert. Ich beantworte Fragen zu Kernbohrung, Preisen und Ablauf. Wie kann ich helfen?',
+        chipPreis: 'Preis berechnen', chipAnfrage: 'Anfrage online senden', chipWa: 'WhatsApp mit Zusammenfassung',
+        formIntro: 'Gern! Bitte ergänzen Sie unten Ihre Angaben, prüfen Sie sie und senden Sie die Anfrage ab.',
+        formTitle: 'Ihre Anfrage an Herrn Salcutan', name: 'Name', phone: 'Telefonnummer', place: 'Ort der Baustelle', concern: 'Ihr Anliegen',
+        photos: 'Fotos der Baustelle (optional, bis zu 3)', addPhoto: '+ Foto hinzufügen',
+        consent: 'Ich stimme zu, dass Kernbohr-Expert diese Angaben (und ggf. Fotos) zur Bearbeitung meiner Anfrage erhält und mich dazu kontaktiert. Die Weiterleitung erfolgt per E-Mail. Siehe', privacy: 'Datenschutzerklärung',
+        send: 'Anfrage absenden', sending: 'Wird gesendet …',
+        eName: 'Bitte geben Sie Ihren Namen an.', ePhone: 'Bitte geben Sie eine gültige Telefonnummer an.', ePlace: 'Bitte geben Sie den Ort der Baustelle an.', eConcern: 'Bitte beschreiben Sie kurz Ihr Anliegen.',
+        ePhoto: 'Dieses Foto konnte nicht geladen werden.', eSend: 'Das Senden hat leider nicht geklappt. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.',
+        thanks: 'Danke, Ihre Anfrage wurde weitergeleitet.', today: 'Wir melden uns in der Regel noch heute bis 19 Uhr.', next: 'Wir melden uns in der Regel am nächsten Werktag ab 7 Uhr.', wa: 'Weitere Fotos können Sie gern per WhatsApp senden.',
+        priceIntro: 'Hier können Sie Ihren Richtpreis berechnen und als PDF-Angebot herunterladen.', priceTitle: 'Richtpreis berechnen', dia: 'Durchmesser (mm)', depth: 'Tiefe (cm)', count: 'Anzahl', material: 'Material', beton: 'Beton / Stahlbeton', mauer: 'Mauerwerk',
+        priceNote: 'Richtwert, unverbindlich, brutto, inkl. Anfahrt und Pilotbohrung.', pdf: 'PDF-Angebot herunterladen', pdfBusy: 'PDF wird erstellt …', pdfFail: 'PDF nicht möglich, bitte per WhatsApp anfragen.',
+        err: 'Der Assistent ist gerade nicht erreichbar. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.',
+      },
+      en: {
+        ph: 'Your question …', greet: 'Hello, I am Kerni, the digital assistant of Kernbohr-Expert. I answer questions about core drilling, prices and process. How can I help?',
+        chipPreis: 'Calculate price', chipAnfrage: 'Send request online', chipWa: 'WhatsApp with summary',
+        formIntro: 'Gladly! Please complete your details below, check them and send the request.',
+        formTitle: 'Your request to Mr. Salcutan', name: 'Name', phone: 'Phone number', place: 'Job site location', concern: 'Your request',
+        photos: 'Photos of the site (optional, up to 3)', addPhoto: '+ Add photo',
+        consent: 'I agree that Kernbohr-Expert receives this information (and photos, if any) to process my request and to contact me about it. It is forwarded by e-mail. See the', privacy: 'privacy policy (German)',
+        send: 'Send request', sending: 'Sending …',
+        eName: 'Please enter your name.', ePhone: 'Please enter a valid phone number.', ePlace: 'Please enter the job site location.', eConcern: 'Please briefly describe your request.',
+        ePhoto: 'This photo could not be loaded.', eSend: 'Sending failed. Please call us: +49 177 190 90 49 (Mon–Sat 7am–7pm) or write on WhatsApp.',
+        thanks: 'Thank you, your request has been forwarded.', today: 'We usually get back to you today until 7 pm.', next: 'We usually get back to you on the next working day from 7 am.', wa: 'You are welcome to send more photos via WhatsApp.',
+        priceIntro: 'Here you can calculate your estimate and download it as a PDF quote.', priceTitle: 'Calculate estimate', dia: 'Diameter (mm)', depth: 'Depth (cm)', count: 'Quantity', material: 'Material', beton: 'Concrete / reinforced', mauer: 'Masonry',
+        priceNote: 'Guide price, non-binding, gross, incl. travel and pilot hole.', pdf: 'Download PDF quote', pdfBusy: 'Creating PDF …', pdfFail: 'PDF not possible, please ask via WhatsApp.',
+        err: 'The assistant is currently unavailable. Please call us: +49 177 190 90 49 (Mon–Sat 7am–7pm) or write on WhatsApp.',
+      },
+      ro: {
+        ph: 'Întrebarea dvs. …', greet: 'Bună, sunt Kerni, asistentul digital al Kernbohr-Expert. Răspund la întrebări despre carotare, prețuri și desfășurarea lucrării. Cu ce vă pot ajuta?',
+        chipPreis: 'Calculează prețul', chipAnfrage: 'Trimite solicitarea online', chipWa: 'WhatsApp cu rezumat',
+        formIntro: 'Cu plăcere! Vă rugăm să completați datele de mai jos, să le verificați și să trimiteți solicitarea.',
+        formTitle: 'Solicitarea dvs. către dl Salcutan', name: 'Nume', phone: 'Număr de telefon', place: 'Locul lucrării', concern: 'Solicitarea dvs.',
+        photos: 'Fotografii ale locului (opțional, până la 3)', addPhoto: '+ Adaugă fotografie',
+        consent: 'Sunt de acord ca Kernbohr-Expert să primească aceste date (și fotografiile, dacă există) pentru a-mi procesa solicitarea și a mă contacta. Transmiterea se face prin e-mail. Vezi', privacy: 'politica de confidențialitate (în germană)',
+        send: 'Trimite solicitarea', sending: 'Se trimite …',
+        eName: 'Vă rugăm să introduceți numele.', ePhone: 'Vă rugăm să introduceți un număr de telefon valid.', ePlace: 'Vă rugăm să introduceți locul lucrării.', eConcern: 'Vă rugăm să descrieți pe scurt solicitarea.',
+        ePhoto: 'Această fotografie nu a putut fi încărcată.', eSend: 'Trimiterea nu a reușit. Vă rugăm să ne sunați: +49 177 190 90 49 (lun–sâm 7–19) sau să scrieți pe WhatsApp.',
+        thanks: 'Mulțumim, solicitarea a fost transmisă.', today: 'De obicei vă contactăm azi, până la ora 19.', next: 'De obicei vă contactăm în următoarea zi lucrătoare, de la ora 7.', wa: 'Puteți trimite și alte fotografii pe WhatsApp.',
+        priceIntro: 'Aici puteți calcula prețul orientativ și îl puteți descărca ca ofertă PDF.', priceTitle: 'Calculează prețul', dia: 'Diametru (mm)', depth: 'Adâncime (cm)', count: 'Număr', material: 'Material', beton: 'Beton / beton armat', mauer: 'Zidărie',
+        priceNote: 'Preț orientativ, nu este angajament, brut, include deplasarea și gaura pilot.', pdf: 'Descarcă oferta PDF', pdfBusy: 'Se creează PDF …', pdfFail: 'PDF indisponibil, vă rugăm să cereți pe WhatsApp.',
+        err: 'Asistentul nu este disponibil momentan. Vă rugăm să ne sunați: +49 177 190 90 49 (lun–sâm 7–19) sau să scrieți pe WhatsApp.',
+      },
+      ru: {
+        ph: 'Ваш вопрос …', greet: 'Здравствуйте, я Kerni, цифровой помощник Kernbohr-Expert. Отвечаю на вопросы об алмазном бурении, ценах и порядке работ. Чем помочь?',
+        chipPreis: 'Рассчитать цену', chipAnfrage: 'Отправить заявку онлайн', chipWa: 'WhatsApp со сводкой',
+        formIntro: 'С удовольствием! Заполните данные ниже, проверьте их и отправьте заявку.',
+        formTitle: 'Ваша заявка господину Салкуцану', name: 'Имя', phone: 'Номер телефона', place: 'Место работ', concern: 'Ваша заявка',
+        photos: 'Фото объекта (необязательно, до 3)', addPhoto: '+ Добавить фото',
+        consent: 'Я согласен(на), что Kernbohr-Expert получит эти данные (и фото, если есть) для обработки моей заявки и свяжется со мной. Передача происходит по e-mail. См.', privacy: 'политику конфиденциальности (на немецком)',
+        send: 'Отправить заявку', sending: 'Отправляется …',
+        eName: 'Укажите, пожалуйста, имя.', ePhone: 'Укажите корректный номер телефона.', ePlace: 'Укажите место работ.', eConcern: 'Кратко опишите, что нужно сделать.',
+        ePhoto: 'Не удалось загрузить это фото.', eSend: 'Отправить не удалось. Позвоните нам: +49 177 190 90 49 (пн–сб 7–19) или напишите в WhatsApp.',
+        thanks: 'Спасибо, ваша заявка передана.', today: 'Обычно мы связываемся сегодня до 19 часов.', next: 'Обычно мы связываемся в следующий рабочий день с 7 часов.', wa: 'Дополнительные фото можно прислать в WhatsApp.',
+        priceIntro: 'Здесь можно рассчитать ориентировочную цену и скачать её в виде PDF-предложения.', priceTitle: 'Рассчитать цену', dia: 'Диаметр (мм)', depth: 'Глубина (см)', count: 'Количество', material: 'Материал', beton: 'Бетон / железобетон', mauer: 'Кладка',
+        priceNote: 'Ориентир, не является обязательством, брутто, включая выезд и пилотное отверстие.', pdf: 'Скачать PDF-предложение', pdfBusy: 'Создаётся PDF …', pdfFail: 'PDF недоступен, запросите через WhatsApp.',
+        err: 'Помощник сейчас недоступен. Позвоните нам: +49 177 190 90 49 (пн–сб 7–19) или напишите в WhatsApp.',
+      },
+      it: {
+        ph: 'La sua domanda …', greet: 'Buongiorno, sono Kerni, l\'assistente digitale di Kernbohr-Expert. Rispondo a domande su carotaggi, prezzi e svolgimento dei lavori. Come posso aiutarla?',
+        chipPreis: 'Calcola il prezzo', chipAnfrage: 'Invia richiesta online', chipWa: 'WhatsApp con riepilogo',
+        formIntro: 'Volentieri! Completi i dati qui sotto, li controlli e invii la richiesta.',
+        formTitle: 'La sua richiesta al sig. Salcutan', name: 'Nome', phone: 'Numero di telefono', place: 'Luogo del cantiere', concern: 'La sua richiesta',
+        photos: 'Foto del cantiere (facoltative, fino a 3)', addPhoto: '+ Aggiungi foto',
+        consent: 'Acconsento che Kernbohr-Expert riceva questi dati (ed eventuali foto) per elaborare la mia richiesta e contattarmi. L\'inoltro avviene via e-mail. Vedi', privacy: 'l\'informativa sulla privacy (in tedesco)',
+        send: 'Invia richiesta', sending: 'Invio in corso …',
+        eName: 'Inserisca il suo nome.', ePhone: 'Inserisca un numero di telefono valido.', ePlace: 'Inserisca il luogo del cantiere.', eConcern: 'Descriva brevemente la sua richiesta.',
+        ePhoto: 'Impossibile caricare questa foto.', eSend: 'Invio non riuscito. Ci chiami: +49 177 190 90 49 (lun–sab 7–19) o scriva su WhatsApp.',
+        thanks: 'Grazie, la sua richiesta è stata inoltrata.', today: 'Di solito la richiamiamo oggi entro le 19.', next: 'Di solito la richiamiamo il giorno lavorativo successivo dalle 7.', wa: 'Può inviare altre foto su WhatsApp.',
+        priceIntro: 'Qui può calcolare il prezzo indicativo e scaricarlo come offerta PDF.', priceTitle: 'Calcola il prezzo', dia: 'Diametro (mm)', depth: 'Profondità (cm)', count: 'Quantità', material: 'Materiale', beton: 'Calcestruzzo / armato', mauer: 'Muratura',
+        priceNote: 'Prezzo indicativo, non vincolante, lordo, incl. trasferta e foro pilota.', pdf: 'Scarica offerta PDF', pdfBusy: 'Creazione PDF …', pdfFail: 'PDF non disponibile, chieda tramite WhatsApp.',
+        err: 'L\'assistente non è al momento disponibile. Ci chiami: +49 177 190 90 49 (lun–sab 7–19) o scriva su WhatsApp.',
+      },
+    };
+    const LANGNAME = { de: 'Deutsch', en: 'Englisch', ro: 'Rumänisch', ru: 'Russisch', it: 'Italienisch' };
+    const SPEECH = { de: 'de-DE', en: 'en-US', ro: 'ro-RO', ru: 'ru-RU', it: 'it-IT' };
+    let lang = 'de';
+    const tt = () => T[lang];
+
+    const words = (s, list) => new RegExp('(^|[^\\p{L}])(' + list + ')(?=$|[^\\p{L}])', 'iu').test(s);
+    const detectLang = (t) => {
+      if (/[а-яё]/i.test(t)) return 'ru';
+      if (/[ăâîșțşţ]/i.test(t) || words(t, 'bună|buna|vreau|cât|costă|cost|mulțumesc|mulțumim|salut|aveți|puteți|gaură|găuri|perete|sunt|dvs|vă rog')) return 'ro';
+      if (words(t, 'ciao|buongiorno|salve|quanto|vorrei|grazie|foro|fori|muro|costa|prezzo|potete|lavoro')) return 'it';
+      if (words(t, 'hello|hi|how|much|price|cost|the|you|drill|drilling|wall|can|please|need|want|do|is|are')) return 'en';
+      if (words(t, 'ich|und|der|die|das|was|kostet|wie|bitte|danke|ja|nein|brauche|haben|sie|wir|kann|nicht|für')) return 'de';
+      return null;
+    };
+    const JA = /^(ja|ja,?\s*bitte|ja,?\s*gerne|gerne|gern|sehr gerne|ok|okay|klar|bitte|yes|yeah|yep|sure|please|da|da,?\s*bine|bine|sigur|desigur|s[ìi]|certo|volentieri|да|давайте|конечно|хорошо)(?![\p{L}])/iu;
+    const isYes = (t) => t.length <= 40 && JA.test(t.trim());
+
     const $ = (s) => root.querySelector(s);
     const fab = $('.kc-fab'), panel = $('#kc-panel'), log = $('.kc-log'), form = $('.kc-form'), input = form.querySelector('input');
-    const chips = $('.kc-chips'), consent = $('.kc-consent');
+    const chips = $('.kc-chips'), consent = $('.kc-consent'), mic = $('.kc-mic');
     const history = [];
-    const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    const link = (t) => esc(t.replace(/\*\*|__/g, '').replace(/[\u202f\u00a0]/g, ' ')).replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)]/g, (u) => `<a href="${u}" target="_blank" rel="noopener">${u.includes('wa.me') ? 'WhatsApp öffnen' : u.includes('#kb-rechner') ? 'Richtpreis-Rechner mit PDF-Angebot öffnen' : u}</a>`);
+    let formShown = false, offerPending = false, lastPrice = '', started = false;
+    const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const link = (t) => esc(t.replace(/\*\*|__/g, '').replace(/[  ]/g, ' ')).replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)]/g, (u) => `<a href="${u}" target="_blank" rel="noopener">${u.includes('wa.me') ? 'WhatsApp' : u.includes('#kb-rechner') ? 'Richtpreis-Rechner' : u}</a>`);
     const add = (cls, html) => { const d = document.createElement('div'); d.className = 'kc-m ' + cls; d.innerHTML = html; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; };
+    const bot = (text) => { add('kc-bot', link(text)); history.push({ role: 'assistant', content: text }); };
     const toggle = (open) => { panel.hidden = !open; fab.setAttribute('aria-expanded', String(open)); if (open && !form.hidden) input.focus(); };
     fab.addEventListener('click', () => toggle(panel.hidden));
     document.addEventListener('click', (e) => { if (e.target.closest && e.target.closest('[data-open-chat]')) { e.preventDefault(); toggle(true); } });
     $('.kc-x').addEventListener('click', () => { toggle(false); fab.focus(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) toggle(false); });
+
+    // Seitenkontext: passende Begrüßung und Startfragen
+    const path = location.pathname;
+    const ctx = /waerme|klima/.test(path) ? 'wp' : /wanddurchbruch|tragende/.test(path) ? 'wd' : /preis|kosten/.test(path) ? 'preis' : 'std';
+    const GREET = {
+      wp: 'Hallo, ich bin Kerni, der digitale Assistent von Kernbohr-Expert. Haben Sie Fragen zur Kernbohrung für Wärmepumpe oder Klimagerät? Ich helfe gern.',
+      wd: 'Hallo, ich bin Kerni, der digitale Assistent von Kernbohr-Expert. Fragen zu Wanddurchbruch, Statik oder Kosten? Fragen Sie mich.',
+      preis: 'Hallo, ich bin Kerni, der digitale Assistent von Kernbohr-Expert. Ich helfe Ihnen gern bei der Preisberechnung für Ihre Kernbohrung.',
+    };
+    const FRAGEN = {
+      std: ['Was kostet eine Kernbohrung?', 'Arbeiten Sie nachts?'],
+      wp: ['Welcher Durchmesser für die Wärmepumpe?', 'Was kostet die Durchführung?'],
+      wd: ['Wer darf einen Wanddurchbruch machen?', 'Was kostet ein Wanddurchbruch?'],
+      preis: ['Was ist im Preis enthalten?', 'Gibt es Zuschläge?'],
+    };
+    const renderChips = (first) => {
+      chips.textContent = '';
+      const mk = (label, fn) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.addEventListener('click', fn); chips.appendChild(b); };
+      if (first && lang === 'de') FRAGEN[ctx].forEach((q) => mk(q, () => send(q)));
+      mk(tt().chipPreis, showPrice);
+      if (!formShown) mk(tt().chipAnfrage, showForm);
+      if (!first) mk(tt().chipWa, openWa);
+      chips.hidden = false;
+    };
+
     $('.kc-ok').addEventListener('click', () => {
-      consent.hidden = true; log.hidden = false; chips.hidden = false; form.hidden = false;
-      add('kc-bot', 'Hallo, ich bin Kerni, der digitale Assistent von Kernbohr-Expert. Ich beantworte Fragen zu Kernbohrung, Preisen und Ablauf. Wie kann ich helfen?');
-      input.focus();
+      consent.hidden = true; log.hidden = false; form.hidden = false; started = true;
+      bot(GREET[ctx] || tt().greet);
+      renderChips(true); input.focus();
     });
-    let formShown = false;
-    const leadCard = (pre = {}) => {
+
+    // WhatsApp mit Zusammenfassung (Text geht nur an WhatsApp, nicht an unseren Server)
+    function openWa() {
+      const fragen = history.filter((m) => m.role === 'user' && !isYes(m.content)).slice(-3).map((m) => m.content.slice(0, 160));
+      const txt = ['Hallo Herr Salcutan, ich habe auf Ihrer Website mit Kerni (KI-Assistent) geschrieben.',
+        fragen.length ? 'Meine Fragen: ' + fragen.join(' | ') : '', lastPrice ? 'Richtpreis laut Rechner: ' + lastPrice : '',
+        lang !== 'de' ? `(Ich schreibe auf ${LANGNAME[lang]}.)` : '', 'Ort der Baustelle: '].filter(Boolean).join('\n');
+      window.open((root.dataset.wa || 'https://wa.me/491771909049') + '?text=' + encodeURIComponent(txt), '_blank', 'noopener');
+    }
+
+    // Rückruf-Hinweis nach Uhrzeit (Mo–Sa 7–19 Uhr, ohne Gewähr für Feiertage)
+    const rueckruf = () => {
+      const d = new Date().toLocaleString('en-US', { timeZone: 'Europe/Berlin', weekday: 'short' });
+      const h = parseInt(new Date().toLocaleString('en-GB', { timeZone: 'Europe/Berlin', hour: 'numeric', hour12: false }), 10);
+      return d !== 'Sun' && h >= 7 && h < 19 ? tt().today : tt().next;
+    };
+
+    // Foto verkleinern (max. 1280 px, JPEG): entfernt auch EXIF-Daten wie GPS
+    const shrink = (file) => new Promise((res, rej) => {
+      const img = new Image(); const u = URL.createObjectURL(file);
+      img.onload = () => {
+        const k = Math.min(1, 1280 / Math.max(img.width, img.height));
+        const c = document.createElement('canvas'); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(u); res(c.toDataURL('image/jpeg', 0.8));
+      };
+      img.onerror = () => { URL.revokeObjectURL(u); rej(new Error('img')); };
+      img.src = u;
+    });
+
+    function leadCard(pre = {}) {
       document.querySelectorAll('.kc-lead').forEach((n) => n.remove());
-      formShown = true;
+      formShown = true; renderChips(history.filter((m) => m.role === 'user').length === 0);
+      const t = tt(); const fotos = [];
       const box = document.createElement('div'); box.className = 'kc-m kc-lead';
-      box.innerHTML = '<b>Ihre Anfrage an Herrn Salcutan</b>'
-        + `<div class="kc-f"><label>Name<input class="kc-n" autocomplete="name" maxlength="80" value="${esc(pre.name || '')}"></label>`
-        + `<label>Telefonnummer<input class="kc-t" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" value="${esc(pre.telefon || '')}"></label>`
-        + `<label>Ort der Baustelle<input class="kc-o" maxlength="80" value="${esc(pre.ort || '')}"></label>`
-        + `<label>Ihr Anliegen<textarea class="kc-a" rows="4" maxlength="600">${esc(pre.anliegen || '')}</textarea></label></div>`
+      box.innerHTML = `<b>${esc(t.formTitle)}</b>`
+        + `<div class="kc-f"><label>${esc(t.name)}<input class="kc-n" autocomplete="name" maxlength="80" value="${esc(pre.name || '')}"></label>`
+        + `<label>${esc(t.phone)}<input class="kc-t" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" value="${esc(pre.telefon || '')}"></label>`
+        + `<label>${esc(t.place)}<input class="kc-o" maxlength="80" value="${esc(pre.ort || '')}"></label>`
+        + `<label>${esc(t.concern)}<textarea class="kc-a" rows="4" maxlength="600">${esc(pre.anliegen || '')}</textarea></label></div>`
+        + `<div class="kc-f"><span style="font-weight:600;font-size:.8rem;color:#3a3f45">${esc(t.photos)}</span><div class="kc-ph"><label class="kc-add">${esc(t.addPhoto)}<input type="file" class="kc-file" accept="image/*" multiple></label></div></div>`
         + '<input class="kc-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">'
-        + '<label class="kc-cl"><input type="checkbox" class="kc-cb"><span>Ich stimme zu, dass Kernbohr-Expert diese Angaben zur Bearbeitung meiner Anfrage erhält und mich dazu kontaktiert. Die Weiterleitung erfolgt per E-Mail. Siehe <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</span></label>'
+        + `<label class="kc-cl"><input type="checkbox" class="kc-cb"><span>${esc(t.consent)} <a href="/datenschutzerklaerung/" target="_blank" rel="noopener">${esc(t.privacy)}</a>.</span></label>`
         + '<p class="kc-err" role="alert" hidden></p>'
-        + '<button type="button" class="kc-send" disabled>Anfrage absenden</button>';
+        + `<button type="button" class="kc-send" disabled>${esc(t.send)}</button>`;
       log.appendChild(box); log.scrollTop = log.scrollHeight;
       const q = (c) => box.querySelector(c);
-      const cb = q('.kc-cb'), btn = q('.kc-send'), err = q('.kc-err');
+      const cb = q('.kc-cb'), btn = q('.kc-send'), err = q('.kc-err'), ph = q('.kc-ph'), file = q('.kc-file'), addL = q('.kc-add');
+      const showErr = (m) => { err.textContent = m; err.hidden = false; };
+      const drawThumbs = () => {
+        ph.querySelectorAll('.kc-th').forEach((n) => n.remove());
+        fotos.forEach((f, i) => {
+          const d = document.createElement('div'); d.className = 'kc-th';
+          const im = document.createElement('img'); im.src = f; im.alt = '';
+          const x = document.createElement('button'); x.type = 'button'; x.textContent = '×'; x.setAttribute('aria-label', 'Remove');
+          x.addEventListener('click', () => { fotos.splice(i, 1); drawThumbs(); });
+          d.append(im, x); ph.insertBefore(d, addL);
+        });
+        addL.hidden = fotos.length >= 3;
+      };
+      file.addEventListener('change', async () => {
+        err.hidden = true;
+        for (const f of [...file.files]) {
+          if (fotos.length >= 3) break;
+          try { fotos.push(await shrink(f)); } catch { showErr(t.ePhoto); }
+        }
+        file.value = ''; drawThumbs();
+      });
       cb.addEventListener('change', () => { btn.disabled = !cb.checked; });
       btn.addEventListener('click', async () => {
         const lead = { name: q('.kc-n').value.trim(), telefon: q('.kc-t').value.trim(), ort: q('.kc-o').value.trim(), anliegen: q('.kc-a').value.trim() };
         const digits = lead.telefon.replace(/\D/g, '');
-        const fehler = lead.name.length < 2 ? 'Bitte geben Sie Ihren Namen an.' : (digits.length < 6 || digits.length > 16) ? 'Bitte geben Sie eine gültige Telefonnummer an.' : lead.ort.length < 2 ? 'Bitte geben Sie den Ort der Baustelle an.' : lead.anliegen.length < 5 ? 'Bitte beschreiben Sie kurz Ihr Anliegen.' : '';
-        if (fehler) { err.textContent = fehler; err.hidden = false; return; }
-        err.hidden = true; btn.disabled = true; btn.textContent = 'Wird gesendet …';
+        const fehler = lead.name.length < 2 ? t.eName : (digits.length < 6 || digits.length > 16) ? t.ePhone : lead.ort.length < 2 ? t.ePlace : lead.anliegen.length < 5 ? t.eConcern : '';
+        if (fehler) { showErr(fehler); return; }
+        err.hidden = true; btn.disabled = true; btn.textContent = t.sending;
         try {
-          const r = await fetch(root.dataset.url.replace(/\/+$/, '') + '/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...lead, einwilligung: cb.checked, hp: q('.kc-hp').value }) });
+          const r = await fetch(root.dataset.url.replace(/\/+$/, '') + '/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...lead, fotos, sprache: lang, einwilligung: cb.checked, hp: q('.kc-hp').value }) });
           const j = await r.json();
           if (!r.ok || !j.ok) throw new Error('send');
-          box.innerHTML = '<b>Danke, Ihre Anfrage wurde weitergeleitet.</b>Wir melden uns in den Telefonzeiten (Mo–Sa 7–19 Uhr). Fotos der Baustelle können Sie gern per WhatsApp senden.';
+          box.innerHTML = `<b>${esc(t.thanks)}</b>${esc(rueckruf())} ${esc(t.wa)}`;
           history.length = 0; formShown = false;
         } catch {
-          btn.disabled = false; btn.textContent = 'Anfrage absenden';
-          err.textContent = 'Das Senden hat leider nicht geklappt. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.'; err.hidden = false;
+          btn.disabled = false; btn.textContent = t.send; showErr(t.eSend);
         }
       });
-    };
-    const JA = /^(ja|ja,? bitte|ja,? gerne|gerne|gern|sehr gerne|ok|okay|klar|bitte|mach das|yes|да)\b/i;
-    const ANGEBOT = /anfrage[^.?!]*(senden|weiterleiten)|(senden|weiterleiten)[^.?!]*anfrage/i;
+    }
+    function showForm() {
+      if (formShown) return;
+      const fragen = history.filter((m) => m.role === 'user' && !isYes(m.content)).slice(-2).map((m) => m.content).join(' / ');
+      bot(tt().formIntro);
+      leadCard({ anliegen: fragen.slice(0, 300) });
+    }
+
+    // Preiskarte mit PDF-Angebot (Rechenlogik und PDF wie im Richtpreis-Rechner auf der Seite)
+    function priceCard(pre = {}) {
+      document.querySelectorAll('.kc-price').forEach((n) => n.remove());
+      const t = tt();
+      const ex = { richtung: pre.richtung || 'normal', zeit: pre.zeit || 'tag', wasser: !!pre.wasser, geruest: !!pre.geruest, tage: pre.tage || 1 };
+      const box = document.createElement('div'); box.className = 'kc-m kc-price';
+      box.innerHTML = `<b>${esc(t.priceTitle)}</b><div class="kc-pg">`
+        + `<label>${esc(t.dia)}<input class="kc-pd" type="number" inputmode="numeric" min="${regeln.minDurchmesser}" max="${regeln.maxDurchmesser}" value="${pre.d || 100}"></label>`
+        + `<label>${esc(t.depth)}<input class="kc-pe" type="number" inputmode="numeric" min="1" max="${regeln.maxTiefeCm}" value="${pre.tiefe || 30}"></label>`
+        + `<label>${esc(t.count)}<input class="kc-pc" type="number" inputmode="numeric" min="1" max="200" value="${pre.anzahl || 1}"></label>`
+        + `<label>${esc(t.material)}<select class="kc-pm"><option value="beton">${esc(t.beton)}</option><option value="mauerwerk">${esc(t.mauer)}</option></select></label></div>`
+        + '<div class="kc-pt" aria-live="polite"></div><ul class="kc-pl"></ul>'
+        + `<p class="kc-pn">${esc(t.priceNote)}</p><button type="button" class="kc-pdf">${esc(t.pdf)}</button>`;
+      log.appendChild(box); log.scrollTop = log.scrollHeight;
+      const q = (c) => box.querySelector(c);
+      q('.kc-pm').value = pre.material === 'mauerwerk' ? 'mauerwerk' : 'beton';
+      let last = null;
+      const num = (el, min, max, def) => { const v = Math.round(Number(el.value)); return Number.isNaN(v) || el.value === '' ? def : Math.min(max, Math.max(min, v)); };
+      const update = () => {
+        const d = num(q('.kc-pd'), regeln.minDurchmesser, regeln.maxDurchmesser, 100), tiefe = num(q('.kc-pe'), 1, regeln.maxTiefeCm, 30), anzahl = num(q('.kc-pc'), 1, 200, 1);
+        const eingabe = { d, tiefe, anzahl, material: q('.kc-pm').value, ...ex };
+        const r = berechne(eingabe); last = { eingabe, ergebnis: r };
+        q('.kc-pt').textContent = 'ca. ' + eur(r.total);
+        q('.kc-pl').textContent = ''; r.posten.forEach((p) => { const li = document.createElement('li'); li.textContent = `${p.t}: ${eur(p.v)}`; q('.kc-pl').appendChild(li); });
+        lastPrice = `ca. ${eur(r.total)} (Ø ${d} mm, ${tiefe} cm, ${anzahl}x, ${eingabe.material === 'mauerwerk' ? 'Mauerwerk' : 'Beton'})`;
+      };
+      box.querySelectorAll('input,select').forEach((el) => el.addEventListener('input', update));
+      box.querySelectorAll('input').forEach((el) => el.addEventListener('blur', () => { const mm = { 'kc-pd': [regeln.minDurchmesser, regeln.maxDurchmesser], 'kc-pe': [1, regeln.maxTiefeCm], 'kc-pc': [1, 200] }[el.className]; if (mm && el.value !== '') { el.value = Math.min(mm[1], Math.max(mm[0], Math.round(Number(el.value)))); update(); } }));
+      update();
+      const pdf = q('.kc-pdf');
+      pdf.addEventListener('click', async () => {
+        if (!last) return;
+        const label = pdf.textContent; pdf.disabled = true; pdf.textContent = t.pdfBusy;
+        try {
+          const { erstelleAngebotPdf } = await import('../lib/angebotPdf.js');
+          await erstelleAngebotPdf({ eingabe: { ...last.eingabe }, ergebnis: last.ergebnis });
+        } catch { pdf.textContent = t.pdfFail; setTimeout(() => { pdf.textContent = label; pdf.disabled = false; }, 3500); return; }
+        pdf.textContent = label; pdf.disabled = false;
+      });
+    }
+    function showPrice() { bot(tt().priceIntro); priceCard(); }
+
     async function send(text) {
       text = text.trim(); if (!text) return;
-      chips.hidden = true; input.value = '';
+      input.value = '';
+      const dl = detectLang(text);
+      if (dl && dl !== lang) { lang = dl; input.placeholder = tt().ph; }
+      const wasOffer = offerPending; offerPending = false;
       add('kc-me', esc(text)); history.push({ role: 'user', content: text });
-      const lastBot = [...history].reverse().find((m) => m.role === 'assistant')?.content || '';
-      if (!formShown && (text === 'Anfrage online senden' || (JA.test(text) && text.length <= 40 && ANGEBOT.test(lastBot)))) {
-        const fragen = history.filter((m) => m.role === 'user' && !JA.test(m.content) && m.content !== 'Anfrage online senden').slice(-2).map((m) => m.content).join(' / ');
-        const msg = 'Gern! Bitte ergänzen Sie unten Ihre Angaben, prüfen Sie sie und senden Sie die Anfrage ab.';
-        add('kc-bot', msg); history.push({ role: 'assistant', content: msg });
-        leadCard({ anliegen: fragen.slice(0, 300) });
-        return;
-      }
+      if (!formShown && wasOffer && isYes(text)) { showForm(); return; }
+      renderChips(false);
       const wait = add('kc-bot kc-typing', '…');
       try {
         const r = await fetch(root.dataset.url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: history }) });
         const j = await r.json();
         const reply = j.reply || 'Dazu rufen Sie uns bitte kurz an.';
-        wait.remove(); add('kc-bot', link(reply)); history.push({ role: 'assistant', content: reply });
+        wait.remove(); bot(reply);
+        if (j.offer) offerPending = true;
+        if (j.preis) priceCard(j.preis);
         if (j.lead && !formShown) leadCard(j.lead);
       } catch {
-        wait.remove(); add('kc-bot', 'Der Assistent ist gerade nicht erreichbar. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.');
+        wait.remove(); add('kc-bot', esc(tt().err));
       }
     }
     form.addEventListener('submit', (e) => { e.preventDefault(); send(input.value); });
-    chips.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => send(b.textContent)));
+
+    // Spracheingabe (Browser-Spracherkennung), nur wenn verfügbar
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SR) {
+      mic.hidden = false;
+      mic.addEventListener('click', () => {
+        try {
+          const rec = new SR(); rec.lang = SPEECH[lang] || 'de-DE'; rec.interimResults = false; rec.maxAlternatives = 1;
+          rec.onresult = (e) => { input.value = (input.value + ' ' + e.results[0][0].transcript).trim(); input.focus(); };
+          rec.onend = () => mic.classList.remove('on'); rec.onerror = () => mic.classList.remove('on');
+          mic.classList.add('on'); rec.start();
+        } catch { mic.classList.remove('on'); }
+      });
+    }
   }
 </script>

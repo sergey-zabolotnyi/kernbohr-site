@@ -21,14 +21,14 @@ HÄUFIGE FRAGEN:
 ${faqs.slice(0, 18).map(([q, a]) => `F: ${q}\nA: ${a}`).join('\n')}
 `;
 
-const SYSTEM = () => `Du bist Kerni, der digitale KI-Assistent (Kernbohr-Expert Assistent) von Kernbohr-Expert Dresden. Stelle dich nur beim ersten Mal kurz vor und gib dich nie als Mensch aus. Antworte kurz (max. 4 Sätze), freundlich, sachlich, auf Deutsch (Sie-Form).
+const SYSTEM = () => `Du bist Kerni, der digitale KI-Assistent (Kernbohr-Expert Assistent) von Kernbohr-Expert Dresden. Stelle dich nur beim ersten Mal kurz vor und gib dich nie als Mensch aus. Antworte kurz (max. 4 Sätze), freundlich, sachlich, auf Deutsch (Sie-Form). Schreibt die Person in einer anderen Sprache (z. B. Englisch, Rumänisch, Russisch, Italienisch), antwortest du in genau dieser Sprache.
 Regeln:
 - Nutze NUR die Informationen unten. Wenn etwas fehlt oder unsicher ist, sage das und verweise auf Telefon ${site.phoneDisplay} (Mo–Sa 7–19 Uhr) oder WhatsApp.
 - Für Preise rufst du IMMER die Funktion richtpreis auf und rechnest nie selbst. Frage fehlende Angaben (Durchmesser, Tiefe, Anzahl, Material) kurz nach. Nenne jeden Preis als unverbindlichen Richtwert, brutto.
 - Gib keine Zusagen zu Terminen, Festpreisen, Rechtsfragen oder Statik. Statik klärt der Auftraggeber mit dem Statiker.
-- Preisfragen: Fragt die Person nach Kosten oder Preisen, nenne zuerst den Richtpreis (Funktion richtpreis). Weise danach einmal im Gespräch darauf hin, dass sie ihren Preis mit unserem Richtpreis-Rechner selbst berechnen und als PDF-Angebot herunterladen kann: https://kernbohr-expert.de/preise/#kb-rechner (das PDF wird im Browser erstellt und ist unverbindlich). Erfinde keine PDF-Funktion im Chat: Du selbst erstellst kein PDF, du verweist nur auf den Rechner.
-- Anfrage online senden: Nachdem du eine konkrete Frage zu Leistung, Preis, Ablauf, Wärmepumpe oder Termin beantwortet hast, schließt du deine Antwort einmal mit der Frage: „Möchten Sie Ihre Anfrage gleich online an uns senden?“ Stelle diese Frage nicht nach jeder Antwort, nicht bei Begrüßung, Dank oder reinen Öffnungszeiten-Fragen und nie wieder, wenn die Person abgelehnt hat oder das Formular schon angezeigt wurde. Sagt die Person Ja (oder möchte sie ein Angebot, einen Termin oder Rückruf), rufst du SOFORT die Funktion anfrage_formular_zeigen auf, mit dem, was du schon aus dem Gespräch weißt (Anliegen in einem kurzen Satz, Ort falls genannt). Frage NICHT selbst nach Name oder Telefonnummer und stelle die Frage nach der Online-Anfrage nicht noch einmal: Die Person ergänzt alles im Formular, das der Chat darunter anzeigt, prüft es und sendet es selbst ab. Schreibe danach nur einen kurzen Satz, dass sie die Angaben unten ergänzen und absenden kann.
-- Fotos kann der Chat nicht senden: Bitte Fotos der Baustelle per WhatsApp schicken: https://wa.me/${site.whatsapp}
+- Preisfragen: Fragt die Person nach Kosten oder Preisen, nenne zuerst den Richtpreis (Funktion richtpreis). Danach erscheint unter dem Chat automatisch eine Preiskarte: Die Person kann dort Durchmesser, Tiefe, Anzahl und Material anpassen und ein PDF-Angebot herunterladen. Weise kurz darauf hin („Unten können Sie die Angaben anpassen und das PDF-Angebot herunterladen.“). Du selbst erstellst kein PDF.
+- Anfrage online senden: Nachdem du eine konkrete Frage zu Leistung, Preis, Ablauf, Wärmepumpe oder Termin beantwortet hast, schließt du deine Antwort einmal mit der Frage: „Möchten Sie Ihre Anfrage gleich online an uns senden?“ Stelle diese Frage nicht nach jeder Antwort, nicht bei Begrüßung, Dank oder reinen Öffnungszeiten-Fragen und nie wieder, wenn die Person abgelehnt hat oder das Formular schon angezeigt wurde. Hänge an eine Antwort, in der du diese Frage stellst, als allerletztes Zeichen die Markierung [[ANFRAGE?]] an (sie wird der Person nicht angezeigt; die Frage selbst stellst du in der Sprache der Person). Sagt die Person Ja (oder möchte sie ein Angebot, einen Termin oder Rückruf), rufst du SOFORT die Funktion anfrage_formular_zeigen auf, mit dem, was du schon aus dem Gespräch weißt (Anliegen in einem kurzen Satz, Ort falls genannt). Frage NICHT selbst nach Name oder Telefonnummer und stelle die Frage nach der Online-Anfrage nicht noch einmal: Die Person ergänzt alles im Formular, das der Chat darunter anzeigt, prüft es und sendet es selbst ab. Schreibe danach nur einen kurzen Satz, dass sie die Angaben unten ergänzen und absenden kann.
+- Fotos: Im Anfrageformular kann die Person bis zu 3 Fotos der Baustelle anhängen. Alternativ per WhatsApp: https://wa.me/${site.whatsapp}
 - Bei Beschwerden, Notfällen oder Eilfällen nenne direkt Telefon und WhatsApp.
 - Schreibe reinen Text ohne Markdown (kein **, keine Listen mit #). Kurze Absätze.
 - Themen außerhalb von Kernbohrung/Betonbearbeitung lehnst du höflich ab.
@@ -64,7 +64,7 @@ const TOOLS = [{
     parameters: {
       type: 'object',
       properties: {
-        anliegen: { type: 'string', description: 'Kurze Beschreibung: Art der Arbeit, Maße, Material, Wunschtermin' },
+        anliegen: { type: 'string', description: 'Kurze Beschreibung auf Deutsch (auch wenn die Person eine andere Sprache spricht): Art der Arbeit, Maße, Material, Wunschtermin' },
         ort: { type: 'string', description: 'Ort der Baustelle, falls bekannt' },
         name: { type: 'string' },
         telefon: { type: 'string' },
@@ -73,17 +73,21 @@ const TOOLS = [{
   },
 }];
 
-function runTool(a) {
+function norm(a) {
   const d = Math.round(Number(a.durchmesser_mm));
   const tiefe = Number(a.tiefe_cm);
-  if (!(d >= regeln.minDurchmesser && d <= regeln.maxDurchmesser) || !(tiefe >= 1 && tiefe <= regeln.maxTiefeCm)) {
-    return { fehler: `Durchmesser ${regeln.minDurchmesser}–${regeln.maxDurchmesser} mm und Tiefe bis ${regeln.maxTiefeCm} cm. Andere Maße nur nach Anfrage.` };
-  }
-  const r = berechne({
-    d, tiefe, anzahl: Math.min(Math.max(Math.round(a.anzahl || 1), 1), 200), material: a.material || 'beton',
-    richtung: a.richtung || 'normal', zeit: a.zeit || 'tag', wasser: !!a.wassersauger, geruest: !!a.geruest,
-    tage: Math.min(Math.max(Math.round(a.einsatztage || 1), 1), 30),
-  });
+  if (!(d >= regeln.minDurchmesser && d <= regeln.maxDurchmesser) || !(tiefe >= 1 && tiefe <= regeln.maxTiefeCm)) return null;
+  return {
+    d, tiefe, anzahl: Math.min(Math.max(Math.round(a.anzahl || 1), 1), 200), material: a.material === 'mauerwerk' ? 'mauerwerk' : 'beton',
+    richtung: ['ueberkopf', 'schraeg'].includes(a.richtung) ? a.richtung : 'normal', zeit: ['nacht', 'wochenende'].includes(a.zeit) ? a.zeit : 'tag',
+    wasser: !!a.wassersauger, geruest: !!a.geruest, tage: Math.min(Math.max(Math.round(a.einsatztage || 1), 1), 30),
+  };
+}
+
+function runTool(a) {
+  const e = norm(a);
+  if (!e) return { fehler: `Durchmesser ${regeln.minDurchmesser}–${regeln.maxDurchmesser} mm und Tiefe bis ${regeln.maxTiefeCm} cm. Andere Maße nur nach Anfrage.` };
+  const r = berechne(e);
   return { gesamt_brutto: eur(r.total), mindestpreis_angewendet: r.mindestpreisGreift, posten: r.posten.map((p) => `${p.t}: ${eur(p.v)}`) };
 }
 
@@ -127,11 +131,17 @@ export default {
       const lead = cleanLead(body);
       if (body.hp || body.einwilligung !== true || !lead) return json({ ok: false, error: 'invalid' }, 400);
       if (!env.BREVO_API_KEY || !env.MAIL_TO || !env.MAIL_FROM) return json({ ok: false, error: 'not configured' }, 503);
-      const text = ['Neue Anfrage über kernbohr-expert.de (Chat Kerni)', '', `Name: ${lead.name}`, `Telefon: ${lead.telefon}`, `Ort: ${lead.ort}`, `Anliegen: ${lead.anliegen}`, '', 'Die Person hat der Weiterleitung ausdrücklich zugestimmt und bittet um Rückruf. Fotos kommen ggf. per WhatsApp.'].join('\n');
+      const SPR = { de: 'Deutsch', en: 'Englisch', ro: 'Rumänisch', ru: 'Russisch', it: 'Italienisch' };
+      const sprache = SPR[body.sprache] || 'Deutsch';
+      const fotos = (Array.isArray(body.fotos) ? body.fotos : []).slice(0, 3)
+        .map((f) => /^data:image\/jpeg;base64,(\/9j\/[A-Za-z0-9+/=]+)$/.exec(String(f))?.[1])
+        .filter((b) => b && b.length <= 1_000_000);
+      if (fotos.reduce((n, b) => n + b.length, 0) > 2_800_000) return json({ ok: false, error: 'photos too large' }, 413);
+      const text = ['Neue Anfrage über kernbohr-expert.de (Chat Kerni)', '', `Name: ${lead.name}`, `Telefon: ${lead.telefon}`, `Ort: ${lead.ort}`, `Anliegen: ${lead.anliegen}`, `Sprache der Person: ${sprache}${sprache === 'Deutsch' ? '' : ' (bitte ggf. in dieser Sprache oder per WhatsApp antworten)'}`, `Fotos: ${fotos.length ? fotos.length + ' im Anhang' : 'keine (ggf. per WhatsApp)'}`, '', 'Die Person hat der Weiterleitung ausdrücklich zugestimmt und bittet um Rückruf.'].join('\n');
       try {
         const m = await fetch('https://api.brevo.com/v3/smtp/email', {
           method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json', 'api-key': env.BREVO_API_KEY },
-          body: JSON.stringify({ sender: { name: 'Kernbohr-Expert Website', email: env.MAIL_FROM }, to: [{ email: env.MAIL_TO }], subject: `Neue Anfrage: ${lead.anliegen.slice(0, 50)} (${lead.ort})`, textContent: text }),
+          body: JSON.stringify({ sender: { name: 'Kernbohr-Expert Website', email: env.MAIL_FROM }, to: [{ email: env.MAIL_TO }], subject: `Neue Anfrage: ${lead.anliegen.slice(0, 50)} (${lead.ort})`, textContent: text, ...(fotos.length ? { attachment: fotos.map((content, i) => ({ name: `foto-${i + 1}.jpg`, content })) } : {}) }),
         });
         if (!m.ok) throw new Error(`mail ${m.status}`);
         return json({ ok: true });
@@ -148,6 +158,7 @@ export default {
     const messages = [{ role: 'system', content: SYSTEM() }, ...history];
     let tools = TOOLS;
     let lead = null;
+    let preis = null;
     try {
       for (let i = 0; i < 3; i++) {
         const r = await fetch(`${env.PROVIDER_URL}/chat/completions`, {
@@ -171,13 +182,16 @@ export default {
               if (c.function.name === 'anfrage_formular_zeigen') {
                 lead = { name: clean(args.name, 80), telefon: clean(args.telefon, 30), ort: clean(args.ort, 80), anliegen: clean(args.anliegen, 600) };
                 out = { status: 'Das Formular wird der Person jetzt unter dem Chat angezeigt. Sie ergänzt und sendet selbst ab. Du hast nichts gesendet. Frage nicht erneut nach der Online-Anfrage.' };
-              } else out = runTool(args);
+              } else { out = runTool(args); if (c.function.name === 'richtpreis' && !out.fehler) preis = norm(args); }
             } catch { out = { fehler: 'ungültige Angaben' }; }
             messages.push({ role: 'tool', tool_call_id: c.id, content: JSON.stringify(out) });
           }
           continue;
         }
-        return json({ reply: (msg?.content || '').trim() || (lead ? 'Bitte ergänzen Sie unten Ihre Angaben und senden Sie die Anfrage ab.' : 'Dazu rufen Sie uns bitte kurz an.'), ...(lead ? { lead } : {}) });
+        let reply = (msg?.content || '').trim();
+        const offer = /\[\[ANFRAGE\?\]\]/.test(reply) || /Möchten Sie Ihre Anfrage gleich online/.test(reply);
+        reply = reply.replace(/\s*\[\[ANFRAGE\?\]\]\s*/g, '').trim();
+        return json({ reply: reply || (lead ? 'Bitte ergänzen Sie unten Ihre Angaben und senden Sie die Anfrage ab.' : 'Dazu rufen Sie uns bitte kurz an.'), ...(lead ? { lead } : {}), ...(preis ? { preis } : {}), ...(offer ? { offer: true } : {}) });
       }
       return json({ reply: 'Dazu rufen Sie uns bitte kurz an oder schreiben per WhatsApp.' });
     } catch (e) {
