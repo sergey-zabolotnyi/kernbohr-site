@@ -126,14 +126,14 @@ export default {
     if (new URL(req.url).pathname === '/lead') {
       const lead = cleanLead(body);
       if (body.hp || body.einwilligung !== true || !lead) return json({ ok: false, error: 'invalid' }, 400);
-      if (!env.TELEGRAM_TOKEN || !env.TELEGRAM_CHAT_ID) return json({ ok: false, error: 'not configured' }, 503);
-      const text = ['Neue Anfrage über kernbohr-expert.de (Chat Kerni)', '', `Name: ${lead.name}`, `Telefon: ${lead.telefon}`, `Ort: ${lead.ort}`, `Anliegen: ${lead.anliegen}`, '', 'Die Person hat der Weiterleitung zugestimmt. Fotos kommen ggf. per WhatsApp.'].join('\n');
+      if (!env.BREVO_API_KEY || !env.MAIL_TO || !env.MAIL_FROM) return json({ ok: false, error: 'not configured' }, 503);
+      const text = ['Neue Anfrage über kernbohr-expert.de (Chat Kerni)', '', `Name: ${lead.name}`, `Telefon: ${lead.telefon}`, `Ort: ${lead.ort}`, `Anliegen: ${lead.anliegen}`, '', 'Die Person hat der Weiterleitung ausdrücklich zugestimmt und bittet um Rückruf. Fotos kommen ggf. per WhatsApp.'].join('\n');
       try {
-        const t = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_TOKEN}/sendMessage`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: env.TELEGRAM_CHAT_ID, text, disable_web_page_preview: true }),
+        const m = await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json', 'api-key': env.BREVO_API_KEY },
+          body: JSON.stringify({ sender: { name: 'Kernbohr-Expert Website', email: env.MAIL_FROM }, to: [{ email: env.MAIL_TO }], subject: `Neue Anfrage: ${lead.anliegen.slice(0, 50)} (${lead.ort})`, textContent: text }),
         });
-        if (!t.ok) throw new Error(`telegram ${t.status}`);
+        if (!m.ok) throw new Error(`mail ${m.status}`);
         return json({ ok: true });
       } catch (e) {
         console.error(String(e));

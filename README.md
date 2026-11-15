@@ -44,10 +44,11 @@ KI-Dateien: `/llms.txt`, `/llms-full.txt`, `/firmendaten.json` (werden aus den D
 5. В корне сайта создайте файл `.env` со строкой `PUBLIC_CHAT_URL=https://kernbohr-chat.<аккаунт>.workers.dev` и пересоберите сайт.
 6. В Datenschutz автоматически появляется раздел «Chat-Assistent» (нужна юридическая проверка и договор с провайдером).
 
-### Заявки из чата в Telegram
-Kerni сам ничего не отправляет: когда клиент просит предложение, он собирает имя, телефон, город и суть, а в чате появляется карточка. Только после галочки согласия и кнопки «Anfrage absenden» Worker (`POST /lead`) шлёт сообщение в Telegram.
-1. В Telegram: @BotFather → `/newbot` → токен. Ион пишет боту `/start`; chat ID узнать через `https://api.telegram.org/bot<ТОКЕН>/getUpdates` (поле `chat.id`).
-2. `cd worker` → `npx wrangler secret put TELEGRAM_TOKEN` и `npx wrangler secret put TELEGRAM_CHAT_ID` → `npx wrangler deploy`.
-3. Пересобрать сайт (если `PUBLIC_CHAT_URL` уже задан, ничего менять не надо). Datenschutz уже содержит абзац про отправку заявки (нужна юридическая проверка).
+### Заявки из чата по e-mail
+Kerni сам ничего не отправляет: когда клиент просит предложение, он собирает имя, телефон, город и суть, а в чате появляется карточка. Только после галочки согласия и кнопки «Anfrage absenden» Worker (`POST /lead`) шлёт письмо Иону через Brevo (EU).
+1. Регистрация на brevo.com (бесплатный тариф), в «Senders» добавить и подтвердить `info@kernbohr-expert.de`. Для лучшей доставки добавить в DNS домена записи SPF/DKIM, которые покажет Brevo.
+2. «SMTP & API» → создать API-ключ.
+3. `cd worker` → `npx wrangler secret put BREVO_API_KEY` → `npx wrangler deploy` (адреса `MAIL_TO`/`MAIL_FROM` в `wrangler.toml`).
+4. Пересобрать сайт (если `PUBLIC_CHAT_URL` уже задан, больше ничего менять не надо). Datenschutz уже содержит абзац про отправку заявки (нужна юридическая проверка и договор с Brevo об обработке данных).
 
 Цены бот не придумывает: он вызывает `berechne()` из `src/data/preisliste.js`. Лимит расходов задайте в кабинете провайдера API.

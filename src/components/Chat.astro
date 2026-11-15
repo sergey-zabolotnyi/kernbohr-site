@@ -104,7 +104,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
       const box = document.createElement('div'); box.className = 'kc-m kc-lead';
       box.innerHTML = `<b>Ihre Anfrage an Herrn Salcutan</b><dl><dt>Name</dt><dd>${esc(lead.name)}</dd><dt>Telefon</dt><dd>${esc(lead.telefon)}</dd><dt>Ort</dt><dd>${esc(lead.ort)}</dd><dt>Anliegen</dt><dd>${esc(lead.anliegen)}</dd></dl>`
         + '<input class="kc-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">'
-        + '<label><input type="checkbox" class="kc-cb"><span>Ich stimme zu, dass Kernbohr-Expert diese Angaben zur Bearbeitung meiner Anfrage erhält und mich dazu kontaktiert. Die Weiterleitung erfolgt über den Messenger Telegram. Siehe <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</span></label>'
+        + '<label><input type="checkbox" class="kc-cb"><span>Ich stimme zu, dass Kernbohr-Expert diese Angaben zur Bearbeitung meiner Anfrage erhält und mich dazu kontaktiert. Die Weiterleitung erfolgt per E-Mail. Siehe <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</span></label>'
         + '<button type="button" class="kc-send" disabled>Anfrage absenden</button>';
       log.appendChild(box); log.scrollTop = log.scrollHeight;
       const cb = box.querySelector('.kc-cb'), btn = box.querySelector('.kc-send'), hp = box.querySelector('.kc-hp');
