@@ -21,6 +21,14 @@ import { faqSchema, howToSchema } from '../lib/schema.js';
 
 const pick = ['Was kostet eine Kernbohrung', 'Kann ich meine Anfrage auch online', 'Arbeiten Sie auch am Wochenende', 'Wie tief können Sie bohren', 'Wie groß können die Bohrdurchmesser', 'Arbeiten Sie staubfrei', 'In welchen Regionen'];
 const faqs = pick.map((p) => allFaqs.find(([q]) => q.startsWith(p))).filter(Boolean);
+const chat = !!import.meta.env.PUBLIC_CHAT_URL;
+const kerniPunkte = [
+  ['clock', 'Antworten rund um die Uhr', 'Auch auf Englisch, Rumänisch, Russisch und Italienisch.'],
+  ['euro', 'Richtpreis in Sekunden', 'Transparent mit allen Positionen, passend zu Ihrer Bohrung.'],
+  ['check', 'PDF-Angebot mit einem Klick', 'Wird in Ihrem Browser erstellt, dabei werden keine Daten übertragen.'],
+  ['camera', 'Anfrage in zwei Minuten', 'Foto anhängen, Angaben prüfen und senden. Herr Salcutan ruft Sie in der Telefonzeit (' + site.phoneHours + ') zurück.'],
+  ['shield', 'Sie behalten die Kontrolle', 'Es wird nichts ohne Ihre Bestätigung gesendet. Richtpreise sind unverbindlich, verbindlich ist erst unser Angebot.'],
+];
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich habe eine Anfrage für eine Kernbohrung. Foto der Baustelle sende ich gleich mit.')}`;
 const leistungen = services.filter((s) => s.group === 'Leistung');
 const anwendungen = services.filter((s) => s.group === 'Anwendung');
@@ -93,6 +101,27 @@ const werte = [
       </div>
     </div>
   </section>
+
+  {chat && (
+    <section class="soft">
+      <div class="wrap">
+        <span class="eyebrow">Digitaler Assistent</span>
+        <h2>Kerni: Ihr digitaler Assistent für Kernbohrung in Dresden</h2>
+        <p class="lead">Fragen stellen, Preis berechnen, Angebot herunterladen: in wenigen Minuten, ohne Wartezeit.</p>
+        <div class="cards">
+          {kerniPunkte.map(([icon, t, d]) => (
+            <div class="card">
+              <div class="ico"><Icon name={icon} size={28} /></div>
+              <h3>{t}</h3>
+              <p>{d}</p>
+            </div>
+          ))}
+        </div>
+        <p><a class="btn btn-main" href="#kb-chat" data-open-chat>Kerni fragen</a></p>
+        <p>Lieber persönlich? Rufen Sie uns an unter <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a> oder schreiben Sie per <a href={wa} rel="noopener">WhatsApp</a>.</p>
+      </div>
+    </section>
+  )}
 
   <section class="soft">
     <div class="wrap">
