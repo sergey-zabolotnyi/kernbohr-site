@@ -434,18 +434,27 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
 .hero-points:focus-visible,.timeline:focus-visible{outline:3px solid var(--accent-l);outline-offset:2px}
 .hinweis{font-size:.85rem;color:#4b5058;margin-top:1rem}
 
-.kerni-head{display:flex;align-items:center;gap:1rem}
-.kerni-head h2{margin:0}
-.kerni-av{flex:none;width:72px;height:72px;display:block}
+.kerni-head{display:flex;align-items:center;gap:1.1rem}
+.kerni-head h2{margin:.15rem 0 0}
+.kerni-av{flex:none;width:84px;height:84px;display:block;filter:drop-shadow(0 6px 14px rgba(232,89,12,.3))}
 .kerni-av svg{width:100%;height:100%;display:block}
-.kerni-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin:1.4rem 0}
-.kerni-card{gap:.6rem;padding:1.1rem}
-.kerni-top{display:flex;align-items:center;gap:.65rem}
-.kerni-top h3{margin:0;font-size:1.02rem;line-height:1.25}
-.ico-s{flex:none;width:38px;height:38px;border-radius:10px}
-@media (max-width:1100px){.kerni-grid{grid-template-columns:repeat(3,1fr)}}
+.kerni-usp .lead{margin:1rem 0 0;max-width:46rem}
+.kerni-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem;margin:1.8rem 0 1.6rem}
+.kerni-card{grid-column:span 2;gap:.7rem;padding:1.5rem;border-top:4px solid var(--accent)}
+.kerni-card:nth-child(n+4){grid-column:span 3}
+.kerni-top{display:flex;align-items:center;gap:.85rem}
+.kerni-top h3{margin:0;font-size:1.3rem;line-height:1.2}
+.kerni-card p{font-size:1.05rem;line-height:1.55}
+.ico-s{flex:none;width:46px;height:46px;border-radius:12px}
+.kerni-cta{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.kerni-cta p{margin:0}
+@media (max-width:900px){.kerni-grid{grid-template-columns:1fr}.kerni-card,.kerni-card:nth-child(n+4){grid-column:auto}}
 @media (max-width:700px){
-  .kerni-av{width:52px;height:52px}
-  .kerni-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:1rem;gap:.8rem;margin-inline:-1rem;padding:.2rem 1rem .8rem;-webkit-overflow-scrolling:touch}
-  .kerni-card{flex:0 0 78%;scroll-snap-align:start}
+  .kerni-av{width:60px;height:60px}
+  .kerni-grid{gap:.8rem;margin:1.3rem 0 1.3rem}
+  .kerni-card{padding:1.1rem 1.2rem}
+  .kerni-top h3{font-size:1.2rem}
+  .kerni-card p{font-size:1rem}
+  .kerni-cta{flex-direction:column;align-items:stretch;gap:1rem}
+  .kerni-cta .btn{justify-content:center}
 }
