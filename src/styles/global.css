@@ -433,3 +433,19 @@ a.card:not(.has-img):hover{border-top-color:var(--accent)}
 .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .hero-points:focus-visible,.timeline:focus-visible{outline:3px solid var(--accent-l);outline-offset:2px}
 .hinweis{font-size:.85rem;color:#4b5058;margin-top:1rem}
+
+.kerni-head{display:flex;align-items:center;gap:1rem}
+.kerni-head h2{margin:0}
+.kerni-av{flex:none;width:72px;height:72px;display:block}
+.kerni-av svg{width:100%;height:100%;display:block}
+.kerni-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin:1.4rem 0}
+.kerni-card{gap:.6rem;padding:1.1rem}
+.kerni-top{display:flex;align-items:center;gap:.65rem}
+.kerni-top h3{margin:0;font-size:1.02rem;line-height:1.25}
+.ico-s{flex:none;width:38px;height:38px;border-radius:10px}
+@media (max-width:1100px){.kerni-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){
+  .kerni-av{width:52px;height:52px}
+  .kerni-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:1rem;gap:.8rem;margin-inline:-1rem;padding:.2rem 1rem .8rem;-webkit-overflow-scrolling:touch}
+  .kerni-card{flex:0 0 78%;scroll-snap-align:start}
+}
