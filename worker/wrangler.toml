@@ -11,3 +11,6 @@ MODEL = "openai/gpt-oss-120b"
 # Erlaubte Seiten (durch Komma getrennt). Test-Subdomain hier ergänzen.
 ALLOWED_ORIGINS = "https://kernbohr-expert.de,https://www.kernbohr-expert.de,http://localhost:4321"
 # Der API-Schlüssel kommt NICHT hierher, sondern: npx wrangler secret put API_KEY
+# Telegram-Weiterleitung von Anfragen: Secrets setzen mit
+#   npx wrangler secret put TELEGRAM_TOKEN      (Token von @BotFather)
+#   npx wrangler secret put TELEGRAM_CHAT_ID    (Chat-ID von Ion oder der Gruppe)

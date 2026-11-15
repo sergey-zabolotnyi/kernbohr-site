@@ -9,14 +9,14 @@ const wissen = () => `
 FIRMA: ${site.company}, Inhaber Ion Salcutan, ${site.address?.street ?? 'Burkersdorfer Weg 19'}, 01189 Dresden. Branche seit 2006, 8 Mitarbeiter.
 TELEFON: ${site.phoneDisplay} (Mo–Sa 7–19 Uhr). WhatsApp und E-Mail (${site.email}) jederzeit, Antwort in den Telefonzeiten.
 EINSÄTZE: nach Absprache rund um die Uhr, auch abends, nachts, Wochenende, Feiertage, soweit Ruhezeiten/Hausordnung es zulassen. Meist schon am nächsten oder übernächsten Tag möglich. Bundesweit auf Anfrage.
-LEISTUNGEN: Kernbohrung Ø 14–501 mm bis 2 m Tiefe in Beton, Stahlbeton, Mauerwerk; Wanddurchbruch; Betonsägen; Fugenschneiden; Schlitze fräsen; Rückbau/Teilabbruch; Wärmepumpe/Klima-Durchführungen; Dunstabzug; Kamin/Sanitär.
+LEISTUNGEN: Kernbohrung Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton, Mauerwerk; Wanddurchbruch; Betonsägen; Fugenschneiden; Schlitze fräsen; Rückbau/Teilabbruch; Wärmepumpe/Klima-Durchführungen; Dunstabzug; Kamin/Sanitär.
 ABLAUF: Foto per WhatsApp/Formular, Festpreis-Angebot, Auftraggeber markiert die Bohrpunkte und gibt frei (Leitungen, Bewehrung, Statik vorab klären, bei tragenden Teilen mit Statiker). Ortungsgerät ist vorhanden, gebohrt wird nur an freigegebenen Punkten.
 BAUSTELLE: normaler Wasseranschluss und Strom nötig (230 V oder 400 V per Adapter auf 16 A).
 PREISE (Stand ${stand}, Endpreise brutto, € je cm Bohrtiefe, Beton/Stahlbeton | Mauerwerk):
 ${staffelKompakt.map(([a, b, x, y]) => `Ø ${a}–${b} mm: ${eur(x)} | ${eur(y)}`).join('\n')}
 ZUSCHLÄGE UND NEBENKOSTEN:
 ${zuschlagTabelle.map(([a, b]) => `${a}: ${b}`).join('\n')}
-Mindestauftragswert ${regeln.mindestpreis} €. Anfahrt ${regeln.anfahrt} € im Umkreis ca. 20–30 km um Dresden, weiter nach Vereinbarung. Nacht = 23–6 Uhr (+75 %), Sa/So/Feiertag +100 %.
+Mindestauftragswert ${regeln.mindestpreis} €. Anfahrt ${regeln.anfahrt} € im Umkreis bis ca. 30 km um Dresden, weiter nach Vereinbarung. Nacht = 23–6 Uhr (+75 %), Sa/So/Feiertag +100 %.
 HÄUFIGE FRAGEN:
 ${faqs.slice(0, 18).map(([q, a]) => `F: ${q}\nA: ${a}`).join('\n')}
 `;
@@ -26,7 +26,9 @@ Regeln:
 - Nutze NUR die Informationen unten. Wenn etwas fehlt oder unsicher ist, sage das und verweise auf Telefon ${site.phoneDisplay} (Mo–Sa 7–19 Uhr) oder WhatsApp.
 - Für Preise rufst du IMMER die Funktion richtpreis auf und rechnest nie selbst. Frage fehlende Angaben (Durchmesser, Tiefe, Anzahl, Material) kurz nach. Nenne jeden Preis als unverbindlichen Richtwert, brutto.
 - Gib keine Zusagen zu Terminen, Festpreisen, Rechtsfragen oder Statik. Statik klärt der Auftraggeber mit dem Statiker.
-- Frage nie nach Namen, Adresse oder Telefonnummer. Für ein Angebot: Foto der Baustelle per WhatsApp senden: https://wa.me/${site.whatsapp}
+- Persönliche Daten fragst du NUR, wenn die Person ausdrücklich ein Angebot, einen Termin oder einen Rückruf möchte. Biete dann an: „Soll ich Ihre Anfrage an Herrn Salcutan weiterleiten?“ Erst nach einem Ja fragst du nacheinander kurz nach: Name, Telefonnummer, Ort (Stadt oder Stadtteil) und was gemacht werden soll (Art der Arbeit, Maße, Material, falls bekannt). Eine Frage pro Nachricht. Wenn alles vorliegt, rufst du die Funktion anfrage_vorbereiten auf. Du sendest selbst nichts: Die Person bestätigt unten im Chat mit Zustimmung und Knopf. Sage danach nur, dass sie die Angaben unten prüfen und absenden kann.
+- Fotos kann der Chat nicht senden: Bitte Fotos der Baustelle per WhatsApp schicken: https://wa.me/${site.whatsapp}
+- Bei Beschwerden, Notfällen oder Eilfällen nenne direkt Telefon und WhatsApp.
 - Schreibe reinen Text ohne Markdown (kein **, keine Listen mit #). Kurze Absätze.
 - Themen außerhalb von Kernbohrung/Betonbearbeitung lehnst du höflich ab.
 WISSEN:
@@ -53,6 +55,22 @@ const TOOLS = [{
       required: ['durchmesser_mm', 'tiefe_cm'],
     },
   },
+}, {
+  type: 'function',
+  function: {
+    name: 'anfrage_vorbereiten',
+    description: 'Bereitet eine Anfrage an den Inhaber vor, nachdem die Person ausdrücklich eine Weiterleitung wünscht und alle Angaben genannt hat. Sendet NICHTS: Die Person bestätigt im Chat selbst.',
+    parameters: {
+      type: 'object',
+      properties: {
+        name: { type: 'string' },
+        telefon: { type: 'string', description: 'Telefonnummer der Person' },
+        ort: { type: 'string', description: 'Ort der Baustelle' },
+        anliegen: { type: 'string', description: 'Kurze Beschreibung: Art der Arbeit, Maße, Material, Wunschtermin' },
+      },
+      required: ['name', 'telefon', 'ort', 'anliegen'],
+    },
+  },
 }];
 
 function runTool(a) {
@@ -67,6 +85,14 @@ function runTool(a) {
     tage: Math.min(Math.max(Math.round(a.einsatztage || 1), 1), 30),
   });
   return { gesamt_brutto: eur(r.total), mindestpreis_angewendet: r.mindestpreisGreift, posten: r.posten.map((p) => `${p.t}: ${eur(p.v)}`) };
+}
+
+const clean = (v, n) => String(v ?? '').replace(/[\u0000-\u001f\u007f<>]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, n);
+function cleanLead(a) {
+  const lead = { name: clean(a.name, 80), telefon: clean(a.telefon, 30), ort: clean(a.ort, 80), anliegen: clean(a.anliegen, 600) };
+  const digits = lead.telefon.replace(/\D/g, '');
+  if (lead.name.length < 2 || digits.length < 6 || digits.length > 16 || !/^[+\d][\d\s()/+.-]+$/.test(lead.telefon) || lead.ort.length < 2 || lead.anliegen.length < 5) return null;
+  return lead;
 }
 
 const hits = new Map(); // einfache Begrenzung je IP und Minute (pro Worker-Instanz)
@@ -95,6 +121,25 @@ export default {
 
     let body;
     try { body = await req.json(); } catch { return json({ error: 'bad request' }, 400); }
+
+    // Anfrage absenden: nur nach ausdrücklicher Bestätigung der Person im Widget (Zustimmung + Knopf).
+    if (new URL(req.url).pathname === '/lead') {
+      const lead = cleanLead(body);
+      if (body.hp || body.einwilligung !== true || !lead) return json({ ok: false, error: 'invalid' }, 400);
+      if (!env.TELEGRAM_TOKEN || !env.TELEGRAM_CHAT_ID) return json({ ok: false, error: 'not configured' }, 503);
+      const text = ['Neue Anfrage über kernbohr-expert.de (Chat Kerni)', '', `Name: ${lead.name}`, `Telefon: ${lead.telefon}`, `Ort: ${lead.ort}`, `Anliegen: ${lead.anliegen}`, '', 'Die Person hat der Weiterleitung zugestimmt. Fotos kommen ggf. per WhatsApp.'].join('\n');
+      try {
+        const t = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_TOKEN}/sendMessage`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: env.TELEGRAM_CHAT_ID, text, disable_web_page_preview: true }),
+        });
+        if (!t.ok) throw new Error(`telegram ${t.status}`);
+        return json({ ok: true });
+      } catch (e) {
+        console.error(String(e));
+        return json({ ok: false, error: 'send failed' }, 502);
+      }
+    }
     const history = (Array.isArray(body.messages) ? body.messages : [])
       .filter((m) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
       .slice(-8).map((m) => ({ role: m.role, content: m.content.slice(0, 600) }));
@@ -102,6 +147,7 @@ export default {
 
     const messages = [{ role: 'system', content: SYSTEM() }, ...history];
     let tools = TOOLS;
+    let lead = null;
     try {
       for (let i = 0; i < 3; i++) {
         const r = await fetch(`${env.PROVIDER_URL}/chat/completions`, {
@@ -120,12 +166,18 @@ export default {
           messages.push(msg);
           for (const c of msg.tool_calls) {
             let out;
-            try { out = runTool(JSON.parse(c.function.arguments || '{}')); } catch { out = { fehler: 'ungültige Angaben' }; }
+            try {
+              const args = JSON.parse(c.function.arguments || '{}');
+              if (c.function.name === 'anfrage_vorbereiten') {
+                lead = cleanLead(args);
+                out = lead ? { status: 'Die Person sieht die Angaben jetzt unten im Chat und kann sie bestätigen und absenden. Du hast noch nichts gesendet.' } : { fehler: 'Angaben unvollständig oder ungültig (Name, Telefon, Ort, Anliegen). Frage kurz nach.' };
+              } else out = runTool(args);
+            } catch { out = { fehler: 'ungültige Angaben' }; }
             messages.push({ role: 'tool', tool_call_id: c.id, content: JSON.stringify(out) });
           }
           continue;
         }
-        return json({ reply: (msg?.content || '').trim() || 'Dazu rufen Sie uns bitte kurz an.' });
+        return json({ reply: (msg?.content || '').trim() || (lead ? 'Bitte prüfen Sie Ihre Angaben unten und senden Sie die Anfrage ab.' : 'Dazu rufen Sie uns bitte kurz an.'), ...(lead ? { lead } : {}) });
       }
       return json({ reply: 'Dazu rufen Sie uns bitte kurz an oder schreiben per WhatsApp.' });
     } catch (e) {
