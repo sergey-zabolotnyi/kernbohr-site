@@ -20,6 +20,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
     <div class="kc-chips" hidden></div>
     <form class="kc-form" hidden>
       <input type="text" maxlength="500" placeholder="Ihre Frage …" aria-label="Ihre Frage" autocomplete="off" />
+      <select class="kc-sl" aria-label="Sprache" title="Sprache / Language" hidden><option value="de">DE</option><option value="en">EN</option><option value="ro">RO</option><option value="ru">RU</option><option value="it">IT</option></select>
       <button type="button" class="kc-mic" aria-label="Spracheingabe" title="Spracheingabe" hidden>🎤</button>
       <button type="submit" aria-label="Senden">➤</button>
     </form>
@@ -70,7 +71,8 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-chips{display:flex;gap:.4rem;padding:.5rem .8rem;flex-wrap:wrap;background:#f4f6f8}
   .kc-mic{width:44px;border:1.5px solid #cfd5da;border-radius:10px;background:#fff;font-size:1.05rem;cursor:pointer}
   .kc-mic.on{background:#fee2e2;border-color:#b42318}
-  .kc-mic[hidden]{display:none}
+  .kc-mic[hidden],.kc-sl[hidden]{display:none}
+  .kc-sl{border:1.5px solid #cfd5da;border-radius:10px;background:#fff;font-size:.85rem;font-weight:700;padding:0 .3rem;cursor:pointer}
   .kc-ph{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:.2rem 0 .6rem}
   .kc-ph label.kc-add{display:inline-block;border:1.5px dashed #c2410c;color:#c2410c;border-radius:8px;padding:.45rem .7rem;font-weight:600;font-size:.82rem;cursor:pointer}
   .kc-ph input[type=file]{position:absolute;left:-9999px;opacity:0;width:1px;height:1px}
@@ -201,7 +203,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
 
     const $ = (s) => root.querySelector(s);
     const fab = $('.kc-fab'), panel = $('#kc-panel'), log = $('.kc-log'), form = $('.kc-form'), input = form.querySelector('input');
-    const chips = $('.kc-chips'), consent = $('.kc-consent'), mic = $('.kc-mic');
+    const chips = $('.kc-chips'), consent = $('.kc-consent'), mic = $('.kc-mic'), sl = $('.kc-sl');
     const history = [];
     let formShown = false, offerPending = false, lastPrice = '', started = false;
     const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -381,7 +383,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
       text = text.trim(); if (!text) return;
       input.value = '';
       const dl = detectLang(text);
-      if (dl && dl !== lang) { lang = dl; input.placeholder = tt().ph; }
+      if (dl && dl !== lang) { lang = dl; input.placeholder = tt().ph; sl.value = lang; }
       const wasOffer = offerPending; offerPending = false;
       add('kc-me', esc(text)); history.push({ role: 'user', content: text });
       if (!formShown && wasOffer && isYes(text)) { showForm(); return; }
@@ -404,7 +406,8 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
     // Spracheingabe (Browser-Spracherkennung), nur wenn verfügbar
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (SR) {
-      mic.hidden = false;
+      mic.hidden = false; sl.hidden = false;
+      sl.addEventListener('change', () => { lang = sl.value; input.placeholder = tt().ph; });
       mic.addEventListener('click', () => {
         try {
           const rec = new SR(); rec.lang = SPEECH[lang] || 'de-DE'; rec.interimResults = false; rec.maxAlternatives = 1;
