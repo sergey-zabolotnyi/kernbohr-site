@@ -155,7 +155,11 @@ export default {
       .slice(-8).map((m) => ({ role: m.role, content: m.content.slice(0, 600) }));
     if (!history.length || history[history.length - 1].role !== 'user') return json({ error: 'bad request' }, 400);
 
-    const messages = [{ role: 'system', content: SYSTEM() }, ...history];
+    const SPR = { en: 'Englisch', ro: 'Rumänisch', ru: 'Russisch', it: 'Italienisch' };
+    const hint = SPR[body.lang]
+      ? [{ role: 'system', content: `WICHTIG: Die Person schreibt auf ${SPR[body.lang]}. Antworte ausschließlich auf ${SPR[body.lang]} in korrekter, natürlicher Sprache, ohne deutsche Wörter (nur Fachbegriffe wie Kernbohrung oder Namen dürfen deutsch bleiben). Die Frage nach der Online-Anfrage stellst du ebenfalls auf ${SPR[body.lang]}, mit der Markierung [[ANFRAGE?]] am Ende. Beim Aufruf von anfrage_formular_zeigen formulierst du das Anliegen auf Deutsch.` }]
+      : [];
+    const messages = [{ role: 'system', content: SYSTEM() }, ...history.slice(0, -1), ...hint, history[history.length - 1]];
     let tools = TOOLS;
     let lead = null;
     let preis = null;

@@ -388,7 +388,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
       renderChips(false);
       const wait = add('kc-bot kc-typing', '…');
       try {
-        const r = await fetch(root.dataset.url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: history }) });
+        const r = await fetch(root.dataset.url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: history, lang }) });
         const j = await r.json();
         const reply = j.reply || 'Dazu rufen Sie uns bitte kurz an.';
         wait.remove(); bot(reply);
