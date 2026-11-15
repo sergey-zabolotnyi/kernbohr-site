@@ -26,8 +26,7 @@ Regeln:
 - Nutze NUR die Informationen unten. Wenn etwas fehlt oder unsicher ist, sage das und verweise auf Telefon ${site.phoneDisplay} (Mo–Sa 7–19 Uhr) oder WhatsApp.
 - Für Preise rufst du IMMER die Funktion richtpreis auf und rechnest nie selbst. Frage fehlende Angaben (Durchmesser, Tiefe, Anzahl, Material) kurz nach. Nenne jeden Preis als unverbindlichen Richtwert, brutto.
 - Gib keine Zusagen zu Terminen, Festpreisen, Rechtsfragen oder Statik. Statik klärt der Auftraggeber mit dem Statiker.
-- Persönliche Daten fragst du NUR, wenn die Person ausdrücklich ein Angebot, einen Termin oder einen Rückruf möchte. Biete dann an: „Soll ich Ihre Anfrage an Herrn Salcutan weiterleiten?“ Erst nach einem Ja fragst du nacheinander kurz nach: Name, Telefonnummer, Ort (Stadt oder Stadtteil) und was gemacht werden soll (Art der Arbeit, Maße, Material, falls bekannt). Eine Frage pro Nachricht. Wenn alles vorliegt, rufst du die Funktion anfrage_vorbereiten auf. Du sendest selbst nichts: Die Person bestätigt unten im Chat mit Zustimmung und Knopf. Sage danach nur, dass sie die Angaben unten prüfen und absenden kann.
-- Nachdem du eine konkrete Frage zu Leistung, Preis, Ablauf, Wärmepumpe oder Termin beantwortet hast, schließt du deine Antwort einmal mit der Frage: „Möchten Sie Ihre Anfrage gleich online an uns senden?“ Stelle diese Frage nicht nach jeder Antwort, nicht bei Begrüßung, Dank oder reinen Öffnungszeiten-Fragen und nie wieder, wenn die Person abgelehnt hat. Sagt sie Ja, folge dem Ablauf oben.
+- Anfrage online senden: Nachdem du eine konkrete Frage zu Leistung, Preis, Ablauf, Wärmepumpe oder Termin beantwortet hast, schließt du deine Antwort einmal mit der Frage: „Möchten Sie Ihre Anfrage gleich online an uns senden?“ Stelle diese Frage nicht nach jeder Antwort, nicht bei Begrüßung, Dank oder reinen Öffnungszeiten-Fragen und nie wieder, wenn die Person abgelehnt hat oder das Formular schon angezeigt wurde. Sagt die Person Ja (oder möchte sie ein Angebot, einen Termin oder Rückruf), rufst du SOFORT die Funktion anfrage_formular_zeigen auf, mit dem, was du schon aus dem Gespräch weißt (Anliegen in einem kurzen Satz, Ort falls genannt). Frage NICHT selbst nach Name oder Telefonnummer und stelle die Frage nach der Online-Anfrage nicht noch einmal: Die Person ergänzt alles im Formular, das der Chat darunter anzeigt, prüft es und sendet es selbst ab. Schreibe danach nur einen kurzen Satz, dass sie die Angaben unten ergänzen und absenden kann.
 - Fotos kann der Chat nicht senden: Bitte Fotos der Baustelle per WhatsApp schicken: https://wa.me/${site.whatsapp}
 - Bei Beschwerden, Notfällen oder Eilfällen nenne direkt Telefon und WhatsApp.
 - Schreibe reinen Text ohne Markdown (kein **, keine Listen mit #). Kurze Absätze.
@@ -59,17 +58,16 @@ const TOOLS = [{
 }, {
   type: 'function',
   function: {
-    name: 'anfrage_vorbereiten',
-    description: 'Bereitet eine Anfrage an den Inhaber vor, nachdem die Person ausdrücklich eine Weiterleitung wünscht und alle Angaben genannt hat. Sendet NICHTS: Die Person bestätigt im Chat selbst.',
+    name: 'anfrage_formular_zeigen',
+    description: 'Zeigt der Person unter dem Chat das Anfrageformular (Name, Telefon, Ort, Anliegen), vorausgefüllt mit bekannten Angaben. Sendet NICHTS: Die Person ergänzt, prüft und sendet selbst ab. Alle Felder sind optional.',
     parameters: {
       type: 'object',
       properties: {
-        name: { type: 'string' },
-        telefon: { type: 'string', description: 'Telefonnummer der Person' },
-        ort: { type: 'string', description: 'Ort der Baustelle' },
         anliegen: { type: 'string', description: 'Kurze Beschreibung: Art der Arbeit, Maße, Material, Wunschtermin' },
+        ort: { type: 'string', description: 'Ort der Baustelle, falls bekannt' },
+        name: { type: 'string' },
+        telefon: { type: 'string' },
       },
-      required: ['name', 'telefon', 'ort', 'anliegen'],
     },
   },
 }];
@@ -169,16 +167,16 @@ export default {
             let out;
             try {
               const args = JSON.parse(c.function.arguments || '{}');
-              if (c.function.name === 'anfrage_vorbereiten') {
-                lead = cleanLead(args);
-                out = lead ? { status: 'Die Person sieht die Angaben jetzt unten im Chat und kann sie bestätigen und absenden. Du hast noch nichts gesendet.' } : { fehler: 'Angaben unvollständig oder ungültig (Name, Telefon, Ort, Anliegen). Frage kurz nach.' };
+              if (c.function.name === 'anfrage_formular_zeigen') {
+                lead = { name: clean(args.name, 80), telefon: clean(args.telefon, 30), ort: clean(args.ort, 80), anliegen: clean(args.anliegen, 600) };
+                out = { status: 'Das Formular wird der Person jetzt unter dem Chat angezeigt. Sie ergänzt und sendet selbst ab. Du hast nichts gesendet. Frage nicht erneut nach der Online-Anfrage.' };
               } else out = runTool(args);
             } catch { out = { fehler: 'ungültige Angaben' }; }
             messages.push({ role: 'tool', tool_call_id: c.id, content: JSON.stringify(out) });
           }
           continue;
         }
-        return json({ reply: (msg?.content || '').trim() || (lead ? 'Bitte prüfen Sie Ihre Angaben unten und senden Sie die Anfrage ab.' : 'Dazu rufen Sie uns bitte kurz an.'), ...(lead ? { lead } : {}) });
+        return json({ reply: (msg?.content || '').trim() || (lead ? 'Bitte ergänzen Sie unten Ihre Angaben und senden Sie die Anfrage ab.' : 'Dazu rufen Sie uns bitte kurz an.'), ...(lead ? { lead } : {}) });
       }
       return json({ reply: 'Dazu rufen Sie uns bitte kurz an oder schreiben per WhatsApp.' });
     } catch (e) {

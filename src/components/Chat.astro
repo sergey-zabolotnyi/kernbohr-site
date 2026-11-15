@@ -62,9 +62,11 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-typing{opacity:.6}
   .kc-lead{align-self:stretch;background:#fff;border:2px solid #e8590c;border-radius:12px;padding:.7rem .8rem;font-size:.88rem}
   .kc-lead b{display:block;margin-bottom:.3rem}
-  .kc-lead dl{margin:0 0 .6rem;display:grid;grid-template-columns:auto 1fr;gap:.15rem .6rem}
-  .kc-lead dt{font-weight:600;color:#5a6068}.kc-lead dd{margin:0;word-break:break-word}
-  .kc-lead label{display:flex;gap:.5rem;align-items:flex-start;font-size:.8rem;margin:0 0 .6rem;line-height:1.35}
+  .kc-f{display:grid;gap:.5rem;margin:0 0 .6rem}
+  .kc-f label{display:grid;gap:.2rem;font-weight:600;font-size:.8rem;color:#3a3f45}
+  .kc-f input,.kc-f textarea{font:inherit;font-weight:400;font-size:16px;padding:.5rem .6rem;border:1px solid #c9ced4;border-radius:8px;width:100%;box-sizing:border-box}
+  .kc-err{color:#b42318;font-size:.82rem;margin:0 0 .5rem}
+  .kc-lead .kc-cl{display:flex;gap:.5rem;align-items:flex-start;font-size:.8rem;margin:0 0 .6rem;line-height:1.35}
   .kc-lead input[type=checkbox]{margin-top:.15rem;width:18px;height:18px;flex:none}
   .kc-lead .kc-send{width:100%;min-height:44px;border:0;border-radius:10px;background:#c2410c;color:#fff;font-weight:700;cursor:pointer}
   .kc-lead .kc-send:disabled{opacity:.5;cursor:not-allowed}
@@ -102,40 +104,63 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
       add('kc-bot', 'Hallo, ich bin Kerni, der digitale Assistent von Kernbohr-Expert. Ich beantworte Fragen zu Kernbohrung, Preisen und Ablauf. Wie kann ich helfen?');
       input.focus();
     });
-    const leadCard = (lead) => {
+    let formShown = false;
+    const leadCard = (pre = {}) => {
+      document.querySelectorAll('.kc-lead').forEach((n) => n.remove());
+      formShown = true;
       const box = document.createElement('div'); box.className = 'kc-m kc-lead';
-      box.innerHTML = `<b>Ihre Anfrage an Herrn Salcutan</b><dl><dt>Name</dt><dd>${esc(lead.name)}</dd><dt>Telefon</dt><dd>${esc(lead.telefon)}</dd><dt>Ort</dt><dd>${esc(lead.ort)}</dd><dt>Anliegen</dt><dd>${esc(lead.anliegen)}</dd></dl>`
+      box.innerHTML = '<b>Ihre Anfrage an Herrn Salcutan</b>'
+        + `<div class="kc-f"><label>Name<input class="kc-n" autocomplete="name" maxlength="80" value="${esc(pre.name || '')}"></label>`
+        + `<label>Telefonnummer<input class="kc-t" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" value="${esc(pre.telefon || '')}"></label>`
+        + `<label>Ort der Baustelle<input class="kc-o" maxlength="80" value="${esc(pre.ort || '')}"></label>`
+        + `<label>Ihr Anliegen<textarea class="kc-a" rows="4" maxlength="600">${esc(pre.anliegen || '')}</textarea></label></div>`
         + '<input class="kc-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">'
-        + '<label><input type="checkbox" class="kc-cb"><span>Ich stimme zu, dass Kernbohr-Expert diese Angaben zur Bearbeitung meiner Anfrage erhält und mich dazu kontaktiert. Die Weiterleitung erfolgt per E-Mail. Siehe <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</span></label>'
+        + '<label class="kc-cl"><input type="checkbox" class="kc-cb"><span>Ich stimme zu, dass Kernbohr-Expert diese Angaben zur Bearbeitung meiner Anfrage erhält und mich dazu kontaktiert. Die Weiterleitung erfolgt per E-Mail. Siehe <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</span></label>'
+        + '<p class="kc-err" role="alert" hidden></p>'
         + '<button type="button" class="kc-send" disabled>Anfrage absenden</button>';
       log.appendChild(box); log.scrollTop = log.scrollHeight;
-      const cb = box.querySelector('.kc-cb'), btn = box.querySelector('.kc-send'), hp = box.querySelector('.kc-hp');
+      const q = (c) => box.querySelector(c);
+      const cb = q('.kc-cb'), btn = q('.kc-send'), err = q('.kc-err');
       cb.addEventListener('change', () => { btn.disabled = !cb.checked; });
       btn.addEventListener('click', async () => {
-        btn.disabled = true; btn.textContent = 'Wird gesendet …';
+        const lead = { name: q('.kc-n').value.trim(), telefon: q('.kc-t').value.trim(), ort: q('.kc-o').value.trim(), anliegen: q('.kc-a').value.trim() };
+        const digits = lead.telefon.replace(/\D/g, '');
+        const fehler = lead.name.length < 2 ? 'Bitte geben Sie Ihren Namen an.' : (digits.length < 6 || digits.length > 16) ? 'Bitte geben Sie eine gültige Telefonnummer an.' : lead.ort.length < 2 ? 'Bitte geben Sie den Ort der Baustelle an.' : lead.anliegen.length < 5 ? 'Bitte beschreiben Sie kurz Ihr Anliegen.' : '';
+        if (fehler) { err.textContent = fehler; err.hidden = false; return; }
+        err.hidden = true; btn.disabled = true; btn.textContent = 'Wird gesendet …';
         try {
-          const r = await fetch(root.dataset.url.replace(/\/+$/, '') + '/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...lead, einwilligung: cb.checked, hp: hp.value }) });
+          const r = await fetch(root.dataset.url.replace(/\/+$/, '') + '/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...lead, einwilligung: cb.checked, hp: q('.kc-hp').value }) });
           const j = await r.json();
           if (!r.ok || !j.ok) throw new Error('send');
           box.innerHTML = '<b>Danke, Ihre Anfrage wurde weitergeleitet.</b>Wir melden uns in den Telefonzeiten (Mo–Sa 7–19 Uhr). Fotos der Baustelle können Sie gern per WhatsApp senden.';
-          history.length = 0;
+          history.length = 0; formShown = false;
         } catch {
           btn.disabled = false; btn.textContent = 'Anfrage absenden';
-          add('kc-bot', 'Das Senden hat leider nicht geklappt. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.');
+          err.textContent = 'Das Senden hat leider nicht geklappt. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.'; err.hidden = false;
         }
       });
     };
+    const JA = /^(ja|ja,? bitte|ja,? gerne|gerne|gern|sehr gerne|ok|okay|klar|bitte|mach das|yes|да)\b/i;
+    const ANGEBOT = /anfrage[^.?!]*(senden|weiterleiten)|(senden|weiterleiten)[^.?!]*anfrage/i;
     async function send(text) {
       text = text.trim(); if (!text) return;
       chips.hidden = true; input.value = '';
       add('kc-me', esc(text)); history.push({ role: 'user', content: text });
+      const lastBot = [...history].reverse().find((m) => m.role === 'assistant')?.content || '';
+      if (!formShown && (text === 'Anfrage online senden' || (JA.test(text) && text.length <= 40 && ANGEBOT.test(lastBot)))) {
+        const fragen = history.filter((m) => m.role === 'user' && !JA.test(m.content) && m.content !== 'Anfrage online senden').slice(-2).map((m) => m.content).join(' / ');
+        const msg = 'Gern! Bitte ergänzen Sie unten Ihre Angaben, prüfen Sie sie und senden Sie die Anfrage ab.';
+        add('kc-bot', msg); history.push({ role: 'assistant', content: msg });
+        leadCard({ anliegen: fragen.slice(0, 300) });
+        return;
+      }
       const wait = add('kc-bot kc-typing', '…');
       try {
         const r = await fetch(root.dataset.url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: history }) });
         const j = await r.json();
         const reply = j.reply || 'Dazu rufen Sie uns bitte kurz an.';
         wait.remove(); add('kc-bot', link(reply)); history.push({ role: 'assistant', content: reply });
-        if (j.lead) leadCard(j.lead);
+        if (j.lead && !formShown) leadCard(j.lead);
       } catch {
         wait.remove(); add('kc-bot', 'Der Assistent ist gerade nicht erreichbar. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.');
       }
