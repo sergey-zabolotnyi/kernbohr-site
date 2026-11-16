@@ -66,6 +66,8 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-lead .kc-cl{display:flex;gap:.5rem;align-items:flex-start;font-size:.8rem;margin:0 0 .6rem;line-height:1.35}
   .kc-lead input[type=checkbox]{margin-top:.15rem;width:18px;height:18px;flex:none}
   .kc-lead .kc-send{width:100%;min-height:44px;border:0;border-radius:10px;background:#c2410c;color:#fff;font-weight:700;cursor:pointer}
+  .kc-lead .kc-wa2{width:100%;min-height:44px;margin-top:.5rem;border:1.5px solid #1f9d55;border-radius:10px;background:#fff;color:#177a43;font-weight:700;cursor:pointer}
+  .kc-lead .kc-wan{margin:.4rem 0 0;font-size:.78rem;line-height:1.35;color:#5b6168}
   .kc-lead .kc-send:disabled{opacity:.5;cursor:not-allowed}
   .kc-lead .kc-hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
   .kc-chips{display:flex;gap:.4rem;padding:.5rem .8rem;flex-wrap:wrap;background:#f4f6f8}
@@ -115,7 +117,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         formTitle: 'Ihre Anfrage an Herrn Salcutan', name: 'Name', phone: 'Telefonnummer', place: 'Ort der Baustelle', concern: 'Ihr Anliegen',
         photos: 'Fotos der Baustelle (optional, bis zu 3)', addPhoto: '+ Foto hinzufügen',
         consent: 'Ich stimme zu, dass Kernbohr-Expert diese Angaben (und ggf. Fotos) zur Bearbeitung meiner Anfrage erhält und mich dazu kontaktiert. Die Weiterleitung erfolgt per E-Mail. Siehe', privacy: 'Datenschutzerklärung',
-        send: 'Anfrage absenden', sending: 'Wird gesendet …',
+        send: 'Anfrage absenden', waBtn: 'Stattdessen per WhatsApp senden', waNote: 'Antwort in den Telefonzeiten (Mo–Sa 7–19 Uhr). Ihre Angaben werden in die Nachricht übernommen; Fotos können Sie dort direkt anhängen.', sending: 'Wird gesendet …',
         eName: 'Bitte geben Sie Ihren Namen an.', ePhone: 'Bitte geben Sie eine gültige Telefonnummer an.', ePlace: 'Bitte geben Sie den Ort der Baustelle an.', eConcern: 'Bitte beschreiben Sie kurz Ihr Anliegen.',
         ePhoto: 'Dieses Foto konnte nicht geladen werden.', eSend: 'Das Senden hat leider nicht geklappt. Bitte rufen Sie uns an: +49 177 190 90 49 (Mo–Sa 7–19 Uhr) oder schreiben Sie per WhatsApp.',
         thanks: 'Danke, Ihre Anfrage wurde weitergeleitet.', today: 'Wir melden uns in der Regel noch heute bis 19 Uhr.', next: 'Wir melden uns in der Regel am nächsten Werktag ab 7 Uhr.', wa: 'Weitere Fotos können Sie gern per WhatsApp senden.',
@@ -130,7 +132,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         formTitle: 'Your request to Mr. Salcutan', name: 'Name', phone: 'Phone number', place: 'Job site location', concern: 'Your request',
         photos: 'Photos of the site (optional, up to 3)', addPhoto: '+ Add photo',
         consent: 'I agree that Kernbohr-Expert receives this information (and photos, if any) to process my request and to contact me about it. It is forwarded by e-mail. See the', privacy: 'privacy policy (German)',
-        send: 'Send request', sending: 'Sending …',
+        send: 'Send request', waBtn: 'Send via WhatsApp instead', waNote: 'We reply during phone hours (Mon–Sat 7 am–7 pm). Your details are copied into the message; you can attach photos there.', sending: 'Sending …',
         eName: 'Please enter your name.', ePhone: 'Please enter a valid phone number.', ePlace: 'Please enter the job site location.', eConcern: 'Please briefly describe your request.',
         ePhoto: 'This photo could not be loaded.', eSend: 'Sending failed. Please call us: +49 177 190 90 49 (Mon–Sat 7am–7pm) or write on WhatsApp.',
         thanks: 'Thank you, your request has been forwarded.', today: 'We usually get back to you today until 7 pm.', next: 'We usually get back to you on the next working day from 7 am.', wa: 'You are welcome to send more photos via WhatsApp.',
@@ -145,7 +147,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         formTitle: 'Solicitarea dvs. către dl Salcutan', name: 'Nume', phone: 'Număr de telefon', place: 'Locul lucrării', concern: 'Solicitarea dvs.',
         photos: 'Fotografii ale locului (opțional, până la 3)', addPhoto: '+ Adaugă fotografie',
         consent: 'Sunt de acord ca Kernbohr-Expert să primească aceste date (și fotografiile, dacă există) pentru a-mi procesa solicitarea și a mă contacta. Transmiterea se face prin e-mail. Vezi', privacy: 'politica de confidențialitate (în germană)',
-        send: 'Trimite solicitarea', sending: 'Se trimite …',
+        send: 'Trimite solicitarea', waBtn: 'Trimite în schimb pe WhatsApp', waNote: 'Răspundem în programul de telefon (Lu–Sâ 7–19). Datele dvs. sunt preluate în mesaj; puteți atașa fotografii acolo.', sending: 'Se trimite …',
         eName: 'Vă rugăm să introduceți numele.', ePhone: 'Vă rugăm să introduceți un număr de telefon valid.', ePlace: 'Vă rugăm să introduceți locul lucrării.', eConcern: 'Vă rugăm să descrieți pe scurt solicitarea.',
         ePhoto: 'Această fotografie nu a putut fi încărcată.', eSend: 'Trimiterea nu a reușit. Vă rugăm să ne sunați: +49 177 190 90 49 (lun–sâm 7–19) sau să scrieți pe WhatsApp.',
         thanks: 'Mulțumim, solicitarea a fost transmisă.', today: 'De obicei vă contactăm azi, până la ora 19.', next: 'De obicei vă contactăm în următoarea zi lucrătoare, de la ora 7.', wa: 'Puteți trimite și alte fotografii pe WhatsApp.',
@@ -160,7 +162,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         formTitle: 'Ваша заявка господину Салкуцану', name: 'Имя', phone: 'Номер телефона', place: 'Место работ', concern: 'Ваша заявка',
         photos: 'Фото объекта (необязательно, до 3)', addPhoto: '+ Добавить фото',
         consent: 'Я согласен(на), что Kernbohr-Expert получит эти данные (и фото, если есть) для обработки моей заявки и свяжется со мной. Передача происходит по e-mail. См.', privacy: 'политику конфиденциальности (на немецком)',
-        send: 'Отправить заявку', sending: 'Отправляется …',
+        send: 'Отправить заявку', waBtn: 'Отправить в WhatsApp', waNote: 'Отвечаем в рабочие часы (пн–сб 7–19). Ваши данные попадут в сообщение; фото можно приложить прямо там.', sending: 'Отправляется …',
         eName: 'Укажите, пожалуйста, имя.', ePhone: 'Укажите корректный номер телефона.', ePlace: 'Укажите место работ.', eConcern: 'Кратко опишите, что нужно сделать.',
         ePhoto: 'Не удалось загрузить это фото.', eSend: 'Отправить не удалось. Позвоните нам: +49 177 190 90 49 (пн–сб 7–19) или напишите в WhatsApp.',
         thanks: 'Спасибо, ваша заявка передана.', today: 'Обычно мы связываемся сегодня до 19 часов.', next: 'Обычно мы связываемся в следующий рабочий день с 7 часов.', wa: 'Дополнительные фото можно прислать в WhatsApp.',
@@ -175,7 +177,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         formTitle: 'La sua richiesta al sig. Salcutan', name: 'Nome', phone: 'Numero di telefono', place: 'Luogo del cantiere', concern: 'La sua richiesta',
         photos: 'Foto del cantiere (facoltative, fino a 3)', addPhoto: '+ Aggiungi foto',
         consent: 'Acconsento che Kernbohr-Expert riceva questi dati (ed eventuali foto) per elaborare la mia richiesta e contattarmi. L\'inoltro avviene via e-mail. Vedi', privacy: 'l\'informativa sulla privacy (in tedesco)',
-        send: 'Invia richiesta', sending: 'Invio in corso …',
+        send: 'Invia richiesta', waBtn: 'Invia invece su WhatsApp', waNote: 'Rispondiamo negli orari telefonici (lun–sab 7–19). I suoi dati vengono inseriti nel messaggio; può allegare le foto lì.', sending: 'Invio in corso …',
         eName: 'Inserisca il suo nome.', ePhone: 'Inserisca un numero di telefono valido.', ePlace: 'Inserisca il luogo del cantiere.', eConcern: 'Descriva brevemente la sua richiesta.',
         ePhoto: 'Impossibile caricare questa foto.', eSend: 'Invio non riuscito. Ci chiami: +49 177 190 90 49 (lun–sab 7–19) o scriva su WhatsApp.',
         thanks: 'Grazie, la sua richiesta è stata inoltrata.', today: 'Di solito la richiamiamo oggi entro le 19.', next: 'Di solito la richiamiamo il giorno lavorativo successivo dalle 7.', wa: 'Può inviare altre foto su WhatsApp.',
@@ -247,7 +249,16 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
     });
 
     // WhatsApp mit Zusammenfassung (Text geht nur an WhatsApp, nicht an unseren Server)
-    function openWa() {
+    function openWa(f) {
+      if (f && f.anliegen !== undefined) {
+        const zeilen = ['Guten Tag Herr Salcutan, ich habe auf Ihrer Website mit Kerni (KI-Assistent) eine Anfrage vorbereitet und sende sie Ihnen hiermit direkt per WhatsApp.',
+          f.name ? 'Name: ' + f.name : '', f.telefon ? 'Telefon: ' + f.telefon : '', 'Ort der Baustelle: ' + (f.ort || ''),
+          'Anliegen: ' + (f.anliegen || ''), lastPrice ? 'Richtpreis laut Rechner: ' + lastPrice : '',
+          lang !== 'de' ? `(Ich schreibe auf ${LANGNAME[lang]}.)` : '', f.fotos ? 'Fotos sende ich gleich hier mit.' : '',
+          'Mir ist bewusst, dass Sie in den Telefonzeiten (Mo–Sa 7–19 Uhr) antworten. Vielen Dank!'].filter(Boolean).join('\n');
+        window.open((root.dataset.wa || 'https://wa.me/491771909049') + '?text=' + encodeURIComponent(zeilen), '_blank', 'noopener');
+        return;
+      }
       const fragen = history.filter((m) => m.role === 'user' && !isYes(m.content)).slice(-3).map((m) => m.content.slice(0, 160));
       const txt = ['Hallo Herr Salcutan, ich habe auf Ihrer Website mit Kerni (KI-Assistent) geschrieben.',
         fragen.length ? 'Meine Fragen: ' + fragen.join(' | ') : '', lastPrice ? 'Richtpreis laut Rechner: ' + lastPrice : '',
@@ -288,7 +299,8 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         + '<input class="kc-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">'
         + `<label class="kc-cl"><input type="checkbox" class="kc-cb"><span>${esc(t.consent)} <a href="/datenschutzerklaerung/" target="_blank" rel="noopener">${esc(t.privacy)}</a>.</span></label>`
         + '<p class="kc-err" role="alert" hidden></p>'
-        + `<button type="button" class="kc-send" disabled>${esc(t.send)}</button>`;
+        + `<button type="button" class="kc-send" disabled>${esc(t.send)}</button>`
+        + `<button type="button" class="kc-wa2">${esc(t.waBtn)}</button><p class="kc-wan">${esc(t.waNote)}</p>`;
       log.appendChild(box); log.scrollTop = log.scrollHeight;
       const q = (c) => box.querySelector(c);
       const cb = q('.kc-cb'), btn = q('.kc-send'), err = q('.kc-err'), ph = q('.kc-ph'), file = q('.kc-file'), addL = q('.kc-add');
@@ -313,6 +325,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         file.value = ''; drawThumbs();
       });
       cb.addEventListener('change', () => { btn.disabled = !cb.checked; });
+      q('.kc-wa2').addEventListener('click', () => openWa({ name: q('.kc-n').value.trim(), telefon: q('.kc-t').value.trim(), ort: q('.kc-o').value.trim(), anliegen: q('.kc-a').value.trim(), fotos: fotos.length }));
       btn.addEventListener('click', async () => {
         const lead = { name: q('.kc-n').value.trim(), telefon: q('.kc-t').value.trim(), ort: q('.kc-o').value.trim(), anliegen: q('.kc-a').value.trim() };
         const digits = lead.telefon.replace(/\D/g, '');
