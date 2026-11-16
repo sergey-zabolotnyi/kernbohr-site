@@ -6,6 +6,7 @@ import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema, faqSchema } from '../lib/schema.js';
 import { durchmesserTabelle, durchmesserFaq } from '../data/durchmesser.js';
+import { durchmesserSeiten } from '../data/durchmesserSeiten.js';
 ---
 <Base
   title="Kernbohrung Durchmesser: Welcher Bohrdurchmesser passt?"
@@ -45,7 +46,12 @@ import { durchmesserTabelle, durchmesserFaq } from '../data/durchmesser.js';
         <li>5 bis 15 mm Luft ergänzen, damit sich das Rohr einschieben und abdichten lässt.</li>
         <li>Wandstärke messen (Bohrtiefe) und ein Foto der Bohrstelle mit Maßband machen.</li>
       </ol>
-      <div class="btns"><a class="btn btn-main" href="/preise/#kb-rechner">Richtpreis berechnen</a></div>
+      <div class="btns"><a class="btn btn-main" href="/kernbohrung-rechner/">Richtpreis berechnen</a></div>
+
+      <h2>Preise und Anwendungen nach Durchmesser</h2>
+      <ul class="chips">
+        {durchmesserSeiten.map((x) => <li><a href={`/kernbohrung-${x.mm}-mm/`}>Ø {x.mm} mm: {x.kurz}</a></li>)}
+      </ul>
 
       <h2>Häufige Fragen</h2>
       <div class="prose">

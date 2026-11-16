@@ -7,6 +7,7 @@ import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema } from '../lib/schema.js';
 import { orte } from '../data/orte.js';
+import { regeln, eur } from '../data/preisliste.js';
 
 const stadtteile = ['Altstadt', 'Neustadt', 'Pieschen', 'Striesen', 'Blasewitz', 'Loschwitz', 'Johannstadt', 'Plauen', 'Löbtau', 'Cotta', 'Gorbitz', 'Prohlis', 'Leuben', 'Klotzsche', 'Lockwitz'];
 const umland = ['Radebeul', 'Coswig', 'Meißen', 'Pirna', 'Heidenau', 'Freital', 'Radeberg', 'Dippoldiswalde', 'Rabenau', 'Glashütte', 'Bad Gottleuba-Berggießhübel'];
@@ -53,6 +54,19 @@ const bundesweit = ['Leipzig', 'Berlin', 'Chemnitz', 'Thüringen', 'Brandenburg'
           <p>Weitere Einsätze auf Anfrage. Anfahrt, Übernachtung und Einsatzdauer vereinbaren wir individuell.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <span class="eyebrow">Anfahrt und Preis</span>
+      <h2>Was kostet die Anfahrt?</h2>
+      <p>Im Umkreis bis ca. 30 km um Dresden berechnen wir Anfahrt und Baustelleneinrichtung pauschal mit {eur(regeln.anfahrt)} je Einsatz. Das gilt für alle Dresdner Stadtteile sowie für Radebeul, Coswig, Meißen, Pirna, Heidenau, Freital und Radeberg. Für Leipzig, Berlin und weiter entfernte Ziele vereinbaren wir Anfahrt, Übernachtung und Einsatzdauer individuell, vor allem bei größeren Projekten.</p>
+      <h2>Wie schnell sind wir vor Ort?</h2>
+      <p>Telefonisch erreichen Sie uns Mo–Sa 7–19 Uhr. Kurzfristige Termine sind oft möglich, Einsätze abends, nachts und am Wochenende vereinbaren wir nach Absprache (mit den Zuschlägen aus der Preisliste). Senden Sie uns ein Foto per WhatsApp, dann nennen wir Ihnen Preis und Terminvorschlag.</p>
+      <h2>Kernbohrung in der Nähe: so finden Sie uns</h2>
+      <p>Unser Sitz ist {`Burkersdorfer Weg 19, 01189 Dresden`}. Die Wege im Raum Dresden sind kurz, deshalb sind wir für die meisten Aufträge in der Region schnell erreichbar. Ob Ihr Ort im Einsatzgebiet liegt, klären wir in einem kurzen Anruf.</p>
+      <div class="btns"><a class="btn btn-main" href="/kernbohrung-rechner/">Richtpreis berechnen</a><a class="btn btn-dark" href="/kontakt/">Termin anfragen</a></div>
     </div>
   </section>
 

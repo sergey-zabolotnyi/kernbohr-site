@@ -263,6 +263,9 @@ import { site } from '../data/site.js';
   });
 
   let last = null;
+  let genutzt = false;
+  const kbForm = $('kb-form');
+  kbForm && kbForm.addEventListener('input', () => { if (!genutzt) { genutzt = true; if (window.kbTrack) window.kbTrack('Rechner genutzt'); } }, { once: false });
   el.pdf.addEventListener('click', async () => {
     if (!last) return;
     const label = el.pdf.textContent;
@@ -271,6 +274,7 @@ import { site } from '../data/site.js';
     try {
       const { erstelleAngebotPdf } = await import('../lib/angebotPdf.js');
       await erstelleAngebotPdf(last);
+      if (window.kbTrack) window.kbTrack('PDF-Angebot');
     } catch (err) {
       el.pdf.textContent = 'PDF nicht möglich, bitte per WhatsApp anfragen';
       setTimeout(() => { el.pdf.textContent = label; el.pdf.disabled = false; }, 3500);
