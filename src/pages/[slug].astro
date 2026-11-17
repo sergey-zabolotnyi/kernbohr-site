@@ -13,6 +13,7 @@ import { heroStyle } from '../lib/media.js';
 import HeroVideo from '../components/HeroVideo.astro';
 import { heroBilder, heroVideos } from '../data/heroBilder.js';
 import { crumbSchema, faqSchema, preisAngebot } from '../lib/schema.js';
+import { serviceSections } from '../data/serviceSections.js';
 
 export function getStaticPaths() {
   return services.map((s) => ({ params: { slug: s.slug }, props: { s } }));
@@ -21,6 +22,7 @@ export function getStaticPaths() {
 const { s } = Astro.props;
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hallo, ich interessiere mich für: ${s.name}. Foto der Baustelle sende ich gleich mit.`)}`;
 const others = services.filter((x) => x.slug !== s.slug && x.group === s.group).slice(0, 3);
+const sections = serviceSections[s.slug] || [];
 const guide = s.guide ? articles.find((a) => a.slug === s.guide) : null;
 
 const schema = [
@@ -77,6 +79,28 @@ const schema = [
       )}
     </div>
   </section>
+
+  {sections.length > 0 && (
+    <section>
+      <div class="wrap prose">
+        {sections.map((sec) => (
+          <>
+            <h2>{sec.h}</h2>
+            {sec.p && sec.p.map((t) => <p>{t}</p>)}
+            {sec.tabelle && (
+              <div class="table-scroll" tabindex="0" role="group" aria-label="Tabelle (seitlich scrollbar)">
+                <table class="facts">
+                  <thead><tr>{sec.tabelle.kopf.map((k) => <th>{k}</th>)}</tr></thead>
+                  <tbody>{sec.tabelle.zeilen.map((z) => <tr>{z.map((c, i) => (i === 0 ? <th scope="row">{c}</th> : <td>{c}</td>))}</tr>)}</tbody>
+                </table>
+              </div>
+            )}
+            {sec.liste && <ul>{sec.liste.map((l) => <li>{l}</li>)}</ul>}
+          </>
+        ))}
+      </div>
+    </section>
+  )}
 
   <Gallery ids={s.media} eyebrow="Einblick" title="Aus unserer Arbeit" />
 

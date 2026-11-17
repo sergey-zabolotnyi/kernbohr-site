@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import Rechner from '../components/Rechner.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import HeroPreload from '../components/HeroPreload.astro';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema, faqSchema } from '../lib/schema.js';
+import { durchmesserSeiten } from '../data/durchmesserSeiten.js';
+import { regeln, eur } from '../data/preisliste.js';
+import { site } from '../data/site.js';
+
+const faqs = [
+  ['Wie funktioniert der Kernbohr-Rechner?', 'Sie wählen Material, Durchmesser, Bohrtiefe und Anzahl der Bohrungen. Der Rechner nutzt unsere Preisliste 2026 und zeigt alle Posten einzeln: Bohrpreis, Pilotbohrung, Anfahrt und mögliche Zuschläge. Auf Wunsch laden Sie das Ergebnis als PDF-Angebot herunter. Das PDF entsteht in Ihrem Browser, es werden keine Daten übertragen.'],
+  ['Ist das Ergebnis verbindlich?', 'Nein. Der Rechner liefert eine unverbindliche Schätzung brutto. Verbindlich wird der Preis erst mit unserem Angebot nach Ihrem Foto oder Ihren Maßen.'],
+  ['Wie kann ich einen Termin buchen?', `Rufen Sie uns an (${site.phoneDisplay}, ${site.phoneHours}), schreiben Sie per WhatsApp mit einem Foto der Baustelle oder senden Sie die Anfrage über unser Formular. Wir melden uns mit Preis und Terminvorschlag. Einsätze nachts oder am Wochenende vereinbaren wir nach Absprache.`],
+  ['Was kostet eine Kernbohrung mindestens?', `Der Mindestauftragswert beträgt ${eur(regeln.mindestpreis)} je Auftrag. Darin sind Anfahrt und Baustelleneinrichtung (${eur(regeln.anfahrt)} im Umkreis bis ca. 30 km um Dresden) bereits berücksichtigt. Mehrere Bohrungen im selben Termin bündeln Sie am günstigsten.`],
+  ['Welche Zuschläge gibt es?', 'Für Schräg- und Überkopfbohrungen +50 %, nachts +75 % und am Wochenende oder Feiertag +100 % auf den Bohrpreis. Wassersauger, Gerüststellung und Wartezeit werden bei Bedarf extra berechnet. Die komplette Liste steht auf der Seite Kosten und Preise.'],
+];
+const schema = [
+  crumbSchema([['Kernbohr-Rechner', '/kernbohrung-rechner/']]),
+  faqSchema(faqs),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Kernbohr-Rechner',
+    url: site.url + '/kernbohrung-rechner/',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Alle',
+    inLanguage: 'de-DE',
+    description: 'Richtpreis für Kernbohrungen in Beton und Mauerwerk nach Durchmesser, Tiefe und Anzahl, basierend auf der Preisliste 2026.',
+    provider: { '@id': site.url + '/#business' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  },
+];
+---
+<Base
+  title="Kernbohrung Kosten Rechner: Preis in 30 Sekunden"
+  description="Kernbohrung Kosten Rechner mit Preisliste 2026: Richtpreis nach Durchmesser und Tiefe, PDF-Angebot, Termin anfragen. Dresden und Sachsen."
+  path="/kernbohrung-rechner/"
+  schema={schema}
+>
+  <Breadcrumbs items={[['Kernbohr-Rechner']]} />
+  <HeroPreload slot="head" id={'werk-wand-gross'} />
+  <section class="hero small" style={heroStyle('werk-wand-gross')}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Kosten-Rechner</span>
+        <h1>Kernbohrung Kosten Rechner: Ihr Richtpreis in 30 Sekunden</h1>
+        <p class="lead">Material, Durchmesser, Tiefe und Anzahl eingeben, und Sie sehen sofort alle Posten nach unserer Preisliste 2026. Mit PDF-Angebot zum Mitnehmen und direkter Terminanfrage.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><Rechner /></div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Nach Durchmesser</span>
+      <h2>Preise für gängige Bohrdurchmesser</h2>
+      <p>Sie kennen Ihren Durchmesser schon? Auf diesen Seiten finden Sie Preis je cm, Beispielrechnungen und Anwendungen:</p>
+      <ul class="chips">
+        {durchmesserSeiten.map((x) => <li><a href={`/kernbohrung-${x.mm}-mm/`}>Ø {x.mm} mm: {x.kurz}</a></li>)}
+        <li><a href="/bohrdurchmesser/">Welcher Durchmesser passt?</a></li>
+        <li><a href="/preise/">Komplette Preisliste 2026</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">FAQ</span>
+      <h2>Häufige Fragen zum Rechner und zum Termin</h2>
+      {faqs.map(([q, a]) => (
+        <details open><summary>{q}</summary><p>{a}</p></details>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand title="Termin buchen: Foto senden, Festpreis erhalten" text="Schicken Sie uns ein Foto der Baustelle per WhatsApp oder rufen Sie an. Wir melden uns mit Preis und Terminvorschlag." />
+</Base>

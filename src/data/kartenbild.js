@@ -23,5 +23,10 @@ export const artikelBild = {
   'wanddurchbruch-kosten': 'werk-unterzug',
   'kernbohrung-kosten-dresden': 'werk-bohrkrone-152',
   'kernbohrung-mietwohnung-eigentum': 'werk-durchfuehrung-decke',
+  'kernbohrgeraet-mieten-oder-beauftragen': 'werk-bohrstaender',
+  'kernbohrung-dunstabzugshaube-durchmesser': 'werk-wand-125',
+  'kernbohrung-kaminofen-ofenrohr': 'werk-bohrkrone-152',
+  'fugenschneiden-beton-ratgeber': 'werk-wand-125',
+  'entkernung-altbau-dresden': 'werk-oeffnung-geruest',
   'handwerkerleistungen-steuer-absetzen-35a': 'werk-oeffnung-geruest',
 };

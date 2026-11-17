@@ -67,6 +67,7 @@ import { site } from '../data/site.js';
     } else {
       window.open(`https://wa.me/${wa}?text=${encodeURIComponent(lines)}`, '_blank', 'noopener');
     }
+    if (window.kbTrack) window.kbTrack('Formular');
     hint.textContent = 'Danke! Bitte senden Sie die vorbereitete Nachricht in der geöffneten App ab. Wir melden uns schnellstmöglich.';
   });
 </script>

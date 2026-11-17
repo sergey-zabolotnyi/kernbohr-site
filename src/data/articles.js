@@ -419,4 +419,221 @@ export const articles = [
       ['Machen Sie auch Betonbohrungen über Kopf und in Wohnungen?', 'Ja, horizontal, vertikal und über Kopf, in bewohnten Gebäuden staubarm mit Wassersauger.'],
     ],
   },
+  {
+    slug: 'kernbohrgeraet-mieten-oder-beauftragen',
+    icon: 'drill',
+    date: '2026-11-16',
+    title: 'Kernbohrgerät mieten oder Kernbohrung beauftragen?',
+    h1: 'Kernbohrgerät mieten oder Kernbohrung beauftragen: Was lohnt sich?',
+    description: 'Kernbohrgerät mieten in Dresden oder die Kernbohrung beauftragen? Ausrüstung, Risiken, Kostenvergleich und eine Checkliste für Ihre Entscheidung.',
+    short: 'Selbst bohren oder bohren lassen: Ausrüstung, Risiken und Kosten im Vergleich.',
+    answer: 'Für einzelne Bohrungen lohnt sich die Miete eines Kernbohrgeräts meist nicht. Neben dem Bohrmotor brauchen Sie Bohrständer, passende Diamantkrone, Wasserversorgung und Absaugung, und bei Stahlbeton oder tragenden Bauteilen ist Erfahrung nötig. Wir vermieten keine Geräte, sondern kommen mit Technik, Wasser und Staubschutz zu Ihnen. Den Preis sehen Sie vorab in der Preisliste und im Kernbohr-Rechner.',
+    sections: [
+      { h: 'Was zu einer Kernbohrung außer dem Bohrmotor gehört', ul: [
+        '<strong>Bohrmotor und Bohrständer:</strong> Der Ständer wird an der Wand befestigt (Dübel oder Vakuum) und führt die Krone gerade. Ohne stabile Befestigung verläuft die Bohrung schief oder die Krone klemmt.',
+        '<strong>Diamantbohrkrone im passenden Durchmesser:</strong> Für Mauerwerk, Beton und Stahlbeton gibt es unterschiedliche Kronen. Die falsche Krone verschleißt schnell oder schneidet schlecht.',
+        '<strong>Wasser:</strong> Die Nassbohrung kühlt die Krone und bindet Staub. Wasser muss zugeführt und Schlamm aufgefangen werden.',
+        '<strong>Absaugung und Abdeckung:</strong> Wassersauger, Folie und Abdeckung schützen Boden und Möbel.',
+        '<strong>Strom:</strong> 230 V, bei großen Durchmessern eventuell 400 V.',
+      ] },
+      { h: 'Typische Risiken beim Selbermachen', ul: [
+        '<strong>Bewehrung:</strong> Trifft die Krone Stahl, wird es schwer. Krone und Motor können Schaden nehmen, und die Bohrung bleibt stecken.',
+        '<strong>Leitungen in der Wand:</strong> Elektro-, Wasser- und Heizungsleitungen sind oft nicht dokumentiert. Eine Leitungsortung vor dem Bohren ist wichtig.',
+        '<strong>Wasserschäden und Schmutz:</strong> Bei falscher Wasserführung läuft Schlamm in die Wohnung oder an die Fassade.',
+        '<strong>Statik:</strong> In tragenden Wänden und Decken darf nicht beliebig gebohrt werden. Das klären Sie vorab mit dem Statiker.',
+        '<strong>Zustimmung und Haftung:</strong> Mieter und Wohnungseigentümer brauchen die Zustimmung von Vermieter oder Eigentümergemeinschaft, Schäden gehen sonst zu Ihren Lasten.',
+      ] },
+      { h: 'Wann Selbermachen noch sinnvoll sein kann', p: [
+        'Bei einer einzelnen kleinen Bohrung in einfachem Mauerwerk, ohne Bewehrung und ohne tragende Funktion, ist Selbermachen denkbar, wenn Sie Gerät, Wasser und Schutz organisiert haben. Sobald Stahlbeton, große Durchmesser, Überkopfbohrungen oder mehrere Bohrungen anstehen, spricht fast alles für den Fachbetrieb.',
+      ] },
+      { h: 'Kosten im Vergleich', p: [
+        'Bei uns gilt die Preisliste: ab ' + eur(1.2) + ' je cm Bohrtiefe in Beton (Ø 14–101 mm), in Mauerwerk ab ' + eur(1.1) + ', dazu Anfahrt (' + eur(regeln.anfahrt) + ' im Umkreis bis ca. 30 km um Dresden) und Pilotbohrung. Der Mindestauftragswert beträgt ' + eur(regeln.mindestpreis) + '. Beispiel: Eine Bohrung Ø 82 mm, 30 cm Beton kostet bei uns ' + eur(berechne({ d: 82, tiefe: 30 }).total) + ' brutto. Die Mietkosten eines Geräts, Krone, Wasserversorgung und Ihre eigene Zeit sollten Sie dagegen rechnen, außerdem das Risiko eines Fehlers.',
+        'Mehrere Bohrungen in einem Termin sind am günstigsten, weil Anfahrt und Einrichtung nur einmal anfallen. Probieren Sie den <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a> aus.',
+      ] },
+      { h: 'Checkliste: Das sollten Sie vor der Entscheidung wissen', checks: [
+        'Material der Wand: Mauerwerk, Beton oder Stahlbeton?',
+        'Durchmesser und Wandstärke (Bohrtiefe)',
+        'Anzahl der Bohrungen',
+        'Ist die Wand tragend? Verlaufen Leitungen an der Stelle?',
+        'Strom und Wasser vor Ort vorhanden?',
+        'Zustimmung von Vermieter oder Eigentümergemeinschaft, falls nötig',
+      ] },
+    ],
+    faqs: [
+      ['Vermieten Sie Kernbohrgeräte?', 'Nein. Wir führen die Kernbohrung selbst aus und kommen mit Gerät, Wasser und Staubschutz zu Ihnen.'],
+      ['Wie finde ich den passenden Bohrdurchmesser?', 'Messen Sie den Außendurchmesser des Rohrs oder der Hülse, rechnen Sie Dämmung und 5 bis 15 mm Luft dazu. Unsere Seite zum Bohrdurchmesser nennt Richtwerte.'],
+      ['Wie bekomme ich schnell einen Preis?', 'Rechnen Sie im Kernbohr-Rechner oder schicken Sie uns ein Foto der Bohrstelle mit Maßband per WhatsApp. Wir nennen Ihnen Preis und Termin.'],
+      ['Was passiert, wenn die Krone auf Stahl trifft?', 'Stahl ab 1,5 cm Dicke berechnen wir je cm als Einzelschnitt, siehe Preisliste. Die Bewehrung lässt sich vorab nicht immer erkennen, deshalb planen wir mit passenden Kronen und Erfahrung.'],
+    ],
+  },
+  {
+    slug: 'kernbohrung-dunstabzugshaube-durchmesser',
+    icon: 'drill',
+    date: '2026-11-16',
+    title: 'Dunstabzugshaube: Durchbruch, Durchmesser und Ablauf',
+    h1: 'Kernbohrung für die Dunstabzugshaube: Durchmesser, Mauerkasten, Ablauf',
+    description: 'Kernbohrung für die Abzugshaube: Welcher Durchmesser für DN 125 und DN 150, Mauerkasten, Gefälle, Ablauf und Kosten. Dresden und Umgebung.',
+    short: 'Durchmesser für DN 125 und DN 150, Mauerkasten, Gefälle und Ablauf im Überblick.',
+    answer: 'Für ein Abluftrohr DN 125 bohren wir meist Ø 130 bis 135 mm, für DN 150 meist Ø 160 bis 165 mm, mit Mauerkasten größer. Die Bohrung erhält ein leichtes Gefälle nach außen, damit kein Regenwasser eindringt. Der Durchbruch ist eine normale Kernbohrung und wird nach Durchmesser und Wandstärke berechnet.',
+    sections: [
+      { h: 'Welcher Durchmesser passt zur Abzugshaube?', table: {
+        head: ['Abluftrohr der Haube', 'Typischer Bohrdurchmesser', 'Hinweis'],
+        rows: [
+          ['DN 125', 'Ø 130–135 mm', 'Mit Mauerkasten größer bohren'],
+          ['DN 150', 'Ø 160–165 mm', 'Mit Mauerkasten größer bohren'],
+        ],
+      }, p: ['Maßgeblich ist der Außendurchmesser von Rohr oder Mauerkasten, nicht der Innendurchmesser. Dazu kommen 5 bis 15 mm Luft. Welche Maße Ihr Hersteller vorgibt, steht in der Montageanleitung der Haube.'] },
+      { h: 'Abluft oder Umluft?', p: [
+        'Eine Abluft-Haube führt die Luft nach draußen und braucht deshalb einen Durchbruch in der Außenwand. Eine Umluft-Haube filtert die Luft und gibt sie in den Raum zurück, hier ist keine Bohrung nötig. Wer von Umluft auf Abluft wechselt, braucht den Durchbruch nachträglich.',
+      ] },
+      { h: 'Gefälle, Mauerkasten und Abdichtung', ul: [
+        'Die Bohrung erhält ein leichtes Gefälle nach außen, damit kein Wasser in die Küche läuft.',
+        'Ein Mauerkasten mit Rückstauklappe verhindert, dass kalte Luft oder Gerüche zurückströmen (je nach Haube und Hersteller).',
+        'Außen sitzt eine Blende oder ein Wetterschutzgitter.',
+        'Die Fuge zwischen Rohr und Wand wird abgedichtet.',
+      ] },
+      { h: 'So läuft der Termin ab', ol: [
+        'Foto der Stelle mit Maßband senden, wir nennen Durchmesser und Preis',
+        'Bohrstelle gemeinsam markieren und prüfen, ob dort Leitungen verlaufen',
+        'Küche abdecken, staubarm mit Wassersauger bohren',
+        'Aufräumen, Übergabe der sauberen Küche',
+      ] },
+      { h: 'Was kostet der Durchbruch?', p: [
+        'Eine Bohrung für die Dunstabzugshaube ist eine normale Kernbohrung. Maßgeblich sind Durchmesser, Wandstärke und Material. Als Beispiel: Ø 132 mm, 36 cm Mauerwerk kosten nach Preisliste ' + eur(berechne({ d: 132, tiefe: 36, material: 'mauerwerk' }).total) + ' brutto inklusive Anfahrt und Pilotbohrung (Mindestauftragswert ' + eur(regeln.mindestpreis) + '). Ihren Richtpreis rechnen Sie im <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a> aus.',
+      ] },
+      { h: 'Brauche ich eine Genehmigung?', p: [
+        'In Mietwohnungen und Eigentümergemeinschaften klären Sie vorab die Zustimmung. Bei tragenden Wänden und Fassaden ist Rücksprache wichtig, bei denkmalgeschützten Gebäuden mit der Denkmalschutzbehörde.',
+      ] },
+    ],
+    faqs: [
+      ['Welcher Durchmesser für DN 125?', 'In der Regel Ø 130 bis 135 mm. Bei Mauerkasten bohren wir größer, die Herstellerangabe ist maßgeblich.'],
+      ['Welcher Durchmesser für DN 150?', 'In der Regel Ø 160 bis 165 mm, mit Mauerkasten größer.'],
+      ['Wie lange dauert die Bohrung?', 'Der eigentliche Durchbruch dauert meist nur kurz. Dazu kommen Aufbau, Abdeckung und Aufräumen. Den Zeitrahmen nennen wir mit dem Termin.'],
+      ['Kann ich ein Foto schicken statt einen Termin zur Besichtigung zu machen?', 'Ja. Ein Foto der Stelle mit Maßband und die Angabe der Wandstärke genügen meist für ein Angebot.'],
+    ],
+  },
+  {
+    slug: 'kernbohrung-kaminofen-ofenrohr',
+    icon: 'drill',
+    date: '2026-11-16',
+    title: 'Kaminofen: Kernbohrung für Ofenrohr und Schornstein',
+    h1: 'Kernbohrung für Kaminofen und Ofenrohr: Das ist zu beachten',
+    description: 'Kernbohrung für den Kaminofen-Anschluss: Durchmesser 130–200 mm, Schornsteinfeger-Freigabe, Abstände zu brennbaren Bauteilen, Ablauf in Dresden.',
+    short: 'Wanddurchführung für Ofenrohr: Durchmesser, Freigabe durch den Schornsteinfeger, Ablauf.',
+    answer: 'Für den Anschluss eines Kaminofens bohren wir die Wanddurchführung für das Ofenrohr, üblich sind Durchmesser von 130 bis 200 mm. Vorab muss der Bezirksschornsteinfeger den Anschluss freigeben. Er prüft auch Abstände zu brennbaren Bauteilen und den Schornstein selbst. Die Bohrung führen wir fachgerecht aus, die Abnahme klären Sie vor der Planung.',
+    sections: [
+      { h: 'Erst der Schornsteinfeger, dann die Bohrung', p: [
+        'Ein Kaminofen darf erst angeschlossen werden, wenn der Bezirksschornsteinfeger zugestimmt hat. Er prüft, ob der Schornstein für Ihren Ofen geeignet ist und ob Abstände zu brennbaren Bauteilen stimmen. Sprechen Sie ihn deshalb ein, bevor Sie Bohrtermin oder Ofen festlegen. Wir bohren nach Ihrer Planung und den Vorgaben des Herstellers.',
+      ] },
+      { h: 'Welcher Durchmesser für die Wanddurchführung?', p: [
+        'Der Durchmesser richtet sich nach dem Ofenrohr und einer eventuell nötigen Wandhülse oder einem Mauerfutter. Üblich sind 130 bis 200 mm. Die Herstellerangabe des Ofens und die Vorgaben des Schornsteinfegers sind maßgeblich. Schicken Sie uns ein Foto der Stelle mit Maßband, wir nennen den passenden Durchmesser.',
+      ] },
+      { h: 'Typische Fälle', ul: [
+        'Ofenrohr durch die Wand in einen seitlich liegenden Schornstein',
+        'Durchführung durch Ziegel, Kalksandstein, Beton oder Schornsteinmauerwerk',
+        'Zusätzliche Bohrungen für Luftzufuhr oder Sanitär im selben Termin',
+      ] },
+      { h: 'So bereiten Sie den Termin vor', ol: [
+        'Freigabe oder Termin mit dem Bezirksschornsteinfeger klären',
+        'Ofen- und Rohrdaten bereitlegen (Hersteller, Rohrdurchmesser, Hülse)',
+        'Foto der Wand und des Schornsteins mit Maßband',
+        'Bereich freiräumen, Möbel und Boden abdecken',
+        'Strom vor Ort, Wasser nach Absprache',
+      ] },
+      { h: 'Was kostet die Durchführung?', p: [
+        'Die Bohrung wird wie jede Kernbohrung nach Durchmesser, Wandstärke und Material berechnet. Beispiel: Ø 152 mm, 36 cm Mauerwerk kosten nach Preisliste ' + eur(berechne({ d: 152, tiefe: 36, material: 'mauerwerk' }).total) + ' brutto inklusive Anfahrt und Pilotbohrung. Ihren Richtpreis rechnen Sie im <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a> aus.',
+      ] },
+    ],
+    faqs: [
+      ['Darf ich einen Kaminofen selbst anschließen lassen?', 'Der Anschluss muss vom Bezirksschornsteinfeger freigegeben und abgenommen werden. Wir führen nur die Bohrung aus, die Abnahme klären Sie vorab.'],
+      ['Welcher Durchmesser ist für das Ofenrohr üblich?', 'Üblich sind 130 bis 200 mm, je nach Rohr, Hülse und Ofen. Die Herstellerangabe entscheidet.'],
+      ['Können Sie auch in Schornsteinmauerwerk bohren?', 'Ja, nach Absprache und mit Freigabe durch den Schornsteinfeger.'],
+      ['Wie lange dauert eine Durchführung?', 'Die Bohrung selbst dauert meist nur kurz. Aufbau und Aufräumen kommen dazu. Den Zeitrahmen nennen wir mit dem Termin.'],
+    ],
+  },
+  {
+    slug: 'fugenschneiden-beton-ratgeber',
+    icon: 'joint',
+    date: '2026-11-16',
+    title: 'Fugenschneiden in Beton: Wann, wie tief, was kostet es?',
+    h1: 'Fugenschneiden in Beton: Zeitpunkt, Tiefe und Kosten',
+    description: 'Fugenschneiden in Beton: Wann Scheinfugen geschnitten werden, wie tief, welche Fugenarten es gibt und was Sie für ein Angebot in Dresden brauchen.',
+    short: 'Scheinfuge, Dehnfuge, Trennschnitt: Zeitpunkt, Tiefe und Angebot.',
+    answer: 'Fugen werden zeitnah nach dem Betonieren geschnitten, sobald der Beton begehbar und schneidbar ist. Als Richtwert für Scheinfugen wird häufig etwa ein Viertel bis ein Drittel der Plattendicke genannt, maßgeblich sind die Vorgaben von Planer oder Statiker. Für ein Angebot brauchen wir Fugenlänge, Plattendicke und den Betoniertermin.',
+    sections: [
+      { h: 'Warum Beton Fugen braucht', p: [
+        'Beton schwindet beim Aushärten und dehnt sich bei Wärme aus. Ohne Fugen reißt er dort, wo er will. Geschnittene Fugen geben ihm eine Sollbruchstelle, so entstehen keine unkontrollierten Risse in Bodenplatten, Hallenböden, Garagenzufahrten und Terrassen.',
+      ] },
+      { h: 'Welche Fugenarten gibt es?', table: {
+        head: ['Fugenart', 'Zweck', 'Typischer Einsatz'],
+        rows: [
+          ['Scheinfuge', 'Sollbruchstelle: Der Beton reißt kontrolliert in der Fuge', 'Bodenplatten, Hallenböden, Zufahrten'],
+          ['Dehnfuge (Bewegungsfuge)', 'Nimmt Längenänderung durch Temperatur auf', 'Große Flächen, Anschlüsse an Bauteile'],
+          ['Trennschnitt', 'Trennt Bauteile oder Flächen', 'Sanierung, Rückbau'],
+        ],
+      } },
+      { h: 'Der richtige Zeitpunkt', p: [
+        'Die Fuge wird geschnitten, sobald der Beton begehbar und schneidbar ist, aber bevor er von selbst reißt. Der Zeitpunkt hängt von Mischung, Temperatur und Witterung ab. Nennen Sie uns deshalb den Betoniertermin früh, dann stimmen wir den Einsatz ab.',
+      ] },
+      { h: 'Wie tief schneidet man?', p: [
+        'Als Richtwert für Scheinfugen wird häufig etwa ein Viertel bis ein Drittel der Plattendicke genannt. Das Fugenraster und die Tiefe legt der Planer oder Statiker für Ihre Fläche fest, wir setzen seine Vorgaben um.',
+      ] },
+      { h: 'Das brauchen wir für ein Angebot', ol: [
+        'Fläche oder Fugenlänge in Metern',
+        'Plattendicke und gewünschtes Fugenraster',
+        'Betoniertermin oder Alter des Betons',
+        'Zugang für das Gerät, Wasser und Strom vor Ort',
+        'Ein Foto der Fläche',
+      ] },
+      { h: 'Was kostet Fugenschneiden?', p: [
+        'Der Preis hängt von Fugenlänge, Schnitttiefe und Zugang ab. Senden Sie uns Maße oder ein Foto, dann erhalten Sie ein kostenloses Angebot. Wir arbeiten in Dresden und Sachsen, größere Flächen auch bundesweit nach Absprache.',
+      ] },
+    ],
+    faqs: [
+      ['Wann sollte man Fugen schneiden?', 'Zeitnah nach dem Betonieren, sobald der Beton begehbar und schneidbar ist. Den genauen Zeitpunkt stimmen wir mit Ihnen ab.'],
+      ['Wie tief wird eine Scheinfuge geschnitten?', 'Als Richtwert wird häufig ein Viertel bis ein Drittel der Plattendicke genannt. Maßgeblich sind die Vorgaben von Planer oder Statiker.'],
+      ['Wofür braucht man Fugen im Beton?', 'Sie geben dem Beton Sollbruchstellen, damit er kontrolliert und nicht unkontrolliert reißt.'],
+      ['Schneiden Sie auch bestehende Flächen nachträglich?', 'Trennschnitte in vorhandenen Flächen sind möglich, etwa bei Sanierung oder Umbau. Senden Sie uns ein Foto der Fläche.'],
+    ],
+  },
+  {
+    slug: 'entkernung-altbau-dresden',
+    icon: 'hammer',
+    date: '2026-11-16',
+    title: 'Entkernung im Altbau in Dresden: Ablauf und Schadstoffe',
+    h1: 'Entkernung im Altbau: Ablauf, Schadstoffe und Teilrückbau in Dresden',
+    description: 'Entkernung und Teilrückbau im Altbau in Dresden: Ablauf, Schadstoffe wie Asbest, Statik und Entsorgung. So planen Sie Sanierung und Rückbau.',
+    short: 'Selektiver Rückbau im Bestand: Ablauf, Schadstoffprüfung, Statik und Entsorgung.',
+    answer: 'Bei der Entkernung im Altbau werden einzelne Wände, Böden oder Einbauten gezielt entfernt, der Rest des Gebäudes bleibt stehen. Vorher klären Sie, welche Wände tragen und ob Schadstoffe wie Asbest verbaut sind. Wir übernehmen Teilrückbau mit Wandsäge und Kernbohrung, staubarm und lärmreduziert, auch in bewohnten Gebäuden.',
+    sections: [
+      { h: 'Was bedeutet Entkernung?', p: [
+        'Entkernung heißt, Räume im Inneren eines Gebäudes zurückzubauen, etwa Wände, Estrich, Bodenbeläge oder Installationen, ohne das Gebäude abzureißen. Das ist die Grundlage vieler Sanierungen und Umbauten, besonders bei Altbauten in Dresden.',
+      ] },
+      { h: 'Ablauf einer Entkernung', ol: [
+        'Bestandsaufnahme per Foto oder Besichtigung: Was soll weg, was muss bleiben?',
+        'Klärung der Statik: Tragende Wände und Decken werden nur nach Vorgabe des Statikers geöffnet.',
+        'Schadstoffprüfung bei älteren Gebäuden, bevor Material bewegt wird',
+        'Schutz von Boden, Treppenhaus und angrenzenden Bereichen',
+        'Rückbau: Schnitte und Bohrungen, dann Entfernen der Teile in handlichen Stücken',
+        'Abtransport, Entsorgung und aufgeräumte Übergabe',
+      ] },
+      { h: 'Schadstoffe im Altbau', p: [
+        'In Gebäuden aus früheren Jahrzehnten können Schadstoffe wie Asbest oder alte Mineralwolle verbaut sein. Besteht ein Verdacht, muss vorab eine Untersuchung erfolgen. Sanierung und Entsorgung übernehmen dafür zugelassene Fachfirmen. Sprechen Sie uns darauf an, wir planen den Ablauf mit Ihnen ab.',
+      ] },
+      { h: 'Womit wir zurückbauen', ul: [
+        '<strong>Wandsäge:</strong> exakte, gerade Schnitte in Wand und Decke, wenig Erschütterung',
+        '<strong>Kernbohrung:</strong> Ecken vorbohren und Durchführungen für neue Leitungen',
+        '<strong>Schlitzfräse:</strong> saubere Schlitze für neue Elektro- und Wasserleitungen',
+      ] },
+      { h: 'Was beeinflusst den Preis?', p: [
+        'Umfang und Material (Mauerwerk, Beton, Stahlbeton), Zugang und Etage, Schutz- und Entsorgungsaufwand sowie statische Maßnahmen. Senden Sie uns Fotos und eine kurze Beschreibung, dann erhalten Sie ein Angebot. Für runde Bohrungen rechnen Sie selbst im <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a>.',
+      ] },
+    ],
+    faqs: [
+      ['Arbeiten Sie auch in bewohnten Gebäuden?', 'Ja. Wir setzen auf lärmreduzierte, staubarme Technik und passende Schutzmaßnahmen.'],
+      ['Reißen Sie auch ganze Gebäude ab?', 'Unser Schwerpunkt sind Teilabbrüche und Rückbau im Bestand.'],
+      ['Wer prüft, ob eine Wand tragend ist?', 'Das klärt ein Statiker oder Architekt anhand der Bauunterlagen oder vor Ort. Wir arbeiten gern mit ihm zusammen.'],
+      ['Was passiert, wenn Asbest gefunden wird?', 'Dann übernehmen zugelassene Fachfirmen Sanierung und Entsorgung. Wir stimmen unsere Arbeiten darauf ab.'],
+    ],
+  },
 ];

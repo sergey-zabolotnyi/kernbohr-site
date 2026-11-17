@@ -13,6 +13,8 @@ import { crumbSchema, faqSchema, articleSchema } from '../../lib/schema.js';
 export function getStaticPaths() {
   return articles.map((a) => ({ params: { slug: a.slug }, props: { a } }));
 }
+// TEMPORÄR aus: Prüfvermerk erst anzeigen, wenn der Inhaber die Texte geprüft hat (auf true setzen).
+const zeigePruefvermerk = false;
 const { a } = Astro.props;
 const date = new Date(a.date).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
 const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
@@ -30,7 +32,7 @@ const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
       <div>
         <span class="eyebrow"><Icon name={a.icon} size={18} /> Ratgeber</span>
         <h1>{a.h1}</h1>
-        <p class="lead byline">Geprüft von {site.owner} <span class="pill pill-ok">Stand: {date}</span></p>
+        <p class="lead byline">{zeigePruefvermerk && <>Geprüft von {site.owner} </>}<span class="pill pill-ok">Stand: {date}</span></p>
       </div>
     </div>
   </section>

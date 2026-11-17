@@ -8,7 +8,7 @@
 - **Inhaber:** Ion Salcutan
 - **Adresse:** Burkersdorfer Weg 19, 01189 Dresden
 - **Telefon / WhatsApp:** +49 177 190 90 49
-- **E-Mail:** info.kernbohrexpert@gmail.com
+- **E-Mail:** info@kernbohr-expert.de
 - **Website:** https://kernbohr-expert.de/
 - **Öffnungszeiten (Telefon):** Mo–Sa 7:00–19:00 Uhr. Einsätze nach Absprache auch nachts und am Wochenende (nur im Text, nicht als Öffnungszeit eintragen)
 - **Gegründet:** 2017 (Inhaber in der Baubranche seit 2006)

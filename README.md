@@ -55,3 +55,16 @@ Kerni сам ничего не отправляет: когда клиент п�
 4. Пересобрать сайт (если `PUBLIC_CHAT_URL` уже задан, больше ничего менять не надо). Datenschutz уже содержит абзац про отправку заявки (нужна юридическая проверка; перед запуском принять договор об обработке данных (AVV/DPA) в аккаунтах Brevo и Groq).
 
 Цены бот не придумывает: он вызывает `berechne()` из `src/data/preisliste.js`. Лимит расходов задайте в кабинете провайдера API.
+
+## Aufrufstatistik ohne Cookies (optional, Umami)
+Nur aktiv in der Live-Version (`build:prod`) und nur, wenn in `.env` gesetzt:
+```
+PUBLIC_UMAMI_ID=<Website-ID aus Umami>
+# optional, nur bei eigenem Server: PUBLIC_UMAMI_SRC=https://<dein-umami>/script.js
+```
+Gezählt werden: Anruf, WhatsApp, E-Mail (Klicks), Rechner genutzt, PDF-Angebot, Formular, Kerni-Anfrage. Der Datenschutz-Text wechselt automatisch (Abschnitt 4). Vor Aktivierung: Umami-Konto anlegen (Cloud oder selbst gehostet), Auftragsverarbeitung bzw. Standort prüfen, Datenschutztext juristisch gegenlesen.
+
+## Neue Seiten (Nov 2026)
+- `/kernbohrung-rechner/` (Rechner als eigene Seite) und `/kernbohrung-<mm>-mm/` für 68, 82, 100, 125, 150, 200 mm. Daten: `src/data/durchmesserSeiten.js`, Preise kommen aus `preisliste.js`.
+- Längere Texte der Leistungsseiten: `src/data/serviceSections.js`. Fachangaben (Richtwerte) bitte von Ion gegenlesen lassen.
+- Sitemap: `lastmod` = letzter Git-Commit der jeweiligen Datei (benötigt Git beim Build, sonst Build-Datum).

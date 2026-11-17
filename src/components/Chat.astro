@@ -338,6 +338,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
           if (!r.ok || !j.ok) throw new Error('send');
           box.innerHTML = `<b>${esc(t.thanks)}</b>${esc(rueckruf())} ${esc(t.wa)}`;
           history.length = 0; formShown = false;
+          if (window.kbTrack) window.kbTrack('Kerni-Anfrage');
         } catch {
           btn.disabled = false; btn.textContent = t.send; showErr(t.eSend);
         }
