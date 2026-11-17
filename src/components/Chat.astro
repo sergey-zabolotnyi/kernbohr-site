@@ -32,7 +32,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   #kb-chat{position:fixed;right:14px;bottom:72px;z-index:60;font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
   .kc-fab{display:flex;align-items:center;gap:.45rem;padding:.7rem 1rem;border:0;border-radius:999px;background:#171c20;color:#fff;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.35);cursor:pointer;border:2px solid #e8590c;min-height:48px}
   .kc-fab:hover{background:#232b32}
-  .kc-panel{position:absolute;right:0;bottom:60px;width:min(380px,calc(100vw - 28px));height:min(560px,calc(100vh - 150px));display:flex;flex-direction:column;background:#fff;color:#1b1f23;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;animation:kc-in .2s ease-out}
+  .kc-panel{position:absolute;right:0;bottom:60px;width:min(380px,calc(100vw - 28px));height:auto;max-height:min(680px,calc(100vh - 120px));max-height:min(680px,calc(100dvh - 120px));padding:0;margin:0;display:flex;flex-direction:column;background:#fff;color:#1b1f23;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden;animation:kc-in .2s ease-out}
   .kc-panel[hidden]{display:none}
   @keyframes kc-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   .kc-panel header{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;background:#171c20;color:#fff;border-bottom:3px solid #e8590c}
@@ -47,10 +47,10 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-on{position:absolute;right:-1px;bottom:-1px;width:11px;height:11px;border-radius:50%;background:#2ecc71;border:2px solid #171c20}
   .kc-panel header small{font:inherit;font-weight:400;opacity:.8;font-size:.82rem;margin:0}
   .kc-x{background:none;border:0;color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;width:36px;height:36px}
-  .kc-consent{padding:1rem;font-size:.9rem;overflow:auto}
+  .kc-consent{padding:1rem;font-size:.9rem;overflow:auto;min-height:0;flex:0 1 auto}
   .kc-consent p{margin:0 0 .8rem}
   .kc-ok{width:100%;padding:.8rem;border:0;border-radius:10px;background:#c2410c;color:#fff;font-weight:700;cursor:pointer;min-height:46px}
-  .kc-log{flex:1;overflow-y:auto;padding:.8rem;display:flex;flex-direction:column;gap:.5rem;background:#f4f6f8}
+  .kc-log{flex:1 1 auto;min-height:min(260px,40vh);min-height:min(260px,40dvh);overscroll-behavior:contain;overflow-y:auto;padding:.8rem;display:flex;flex-direction:column;gap:.5rem;background:#f4f6f8}
   .kc-log[hidden],.kc-chips[hidden],.kc-form[hidden],.kc-consent[hidden]{display:none}
   .kc-m{max-width:88%;padding:.55rem .75rem;border-radius:14px;white-space:pre-wrap;word-wrap:break-word;font-size:.92rem}
   .kc-m a{color:inherit;text-decoration:underline;font-weight:600}
@@ -81,6 +81,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-th{position:relative;width:54px;height:54px}
   .kc-th img{width:100%;height:100%;object-fit:cover;border-radius:8px;border:1px solid #c9ced4}
   .kc-th button{position:absolute;top:-6px;right:-6px;width:22px;height:22px;border-radius:50%;border:0;background:#171c20;color:#fff;font-size:.9rem;line-height:1;cursor:pointer}
+  .kc-m.kc-lead,.kc-m.kc-price{max-width:100%}
   .kc-price{align-self:stretch;background:#fff;border:2px solid #171c20;border-radius:12px;padding:.7rem .8rem;font-size:.88rem}
   .kc-price b{display:block;margin-bottom:.4rem}
   .kc-pg{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.6rem}
@@ -99,7 +100,8 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   @media (min-width:769px){#kb-chat{bottom:20px}}
   @media (max-width:768px){
     #kb-chat{bottom:calc(66px + env(safe-area-inset-bottom))}
-    .kc-panel{position:fixed;right:8px;left:8px;width:auto;bottom:calc(60px + env(safe-area-inset-bottom));height:min(70vh,520px);height:min(72dvh,540px)}
+    .kc-panel:has(.kc-lead) .kc-chips,.kc-panel:has(.kc-price) .kc-chips{display:none}
+    .kc-panel{position:fixed;right:8px;left:8px;width:auto;bottom:calc(60px + env(safe-area-inset-bottom));height:auto;max-height:calc(100vh - 144px - env(safe-area-inset-bottom));max-height:calc(100dvh - 144px - env(safe-area-inset-bottom))}
   }
 </style>
 
@@ -301,7 +303,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         + '<p class="kc-err" role="alert" hidden></p>'
         + `<button type="button" class="kc-send" disabled>${esc(t.send)}</button>`
         + `<button type="button" class="kc-wa2">${esc(t.waBtn)}</button><p class="kc-wan">${esc(t.waNote)}</p>`;
-      log.appendChild(box); log.scrollTop = log.scrollHeight;
+      log.appendChild(box); requestAnimationFrame(() => { log.scrollTop = Math.max(0, log.scrollTop + box.getBoundingClientRect().top - log.getBoundingClientRect().top - 8); });
       const q = (c) => box.querySelector(c);
       const cb = q('.kc-cb'), btn = q('.kc-send'), err = q('.kc-err'), ph = q('.kc-ph'), file = q('.kc-file'), addL = q('.kc-add');
       const showErr = (m) => { err.textContent = m; err.hidden = false; };
@@ -364,7 +366,7 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         + `<label>${esc(t.material)}<select class="kc-pm"><option value="beton">${esc(t.beton)}</option><option value="mauerwerk">${esc(t.mauer)}</option></select></label></div>`
         + '<div class="kc-pt" aria-live="polite"></div><ul class="kc-pl"></ul>'
         + `<p class="kc-pn">${esc(t.priceNote)}</p><button type="button" class="kc-pdf">${esc(t.pdf)}</button>`;
-      log.appendChild(box); log.scrollTop = log.scrollHeight;
+      log.appendChild(box); requestAnimationFrame(() => { log.scrollTop = Math.max(0, log.scrollTop + box.getBoundingClientRect().top - log.getBoundingClientRect().top - 8); });
       const q = (c) => box.querySelector(c);
       q('.kc-pm').value = pre.material === 'mauerwerk' ? 'mauerwerk' : 'beton';
       let last = null;
