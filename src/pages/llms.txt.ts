@@ -29,6 +29,7 @@ Kurzfakten:
 - [Preise und Preisliste 2026](${u}/preise/): komplette Preise je cm Bohrtiefe, Zuschläge, Beispielrechnungen
 - [Kernbohrung](${u}/kernbohrung/)
 - [Leistungen](${u}/leistungen/)
+- [Kernbohrung in Beton und Stahlbeton](${u}/kernbohrung-beton-stahlbeton/)
 - [Einsatzgebiet](${u}/einsatzgebiet/)
 - [Häufige Fragen](${u}/faq/)
 - [Bohrdurchmesser nach Anwendung](${u}/bohrdurchmesser/): Welcher Durchmesser passt für Dunstabzug, Wärmepumpe, Klimagerät, Abwasser und mehr, mit Faustregel

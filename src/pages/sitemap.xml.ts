@@ -27,6 +27,7 @@ export function GET() {
     ['/leistungen/', gitDate('src/pages/leistungen.astro')],
     ['/preise/', preiseDate],
     ['/kernbohrung-rechner/', preiseDate],
+    ['/kernbohrung-beton-stahlbeton/', preiseDate],
     ['/ratgeber/', gitDate('src/pages/ratgeber/index.astro')],
     ['/glossar/', gitDate('src/data/glossar.js')],
     ['/bohrdurchmesser/', gitDate('src/data/durchmesser.js')],

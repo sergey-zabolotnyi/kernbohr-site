@@ -16,6 +16,7 @@ const href = p.slug ? `/referenzen/${p.slug}/` : null;
     <p class="meta">{p.ort}</p>
     {p.kurz && <p>{p.kurz}</p>}
     <div class="pills">
+      {p.anzahl && <span class="pill pill-dark">{p.anzahl} Bohrungen</span>}
       {p.durchmesser && <span class="pill pill-accent">Ø {p.durchmesser} mm</span>}
       {p.tiefe && <span class="pill pill-accent">{p.tiefe} cm tief</span>}
       {p.material && <span class="pill pill-soft">{p.material}</span>}
