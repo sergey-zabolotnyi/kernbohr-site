@@ -60,7 +60,7 @@ export const videoSchema = (v, base = site.url) => ({
   description: v.alt,
   thumbnailUrl: `${base}/posters/${v.id}.jpg`,
   contentUrl: `${base}/videos/${v.id}.mp4`,
-  uploadDate: '2026-11-07',
+  uploadDate: v.id?.startsWith('ikea-') ? '2026-11-17' : '2026-11-07',
 });
 
 // HowTo-Schema für den Ablauf (Schritte als [Name, Text]).

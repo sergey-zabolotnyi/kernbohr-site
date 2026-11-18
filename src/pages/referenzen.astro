@@ -12,9 +12,9 @@ import { allIds, items, heroStyle } from '../lib/media.js';
 import { crumbSchema, videoSchema } from '../lib/schema.js';
 
 // Dekor-Bild (hero-bg) nicht in der Galerie zeigen.
-const ids = allIds().filter((id) => id !== 'hero-bg');
+const ids = allIds().filter((id) => id !== 'hero-bg' && !id.startsWith('ikea-'));
 const hasMedia = items(ids).length > 0;
-const videos = items(ids).filter((m) => m.type === 'video');
+const videos = items(allIds().filter((id) => id !== 'hero-bg')).filter((m) => m.type === 'video');
 ---
 <Base
   title="Referenzen & Einblicke | Kernbohr-Expert Dresden"

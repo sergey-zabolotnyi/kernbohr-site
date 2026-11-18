@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import HeroPreload from '../components/HeroPreload.astro';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema, faqSchema } from '../lib/schema.js';
+import { site } from '../data/site.js';
+import { satz, berechne, eur, regeln } from '../data/preisliste.js';
+
+const hero = 'werk-wand-gross';
+const durchmesser = [68, 82, 100, 125, 150, 200];
+const zeilen = durchmesser.map((mm) => ({ mm, s: satz(mm, 'beton'), b30: berechne({ d: mm, tiefe: 30, material: 'beton' }), b50: berechne({ d: mm, tiefe: 50, material: 'beton' }) }));
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich brauche eine Kernbohrung in Beton/Stahlbeton. Foto der Baustelle sende ich gleich mit.')}`;
+const faqs = [
+  ['Was kostet eine Kernbohrung in Beton?', `Die Preise richten sich nach Durchmesser und Bohrtiefe. Ø 150 mm kostet in Beton oder Stahlbeton ${eur(satz(150, 'beton'))} je cm Bohrtiefe (Preisliste 2026, brutto). Dazu kommen Anfahrt (${eur(regeln.anfahrt)} im Umkreis bis ca. 30 km um Dresden) und Pilotbohrung. Der Mindestauftragswert beträgt ${eur(regeln.mindestpreis)}.`],
+  ['Kostet Stahlbeton mehr als Beton?', `Beton und Stahlbeton haben bei uns denselben Preis je cm Bohrtiefe. Trifft die Bohrkrone Bewehrungsstahl ab 1,5 cm Durchmesser, berechnen wir ${eur(regeln.stahlProCm)} je cm Stahl (Einzelschnitt) zusätzlich.`],
+  ['Wie tief können Sie in Beton bohren?', 'Wir bohren bis zu 2 m tief. Bei großen Durchmessern und großen Tiefen planen wir Bohrständer, Wasser und Strom vorab mit Ihnen ab.'],
+  ['Wie groß kann eine Kernbohrung in Beton sein?', 'Unsere Preisliste deckt Durchmesser von 14 bis 500 mm ab. Typische Größen sind Ø 68 mm für Dosen, Ø 82 bis 125 mm für Leitungen und Abwasser sowie Ø 150 bis 200 mm für Lüftung und Wärmepumpen.'],
+  ['Brauchen Sie Wasser und Strom?', 'Ja, zum Nassbohren. Wasser kann unser Team in Kanistern selbst mitbringen, Strom nutzen wir vor Ort. Wo das nicht möglich ist, klären wir es im Vorfeld, zum Beispiel mit Wassersauger und Bediener.'],
+  ['Darf ich in eine tragende Betonwand oder Decke bohren?', 'Bei tragenden Bauteilen ist vorab eine statische Prüfung nötig. Das klären Sie bitte mit Ihrem Statiker oder Planer. Wir stimmen uns auf Wunsch gern mit ihm ab.'],
+  ['Wie läuft eine Bohrung über Kopf oder schräg?', 'Das ist möglich. Für Überkopf- und Schrägbohrungen berechnen wir einen Zuschlag von 50 % auf den Bohrpreis.'],
+];
+const schema = [
+  crumbSchema([['Leistungen', '/leistungen/'], ['Beton und Stahlbeton', '/kernbohrung-beton-stahlbeton/']]),
+  faqSchema(faqs),
+];
+---
+<Base
+  title="Kernbohrung in Beton und Stahlbeton: Kosten Dresden"
+  description="Kernbohrung in Beton und Stahlbeton in Dresden: Preise je cm Bohrtiefe, Beispielrechnungen, Bewehrung, Tiefe bis 2 m. Mit Praxisbeispiel und Rechner."
+  path="/kernbohrung-beton-stahlbeton/"
+  schema={schema}
+>
+  <Breadcrumbs items={[['Leistungen', '/leistungen/'], ['Beton und Stahlbeton']]} />
+  <HeroPreload slot="head" id={hero} />
+  <section class="hero small" style={heroStyle(hero)}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Kernbohrung in Beton</span>
+        <h1>Kernbohrung in Beton und Stahlbeton</h1>
+        <p class="lead">Sauber, erschütterungsarm und maßgenau: Wir bohren Beton und Stahlbeton mit Diamantkrone und Wasserkühlung, bis 2 m tief.</p>
+        <div class="btns">
+          <a class="btn btn-main" href="/kernbohrung-rechner/"><Icon name="euro" size={20} /> Richtpreis berechnen</a>
+          <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> Foto senden</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <article class="prose">
+        <div class="callout"><strong>Kurze Antwort</strong>Eine Kernbohrung in Beton oder Stahlbeton kostet bei Ø 150 mm {eur(satz(150, 'beton'))} je cm Bohrtiefe. Eine Bohrung durch 30 cm Beton kostet damit {eur(berechne({ d: 150, tiefe: 30, material: 'beton' }).total)} brutto inklusive Anfahrt und Pilotbohrung. Mindestauftragswert: {eur(regeln.mindestpreis)}.</div>
+
+        <h2>Preise nach Durchmesser (Beton und Stahlbeton)</h2>
+        <div class="table-scroll" tabindex="0" role="group" aria-label="Tabelle (seitlich scrollbar)">
+          <table class="facts">
+            <thead><tr><th>Durchmesser</th><th>Preis je cm</th><th>Beispiel 30 cm tief</th><th>Beispiel 50 cm tief</th></tr></thead>
+            <tbody>
+              {zeilen.map((z) => <tr><th scope="row"><a href={`/kernbohrung-${z.mm}-mm/`}>Ø {z.mm} mm</a></th><td>{eur(z.s)}</td><td>{eur(z.b30.total)}</td><td>{eur(z.b50.total)}</td></tr>)}
+            </tbody>
+          </table>
+        </div>
+        <p>Preisliste 2026, brutto. Die Beispiele gelten für eine Bohrung inklusive Anfahrt ({eur(regeln.anfahrt)} im Umkreis bis ca. 30 km um Dresden) und Pilotbohrung. Tiefe und Anzahl sind Beispiele, Ihren Richtwert berechnet der <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a>.</p>
+
+        <h2>Was ist im Preis enthalten, was kostet extra?</h2>
+        <ul class="checks">
+          <li><Icon name="check" size={18} /><span><strong>Enthalten:</strong> Bohrung mit Diamantkrone, Nassbohren, Pilotbohrung für den Bohrständer, Anfahrt und Baustelleneinrichtung.</span></li>
+          <li><Icon name="check" size={18} /><span><strong>Extra:</strong> Bewehrungsstahl ab 1,5 cm ({eur(regeln.stahlProCm)} je cm), Überkopf- und Schrägbohrung (+50 %), Wassersauger mit Bediener ({eur(regeln.wassersaugerTag)} je Tag), Gerüststellung ({eur(regeln.gerueststellungTag)} je Tag).</span></li>
+          <li><Icon name="check" size={18} /><span><strong>Zeitzuschläge:</strong> nachts +75 %, Samstag, Sonntag und Feiertag +100 % auf den Bohrpreis.</span></li>
+        </ul>
+
+        <h2>Beton und Stahlbeton bohren: worauf es ankommt</h2>
+        <ul>
+          <li><strong>Bewehrung:</strong> In Stahlbeton liegt Bewehrungsstahl im Bauteil. Die Diamantkrone schneidet ihn durch, das dauert länger. Ist die Lage bekannt, lässt sich oft eine Stelle ohne Stahltreffer wählen.</li>
+          <li><strong>Tragende Bauteile:</strong> Vor Bohrungen in Decken, Unterzügen oder tragenden Wänden gehört eine statische Prüfung dazu.</li>
+          <li><strong>Wasser und Strom:</strong> Nassbohren braucht beides. Wir bringen Wasser bei Bedarf selbst mit.</li>
+          <li><strong>Tiefe:</strong> Bis 2 m Bohrtiefe sind möglich, bei größeren Durchmessern sorgt ein stabil befestigter Bohrständer für ein maßhaltiges Ergebnis.</li>
+        </ul>
+
+        <h2>Praxisbeispiel: 11 Bohrungen Ø 150 mm in Stahlbeton</h2>
+        <p>Bei IKEA Dresden haben wir am 17.11.2026 elf Kernbohrungen mit Ø 150 mm in Stahlbeton ausgeführt, im Innenbereich und auf dem Parkdeck, als Vorbereitung für Ladestationen für Elektrofahrzeuge. <a href="/referenzen/ikea-dresden-ladeinfrastruktur/">Zum Projekt mit Fotos und Videos</a></p>
+
+        <h2>Häufige Fragen</h2>
+        {faqs.map(([q, a]) => (
+          <details><summary>{q}</summary><p>{a}</p></details>
+        ))}
+      </article>
+    </div>
+  </section>
+
+  <CtaBand title="Foto senden, Festpreis erhalten" text="Schicken Sie uns ein Foto der Bohrstelle mit Maßband. Wir nennen Ihnen Durchmesser und Preis, kostenlos und unverbindlich." />
+</Base>

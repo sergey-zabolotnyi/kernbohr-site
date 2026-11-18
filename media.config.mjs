@@ -28,6 +28,20 @@ export const entries = [
   { id: 'werk-oeffnung-geruest', file: '011', type: 'image',
     alt: 'Hilti-Kernbohrgerät auf Schiene am Gerüst vor einer Öffnung aus drei überlappenden Bohrungen', caption: 'Öffnung aus drei Bohrungen, Arbeit am Gerüst' },
 
+  // ===== Referenz IKEA Dresden (17.11.2026) =====
+  { id: 'ikea-dach-bohrstaender', file: 'ikea-01', type: 'image',
+    alt: 'Hilti-Kernbohrgerät auf Bohrständer auf dem offenen Parkdeck, im Hintergrund Absperrzaun', caption: 'Kernbohrgerät auf dem Parkdeck' },
+  { id: 'ikea-dach-abend', file: 'ikea-02', type: 'image',
+    alt: 'Kernbohrgerät auf Bohrständer auf der abgesperrten Parkdeck-Fläche im Abendlicht', caption: 'Parkdeck im Abendlicht, Arbeitsbereich abgesperrt' },
+  { id: 'ikea-innen-bohrstaender', file: 'ikea-03', type: 'image',
+    alt: 'Kernbohrgerät auf Bohrständer im Innenbereich vor einer Fensterfront', caption: 'Bohrständer im Innenbereich' },
+  { id: 'ikea-bohrung-fertig', file: 'ikea-04', type: 'image',
+    alt: 'Fertige Kernbohrung Ø 150 mm in einer verputzten Wand', caption: 'Fertige Bohrung Ø 150 mm' },
+  { id: 'ikea-bohrung-schiene', file: 'ikea-05', type: 'image',
+    alt: 'Kernbohrgerät auf Schiene neben einer fertigen Bohrung in einer Wandecke', caption: 'Schienenbohrgerät an der Wand' },
+  { id: 'ikea-bohrkern', file: 'ikea-06', type: 'image',
+    alt: 'Diamant-Bohrkrone und ein Bohrkern aus Mauerwerk (Ziegel) nebeneinander', caption: 'Bohrkrone und Bohrkern aus Ziegelmauerwerk' },
+
   // ===== Videos =====
   { id: 'video-markierung', file: 'video001', type: 'video',
     alt: 'Markierte Schnitt- und Bohrstellen an Wand und Decke in einem Altbauraum', caption: 'Vorbereitung: Bohr- und Schnittstellen markieren' },
@@ -39,4 +53,11 @@ export const entries = [
     alt: 'Hilti-Kernbohrgerät auf Schiene vor einer Mauerwerkswand am Fenster', caption: 'Kernbohrgerät auf Schiene in der Mauerwerkswand' },
   { id: 'video-bohrkern-80', file: 'video005', type: 'video',
     alt: 'Betonbohrkern Ø 80 mm, 1 m lang, mit Bewehrungsstahl', caption: 'Bohrkern Ø 80 mm, 1 m tief, mit Bewehrung' },
+
+  { id: 'ikea-video-dach', file: 'ikea-video-dach', type: 'video',
+    alt: 'Kernbohrgerät auf Bohrständer auf dem Parkdeck bei IKEA Dresden', caption: 'Parkdeck: Kernbohrgerät im Einsatz' },
+  { id: 'ikea-video-bohrung-1', file: 'ikea-video-bohrung-1', type: 'video',
+    alt: 'Hilti-Kernbohrgerät auf Schiene bohrt in einer Wand, daneben Bohrkern und Werkzeug', caption: 'Innenbereich: Bohrung mit Schienengerät' },
+  { id: 'ikea-video-bohrung-2', file: 'ikea-video-bohrung-2', type: 'video',
+    alt: 'Nahaufnahme eines Hilti-Kernbohrgeräts auf Schiene beim Bohren mit Wasserzufuhr', caption: 'Innenbereich: Nassbohren mit Wasserzufuhr' },
 ];

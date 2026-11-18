@@ -2,6 +2,7 @@
 import { site } from '../data/site.js';
 import { services } from '../data/services.js';
 import { articles } from '../data/articles.js';
+import { projekte } from '../data/projekte.js';
 import { orte } from '../data/orte.js';
 
 export function GET() {
@@ -28,6 +29,7 @@ Kurzfakten:
 - [Preise und Preisliste 2026](${u}/preise/): komplette Preise je cm Bohrtiefe, Zuschläge, Beispielrechnungen
 - [Kernbohrung](${u}/kernbohrung/)
 - [Leistungen](${u}/leistungen/)
+- [Kernbohrung in Beton und Stahlbeton](${u}/kernbohrung-beton-stahlbeton/)
 - [Einsatzgebiet](${u}/einsatzgebiet/)
 - [Häufige Fragen](${u}/faq/)
 - [Bohrdurchmesser nach Anwendung](${u}/bohrdurchmesser/): Welcher Durchmesser passt für Dunstabzug, Wärmepumpe, Klimagerät, Abwasser und mehr, mit Faustregel
@@ -45,7 +47,7 @@ ${orte.map((o) => `- [Kernbohrung ${o.name}](${u}/kernbohrung-in-${o.slug}/)`).j
 ## Ratgeber
 ${articles.map((a) => `- [${a.title}](${u}/ratgeber/${a.slug}/): ${a.short}`).join('\n')}
 
-## Optional
+${projekte.some((p) => p.slug) ? `## Referenzen\n${projekte.filter((p) => p.slug).map((p) => `- [${p.titel}](${u}/referenzen/${p.slug}/): ${p.kurz}`).join('\n')}\n\n` : ''}## Optional
 - [Ausführliche Fassung für KI](${u}/llms-full.txt)
 - [Maschinenlesbare Firmendaten (JSON)](${u}/firmendaten.json)
 `;
