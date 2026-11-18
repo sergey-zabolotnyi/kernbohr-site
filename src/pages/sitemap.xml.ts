@@ -3,6 +3,7 @@ import { services } from '../data/services.js';
 import { articles } from '../data/articles.js';
 import { orte } from '../data/orte.js';
 import { durchmesserSeiten } from '../data/durchmesserSeiten.js';
+import { projekte } from '../data/projekte.js';
 
 // lastmod: echtes Änderungsdatum der Datendatei bzw. Seitenquelle (letzter Git-Commit), nicht das Build-Datum.
 // Google ignoriert lastmod, wenn es überall gleich ist. Fallback: heute (z. B. ohne Git).
@@ -39,6 +40,7 @@ export function GET() {
     ...services.map((s) => [`/${s.slug}/`, servicesDate]),
     ...orte.map((o) => [`/kernbohrung-in-${o.slug}/`, orteDate]),
     ...durchmesserSeiten.map((d) => [`/kernbohrung-${d.mm}-mm/`, gitDate('src/data/durchmesserSeiten.js')]),
+    ...projekte.filter((p) => p.slug).map((p) => [`/referenzen/${p.slug}/`, p.datum]),
     ...articles.map((a) => [`/ratgeber/${a.slug}/`, a.date || gitDate('src/data/articles.js')]),
   ];
   const xml =

@@ -139,6 +139,66 @@
       "h": 1530,
       "alt": "Gefräster Schlitz entlang eines Gewölbebogens mit Abzweig zur Wand",
       "caption": "Schlitz mit Abzweig"
+    },
+    "ikea-dach-bohrstaender": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Hilti-Kernbohrgerät auf Bohrständer auf dem offenen Parkdeck, im Hintergrund Absperrzaun",
+      "caption": "Kernbohrgerät auf dem Parkdeck"
+    },
+    "ikea-dach-abend": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Kernbohrgerät auf Bohrständer auf der abgesperrten Parkdeck-Fläche im Abendlicht",
+      "caption": "Parkdeck im Abendlicht, Arbeitsbereich abgesperrt"
+    },
+    "ikea-innen-bohrstaender": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Kernbohrgerät auf Bohrständer im Innenbereich vor einer Fensterfront",
+      "caption": "Bohrständer im Innenbereich"
+    },
+    "ikea-bohrung-fertig": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1080,
+      "h": 1920,
+      "alt": "Fertige Kernbohrung Ø 150 mm in einer verputzten Wand",
+      "caption": "Fertige Bohrung Ø 150 mm"
+    },
+    "ikea-bohrung-schiene": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Kernbohrgerät auf Schiene neben einer fertigen Bohrung in einer Wandecke",
+      "caption": "Schienenbohrgerät an der Wand"
+    },
+    "ikea-bohrkern": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Diamant-Bohrkrone und ein Bohrkern aus Mauerwerk (Ziegel) nebeneinander",
+      "caption": "Bohrkrone und Bohrkern aus Ziegelmauerwerk"
     }
   },
   "videos": {
@@ -171,6 +231,21 @@
       "alt": "Rundgang durch einen Altbau mit grün markierten Schlitztrassen und rot markierten Durchführungen an Wand und Gewölbe",
       "caption": "Vorher: markierte Trassen für die Schlitze",
       "size": 1476892
+    },
+    "ikea-video-dach": {
+      "alt": "Kernbohrgerät auf Bohrständer auf dem Parkdeck bei IKEA Dresden",
+      "caption": "Parkdeck: Kernbohrgerät im Einsatz",
+      "size": 977737
+    },
+    "ikea-video-bohrung-1": {
+      "alt": "Hilti-Kernbohrgerät auf Schiene bohrt in einer Wand, daneben Bohrkern und Werkzeug",
+      "caption": "Innenbereich: Bohrung mit Schienengerät",
+      "size": 3572707
+    },
+    "ikea-video-bohrung-2": {
+      "alt": "Nahaufnahme eines Hilti-Kernbohrgeräts auf Schiene beim Bohren mit Wasserzufuhr",
+      "caption": "Innenbereich: Nassbohren mit Wasserzufuhr",
+      "size": 4362614
     }
   }
 }

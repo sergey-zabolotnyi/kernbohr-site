@@ -1,0 +1,112 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Gallery from '../../components/Gallery.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import HeroPreload from '../../components/HeroPreload.astro';
+import { projekte } from '../../data/projekte.js';
+import { site } from '../../data/site.js';
+import { items, heroStyle } from '../../lib/media.js';
+import { crumbSchema, faqSchema, videoSchema } from '../../lib/schema.js';
+
+export function getStaticPaths() {
+  return projekte.filter((p) => p.slug).map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+const datum = new Date(p.datum).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
+const path = `/referenzen/${p.slug}/`;
+const hero = 'ikea-dach-abend';
+
+const faqs = [
+  ['Was wurde bei IKEA Dresden gebohrt?', 'Wir haben am 17.11.2026 Kernbohrungen mit Ø 150 mm ausgeführt, im Innenbereich und auf dem Parkdeck. Die Öffnungen dienen als Vorbereitung für künftige Ladestationen für Elektrofahrzeuge.'],
+  ['Wofür braucht man Kernbohrungen bei Ladeinfrastruktur?', 'Für Ladestationen müssen Kabel und Leerrohre durch Wände, Decken oder Bodenplatten geführt werden. Kernbohrungen liefern saubere, maßhaltige Öffnungen ohne Schlagwirkung auf das Bauteil.'],
+  ['Was kostet eine Kernbohrung mit Ø 150 mm?', 'Der Preis richtet sich nach Material und Bohrtiefe. Die Preise je cm sehen Sie auf unserer Seite zu Ø 150 mm, den Gesamtpreis berechnet der Kernbohr-Rechner. Der Mindestauftragswert beträgt 250 €.'],
+  ['Führen Sie Kernbohrungen auch für Gewerbe und Bauunternehmen aus?', 'Ja. Wir arbeiten für Bauunternehmen, Elektrobetriebe, Planungsbüros und Betreiber von Gewerbeobjekten in Dresden und Sachsen. Senden Sie uns Bohrliste oder Plan, wir erstellen ein Angebot.'],
+];
+const medien = items(['ikea-dach-bohrstaender', 'ikea-innen-bohrstaender', 'ikea-bohrung-fertig', 'ikea-video-dach', 'ikea-video-bohrung-1', 'ikea-video-bohrung-2']).filter((m) => m.type === 'video');
+const schema = [
+  crumbSchema([['Referenzen', '/referenzen/'], [p.titel, path]]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: p.titel,
+    description: p.kurz,
+    datePublished: '2026-11-18',
+    dateModified: '2026-11-18',
+    inLanguage: 'de-DE',
+    image: `${site.url}/images/${p.foto}-1600.webp`,
+    author: { '@id': `${site.url}/#business` },
+    publisher: { '@id': `${site.url}/#business` },
+    mainEntityOfPage: `${site.url}${path}`,
+  },
+  faqSchema(faqs),
+  ...medien.map((v) => videoSchema(v)),
+];
+---
+<Base
+  title="Referenz IKEA Dresden: Kernbohrung Ø 150 mm | Kernbohr-Expert"
+  description="Referenz: Kernbohrungen Ø 150 mm im Innenbereich und auf dem Parkdeck bei IKEA Dresden, als Vorbereitung für E-Ladestationen. Mit Fotos und Videos."
+  path={path}
+  schema={schema}
+>
+  <Breadcrumbs items={[['Referenzen', '/referenzen/'], [p.titel]]} />
+  <HeroPreload slot="head" id={hero} />
+  <section class="hero small" style={heroStyle(hero)}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Referenz</span>
+        <h1>Kernbohrungen für E-Ladeinfrastruktur bei IKEA Dresden</h1>
+        <p class="lead byline"><span class="pill pill-ok">Ausgeführt am {datum}</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <article class="prose">
+        <div class="callout"><strong>Kurz gesagt</strong>Am 17.11.2026 haben wir bei IKEA Dresden Kernbohrungen mit Ø 150 mm ausgeführt: im Innenbereich und auf dem Parkdeck. Die Öffnungen bereiten künftige Ladestationen für Elektrofahrzeuge vor.</div>
+
+        <h2>Eckdaten</h2>
+        <div class="table-scroll" tabindex="0" role="group" aria-label="Eckdaten (seitlich scrollbar)">
+          <table class="facts">
+            <tbody>
+              <tr><th>Ort</th><td>IKEA Dresden, Innenbereich und Parkdeck</td></tr>
+              <tr><th>Datum</th><td>{datum}</td></tr>
+              <tr><th>Bohrdurchmesser</th><td>Ø 150 mm</td></tr>
+              <tr><th>Material</th><td>Beton und Mauerwerk (Ziegel)</td></tr>
+              <tr><th>Verfahren</th><td>Nassbohren mit Hilti-Kernbohrgerät, auf dem Parkdeck mit Bohrständer, im Innenbereich auch mit Schiene</td></tr>
+              <tr><th>Zweck</th><td>Vorbereitung von Ladestationen für Elektrofahrzeuge</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Die Aufgabe</h2>
+        <p>Für den Ausbau der Ladeinfrastruktur müssen Leitungen und Leerrohre durch Bauteile geführt werden. Dafür waren Durchführungen mit Ø 150 mm im Innenbereich und auf dem Parkdeck nötig. Die Bohrungen mussten maßhaltig und sauber ausgeführt werden, ohne Schlagwirkung auf das umgebende Bauteil.</p>
+
+        <h2>So sind wir vorgegangen</h2>
+        <ul>
+          <li><strong>Parkdeck:</strong> Der Arbeitsbereich war abgesperrt. Das Kernbohrgerät stand auf dem Bohrständer, gekühlt wurde mit Wasser.</li>
+          <li><strong>Innenbereich:</strong> Im Mauerwerk haben wir mit dem Schienenbohrgerät gebohrt, der Bohrkern aus Ziegel ist auf den Fotos zu sehen. Auch hier mit Wasserkühlung.</li>
+          <li><strong>Ergebnis:</strong> Saubere, runde Öffnungen mit Ø 150 mm, bereit für die Leitungsführung.</li>
+        </ul>
+
+        <h2>Warum Kernbohrung für Ladeinfrastruktur?</h2>
+        <p>Beim Kernbohren schneidet eine diamantbesetzte Bohrkrone einen runden Kern aus dem Bauteil. Das ist erschütterungsarm, die Kanten bleiben sauber und der Durchmesser stimmt genau. Gerade im laufenden Betrieb eines Gewerbeobjekts ist das ein Vorteil: Es entsteht kaum Lärm und Staub, weil mit Wasser gebohrt wird.</p>
+        <p>Welcher Durchmesser zu welchem Rohr passt, zeigt unsere Übersicht <a href="/bohrdurchmesser/">Bohrdurchmesser</a>. Die Kosten für Ø 150 mm finden Sie auf der Seite <a href="/kernbohrung-150-mm/">Kernbohrung 150 mm</a>, den Gesamtpreis für Ihr Vorhaben berechnet der <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a>.</p>
+
+        <h2>Häufige Fragen</h2>
+        {faqs.map(([q, ans]) => (
+          <details>
+            <summary>{q}</summary>
+            <p>{ans}</p>
+          </details>
+        ))}
+      </article>
+    </div>
+  </section>
+
+  <Gallery ids={['ikea-dach-bohrstaender', 'ikea-dach-abend', 'ikea-video-dach']} eyebrow="Parkdeck" title="Bohrungen auf dem Parkdeck" />
+  <Gallery ids={['ikea-innen-bohrstaender', 'ikea-bohrung-schiene', 'ikea-bohrung-fertig', 'ikea-bohrkern', 'ikea-video-bohrung-1', 'ikea-video-bohrung-2']} eyebrow="Innenbereich" title="Bohrungen im Innenbereich" dark />
+
+  <CtaBand title="Ähnliches Vorhaben?" text="Senden Sie uns Bohrliste, Plan oder ein Foto der Baustelle. Sie erhalten kostenlos ein Angebot." />
+</Base>
