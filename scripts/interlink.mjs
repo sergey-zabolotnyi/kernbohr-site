@@ -33,6 +33,7 @@ const REGELN = [
   ['Handwerkerleistungen|Steuerbonus|§ ?35a', '/ratgeber/handwerkerleistungen-steuer-absetzen-35a/'],
   ['Altbau(?:ten)?|Plattenbau(?:ten)?', '/ratgeber/kernbohrung-dresden-altbau-plattenbau/'],
   ['Checkliste', '/ratgeber/checkliste-termin-vorbereitung/'],
+  ['Stahlbeton(?:wand|wände|decke|decken)?|Bewehrungsstahl', '/kernbohrung-beton-stahlbeton/'],
   ['Betonbohrung(?:en)?', '/ratgeber/betonbohrung-dresden/'],
   ['Meißeln|Stemmen', '/ratgeber/kernbohrung-oder-meisseln/'],
   ['Kernbohrung(?:en)?', '/kernbohrung/'],
