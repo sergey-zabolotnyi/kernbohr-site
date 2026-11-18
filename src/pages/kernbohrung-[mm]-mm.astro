@@ -26,7 +26,7 @@ const tiefen = [20, 30, 50, 80, 100].map((t) => ({ t, b: berechne({ d: d.mm, tie
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hallo, ich brauche eine Kernbohrung mit Ø ${d.mm} mm. Foto der Baustelle sende ich gleich mit.`)}`;
 const faqs = [
   [`Was kostet eine Kernbohrung mit ${d.mm} mm?`, `In Beton oder Stahlbeton kostet Ø ${d.mm} mm ${eur(beton)} je cm Bohrtiefe, in Mauerwerk ${eur(mauer)} je cm (Preisliste 2026, brutto). Dazu kommen Anfahrt (${eur(regeln.anfahrt)} im Umkreis bis ca. 30 km um Dresden) und Pilotbohrung. Der Mindestauftragswert beträgt ${eur(regeln.mindestpreis)}. Beispiel: 6 Bohrungen Ø ${d.mm} mm in Beton, je 25 cm tief, kosten insgesamt ${eur(bsp[2].r.total)} brutto${bsp[2].r.mindestpreisGreift ? ' (Mindestauftragswert)' : ''}. ${bsp[0].r.mindestpreisGreift ? 'Eine einzelne Bohrung bleibt bei diesem Durchmesser meist unter dem Mindestauftragswert, deshalb lohnt es sich, Bohrungen in einem Termin zu bündeln.' : ''}`],
-  [`Was kostet eine Kernbohrung mit ${d.mm} mm durch 80 cm Beton?`, `Eine Bohrung Ø ${d.mm} mm durch 80 cm Beton oder Stahlbeton kostet nach Preisliste 2026 ${eur(tiefen[3].b.total)} brutto, einschließlich Anfahrt (${eur(regeln.anfahrt)} im Umkreis bis ca. 30 km um Dresden) und Pilotbohrung. Weitere Tiefen finden Sie in der Tabelle auf dieser Seite. Bei Bewehrung kommt Stahl ab 1,5 cm mit ${eur(regeln.stahlProCm)} je cm hinzu.`],
+  [`Was kostet eine Kernbohrung mit ${d.mm} mm durch 80 cm Beton?`, `Eine Bohrung Ø ${d.mm} mm durch 80 cm Beton oder Stahlbeton kostet nach Preisliste 2026 ${eur(tiefen[3].b.total)} brutto${tiefen[3].b.mindestpreisGreift ? ' (Mindestauftragswert)' : ''}, einschließlich Anfahrt (${eur(regeln.anfahrt)} im Umkreis bis ca. 30 km um Dresden) und Pilotbohrung. Weitere Tiefen finden Sie in der Tabelle auf dieser Seite. Bei Bewehrung kommt Stahl ab 1,5 cm mit ${eur(regeln.stahlProCm)} je cm hinzu.`],
   ...d.faq,
 ];
 const title = `Kernbohrung ${d.mm} mm: Kosten und Anwendung`;
@@ -83,11 +83,11 @@ const schema = [
         <table class="facts">
           <thead><tr><th>Bohrtiefe</th><th>Beton / Stahlbeton</th><th>Mauerwerk</th></tr></thead>
           <tbody>
-            {tiefen.map((x) => <tr><th scope="row">{x.t} cm</th><td><strong>{eur(x.b.total)}</strong></td><td>{eur(x.m.total)}</td></tr>)}
+            {tiefen.map((x) => <tr><th scope="row">{x.t} cm</th><td><strong>{eur(x.b.total)}</strong>{x.b.mindestpreisGreift && '*'}</td><td>{eur(x.m.total)}{x.m.mindestpreisGreift && '*'}</td></tr>)}
           </tbody>
         </table>
       </div>
-      <p>Eine Bohrung, brutto, inklusive Anfahrt ({eur(regeln.anfahrt)}) und Pilotbohrung. Bewehrungsstahl (ab 1,5 cm) wird je cm zusätzlich berechnet. Mehr zum Material auf unserer Seite <a href="/kernbohrung-beton-stahlbeton/">Kernbohrung in Beton und Stahlbeton</a>.</p>
+      <p>Eine Bohrung, brutto, inklusive Anfahrt ({eur(regeln.anfahrt)}) und Pilotbohrung. * = Mindestauftragswert ({eur(regeln.mindestpreis)}) greift. Bewehrungsstahl (ab 1,5 cm) wird je cm zusätzlich berechnet. Mehr zum Material auf unserer Seite <a href="/kernbohrung-beton-stahlbeton/">Kernbohrung in Beton und Stahlbeton</a>.</p>
 
       <p>Anzahl und Tiefen sind Beispiele. Ihr genauer Richtwert hängt von Wandstärke, Anzahl und Material ab. Rechnen Sie ihn im <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a> aus. Unverbindliche Schätzung, verbindlich ist erst unser Angebot.</p>
 
