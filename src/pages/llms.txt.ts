@@ -30,6 +30,7 @@ Kurzfakten:
 - [Kernbohrung](${u}/kernbohrung/)
 - [Leistungen](${u}/leistungen/)
 - [Kernbohrung in Beton und Stahlbeton](${u}/kernbohrung-beton-stahlbeton/)
+- [Für Bauunternehmen und Gewerbe](${u}/gewerbe/): Nacht-/Wochenendeinsätze, Dokumentation, Rahmenkonditionen
 - [Einsatzgebiet](${u}/einsatzgebiet/)
 - [Häufige Fragen](${u}/faq/)
 - [Bohrdurchmesser nach Anwendung](${u}/bohrdurchmesser/): Welcher Durchmesser passt für Dunstabzug, Wärmepumpe, Klimagerät, Abwasser und mehr, mit Faustregel

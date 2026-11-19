@@ -1,0 +1,70 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site.js';
+---
+<form class="kb-form" id="gewerbe-form" novalidate>
+  <div class="row2">
+    <div><label for="gw-firma">Firma</label><input id="gw-firma" name="firma" autocomplete="organization" required></div>
+    <div><label for="gw-name">Ansprechpartner</label><input id="gw-name" name="name" autocomplete="name" required></div>
+  </div>
+  <div class="row2">
+    <div><label for="gw-tel">Telefon</label><input id="gw-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required></div>
+    <div><label for="gw-mail">E-Mail</label><input id="gw-mail" name="mail" type="email" autocomplete="email"></div>
+  </div>
+  <fieldset>
+    <legend>Welche Arbeiten?</legend>
+    <div class="kb-radio">
+      <label><input type="checkbox" name="art" value="Kernbohrung" checked> Kernbohrung</label>
+      <label><input type="checkbox" name="art" value="Betonsägen"> Betonsägen</label>
+      <label><input type="checkbox" name="art" value="Fugenschneiden"> Fugenschneiden</label>
+      <label><input type="checkbox" name="art" value="Schlitze fräsen"> Schlitze fräsen</label>
+      <label><input type="checkbox" name="art" value="Wand-/Deckendurchbruch"> Wand-/Deckendurchbruch</label>
+      <label><input type="checkbox" name="art" value="Rückbau"> Rückbau</label>
+    </div>
+  </fieldset>
+  <div class="row2">
+    <div><label for="gw-objekt">Objekt und Ort</label><input id="gw-objekt" name="objekt" placeholder="z. B. Bürogebäude, Dresden-Altstadt"></div>
+    <div><label for="gw-zeit">Zeitraum</label><input id="gw-zeit" name="zeit" placeholder="z. B. KW 49 bis 51"></div>
+  </div>
+  <div>
+    <label for="gw-einsatz">Einsatzzeit</label>
+    <select id="gw-einsatz" name="einsatz">
+      <option>Tagsüber (werktags)</option>
+      <option>Nachts</option>
+      <option>Wochenende / Feiertag</option>
+      <option>Kurzfristig / Notfall</option>
+      <option>Noch offen</option>
+    </select>
+  </div>
+  <div>
+    <label for="gw-text">Umfang (Bohrliste, Meter, Leistungsverzeichnis)</label>
+    <textarea id="gw-text" name="text" rows="5" placeholder="z. B. 40 Bohrungen Ø 100 bis 200 mm in Stahlbetondecke, Bohrliste und Plan folgen per E-Mail"></textarea>
+  </div>
+  <p class="note">Pläne, Bohrliste oder Leistungsverzeichnis senden Sie bitte als Anhang an <a href={`mailto:${site.email}`}>{site.email}</a>. Ihre Angaben werden nicht auf dieser Website gespeichert, sondern über Ihre E-Mail-App an uns gesendet. Mehr in der <a href="/datenschutzerklaerung/">Datenschutzerklärung</a>.</p>
+  <div class="btns">
+    <button class="btn btn-main" type="submit"><Icon name="mail" size={20} /> Anfrage per E-Mail senden</button>
+    <a class="btn btn-wa" href={`https://wa.me/${site.whatsapp}`} rel="noopener"><Icon name="whatsapp" size={20} /> WhatsApp</a>
+  </div>
+  <p id="gw-hint" class="note" role="status" aria-live="polite"></p>
+</form>
+
+<script define:vars={{ mail: site.email }}>
+  const f = document.getElementById('gewerbe-form');
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(f);
+    const d = Object.fromEntries(fd);
+    const hint = document.getElementById('gw-hint');
+    if (!d.firma?.trim() || !d.name?.trim() || !d.tel?.trim()) { hint.textContent = 'Bitte Firma, Ansprechpartner und Telefon angeben.'; return; }
+    const art = fd.getAll('art').join(', ') || 'nicht angegeben';
+    const lines = [
+      'Anfrage für Gewerbe / Bauunternehmen',
+      `Firma: ${d.firma}`, `Ansprechpartner: ${d.name}`, `Telefon: ${d.tel}`, d.mail ? `E-Mail: ${d.mail}` : '',
+      `Arbeiten: ${art}`, d.objekt ? `Objekt/Ort: ${d.objekt}` : '', d.zeit ? `Zeitraum: ${d.zeit}` : '', `Einsatzzeit: ${d.einsatz}`,
+      d.text ? `Umfang: ${d.text}` : '',
+    ].filter(Boolean).join('\n');
+    location.href = `mailto:${mail}?subject=${encodeURIComponent('Anfrage Gewerbe: ' + art)}&body=${encodeURIComponent(lines)}`;
+    hint.textContent = 'Ihre E-Mail-App öffnet sich. Bitte Anhänge (Plan, Bohrliste) dort hinzufügen und absenden.';
+    if (window.kbTrack) window.kbTrack('Formular Gewerbe');
+  });
+</script>

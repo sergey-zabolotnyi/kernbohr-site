@@ -1,0 +1,132 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GewerbeForm from '../components/GewerbeForm.astro';
+import HeroPreload from '../components/HeroPreload.astro';
+import { heroStyle } from '../lib/media.js';
+import { crumbSchema, faqSchema } from '../lib/schema.js';
+import { site } from '../data/site.js';
+
+const hero = 'werk-wand-gross';
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, wir haben ein Projekt für Kernbohrung/Betonsägen. Plan und Bohrliste senden wir gern.')}`;
+
+const vorteile = [
+  ['clock', 'Nacht- und Wochenendeinsätze', 'Wir arbeiten nachts und an Wochenenden und Feiertagen, nach Absprache. Das ist gefragt bei Einkaufszentren, Büros, Kliniken, Industrie und Wohnobjekten im Betrieb.'],
+  ['truck', 'Kurzfristig und im Notfall', 'Wenn es schnell gehen muss: Wir sind auch für Einsätze am nächsten Tag oder kurzfristig nach Lage erreichbar.'],
+  ['clipboard', 'Dokumentation', 'Bautagebuch, Tages- und Regieberichte, Fotodokumentation und Mengennachweise führen wir in dem Format, das Ihr Auftraggeber braucht.'],
+  ['euro', 'Rahmenkonditionen', 'Für Dauerpartner und große Objekte vereinbaren wir individuelle Konditionen (Nachlass, Rahmenkonditionen nach Vereinbarung).'],
+  ['hardhat', 'Baustellenregeln', 'Wir halten die Baustellenordnung ein, arbeiten mit Schutzausrüstung und Gefährdungsbeurteilung und lassen unser Team nach den Anforderungen des Objekts einweisen.'],
+  ['user', 'Team und Kapazität', 'Unser Team umfasst 8 Mitarbeiter. Bei großen Projekten und Serienbohrungen können wir es erweitern.'],
+];
+const leistungen = [
+  ['Kernbohrung', '/kernbohrung/', 'Ø 14 bis 500 mm, bis 2 m tief'],
+  ['Betonsägen', '/betonsaegen/', 'Wand- und Deckensägen'],
+  ['Fugenschneiden', '/fugenschneiden/', 'Dehnfugen und Trennschnitte'],
+  ['Schlitze fräsen', '/schlitzfraesen/', 'für Leitungen und Installationen'],
+  ['Wand- und Deckendurchbruch', '/wanddurchbruch/', 'nach Plan und Markierung'],
+  ['Rückbau und Teilabbruch', '/rueckbau-teilabbruch/', 'kontrolliert und staubarm'],
+];
+const faqs = [
+  ['Bieten Sie Rahmenverträge für Bauunternehmen an?', 'Ja. Für regelmäßige Zusammenarbeit und große Objekte vereinbaren wir Rahmenkonditionen. Die Konditionen stimmen wir individuell mit Ihnen ab. Senden Sie uns Ihr Projekt oder Ihr Leistungsverzeichnis, wir melden uns mit einem Angebot.'],
+  ['Arbeiten Sie nachts und am Wochenende?', 'Ja, nach Absprache. Nachteinsätze sowie Einsätze am Wochenende und an Feiertagen sind möglich. Die Zuschläge dafür finden Sie in unserer Preisliste, bei Rahmenvereinbarungen sprechen wir die Konditionen individuell ab.'],
+  ['Wie schnell können Sie kommen?', 'Das hängt von Auslastung und Objekt ab. Kurzfristige Einsätze, auch am nächsten Tag, sind möglich. Rufen Sie uns an oder schreiben Sie per WhatsApp, wir nennen Ihnen den frühestmöglichen Termin.'],
+  ['Welche Dokumentation liefern Sie?', 'Wir führen Bautagebuch sowie Tages- und Regieberichte, fertigen Fotodokumentation und weisen die ausgeführten Mengen nach. Das Format richten wir nach den Vorgaben Ihres Auftraggebers.'],
+  ['Gibt es ein Prüfzeugnis für Kernbohrungen oder Betonsägen?', 'Für das Bohren und Sägen selbst ist in der Regel kein Prüfzeugnis vorgesehen. Prüfzeugnisse und Zulassungen betreffen meist andere Arbeiten, etwa Brandschottungen oder Abdichtungen. Wir arbeiten nach Plan und Markierung, stimmen uns bei Bedarf mit Bauleitung und Statiker ab und dokumentieren die Ausführung.'],
+  ['Haben Sie eine Betriebshaftpflichtversicherung?', 'Ja, wir haben eine gültige Betriebshaftpflichtversicherung. Einen Nachweis senden wir auf Anfrage.'],
+  ['In welchen Regionen sind Sie tätig?', 'Unser Sitz ist Dresden. Im Einsatz sind wir in Sachsen, in Leipzig und bis Berlin, für größere Projekte bundesweit.'],
+  ['Wie erhalten wir ein Angebot?', 'Senden Sie uns Plan, Bohrliste oder Leistungsverzeichnis per E-Mail oder nutzen Sie das Formular auf dieser Seite. Bei Bedarf besichtigen wir das Objekt vorab.'],
+];
+const schema = [crumbSchema([['Für Bauunternehmen und Gewerbe', '/gewerbe/']]), faqSchema(faqs)];
+---
+<Base
+  title="Kernbohrung für Bauunternehmen und Gewerbe | Kernbohr-Expert Dresden"
+  description="Kernbohren, Betonsägen und Schlitze fräsen für Bauunternehmen, Haustechnik und Gewerbe: Nacht- und Wochenendeinsätze, Dokumentation, Rahmenkonditionen. Dresden, Sachsen, bundesweit."
+  path="/gewerbe/"
+  schema={schema}
+>
+  <Breadcrumbs items={[['Für Bauunternehmen und Gewerbe']]} />
+  <HeroPreload slot="head" id={hero} />
+  <section class="hero small" style={heroStyle(hero)}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Für Bauunternehmen und Gewerbe</span>
+        <h1>Kernbohren, Betonsägen und Schlitze fräsen für Ihre Baustelle</h1>
+        <p class="lead">Wir sind Partner für Generalunternehmer, Bau- und Haustechnikbetriebe, Facility Management und Hausverwaltungen: zuverlässig, dokumentiert und auch nachts und am Wochenende im Einsatz.</p>
+        <div class="btns">
+          <a class="btn btn-main" href="#anfrage-gewerbe"><Icon name="mail" size={20} /> Projekt anfragen</a>
+          <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> WhatsApp</a>
+          <a class="btn btn-dark" href={`tel:${site.phoneTel}`}><Icon name="phone" size={20} /> {site.phoneDisplay}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="callout"><strong>Kurz gesagt</strong>Wir übernehmen Kernbohrungen, Betonsägen, Fugenschneiden, Schlitze fräsen, Durchbrüche und Rückbau für Bauunternehmen und Gewerbekunden. Nachteinsätze, Wochenende und kurzfristige Einsätze sind nach Absprache möglich, für Dauerpartner und große Objekte vereinbaren wir Rahmenkonditionen.</div>
+      <span class="eyebrow">Das bieten wir Auftraggebern</span>
+      <h2>Was Sie von uns erwarten können</h2>
+      <div class="cards">
+        {vorteile.map(([icon, t, d]) => (
+          <div class="card">
+            <div class="ico"><Icon name={icon} size={28} /></div>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Leistungen</span>
+      <h2>Unsere Leistungen für Projekte</h2>
+      <ul class="chips">
+        {leistungen.map(([n, href, d]) => <li><a href={href}>{n}</a></li>)}
+      </ul>
+      <p class="lead" style="margin-top:1rem">Wir arbeiten nach Plänen und Markierungen. Statik, Bewehrung und Leitungsfreiheit klären Auftraggeber, Bauleitung und Statiker. Bei Bedarf stimmen wir uns direkt ab.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Nachweise</span>
+      <h2>Das spricht für uns</h2>
+      <ul class="checks">
+        <li><Icon name="check" size={18} /><span><strong>Betriebshaftpflichtversicherung:</strong> gültig, Nachweis auf Anfrage.</span></li>
+        <li><Icon name="check" size={18} /><span><strong>Erfahrung:</strong> Betrieb in Dresden seit {site.founded}, Inhaber in der Baubranche seit {site.sinceBranche}.</span></li>
+        <li><Icon name="check" size={18} /><span><strong>Mitglied</strong> der Handwerkskammer Dresden.</span></li>
+        <li><Icon name="check" size={18} /><span><strong>Baustellenzugang:</strong> Baustellenordnung, Schutzausrüstung, Gefährdungsbeurteilung und Einweisungen nach den Vorgaben des Objekts.</span></li>
+      </ul>
+      <h3>Aus der Praxis</h3>
+      <ul class="chips">
+        <li><a href="/referenzen/ikea-dresden-ladeinfrastruktur/">IKEA Dresden: 11 Kernbohrungen für E-Ladeinfrastruktur</a></li>
+        <li><a href="/referenzen/waermepumpe-neustadt-sachsen/">Wärmepumpe Neustadt: Kernbohrung Ø 200 mm</a></li>
+        <li><a href="/referenzen/">Alle Referenzen</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="soft" id="anfrage-gewerbe">
+    <div class="wrap">
+      <span class="eyebrow">Projektanfrage</span>
+      <h2>Projekt anfragen</h2>
+      <p class="lead">Beschreiben Sie Objekt, Umfang und Zeitraum. Plan, Bohrliste oder Leistungsverzeichnis senden Sie per E-Mail an <a href={`mailto:${site.email}`}>{site.email}</a>. Wir melden uns mit einem Angebot.</p>
+      <GewerbeForm />
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2>Fragen von Auftraggebern</h2>
+      <div class="prose">
+        {faqs.map(([q, a]) => (
+          <details><summary>{q}</summary><p>{a}</p></details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
