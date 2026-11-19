@@ -3,6 +3,7 @@ import { site } from '../data/site.js';
 import { services } from '../data/services.js';
 import { articles } from '../data/articles.js';
 import { projekte } from '../data/projekte.js';
+import { gewerbeSeiten } from '../data/gewerbeSeiten.js';
 import { orte } from '../data/orte.js';
 
 export function GET() {
@@ -31,6 +32,7 @@ Kurzfakten:
 - [Leistungen](${u}/leistungen/)
 - [Kernbohrung in Beton und Stahlbeton](${u}/kernbohrung-beton-stahlbeton/)
 - [Für Bauunternehmen und Gewerbe](${u}/gewerbe/): Nacht-/Wochenendeinsätze, Dokumentation, Rahmenkonditionen
+${gewerbeSeiten.map((g) => `- [${g.nav}](${u}/gewerbe/${g.slug}/)`).join('\n')}
 - [Einsatzgebiet](${u}/einsatzgebiet/)
 - [Häufige Fragen](${u}/faq/)
 - [Bohrdurchmesser nach Anwendung](${u}/bohrdurchmesser/): Welcher Durchmesser passt für Dunstabzug, Wärmepumpe, Klimagerät, Abwasser und mehr, mit Faustregel

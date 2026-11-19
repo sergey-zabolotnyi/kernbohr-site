@@ -1,0 +1,75 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import HeroPreload from '../../components/HeroPreload.astro';
+import { heroStyle } from '../../lib/media.js';
+import { crumbSchema, faqSchema } from '../../lib/schema.js';
+import { gewerbeSeiten } from '../../data/gewerbeSeiten.js';
+import { site } from '../../data/site.js';
+import { regeln, eur } from '../../data/preisliste.js';
+
+export function getStaticPaths() {
+  return gewerbeSeiten.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+const path = `/gewerbe/${p.slug}/`;
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, wir haben ein Projekt: ' + p.h1 + '. Plan und Bohrliste senden wir gern.')}`;
+const schema = [crumbSchema([['Für Bauunternehmen und Gewerbe', '/gewerbe/'], [p.nav, path]]), faqSchema(p.faq)];
+const andere = gewerbeSeiten.filter((x) => x.slug !== p.slug);
+---
+<Base title={p.titel} description={p.beschreibung} path={path} schema={schema}>
+  <Breadcrumbs items={[['Für Bauunternehmen und Gewerbe', '/gewerbe/'], [p.nav]]} />
+  <HeroPreload slot="head" id={p.hero} />
+  <section class="hero small" style={heroStyle(p.hero)}>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">{p.eyebrow}</span>
+        <h1>{p.h1}</h1>
+        <p class="lead">{p.lead}</p>
+        <div class="btns">
+          <a class="btn btn-main" href="/gewerbe/#anfrage-gewerbe"><Icon name="mail" size={20} /> Projekt anfragen</a>
+          <a class="btn btn-wa" href={wa} rel="noopener"><Icon name="whatsapp" size={20} /> WhatsApp</a>
+          <a class="btn btn-dark" href={`tel:${site.phoneTel}`}><Icon name="phone" size={20} /> {site.phoneDisplay}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <article class="prose wide">
+        <div class="callout"><strong>Kurz gesagt</strong>{p.kurzgesagt}</div>
+
+        <h2>Typische Aufträge</h2>
+        <ul class="checks">
+          {p.typisch.map((t) => <li><Icon name="check" size={18} /><span>{t}</span></li>)}
+        </ul>
+
+        <h2>Das brauchen wir für Ihr Angebot</h2>
+        <ul>
+          {p.brauchen.map((t) => <li>{t}</li>)}
+        </ul>
+        <p>Senden Sie die Unterlagen per E-Mail an <a href={`mailto:${site.email}`}>{site.email}</a> oder nutzen Sie das <a href="/gewerbe/#anfrage-gewerbe">Projektformular</a>.</p>
+
+        <h2>Einsatz im laufenden Betrieb, nachts und am Wochenende</h2>
+        <p>{p.betrieb}</p>
+
+        <h2>Dokumentation und Zusammenarbeit</h2>
+        <p>Wir arbeiten nach Plänen und Markierungen. Statik, Bewehrung und Leitungsfreiheit klären Auftraggeber, Bauleitung und Statiker, bei Bedarf stimmen wir uns direkt ab. Bautagebuch, Tages- und Regieberichte, Fotodokumentation und Mengennachweise führen wir in dem Format, das Ihr Auftraggeber braucht. Eine Betriebshaftpflichtversicherung besteht, der Nachweis folgt auf Anfrage. Mindestauftragswert: {eur(regeln.mindestpreis)} je Auftrag.</p>
+        <p>Mehr zur Leistung: <a href={p.dienst.href}>{p.dienst.name}</a>. Preise: <a href="/preise/">Preisliste</a> und <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a>.</p>
+
+        <h2>Häufige Fragen</h2>
+        {p.faq.map(([q, a]) => (
+          <details><summary>{q}</summary><p>{a}</p></details>
+        ))}
+
+        <h2>Weitere Fachseiten für Projekte</h2>
+        <ul class="chips">
+          <li><a href="/gewerbe/">Für Bauunternehmen und Gewerbe</a></li>
+          {andere.map((x) => <li><a href={`/gewerbe/${x.slug}/`}>{x.nav}</a></li>)}
+        </ul>
+      </article>
+    </div>
+  </section>
+</Base>
