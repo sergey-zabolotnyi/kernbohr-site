@@ -33,14 +33,20 @@ export const entries = [
     alt: 'Hilti-Kernbohrgerät auf Bohrständer auf dem offenen Parkdeck, im Hintergrund Absperrzaun', caption: 'Kernbohrgerät auf dem Parkdeck' },
   { id: 'ikea-dach-abend', file: 'ikea-02', type: 'image',
     alt: 'Kernbohrgerät auf Bohrständer auf der abgesperrten Parkdeck-Fläche im Abendlicht', caption: 'Parkdeck im Abendlicht, Arbeitsbereich abgesperrt' },
-  { id: 'ikea-innen-bohrstaender', file: 'ikea-03', type: 'image',
-    alt: 'Kernbohrgerät auf Bohrständer im Innenbereich vor einer Fensterfront', caption: 'Bohrständer im Innenbereich' },
-  { id: 'ikea-bohrung-fertig', file: 'ikea-04', type: 'image',
-    alt: 'Fertige Kernbohrung Ø 150 mm in einer verputzten Wand', caption: 'Fertige Bohrung Ø 150 mm' },
-  { id: 'ikea-bohrung-schiene', file: 'ikea-05', type: 'image',
-    alt: 'Kernbohrgerät auf Schiene neben einer fertigen Bohrung in einer Wandecke', caption: 'Schienenbohrgerät an der Wand' },
-  { id: 'ikea-bohrkern', file: 'ikea-06', type: 'image',
-    alt: 'Diamant-Bohrkrone und ein Bohrkern aus Mauerwerk (Ziegel) nebeneinander', caption: 'Bohrkrone und Bohrkern aus Ziegelmauerwerk' },
+
+  // ===== Referenz Wärmepumpe Neustadt in Sachsen =====
+  { id: 'neustadt-vorher', file: 'neustadt-01', type: 'image',
+    alt: 'Hilti-Kernbohrgerät auf Bohrständer vor Arbeitsbeginn im Innenbereich vor einer Fensterfront', caption: 'Vor Beginn: Bohrständer aufgebaut' },
+  { id: 'neustadt-bohrung-fertig', file: 'neustadt-02', type: 'image',
+    alt: 'Fertige Kernbohrung Ø 200 mm in einer verputzten Wand', caption: 'Fertige Bohrung Ø 200 mm' },
+  { id: 'neustadt-bohrung-schiene', file: 'neustadt-03', type: 'image',
+    alt: 'Kernbohrgerät auf Schiene neben der fertigen Bohrung Ø 200 mm in einer Wandecke', caption: 'Schienenbohrgerät neben der fertigen Bohrung' },
+  { id: 'neustadt-bohrkern-alt', file: 'neustadt-04', type: 'image',
+    alt: 'Diamant-Bohrkrone und ein Bohrkern aus Ziegelmauerwerk nebeneinander', caption: 'Bohrkrone und Bohrkern aus Ziegelmauerwerk' },
+  { id: 'neustadt-bohrkrone-200', file: 'neustadt-05', type: 'image',
+    alt: 'Diamant-Bohrkrone Ø 200 mm neben dem ausgebohrten Kern aus Ziegelmauerwerk und zwei Maulschlüsseln', caption: 'Bohrkrone Ø 200 mm und Bohrkern aus Ziegel' },
+  { id: 'neustadt-bohrkern-ziegel', file: 'neustadt-06', type: 'image',
+    alt: 'Ausgebohrter Kern aus Ziegelmauerwerk neben der Diamant-Bohrkrone Ø 200 mm', caption: 'Bohrkern aus Ziegelmauerwerk' },
 
   // ===== Videos =====
   { id: 'video-markierung', file: 'video001', type: 'video',
@@ -56,8 +62,9 @@ export const entries = [
 
   { id: 'ikea-video-dach', file: 'ikea-video-dach', type: 'video',
     alt: 'Kernbohrgerät auf Bohrständer auf dem Parkdeck bei IKEA Dresden', caption: 'Parkdeck: Kernbohrgerät im Einsatz' },
-  { id: 'ikea-video-bohrung-1', file: 'ikea-video-bohrung-1', type: 'video',
-    alt: 'Hilti-Kernbohrgerät auf Schiene bohrt in einer Wand, daneben Bohrkern und Werkzeug', caption: 'Innenbereich: Bohrung mit Schienengerät' },
-  { id: 'ikea-video-bohrung-2', file: 'ikea-video-bohrung-2', type: 'video',
-    alt: 'Nahaufnahme eines Hilti-Kernbohrgeräts auf Schiene beim Bohren mit Wasserzufuhr', caption: 'Innenbereich: Nassbohren mit Wasserzufuhr' },
+
+  { id: 'neustadt-video-bohrung-1', file: 'neustadt-video-bohrung-1', type: 'video',
+    alt: 'Hilti-Kernbohrgerät auf Schiene bohrt in einer Wand, daneben Bohrkern und Werkzeug', caption: 'Bohrung mit Schienengerät' },
+  { id: 'neustadt-video-bohrung-2', file: 'neustadt-video-bohrung-2', type: 'video',
+    alt: 'Nahaufnahme eines Hilti-Kernbohrgeräts auf Schiene beim Bohren mit Wasserzufuhr', caption: 'Nassbohren mit Wasserzufuhr' },
 ];

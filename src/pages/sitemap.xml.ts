@@ -41,7 +41,7 @@ export function GET() {
     ...services.map((s) => [`/${s.slug}/`, servicesDate]),
     ...orte.map((o) => [`/kernbohrung-in-${o.slug}/`, orteDate]),
     ...durchmesserSeiten.map((d) => [`/kernbohrung-${d.mm}-mm/`, gitDate('src/data/durchmesserSeiten.js')]),
-    ...projekte.filter((p) => p.slug).map((p) => [`/referenzen/${p.slug}/`, p.datum]),
+    ...projekte.filter((p) => p.slug).map((p) => [`/referenzen/${p.slug}/`, p.veroeffentlicht || p.datum]),
     ...articles.map((a) => [`/ratgeber/${a.slug}/`, a.date || gitDate('src/data/articles.js')]),
   ];
   const xml =

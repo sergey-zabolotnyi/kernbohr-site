@@ -12,7 +12,7 @@ import { allIds, items, heroStyle } from '../lib/media.js';
 import { crumbSchema, videoSchema } from '../lib/schema.js';
 
 // Dekor-Bild (hero-bg) nicht in der Galerie zeigen.
-const ids = allIds().filter((id) => id !== 'hero-bg' && !id.startsWith('ikea-'));
+const ids = allIds().filter((id) => id !== 'hero-bg' && !id.startsWith('ikea-') && !id.startsWith('neustadt-'));
 const hasMedia = items(ids).length > 0;
 const videos = items(allIds().filter((id) => id !== 'hero-bg')).filter((m) => m.type === 'video');
 ---
