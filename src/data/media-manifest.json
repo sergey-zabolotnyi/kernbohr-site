@@ -160,45 +160,65 @@
       "alt": "Kernbohrgerät auf Bohrständer auf der abgesperrten Parkdeck-Fläche im Abendlicht",
       "caption": "Parkdeck im Abendlicht, Arbeitsbereich abgesperrt"
     },
-    "ikea-innen-bohrstaender": {
+    "neustadt-vorher": {
       "widths": [
         800,
         1600
       ],
       "w": 1200,
       "h": 1600,
-      "alt": "Kernbohrgerät auf Bohrständer im Innenbereich vor einer Fensterfront",
-      "caption": "Bohrständer im Innenbereich"
+      "alt": "Hilti-Kernbohrgerät auf Bohrständer vor Arbeitsbeginn im Innenbereich vor einer Fensterfront",
+      "caption": "Vor Beginn: Bohrständer aufgebaut"
     },
-    "ikea-bohrung-fertig": {
+    "neustadt-bohrung-fertig": {
       "widths": [
         800,
         1600
       ],
       "w": 1080,
       "h": 1920,
-      "alt": "Fertige Kernbohrung Ø 150 mm in einer verputzten Wand",
-      "caption": "Fertige Bohrung Ø 150 mm"
+      "alt": "Fertige Kernbohrung Ø 200 mm in einer verputzten Wand",
+      "caption": "Fertige Bohrung Ø 200 mm"
     },
-    "ikea-bohrung-schiene": {
+    "neustadt-bohrung-schiene": {
       "widths": [
         800,
         1600
       ],
       "w": 1200,
       "h": 1600,
-      "alt": "Kernbohrgerät auf Schiene neben einer fertigen Bohrung in einer Wandecke",
-      "caption": "Schienenbohrgerät an der Wand"
+      "alt": "Kernbohrgerät auf Schiene neben der fertigen Bohrung Ø 200 mm in einer Wandecke",
+      "caption": "Schienenbohrgerät neben der fertigen Bohrung"
     },
-    "ikea-bohrkern": {
+    "neustadt-bohrkern-alt": {
       "widths": [
         800,
         1600
       ],
       "w": 1200,
       "h": 1600,
-      "alt": "Diamant-Bohrkrone und ein Bohrkern aus Mauerwerk (Ziegel) nebeneinander",
+      "alt": "Diamant-Bohrkrone und ein Bohrkern aus Ziegelmauerwerk nebeneinander",
       "caption": "Bohrkrone und Bohrkern aus Ziegelmauerwerk"
+    },
+    "neustadt-bohrkrone-200": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1536,
+      "h": 2048,
+      "alt": "Diamant-Bohrkrone Ø 200 mm neben dem ausgebohrten Kern aus Ziegelmauerwerk und zwei Maulschlüsseln",
+      "caption": "Bohrkrone Ø 200 mm und Bohrkern aus Ziegel"
+    },
+    "neustadt-bohrkern-ziegel": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1536,
+      "h": 2048,
+      "alt": "Ausgebohrter Kern aus Ziegelmauerwerk neben der Diamant-Bohrkrone Ø 200 mm",
+      "caption": "Bohrkern aus Ziegelmauerwerk"
     }
   },
   "videos": {
@@ -237,14 +257,14 @@
       "caption": "Parkdeck: Kernbohrgerät im Einsatz",
       "size": 977737
     },
-    "ikea-video-bohrung-1": {
+    "neustadt-video-bohrung-1": {
       "alt": "Hilti-Kernbohrgerät auf Schiene bohrt in einer Wand, daneben Bohrkern und Werkzeug",
-      "caption": "Innenbereich: Bohrung mit Schienengerät",
+      "caption": "Bohrung mit Schienengerät",
       "size": 3572707
     },
-    "ikea-video-bohrung-2": {
+    "neustadt-video-bohrung-2": {
       "alt": "Nahaufnahme eines Hilti-Kernbohrgeräts auf Schiene beim Bohren mit Wasserzufuhr",
-      "caption": "Innenbereich: Nassbohren mit Wasserzufuhr",
+      "caption": "Nassbohren mit Wasserzufuhr",
       "size": 4362614
     }
   }

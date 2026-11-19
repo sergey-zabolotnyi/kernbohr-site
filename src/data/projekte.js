@@ -1,17 +1,102 @@
 // Projekte / Case Studies. NUR echte Projekte eintragen (Freigabe des Kunden nötig), sonst bleibt der Bereich verborgen.
-// Pflicht: slug, titel, ort, datum (ISO), kurz. Optional: durchmesser, tiefe, material, dauer, foto (Foto-ID aus media-manifest).
-// WICHTIG: Auftraggeber/Firmen nur nennen, wenn sie zugestimmt haben (TSG: noch NICHT nennen).
-// Fehlende Angaben (tiefe, dauer ...) einfach weglassen, nichts schätzen.
+// Seite je Projekt: /referenzen/<slug>/ (Vorlage: src/pages/referenzen/[slug].astro, alle Inhalte kommen von hier).
+// WICHTIG: Auftraggeber/Firmen nur nennen, wenn sie zugestimmt haben (TSG und Smart Haus: noch NICHT nennen).
+// Keine privaten Adressen oder Kundennachrichten veröffentlichen. Fehlende Angaben weglassen, nichts schätzen.
 export const projekte = [
   {
     slug: 'ikea-dresden-ladeinfrastruktur',
     titel: 'IKEA Dresden: Kernbohrungen für E-Ladeinfrastruktur',
+    h1: 'Kernbohrungen für E-Ladeinfrastruktur bei IKEA Dresden',
     ort: 'IKEA Dresden, Innenbereich und Parkdeck',
     datum: '2026-11-17',
+    veroeffentlicht: '2026-11-18',
     kurz: '11 Kernbohrungen Ø 150 mm in Stahlbeton, im Innenbereich und auf dem Parkdeck, als Vorbereitung für künftige Ladestationen für Elektrofahrzeuge.',
     durchmesser: 150,
     anzahl: 11,
     material: 'Stahlbeton',
     foto: 'ikea-dach-bohrstaender',
+    heroFoto: 'ikea-dach-abend',
+    metaTitle: 'Referenz IKEA Dresden: Kernbohrung Ø 150 mm | Kernbohr-Expert',
+    metaDesc: 'Referenz: 11 Kernbohrungen Ø 150 mm in Stahlbeton, innen und auf dem Parkdeck bei IKEA Dresden, für E-Ladestationen. Mit Fotos und Videos.',
+    kurzgesagt: 'Am 17.11.2026 haben wir bei IKEA Dresden 11 Kernbohrungen mit Ø 150 mm in Stahlbeton ausgeführt: im Innenbereich und auf dem Parkdeck. Die Öffnungen bereiten künftige Ladestationen für Elektrofahrzeuge vor.',
+    eckdaten: [
+      ['Ort', 'IKEA Dresden, Innenbereich und Parkdeck'],
+      ['Datum', '17. November 2026'],
+      ['Anzahl', '11 Bohrungen'],
+      ['Bohrdurchmesser', 'Ø 150 mm'],
+      ['Material', 'Stahlbeton'],
+      ['Verfahren', 'Nassbohren mit Hilti-Kernbohrgerät auf Bohrständer'],
+      ['Wasser und Strom', 'Wasser in Kanistern selbst mitgebracht, Strom vor Ort vorhanden'],
+      ['Auftrag', 'Im Auftrag des ausführenden Unternehmens für die Ladeinfrastruktur'],
+      ['Zweck', 'Vorbereitung von Ladestationen für Elektrofahrzeuge'],
+    ],
+    aufgabe: 'Für den Ausbau der Ladeinfrastruktur müssen Leitungen und Leerrohre durch Bauteile geführt werden. Dafür waren 11 Durchführungen mit Ø 150 mm in Stahlbeton nötig, im Innenbereich und auf dem Parkdeck. Die Bohrungen mussten maßhaltig und sauber ausgeführt werden, ohne Schlagwirkung auf das umgebende Bauteil.',
+    vorgehen: [
+      ['Parkdeck', 'Der Arbeitsbereich war abgesperrt. Das Kernbohrgerät stand auf dem Bohrständer, gekühlt wurde mit Wasser.'],
+      ['Innenbereich', 'Auch im Innenbereich haben wir mit Wasserkühlung gebohrt.'],
+      ['Versorgung', 'Wasser brachte unser Team in Kanistern selbst mit, Strom war vor Ort vorhanden. Wir waren dadurch unabhängig von der Baustelleneinrichtung.'],
+      ['Ergebnis', '11 saubere, runde Öffnungen mit Ø 150 mm, bereit für die Leitungsführung.'],
+    ],
+    warumTitel: 'Warum Kernbohrung für Ladeinfrastruktur?',
+    warum: [
+      'Beim Kernbohren schneidet eine diamantbesetzte Bohrkrone einen runden Kern aus dem Bauteil. Das ist erschütterungsarm, die Kanten bleiben sauber und der Durchmesser stimmt genau. Gerade im laufenden Betrieb eines Gewerbeobjekts ist das ein Vorteil: Es entsteht kaum Lärm und Staub, weil mit Wasser gebohrt wird.',
+      'Welcher Durchmesser zu welchem Rohr passt, zeigt unsere Übersicht <a href="/bohrdurchmesser/">Bohrdurchmesser</a>. Mehr zum Material: <a href="/kernbohrung-beton-stahlbeton/">Kernbohrung in Beton und Stahlbeton</a>. Die Kosten für Ø 150 mm finden Sie auf der Seite <a href="/kernbohrung-150-mm/">Kernbohrung 150 mm</a>, den Gesamtpreis für Ihr Vorhaben berechnet der <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a>.',
+    ],
+    faq: [
+      ['Was wurde bei IKEA Dresden gebohrt?', 'Wir haben am 17.11.2026 insgesamt 11 Kernbohrungen mit Ø 150 mm in Stahlbeton ausgeführt, im Innenbereich und auf dem Parkdeck. Die Öffnungen dienen als Vorbereitung für künftige Ladestationen für Elektrofahrzeuge.'],
+      ['Wofür braucht man Kernbohrungen bei Ladeinfrastruktur?', 'Für Ladestationen müssen Kabel und Leerrohre durch Wände, Decken oder Bodenplatten geführt werden. Kernbohrungen liefern saubere, maßhaltige Öffnungen ohne Schlagwirkung auf das Bauteil.'],
+      ['Brauchen Sie auf der Baustelle Wasser und Strom?', 'Zum Nassbohren braucht es Wasser und Strom. Bei diesem Auftrag hat unser Team das Wasser in Kanistern selbst mitgebracht, der Strom war vor Ort vorhanden. Wo beides fehlt, planen wir das vorab mit Ihnen ab, zum Beispiel mit Wassersauger und Bediener (siehe Preisliste).'],
+      ['Was kostet eine Kernbohrung mit Ø 150 mm?', 'Der Preis richtet sich nach Material und Bohrtiefe. Die Preise je cm sehen Sie auf unserer Seite zu Ø 150 mm, den Gesamtpreis berechnet der Kernbohr-Rechner. Der Mindestauftragswert beträgt 250 € je Auftrag.'],
+      ['Führen Sie Kernbohrungen auch für Gewerbe und Bauunternehmen aus?', 'Ja. Wir arbeiten für Bauunternehmen, Elektrobetriebe, Planungsbüros und Betreiber von Gewerbeobjekten in Dresden und Sachsen. Senden Sie uns Bohrliste oder Plan, wir erstellen ein Angebot.'],
+    ],
+    galerien: [
+      { ids: ['ikea-dach-bohrstaender', 'ikea-dach-abend', 'ikea-video-dach'], eyebrow: 'Auf dem Parkdeck', titel: 'Bohrarbeiten auf dem Parkdeck' },
+    ],
+    videos: ['ikea-video-dach'],
+  },
+  {
+    slug: 'waermepumpe-neustadt-sachsen',
+    titel: 'Wärmepumpe Neustadt in Sachsen: Kernbohrung Ø 200 mm',
+    h1: 'Kernbohrung Ø 200 mm für eine Wärmepumpe in Neustadt in Sachsen',
+    ort: 'Neustadt in Sachsen, Wohnhaus',
+    veroeffentlicht: '2026-11-19',
+    kurz: 'Kernbohrung Ø 200 mm durch eine Ziegelwand für die Durchführung einer Wärmepumpe in einem Wohnhaus in Neustadt in Sachsen.',
+    durchmesser: 200,
+    material: 'Mauerwerk (Ziegel)',
+    foto: 'neustadt-bohrung-fertig',
+    heroFoto: 'neustadt-vorher',
+    metaTitle: 'Referenz Wärmepumpe: Kernbohrung Ø 200 mm Neustadt | Kernbohr-Expert',
+    metaDesc: 'Referenz: Kernbohrung Ø 200 mm durch Ziegelmauerwerk für eine Wärmepumpe in einem Wohnhaus in Neustadt in Sachsen. Mit Fotos und Videos.',
+    kurzgesagt: 'Für die Wärmepumpe eines Wohnhauses in Neustadt in Sachsen haben wir eine Kernbohrung mit Ø 200 mm durch Ziegelmauerwerk ausgeführt. Nassgebohrt, mit sauberem, rundem Ergebnis und ohne Schlagwirkung auf die Wand.',
+    eckdaten: [
+      ['Ort', 'Neustadt in Sachsen, Wohnhaus'],
+      ['Bohrdurchmesser', 'Ø 200 mm'],
+      ['Material', 'Mauerwerk (Ziegel)'],
+      ['Verfahren', 'Nassbohren mit Hilti-Kernbohrgerät auf Bohrständer und Schiene'],
+      ['Auftrag', 'Im Auftrag eines Partnerunternehmens'],
+      ['Zweck', 'Durchführung für eine Wärmepumpe'],
+    ],
+    aufgabe: 'Für den Anschluss der Wärmepumpe mussten Leitungen durch die Außenwand geführt werden. Je nach Gerät und Mauerkasten sind Bohrdurchmesser von 100 bis 200 mm üblich. Hier war eine Öffnung mit Ø 200 mm gefordert, sauber und maßhaltig.',
+    vorgehen: [
+      ['Aufbau', 'Das Kernbohrgerät wurde an der Bohrstelle aufgebaut, mit Bohrständer und Schiene.'],
+      ['Bohren', 'Mit Diamant-Bohrkrone Ø 200 mm und Wasserkühlung haben wir durch das Ziegelmauerwerk gebohrt.'],
+      ['Ergebnis', 'Eine saubere, runde Öffnung mit Ø 200 mm. Der Bohrkern aus Ziegel ist auf den Fotos zu sehen.'],
+    ],
+    warumTitel: 'Warum Kernbohrung für die Wärmepumpe?',
+    warum: [
+      'Beim Kernbohren entsteht eine runde, maßgenaue Öffnung, ohne die Wand mit Schlägen zu belasten. Das ist wichtig bei Mauerwerk, das nicht ausbrechen soll. Weil mit Wasser gebohrt wird, bleiben Staub und Lärm gering.',
+      'Welcher Durchmesser für Ihr Gerät passt, entscheiden Hersteller und Mauerkasten. Mehr dazu auf den Seiten <a href="/kernbohrung-waermepumpe-klimaanlage/">Kernbohrung für Wärmepumpe und Klimaanlage</a> und <a href="/kernbohrung-200-mm/">Kernbohrung Ø 200 mm</a>. Den Preis für Ihr Vorhaben berechnet der <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a>.',
+    ],
+    faq: [
+      ['Was wurde in Neustadt in Sachsen gebohrt?', 'Wir haben eine Kernbohrung mit Ø 200 mm durch Ziegelmauerwerk ausgeführt, für die Leitungsdurchführung einer Wärmepumpe in einem Wohnhaus.'],
+      ['Welcher Durchmesser ist für eine Wärmepumpe üblich?', 'Je nach Hersteller und Mauerkasten sind Ø 100 bis 200 mm üblich. Maßgeblich sind die Herstellerangabe und die Leitungen samt Dämmung. Schicken Sie uns ein Foto, wir beraten.'],
+      ['Was kostet eine Kernbohrung mit Ø 200 mm?', 'Der Preis richtet sich nach Material und Bohrtiefe. Die Preise je cm sehen Sie auf unserer Seite zu Ø 200 mm, den Gesamtpreis berechnet der Kernbohr-Rechner. Der Mindestauftragswert beträgt 250 € je Auftrag.'],
+      ['Arbeiten Sie auch außerhalb von Dresden?', 'Ja. Unser Sitz ist Dresden, die Anfahrt ist im Umkreis von ca. 30 km im Preis enthalten. Darüber hinaus fahren wir nach Absprache, wie hier nach Neustadt in Sachsen.'],
+    ],
+    galerien: [
+      { ids: ['neustadt-vorher', 'neustadt-video-bohrung-1', 'neustadt-video-bohrung-2'], eyebrow: 'Vor und während der Arbeit', titel: 'Bohrarbeiten an der Wand' },
+      { ids: ['neustadt-bohrung-fertig', 'neustadt-bohrung-schiene', 'neustadt-bohrkrone-200', 'neustadt-bohrkern-ziegel'], eyebrow: 'Ergebnis', titel: 'Fertige Bohrung Ø 200 mm und Bohrkern', dark: true },
+    ],
+    videos: ['neustadt-video-bohrung-1', 'neustadt-video-bohrung-2'],
   },
 ];
