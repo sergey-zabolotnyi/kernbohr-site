@@ -7,6 +7,7 @@ import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import { crumbSchema, faqSchema } from '../lib/schema.js';
 import { site } from '../data/site.js';
+import { gewerbeSeiten } from '../data/gewerbeSeiten.js';
 
 const hero = 'werk-wand-gross';
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, wir haben ein Projekt für Kernbohrung/Betonsägen. Plan und Bohrliste senden wir gern.')}`;
@@ -85,6 +86,10 @@ const schema = [crumbSchema([['Für Bauunternehmen und Gewerbe', '/gewerbe/']]),
       <h2>Unsere Leistungen für Projekte</h2>
       <ul class="chips">
         {leistungen.map(([n, href, d]) => <li><a href={href}>{n}</a></li>)}
+      </ul>
+      <h3>Fachseiten für Projekte</h3>
+      <ul class="chips">
+        {gewerbeSeiten.map((x) => <li><a href={`/gewerbe/${x.slug}/`}>{x.nav}</a></li>)}
       </ul>
       <p class="lead" style="margin-top:1rem">Wir arbeiten nach Plänen und Markierungen. Statik, Bewehrung und Leitungsfreiheit klären Auftraggeber, Bauleitung und Statiker. Bei Bedarf stimmen wir uns direkt ab.</p>
     </div>

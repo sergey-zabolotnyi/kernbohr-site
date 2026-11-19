@@ -8,6 +8,7 @@ import CtaBand from '../components/CtaBand.astro';
 import { site } from '../data/site.js';
 import { services } from '../data/services.js';
 import { articles } from '../data/articles.js';
+import { gewerbeSeiten } from '../data/gewerbeSeiten.js';
 import HeroPreload from '../components/HeroPreload.astro';
 import { heroStyle } from '../lib/media.js';
 import HeroVideo from '../components/HeroVideo.astro';
@@ -103,6 +104,14 @@ const schema = [
   )}
 
   <Gallery ids={s.media} eyebrow="Einblick" title="Aus unserer Arbeit" />
+
+  {gewerbeSeiten.filter((g) => g.dienst.href === `/${s.slug}/`).map((g) => (
+    <section>
+      <div class="wrap">
+        <div class="callout"><strong>Für Bauunternehmen und Gewerbe</strong>Großes Projekt oder Serienarbeiten? Nacht- und Wochenendeinsätze, Dokumentation und Rahmenkonditionen: <a href={`/gewerbe/${g.slug}/`}>{g.nav}</a>.</div>
+      </div>
+    </section>
+  ))}
 
   <section class="soft">
     <div class="wrap">
