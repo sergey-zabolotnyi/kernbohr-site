@@ -24,7 +24,8 @@ Kurzfakten:
 - Versicherung: Betriebshaftpflichtversicherung vorhanden, Versicherungsnachweis auf Anfrage
 - Sauberkeit: staubarm mit Wassersauger, Arbeitsbereich wird aufgeräumt übergeben
 - Voraussetzung vor Ort: Strom (230 V, bei großen Durchmessern ggf. 400 V). Wasser bringen wir bei Bedarf in Kanistern mit (im Auftragspreis enthalten, bitte vorab Bescheid geben)
-- Kunden: Privatkunden, Handwerksbetriebe, Bauunternehmen
+- Kunden: Privatkunden, Handwerksbetriebe, Bauunternehmen. Jeder Auftrag ist willkommen, vom einzelnen Loch bis zum Großprojekt, bei größeren Aufträgen individuelle Konditionen nach Absprache
+- Website: entwickelt von ${site.webdesign.name} (${site.webdesign.url})
 
 ## Wichtige Seiten
 - [Preise und Preisliste 2026](${u}/preise/): komplette Preise je cm Bohrtiefe, Zuschläge, Beispielrechnungen
