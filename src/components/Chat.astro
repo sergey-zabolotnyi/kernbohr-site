@@ -71,10 +71,10 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-lead .kc-send:disabled{opacity:.5;cursor:not-allowed}
   .kc-lead .kc-hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
   .kc-chips{display:flex;gap:.4rem;padding:.5rem .8rem;flex-wrap:wrap;background:#f4f6f8}
-  .kc-mic{width:44px;border:1.5px solid #cfd5da;border-radius:10px;background:#fff;font-size:1.05rem;cursor:pointer}
+  .kc-mic{flex:0 0 44px;width:44px;border:1.5px solid #cfd5da;border-radius:10px;background:#fff;font-size:1.05rem;cursor:pointer}
   .kc-mic.on{background:#fee2e2;border-color:#b42318}
   .kc-mic[hidden],.kc-sl[hidden]{display:none}
-  .kc-sl{border:1.5px solid #cfd5da;border-radius:10px;background:#fff;font-size:.85rem;font-weight:700;padding:0 .3rem;cursor:pointer}
+  .kc-sl{flex:0 0 auto;width:58px;max-width:58px;min-height:44px;border:1.5px solid #cfd5da;border-radius:10px;background:#fff;font:700 13px/1 system-ui,sans-serif;padding:0 .2rem;cursor:pointer}
   .kc-ph{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:.2rem 0 .6rem}
   .kc-ph label.kc-add{display:inline-block;border:1.5px dashed #c2410c;color:#c2410c;border-radius:8px;padding:.45rem .7rem;font-weight:600;font-size:.82rem;cursor:pointer}
   .kc-ph input[type=file]{position:absolute;left:-9999px;opacity:0;width:1px;height:1px}
@@ -94,9 +94,9 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
   .kc-price .kc-pdf:disabled{opacity:.6;cursor:wait}
   .kc-chips button{border:1px solid #e8590c;background:#fff;color:#c2410c;border-radius:999px;padding:.35rem .7rem;font-size:.8rem;font-weight:600;cursor:pointer}
   .kc-form{display:flex;gap:.4rem;padding:.6rem;border-top:1px solid #e3e6e9;background:#fff}
-  .kc-form input{flex:1;min-height:44px;border:1.5px solid #cfd5da;border-radius:10px;padding:0 .7rem;font:inherit}
+  .kc-form input{flex:1 1 0;min-width:0;min-height:44px;border:1.5px solid #cfd5da;border-radius:10px;padding:0 .7rem;font:inherit}
   .kc-form input:focus{outline:0;border-color:#e8590c;box-shadow:0 0 0 3px rgba(232,89,12,.2)}
-  .kc-form button{width:48px;border:0;border-radius:10px;background:#e8590c;color:#fff;font-size:1.1rem;cursor:pointer}
+  .kc-form button{flex:0 0 48px;width:48px;border:0;border-radius:10px;background:#e8590c;color:#fff;font-size:1.1rem;cursor:pointer}
   @media (min-width:769px){#kb-chat{bottom:20px}}
   @media (max-width:768px){
     #kb-chat{bottom:calc(66px + env(safe-area-inset-bottom))}

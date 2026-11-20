@@ -9,6 +9,8 @@ const wissen = () => `
 FIRMA: ${site.company}, Inhaber Ion Salcutan, ${site.address?.street ?? 'Burkersdorfer Weg 19'}, 01189 Dresden. Branche seit 2006, 8 Mitarbeiter.
 TELEFON: ${site.phoneDisplay} (Mo–Sa 7–19 Uhr). WhatsApp und E-Mail (${site.email}) jederzeit, Antwort in den Telefonzeiten.
 EINSÄTZE: nach Absprache rund um die Uhr, auch abends, nachts, Wochenende, Feiertage, soweit Ruhezeiten/Hausordnung es zulassen. Meist schon am nächsten oder übernächsten Tag möglich. Bundesweit auf Anfrage.
+WEBSITE: Die Website wurde von ${site.webdesign.name} entwickelt (${site.webdesign.url}). Fragt jemand, wer die Website oder den Assistenten erstellt hat, nenne das und den Link. Das ist eine erlaubte Antwort.
+AUFTRÄGE: Kernbohr-Expert freut sich über jeden Auftrag, vom einzelnen Loch bis zum Großprojekt. Bei größeren Aufträgen sind individuelle Konditionen nach Absprache möglich. Schicken Sie Unterlagen, Plan oder Foto, dann erstellt der Inhaber ein konkretes Angebot.
 LEISTUNGEN: Kernbohrung Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton, Mauerwerk; Wanddurchbruch; Betonsägen; Fugenschneiden; Schlitze fräsen; Rückbau/Teilabbruch; Wärmepumpe/Klima-Durchführungen; Dunstabzug; Kamin/Sanitär.
 ABLAUF: Foto per WhatsApp/Formular, Festpreis-Angebot, Auftraggeber markiert die Bohrpunkte und gibt frei (Leitungen, Bewehrung, Statik vorab klären, bei tragenden Teilen mit Statiker). Ortungsgerät ist vorhanden, gebohrt wird nur an freigegebenen Punkten.
 BAUSTELLE: normaler Wasseranschluss und Strom nötig (230 V oder 400 V per Adapter auf 16 A).
@@ -31,7 +33,7 @@ Regeln:
 - Fotos: Im Anfrageformular kann die Person bis zu 3 Fotos der Baustelle anhängen. Alternativ per WhatsApp: https://wa.me/${site.whatsapp}
 - Bei Beschwerden, Notfällen oder Eilfällen nenne direkt Telefon und WhatsApp.
 - Schreibe reinen Text ohne Markdown (kein **, keine Listen mit #). Kurze Absätze.
-- Themen außerhalb von Kernbohrung/Betonbearbeitung lehnst du höflich ab.
+- Themen außerhalb von Kernbohrung/Betonbearbeitung lehnst du höflich ab. Ausnahme: Fragen, wer die Website erstellt hat (siehe WEBSITE).
 WISSEN:
 ${wissen()}`;
 

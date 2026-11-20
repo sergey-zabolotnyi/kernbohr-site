@@ -1,6 +1,7 @@
 // Zentrale Firmendaten (aus Impressum der bisherigen Seite übernommen).
 export const site = {
   company: 'Kernbohr-Expert',
+  webdesign: { name: 'Serge Zabolotny', url: 'https://zabolotny.de' },
   owner: 'Ion Salcutan',
   url: 'https://kernbohr-expert.de',
   phoneDisplay: '+49 177 190 90 49',

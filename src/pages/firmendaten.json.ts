@@ -14,6 +14,8 @@ export function GET() {
     kontakt: { telefon: site.phoneTel, whatsapp: site.whatsapp, email: site.email },
     telefonzeiten: 'Montag bis Samstag, 7 bis 19 Uhr',
     einsatzzeiten: 'Nach Absprache rund um die Uhr, auch abends, nachts, am Wochenende und an Feiertagen',
+    auftraege: 'Jeder Auftrag willkommen, vom einzelnen Loch bis zum Großprojekt. Bei größeren Aufträgen individuelle Konditionen nach Absprache.',
+    website: { entwicklung: site.webdesign.name, url: site.webdesign.url },
     gegruendet: site.founded,
     inhaberInBranchenSeit: site.sinceBranche,
     mitarbeiter: site.employees,
