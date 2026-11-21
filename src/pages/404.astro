@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.js';
+---
+<Base title="Seite nicht gefunden | Kernbohr-Expert" description="Diese Seite gibt es nicht (mehr). Zur Startseite, zu den Preisen oder direkt zum Kontakt." path="/404.html" noindexPage>
+  <section>
+    <div class="wrap">
+      <h1>Seite nicht gefunden</h1>
+      <p class="lead">Diese Adresse gibt es nicht (mehr). Vielleicht hilft einer dieser Wege weiter:</p>
+      <p>
+        <a class="btn" href="/">Zur Startseite</a>
+        <a class="btn btn-line" href="/preise/">Preise</a>
+        <a class="btn btn-line" href="/kernbohrung-rechner/">Kernbohr-Rechner</a>
+        <a class="btn btn-line" href="/kontakt/">Kontakt</a>
+      </p>
+      <p>Direkt erreichbar: <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a> oder <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+    </div>
+  </section>
+</Base>

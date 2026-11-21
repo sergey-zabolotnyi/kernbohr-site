@@ -17,7 +17,7 @@ import { orte } from '../data/orte.js';
 import Partner from '../components/Partner.astro';
 import Bewertungen from '../components/Bewertungen.astro';
 import { image, heroStyle } from '../lib/media.js';
-import { faqSchema, howToSchema } from '../lib/schema.js';
+import { faqSchema, howToSchema, videoSchema } from '../lib/schema.js';
 
 const pick = ['Was kostet eine Kernbohrung', 'Kann ich meine Anfrage auch online', 'Arbeiten Sie auch am Wochenende', 'Wie tief können Sie bohren', 'Wie groß können die Bohrdurchmesser', 'Arbeiten Sie staubfrei', 'In welchen Regionen'];
 const faqs = pick.map((p) => allFaqs.find(([q]) => q.startsWith(p))).filter(Boolean);
@@ -43,9 +43,9 @@ const werte = [
 ---
 <Base
   title="Kernbohrung Dresden ab 1,20 €/cm | Kernbohr-Expert"
-  description="Kernbohrung und Wanddurchbruch in Dresden, Leipzig und Sachsen: Ø 14–500 mm, bis 2 m tief, Preisliste ab 1,20 € je cm. Einsätze nach Absprache rund um die Uhr."
+  description="Kernbohrung und Wanddurchbruch in Dresden und Sachsen: Ø 14–500 mm, bis 2 m tief, Preisliste ab 1,20 € je cm. Einsätze auch nachts nach Absprache."
   path="/"
-  schema={[faqSchema(faqs), howToSchema('Kernbohrung beauftragen und ausführen lassen', prozess.map((s) => [s.t, s.d]))]}
+  schema={[videoSchema({ id: 'hero-kernbohr-schiene', caption: 'Kernbohrung mit Hilti-Kernbohrgerät auf Schiene', alt: 'Kurzvideo: Kernbohrgerät auf Führungsschiene bohrt eine Öffnung in eine Betonwand' }), faqSchema(faqs), howToSchema('Kernbohrung beauftragen und ausführen lassen', prozess.map((s) => [s.t, s.d]))]}
 >
   {hasPhoto && <link slot="head" rel="preload" as="image" type="image/webp" imagesrcset={`/images/werk-wand-gross-800.webp 800w, /images/werk-wand-gross-1600.webp 1600w`} imagesizes="(max-width: 860px) 100vw, 60vw" fetchpriority="high" />}
   <section class={`hero ${hasPhoto ? 'has-bg' : 'no-photo'}`} style={heroStyle()}>

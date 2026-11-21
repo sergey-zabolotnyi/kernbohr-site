@@ -65,7 +65,7 @@ export const projekte = [
     material: 'Mauerwerk (Ziegel)',
     foto: 'neustadt-bohrung-fertig',
     heroFoto: 'neustadt-vorher',
-    metaTitle: 'Referenz Wärmepumpe: Kernbohrung Ø 200 mm Neustadt | Kernbohr-Expert',
+    metaTitle: 'Wärmepumpe Neustadt: Kernbohrung Ø 200 mm | Kernbohr-Expert',
     metaDesc: 'Referenz: Kernbohrung Ø 200 mm durch Ziegelmauerwerk für eine Wärmepumpe in einem Wohnhaus in Neustadt in Sachsen. Mit Fotos und Videos.',
     kurzgesagt: 'Für die Wärmepumpe eines Wohnhauses in Neustadt in Sachsen haben wir eine Kernbohrung mit Ø 200 mm durch Ziegelmauerwerk ausgeführt. Nassgebohrt, mit sauberem, rundem Ergebnis und ohne Schlagwirkung auf die Wand.',
     eckdaten: [
