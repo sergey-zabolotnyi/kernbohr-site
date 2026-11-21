@@ -17,8 +17,8 @@ const beispiele = [
 ].map(([t, p]) => ({ t, r: berechne(p), desc: `${p.anzahl}× Ø ${p.d} mm, ${p.tiefe} cm ${p.material === 'mauerwerk' ? 'Mauerwerk' : 'Beton'}${p.richtung ? ', Überkopf' : ''}` }));
 ---
 <Base
-  title="Kernbohrung Kosten Dresden: Preisliste 2026"
-  description="Kernbohrung Preisliste 2026: 1,20–11,00 € je cm Bohrtiefe, Anfahrt 85 €, Mindestpreis 250 €. Mit Richtpreis-Rechner. Dresden, Leipzig, Sachsen."
+  title="Kernbohrung Preise 2026 ab 1,20 € je cm | Dresden"
+  description="Preisliste Kernbohrung 2026: ab 1,20 € je cm Bohrtiefe, Anfahrt 85 €, Mindestpreis 250 €. Preise nach Durchmesser, Beispiele und Rechner. Dresden."
   path="/preise/"
   schema={[crumbSchema([['Kosten & Preise', '/preise/']]), faqSchema(preisFaqs), { '@context': 'https://schema.org', '@type': 'Service', name: 'Kernbohrung', serviceType: 'Kernbohrung', provider: { '@id': 'https://kernbohr-expert.de/#business' }, areaServed: { '@type': 'City', name: 'Dresden' }, offers: preisAngebot('kernbohrung') }]}
 >
@@ -121,7 +121,7 @@ const beispiele = [
           </tbody>
         </table>
       </div>
-      <p class="note">Beispielrechnung nach Preisliste 2026, ohne Anfahrt (85 €) und Mindestpreis (250 € je Auftrag). Den verbindlichen Festpreis erhalten Sie nach Foto und kurzer Rücksprache.</p>
+      <p class="note">Beispielrechnung nach Preisliste 2026, ohne Anfahrt (85 €) und Mindestpreis (250 € je Auftrag). Ein verbindliches Angebot erhalten Sie nach Foto und kurzer Rücksprache.</p>
     </div>
   </section>
 
@@ -142,5 +142,5 @@ const beispiele = [
     </div>
   </section>
 
-  <CtaBand title="Festpreis nach Foto" text="Senden Sie uns ein Foto der Bohrstelle und den gewünschten Durchmesser. Wir melden uns mit einem konkreten Angebot." />
+  <CtaBand title="Verbindliches Angebot nach Foto" text="Senden Sie uns ein Foto der Bohrstelle und den gewünschten Durchmesser. Wir melden uns mit einem konkreten Angebot." />
 </Base>
