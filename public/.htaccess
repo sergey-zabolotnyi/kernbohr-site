@@ -32,3 +32,20 @@ AddCharset UTF-8 .txt .json .xml .html
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType text/javascript "access plus 1 year"
 </IfModule>
+
+# Sicherheits-Header (nur wenn mod_headers aktiv ist, sonst wird der Block ignoriert)
+# HSTS bewusst mit kurzer Laufzeit (5 Minuten); nach erfolgreichem Test auf 31536000 (1 Jahr) erhöhen.
+# Content-Security-Policy folgt später zuerst im Report-Only-Modus, weil eine strenge Policy Chat/Skripte brechen kann.
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=300"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(self), geolocation=(), payment=()"
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Eigene 404-Seite
+ErrorDocument 404 /404.html

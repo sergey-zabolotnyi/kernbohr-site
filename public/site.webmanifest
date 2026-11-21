@@ -1,0 +1,12 @@
+{
+  "name": "Kernbohr-Expert Dresden",
+  "short_name": "Kernbohr-Expert",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#14181c",
+  "theme_color": "#14181c",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -44,7 +44,7 @@ for (const { url, html } of pages) {
   }
   if (canon !== base + url) err(url, `canonical falsch: ${canon}`);
   if (h1s.length !== 1) err(url, `h1 Anzahl ${h1s.length}`);
-  if (/name="robots" content="[^"]*noindex/.test(html)) err(url, 'noindex im Produktions-Build!');
+  if (url !== '/404.html' && /name="robots" content="[^"]*noindex/.test(html)) err(url, 'noindex im Produktions-Build!');
   if (!/property="og:image"/.test(html)) err(url, 'og:image fehlt');
   if (!/<html lang="de"/.test(html)) err(url, 'lang fehlt');
   for (const m of html.matchAll(/<img\b[^>]*>/g)) if (!/ alt=/.test(m[0])) err(url, 'img ohne alt');
@@ -95,7 +95,7 @@ if (fs.existsSync(path.join(dist, 'robots.txt'))) {
 // Sitemap deckt alle Seiten ab
 if (fs.existsSync(path.join(dist, 'sitemap.xml'))) {
   const sm = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
-  for (const { url } of pages) if (!sm.includes(`<loc>${base}${url}</loc>`)) err(url, 'nicht in sitemap.xml');
+  for (const { url } of pages) if (url !== '/404.html' && !sm.includes(`<loc>${base}${url}</loc>`)) err(url, 'nicht in sitemap.xml');
 }
 // Redirect-Ziele
 const red = fs.existsSync(path.join(dist, '_redirects')) ? fs.readFileSync(path.join(dist, '_redirects'), 'utf8') : '';

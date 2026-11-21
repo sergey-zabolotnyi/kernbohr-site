@@ -7,7 +7,7 @@ import Icon from '../components/Icon.astro';
 import { site } from '../data/site.js';
 import { services } from '../data/services.js';
 
-const { title, description, path = '/', schema = [] } = Astro.props;
+const { title, description, path = '/', schema = [], noindexPage = false } = Astro.props;
 
 // Staging-Schutz: standardmäßig noindex. Nur `npm run build:prod` entfernt es.
 const noindex = import.meta.env.PUBLIC_NOINDEX !== 'false';
@@ -125,6 +125,9 @@ const nav = [
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     {noindex && <meta name="robots" content="noindex, nofollow, noarchive" />}
+    {!noindex && noindexPage && <meta name="robots" content="noindex, follow" />}
+    {!noindex && !noindexPage && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+    <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.company} />
     <meta property="og:title" content={fullTitle} />
