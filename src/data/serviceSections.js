@@ -200,11 +200,11 @@ export const serviceSections = {
     },
     {
       h: 'Ablauf und Vorbereitung',
-      p: ['Wir markieren die Bohrstelle mit Ihnen, decken Küche und Arbeitsbereich ab und bohren staubarm mit Wassersauger. Die Küche bleibt dabei sauber, die Bohrung dauert in der Regel nur kurz. Bitte räumen Sie den Bereich vor dem Termin frei und prüfen Sie, ob in der Wand Leitungen verlaufen. Bei Mietwohnungen und Eigentümergemeinschaften klären Sie vorab die Zustimmung.'],
+      p: ['Wir markieren die Bohrstelle mit Ihnen, decken Küche und Arbeitsbereich ab und bohren nass und staubarm, auf Wunsch mit Wassersauger. Die Küche bleibt dabei sauber, die Bohrung dauert in der Regel nur kurz. Bitte räumen Sie den Bereich vor dem Termin frei und prüfen Sie, ob in der Wand Leitungen verlaufen. Bei Mietwohnungen und Eigentümergemeinschaften klären Sie vorab die Zustimmung.'],
     },
     {
       h: 'Was kostet der Durchbruch für die Dunstabzugshaube?',
-      p: ['Eine Bohrung für die Abzugshaube ist eine normale Kernbohrung. Der Preis hängt von Durchmesser, Wandstärke und Material ab. Einen Richtpreis erhalten Sie im Kernbohr-Rechner, den Festpreis nach einem Foto der Stelle.'],
+      p: ['Eine Bohrung für die Abzugshaube ist eine normale Kernbohrung. Der Preis hängt von Durchmesser, Wandstärke und Material ab. Einen Richtpreis erhalten Sie im Kernbohr-Rechner, ein verbindliches Angebot nach einem Foto der Stelle.'],
     },
   ],
 

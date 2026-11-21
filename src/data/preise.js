@@ -8,7 +8,7 @@ export const faktoren = [
   { icon: 'wrench', t: 'Bohrrichtung', d: 'Überkopf- und Schrägbohrungen kosten 50 % Zuschlag, waagerechte und senkrechte Bohrungen nicht.' },
   { icon: 'clock', t: 'Einsatzzeit', d: 'In der Nachtzeit von 23 bis 6 Uhr berechnen wir 75 % Zuschlag auf den Bohrpreis, samstags, sonntags und an Feiertagen 100 %.' },
   { icon: 'truck', t: 'Anfahrt und Aufbau', d: `Anfahrt und Baustelleneinrichtung kosten ${eur(regeln.anfahrt)} pro Einsatz im Umkreis bis ca. 30 km um Dresden, darüber hinaus nach Vereinbarung. Mehrere Bohrungen in einem Termin senken die Kosten je Bohrung.` },
-  { icon: 'drop', t: 'Wassersauger', d: `Der Wassersauger mit Bediener kostet ${eur(regeln.wassersaugerTag)} pro Tag und hält Ihre Baustelle sauber.` },
+  { icon: 'drop', t: 'Wassersauger', d: `Der Wassersauger mit Bediener kostet ${eur(regeln.wassersaugerTag)} pro Tag und hält Ihre Baustelle sauber. Das Wasser (Anschluss vor Ort oder Kanister) ist ohne Aufpreis dabei.` },
   { icon: 'home', t: 'Gerüst und Wartezeit', d: `Gerüststellung ${eur(regeln.gerueststellungTag)} pro Tag, Wartezeit ${eur(regeln.wartezeitStunde)} pro Stunde, falls wir vor Ort warten müssen.` },
 ];
 
@@ -33,7 +33,7 @@ export const preisFaqs = [
   ['Gibt es einen Mindestpreis oder eine Anfahrtspauschale?', 'Ja. Anfahrt und Baustelleneinrichtung kosten 85 € pro Einsatz im Umkreis bis ca. 30 km um Dresden, darüber hinaus nach Vereinbarung. Der Mindestauftragswert liegt bei 250 €. Mehrere Bohrungen in einem Termin sind deshalb pro Bohrung günstiger.'],
   ['Was kostet eine Überkopf- oder Schrägbohrung?', 'Überkopf- und Schrägbohrungen kosten 50 % Zuschlag auf den Bohrpreis.'],
   ['Wie tief können Sie bohren?', 'Wir bohren bis zu 2 m tief, Durchmesser von 14 bis 500 mm sind in der Preisliste enthalten. Größere Durchmesser auf Anfrage.'],
-  ['Was kostet der Wassersauger?', 'Der Wassersauger mit Bediener kostet 55 € pro Tag. Er saugt das Bohrwasser direkt ab und schützt Boden und Wände.'],
+  ['Was kostet der Wassersauger?', 'Der Wassersauger mit Bediener kostet 55 € pro Tag. Er saugt das Bohrwasser direkt ab und schützt Boden und Wände. Das Wasser selbst, aus dem Anschluss vor Ort oder in Kanistern, berechnen wir nicht extra.'],
   ['Kann ich die Kosten von der Steuer absetzen?', 'Privatkunden können Arbeits- und Fahrtkosten für Handwerkerleistungen im eigenen Haushalt nach § 35a EStG zu 20 % geltend machen, höchstens 1.200 € pro Jahr. Voraussetzung sind unter anderem eine ordnungsgemäße Rechnung und unbare Zahlung. Bitte klären Sie Einzelheiten mit Ihrem Steuerberater.'],
   ['Wie kann ich Kosten sparen?', 'Bündeln Sie mehrere Bohrungen in einem Termin, sorgen Sie für freien Zugang sowie Strom und Wasser und senden Sie Fotos und Maße vorab. So entfallen Rückfragen und Wartezeiten.'],
 ];

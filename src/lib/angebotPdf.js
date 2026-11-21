@@ -181,7 +181,7 @@ export async function erstelleAngebotPdf({ eingabe, ergebnis }) {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(13);
   doc.setTextColor(...DARK);
-  doc.text('Jetzt Festpreis anfragen', M + 7, by + 9);
+  doc.text('Verbindliches Angebot anfragen', M + 7, by + 9);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9.5);
   doc.setTextColor(...GRAY);

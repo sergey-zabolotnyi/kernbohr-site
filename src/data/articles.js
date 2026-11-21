@@ -49,7 +49,7 @@ export const articles = [
     faqs: [
       ['Ist Kernbohrung teurer als Meißeln?', 'Pro Öffnung kann die Kernbohrung mehr kosten. Dafür entfallen Nacharbeit, Verputzen und das Risiko von Rissen, sodass sie insgesamt oft günstiger ausfällt. Den genauen Preis zeigt der Kernbohr-Rechner.'],
       ['Kann man Stahlbeton meißeln?', 'Bei größeren Öffnungen ist das sehr aufwändig und ungenau. Für Stahlbeton ist die Kernbohrung das übliche Verfahren.'],
-      ['Wird bei der Kernbohrung viel Staub erzeugt?', 'Bei der Nassbohrung wird der Staub vom Wasser gebunden. Mit Wassersauger und Abdeckung bleibt der Bereich sauber.'],
+      ['Wird bei der Kernbohrung viel Staub erzeugt?', 'Bei der Nassbohrung wird der Staub vom Wasser gebunden. Mit Abdeckung und auf Wunsch Wassersauger bleibt der Bereich sauber.'],
     ],
   },
   {
@@ -62,6 +62,8 @@ export const articles = [
     short: 'Durchmesser, Position, Abdichtung und die typischen Fehler bei der Wanddurchführung.',
     answer: 'Für die Leitungen von Wärmepumpe oder Klimagerät wird ein runder Durchbruch durch die Außenwand gebohrt. Entscheidend sind die richtige Position, ein passender Durchmesser, ein leichtes Gefälle nach außen und eine dauerhaft dichte Abdichtung. Bei tragenden oder erdberührten Bauteilen sollten Statiker bzw. Fachplaner einbezogen werden.',
     sections: [
+      { h: 'Warum jetzt viele Hausbesitzer auf Wärmepumpe umsteigen', p: [
+        'Immer mehr Eigentümer in Sachsen ersetzen Gas- oder Ölheizungen durch eine Wärmepumpe. Für die Installation wird fast immer eine saubere Wanddurchführung gebraucht, und genau dafür sind wir da. Ob und in welcher Höhe es dafür Zuschüsse gibt, ändert sich regelmäßig; aktuelle Informationen finden Sie bei <a href="https://www.bafa.de" rel="noopener" target="_blank">BAFA</a> und <a href="https://www.kfw.de" rel="noopener" target="_blank">KfW</a>.' ] },
       { h: 'Warum die Wärmepumpe eine Kernbohrung braucht', p: [
         'Leitungen für Kältemittel, Heizungsvor- und -rücklauf sowie Strom und Steuerung müssen von der Außeneinheit in das Gebäude geführt werden. Die Kernbohrung liefert eine glatte, runde und passgenaue Öffnung, ohne Erschütterungen, die Risse im Mauerwerk verursachen können.' ] },
       { h: 'Split oder Monoblock: Was geht durch die Wand?', p: [
@@ -74,7 +76,7 @@ export const articles = [
         'Leitungen, Bewehrung und Hohlräume vor dem Bohren orten',
         'Möglichst kurze Leitungswege zwischen Außen- und Inneneinheit',
         'Leichtes Gefälle nach außen einplanen, damit kein Wasser in die Wand läuft' ] },
-      { h: 'Abdichtung: Warum Bauschaum allein nicht reicht', p: [
+      { h: 'Wanddurchführung der Wärmepumpe abdichten: Warum Bauschaum allein nicht reicht', p: [
         'Bei Bauteilen, die an das Erdreich grenzen, gilt für die Abdichtung die DIN 18533 (Abdichtung erdberührter Bauteile). Gegen drückendes Wasser kommen Futterrohre mit Ringraumdichtung oder Flanschsysteme zum Einsatz. Bauschaum und Silikon sind dafür kein dauerhafter Ersatz.',
         'Oberhalb des Geländes wird die Durchführung mit geeignetem Futterrohr bzw. Leerrohr, Dichtmanschette und witterungsbeständigem Dichtstoff geschlossen. Die genauen Vorgaben stehen in der Herstellerdokumentation.' ] },
       { h: 'Durch die Kellerwand oder unter der Kellerdecke bohren', p: [
@@ -86,7 +88,7 @@ export const articles = [
       { h: 'Ablauf in sechs Schritten', ol: [
         'Anfrage mit Foto und Gerätedatenblatt senden',
         'Position festlegen und Wand orten (Leitungen, Bewehrung)',
-        'Festpreisangebot erhalten',
+        'Verbindliches Angebot erhalten',
         'Termin vereinbaren: Strom, Wasser und Zugang klären',
         'Kernbohrung durchführen, Bohrwasser auffangen, Bohrkern entfernen',
         'Futterrohr setzen, abdichten, Arbeitsbereich aufgeräumt übergeben' ] },
@@ -105,6 +107,7 @@ export const articles = [
       ['Welchen Durchmesser braucht meine Wärmepumpe?', 'Das hängt vom Gerät und der Leitungsführung ab. Senden Sie uns Datenblatt und Foto, wir nennen den passenden Durchmesser.'],
       ['Brauche ich einen Statiker?', 'Bei tragenden Wänden oder mehreren Bohrungen nah beieinander ist eine Abstimmung sinnvoll. Wir beraten Sie dazu gern.'],
       ['Kann die Leitung der Wärmepumpe durch die Kellerwand geführt werden?', 'Ja, das ist üblich. Bei erdberührten Wänden muss die Durchführung aber dauerhaft abgedichtet werden, zum Beispiel mit Futterrohr und Ringraumdichtung. Die Wahl richtet sich nach Wasserbelastung, Bauteil und Herstellervorgaben und wird vor der Bohrung mit dem Fachplaner geklärt.'],
+      ['Wie wird die Wanddurchführung einer Wärmepumpe abgedichtet?', 'Über der Erde mit Futterrohr bzw. Leerrohr, Dichtmanschette und witterungsbeständigem Dichtstoff, bei erdberührten Wänden mit Futterrohr und Ringraumdichtung nach den Vorgaben von Hersteller und Fachplaner. Die Dichtung ist ein eigener Arbeitsschritt nach der Bohrung.'],
       ['Reicht Bauschaum zum Abdichten der Kernbohrung?', 'Bei erdberührten Bauteilen nein. Bauschaum ist weder dauerhaft wasserdicht noch für drückendes Wasser geeignet. Dafür braucht es ein Futterrohr mit geeigneter Abdichtung.'],
       ['Wie lange dauert die Bohrung?', 'Eine Standardbohrung dauert in der Regel wenige Minuten bis etwa eine Stunde inklusive Aufbau.'],
     ],
@@ -213,9 +216,9 @@ export const articles = [
     slug: 'kernbohrung-kosten-dresden',
     icon: 'euro',
     date: '2026-11-11',
-    title: 'Was kostet eine Kernbohrung? Preise 2026 in Dresden',
+    title: 'Was kostet eine Kernbohrung? Ab 1,20 € je cm (2026)',
     h1: 'Was kostet eine Kernbohrung? Preise und Beispiele für Dresden',
-    description: 'Kernbohrung Kosten 2026: Preis je cm Bohrtiefe nach Durchmesser, Mindestauftragswert, Anfahrt, Zuschläge und konkrete Rechenbeispiele aus Dresden.',
+    description: 'Kernbohrung Kosten 2026: ab 1,20 € je cm. Preis nach Durchmesser, Mindestauftrag 250 €, Anfahrt, Zuschläge und echte Rechenbeispiele aus Dresden.',
     short: 'Preis je cm, Mindestauftragswert, Zuschläge und Rechenbeispiele nach Preisliste 2026.',
     answer: `Eine Kernbohrung wird nach Durchmesser und Bohrtiefe berechnet: Bei Ø 14 bis 101 mm in Beton kostet sie ${eur(staffelKompakt[0][2])} je cm Bohrtiefe (brutto). Hinzu kommen die Anfahrt mit ${eur(regeln.anfahrt)} und eine Pilotbohrung mit ${eur(regeln.pilotbohrung)}. Der Mindestauftragswert liegt bei ${eur(regeln.mindestpreis)}, sodass auch eine einzelne kleine Bohrung dort beginnt.`,
     sections: [
@@ -401,7 +404,7 @@ export const articles = [
         ],
       } },
       { h: 'Warum Kernbohrung für Rohr- und Kabeldurchführungen', p: [
-        'Bei der Kernbohrung schneidet eine rotierende Diamantkrone einen runden Zylinder aus dem Beton und lässt ihn als Bohrkern stehen. Das ist präziser und erschütterungsärmer als Schlagbohren oder Stemmen und schont angrenzende Bauteile. Die Bohrung wird in der Regel nass ausgeführt, mit Wassersauger bleibt es sauber.',
+        'Bei der Kernbohrung schneidet eine rotierende Diamantkrone einen runden Zylinder aus dem Beton und lässt ihn als Bohrkern stehen. Das ist präziser und erschütterungsärmer als Schlagbohren oder Stemmen und schont angrenzende Bauteile. Die Bohrung wird in der Regel nass ausgeführt, mit Abdeckung und auf Wunsch Wassersauger bleibt es sauber.',
       ] },
       { h: 'Welcher Durchmesser für welchen Zweck?', p: ['Die Wahl des Durchmessers hängt vom Rohr oder der Leitung ab, plus Platz für Dämmung oder Dichtung. Eine Übersicht finden Sie in unserem Ratgeber zur Wahl des Bohrdurchmessers.'] },
       { h: 'Was kostet eine Betonbohrung?', p: ['Der Preis richtet sich nach Durchmesser und Bohrtiefe, ab 1,20 € je cm Bohrtiefe (brutto, Ø 14–101 mm in Beton). Dazu kommen Anfahrt und Pilotbohrung, der Mindestauftragswert beträgt 250 €. Details und Beispiele stehen im Kostenratgeber und im Kernbohr-Rechner.'] },
@@ -416,7 +419,7 @@ export const articles = [
       ['Ist Betonbohrung dasselbe wie Kernbohrung?', 'Betonbohrung ist der Oberbegriff für Bohrungen in Beton. Die Kernbohrung ist das Verfahren mit Diamantkrone für runde, saubere Öffnungen größerer Durchmesser.'],
       ['Wann reicht ein Bohrhammer nicht aus?', 'Bei größeren Durchmessern, Stahlbeton mit Bewehrung und überall dort, wo Erschütterungen und Ausbrüche vermieden werden sollen, ist eine Kernbohrung die bessere Wahl.'],
       ['Wie groß kann eine Betonbohrung werden?', 'Wir bohren Ø 14 bis 500 mm, bis zu 2 m tief. Größere Durchmesser auf Anfrage.'],
-      ['Machen Sie auch Betonbohrungen über Kopf und in Wohnungen?', 'Ja, horizontal, vertikal und über Kopf, in bewohnten Gebäuden staubarm mit Wassersauger.'],
+      ['Machen Sie auch Betonbohrungen über Kopf und in Wohnungen?', 'Ja, horizontal, vertikal und über Kopf, in bewohnten Gebäuden staubarm im Nassverfahren, auf Wunsch mit Wassersauger.'],
     ],
   },
   {
@@ -433,7 +436,7 @@ export const articles = [
         '<strong>Bohrmotor und Bohrständer:</strong> Der Ständer wird an der Wand befestigt (Dübel oder Vakuum) und führt die Krone gerade. Ohne stabile Befestigung verläuft die Bohrung schief oder die Krone klemmt.',
         '<strong>Diamantbohrkrone im passenden Durchmesser:</strong> Für Mauerwerk, Beton und Stahlbeton gibt es unterschiedliche Kronen. Die falsche Krone verschleißt schnell oder schneidet schlecht.',
         '<strong>Wasser:</strong> Die Nassbohrung kühlt die Krone und bindet Staub. Wasser muss zugeführt und Schlamm aufgefangen werden.',
-        '<strong>Absaugung und Abdeckung:</strong> Wassersauger, Folie und Abdeckung schützen Boden und Möbel.',
+        '<strong>Absaugung und Abdeckung:</strong> Folie, Abdeckung und auf Wunsch der Wassersauger schützen Boden und Möbel.',
         '<strong>Strom:</strong> 230 V, bei großen Durchmessern eventuell 400 V.',
       ] },
       { h: 'Typische Risiken beim Selbermachen', ul: [
@@ -495,7 +498,7 @@ export const articles = [
       { h: 'So läuft der Termin ab', ol: [
         'Foto der Stelle mit Maßband senden, wir nennen Durchmesser und Preis',
         'Bohrstelle gemeinsam markieren und prüfen, ob dort Leitungen verlaufen',
-        'Küche abdecken, staubarm mit Wassersauger bohren',
+        'Küche abdecken, nass und staubarm bohren (auf Wunsch mit Wassersauger)',
         'Aufräumen, Übergabe der sauberen Küche',
       ] },
       { h: 'Was kostet der Durchbruch?', p: [

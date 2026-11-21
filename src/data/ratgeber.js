@@ -24,7 +24,7 @@ export const artikel = [
       },
       {
         h2: 'So erhalten Sie ein genaues Angebot',
-        paras: ['Mit diesen Angaben kann ein Festpreis meist ohne Vor-Ort-Termin genannt werden:'],
+        paras: ['Mit diesen Angaben kann meist ohne Vor-Ort-Termin ein verbindliches Angebot erstellt werden:'],
         list: [
           'Foto der Stelle (Gesamtansicht und Nahaufnahme)',
           'Gewünschter Durchmesser und Anzahl der Bohrungen',

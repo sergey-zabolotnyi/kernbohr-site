@@ -37,7 +37,7 @@ Die Website kernbohr-expert.de wurde von ${site.webdesign.name} entwickelt (${si
 - Durchmesser: 14 bis 500 mm in der Preisliste, größere auf Anfrage
 - Bohrtiefe: bis 2 m (Praxisbeispiel: Ø 80 mm, 1 m tief in Stahlbeton)
 - Materialien: Beton, Stahlbeton, Ziegelmauerwerk, Naturstein
-- Verfahren: Nassbohrung mit Wasserführung und Wassersauger, auch trocken; waagerecht, senkrecht, über Kopf und schräg
+- Verfahren: Nassbohrung mit Wasserführung (Wassersauger optional), auch trocken; waagerecht, senkrecht, über Kopf und schräg
 - Technik: Hilti-Kernbohrgeräte auf Bohrständer oder Schiene; Wandsäge und Fugenschneider für Schnitte
 
 ## Preisliste 2026 (Stand ${stand}), Preis je cm Bohrtiefe

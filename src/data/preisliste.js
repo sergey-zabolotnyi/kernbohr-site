@@ -71,7 +71,7 @@ export function satz(durchmesser, material) {
 export function berechne({ d, tiefe, anzahl = 1, material = 'beton', richtung = 'normal', zeit = 'tag', wasser = false, geruest = false, tage = 1 }) {
   const s = satz(d, material);
   const bohr = s * tiefe * anzahl;
-  const zuschlag = richtung === 'ueberkopf' || richtung === 'schraeg' ? bohr * regeln.zuschlagUeberkopf : 0;
+  const zuschlag = richtung === 'ueberkopf' ? bohr * regeln.zuschlagUeberkopf : richtung === 'schraeg' ? bohr * regeln.zuschlagSchraeg : 0;
   const zz = zeit === 'nacht' ? regeln.zuschlagNacht : zeit === 'wochenende' ? regeln.zuschlagWochenende : 0;
   const posten = [{ t: `${anzahl}× Ø ${d} mm, ${tiefe} cm, ${material === 'mauerwerk' ? 'Mauerwerk' : 'Beton/Stahlbeton'} (${eur(s)}/cm)`, v: bohr }];
   if (zuschlag) posten.push({ t: richtung === 'ueberkopf' ? 'Zuschlag Überkopf (+50 %)' : 'Zuschlag Schrägbohrung (+50 %)', v: zuschlag });
