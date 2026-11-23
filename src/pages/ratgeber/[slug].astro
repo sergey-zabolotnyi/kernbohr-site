@@ -68,6 +68,11 @@ const more = articles.filter((x) => x.slug !== a.slug).slice(0, 3);
           </details>
         ))}
 
+        {a.autor && (
+          <div class="callout" style="margin-top:2rem"><strong>Über den Autor</strong>
+            {a.autor.name}{a.autor.firma && <>, {a.autor.firma}</>}. {a.autor.text} {a.autor.url && <a href={a.autor.url} rel="noopener" target="_blank">Zur Website</a>}
+          </div>
+        )}
         <p class="note" style="margin-top:2rem">Hinweis: Dieser Ratgeber gibt allgemeine Fachinformationen und ersetzt keine Statik, Rechts- oder Steuerberatung.</p>
       </article>
     </div>

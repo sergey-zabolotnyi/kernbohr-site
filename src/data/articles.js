@@ -639,4 +639,173 @@ export const articles = [
       ['Was passiert, wenn Asbest gefunden wird?', 'Dann übernehmen zugelassene Fachfirmen Sanierung und Entsorgung. Wir stimmen unsere Arbeiten darauf ab.'],
     ],
   },
+  {
+    slug: 'wallbox-wanddurchfuehrung-kernbohrung',
+    icon: 'drill',
+    date: '2026-11-23',
+    title: 'Wallbox: Wanddurchführung für das Ladekabel richtig planen',
+    h1: 'Wallbox installieren: Kernbohrung für Zuleitung und Leerrohr',
+    description: 'Wallbox-Installation: Wann eine Kernbohrung nötig ist, welcher Durchmesser für Leerrohr und Kabel passt, Brandschutz, Zustimmung und Kosten in Dresden.',
+    short: 'Durchmesser für Leerrohr und Zuleitung, Brandschutz, Zustimmung und Kosten bei der Wallbox.',
+    answer: 'Für die Zuleitung einer Wallbox wird meist eine Wand oder Decke durchbohrt, zum Beispiel von der Garage zum Zählerschrank oder durch die Außenwand. Der Durchmesser richtet sich nach Leerrohr, Kabelbündel und Dichtung, die Elektrofachkraft nennt das Maß. Die Zuleitung selbst installiert ein Elektrofachbetrieb, wir bohren die Öffnung passgenau und sauber.',
+    sections: [
+      { h: 'Wann braucht eine Wallbox eine Kernbohrung?', p: [
+        'Wo die Zuleitung nicht offen oder über vorhandene Öffnungen geführt werden kann, ist ein Durchbruch nötig. Das betrifft vor allem den Weg vom Zählerschrank oder Hausanschlussraum zur Garage, Carport oder Außenwand sowie Durchführungen durch Decken in Tiefgaragen.',
+      ], ul: [
+        'Durchführung durch Innenwand oder Decke zwischen Technikraum und Garage',
+        'Durchführung durch die Außenwand für die Zuleitung zum Carport oder Stellplatz',
+        'Serienbohrungen für mehrere Ladepunkte in Tiefgaragen und auf Parkflächen',
+      ] },
+      { h: 'Welcher Durchmesser passt?', p: [
+        'Der Bohrdurchmesser hängt vom Leerrohr oder vom Kabelbündel samt Dichtung ab. Bei der privaten Wallbox ist das meist ein kleiner bis mittlerer Durchmesser, bei mehreren Zuleitungen oder Schotts größer. Das genaue Maß legt der Elektrofachbetrieb nach Hersteller- und Normvorgabe fest, wir bohren genau dieses Maß.',
+      ] },
+      { h: 'Brandschutz und Abdichtung', ul: [
+        'Wird eine Wand oder Decke durchdrungen, die als Brandschutzbauteil gilt (zum Beispiel zwischen Garage und Wohnbereich), ist eine geeignete Abschottung nötig. Das plant und führt der Fachbetrieb aus.',
+        'Durch die Außenwand wird die Fuge zwischen Leerrohr und Wand gegen Wasser abgedichtet, bei Bedarf mit Dichtmanschette.',
+        'Die Bohrung erhält bei Bedarf ein leichtes Gefälle nach außen.',
+      ] },
+      { h: 'Zustimmung, Anmeldung und Zuständigkeiten', p: [
+        'Mieter und Wohnungseigentümer haben seit 2020 grundsätzlich Anspruch auf Zustimmung zur Installation einer Ladestation (§ 554 BGB, § 20 WEG). Wie das im Einzelfall abläuft, klären Sie mit Vermieter oder Hausverwaltung. Die Anmeldung der Ladeeinrichtung beim Netzbetreiber und die Zuleitung übernimmt ein Elektrofachbetrieb. Eine Bohrung durch tragende Teile kann eine Rücksprache mit Statiker oder Verwaltung erfordern.',
+      ] },
+      { h: 'Was kostet die Bohrung?', p: [
+        'Die Kosten richten sich nach Durchmesser, Wandstärke und Material. Als Beispiel: Ø 100 mm, 30 cm Beton kosten nach Preisliste ' + eur(berechne({ d: 100, tiefe: 30 }).total) + ' brutto inklusive Anfahrt und Pilotbohrung (Mindestauftragswert ' + eur(regeln.mindestpreis) + '). Für mehrere Ladepunkte rechnen Sie im <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a> den Richtpreis aus, bei Serien erstellen wir ein Angebot nach Bohrliste.',
+      ] },
+      { h: 'Beispiel aus der Praxis', p: [
+        'Für Ladeinfrastruktur haben wir bei IKEA Dresden 11 Bohrungen Ø 150 mm in Stahlbeton auf dem Parkdeck und im Innenbereich ausgeführt. Den Einsatz zeigt die <a href="/referenzen/ikea-dresden-ladeinfrastruktur/">Referenz IKEA Dresden</a>.',
+      ] },
+    ],
+    faqs: [
+      ['Muss ich für die Wallbox-Zuleitung immer bohren?', 'Nein, nur wenn die Leitung eine Wand oder Decke queren muss und keine passende Öffnung vorhanden ist. Das klärt der Elektrofachbetrieb bei der Planung.'],
+      ['Welchen Durchmesser soll ich bestellen?', 'Das Maß nennt der Elektrofachbetrieb passend zu Leerrohr oder Kabelbündel und Dichtung. Senden Sie uns das Maß mit Foto der Stelle, wir nennen den Preis.'],
+      ['Wer macht die Brandschutzabschottung?', 'Die Abschottung gehört zur Elektroinstallation und wird vom Fachbetrieb geplant und ausgeführt. Wir bohren die Öffnung passgenau.'],
+      ['Können Sie mehrere Ladepunkte in einem Einsatz bohren?', 'Ja. Für Serien in Tiefgaragen und auf Parkflächen bohren wir nach Bohrliste. Die Anfahrt wird nur einmal je Einsatz berechnet.'],
+    ],
+  },
+  {
+    slug: 'hauseinfuehrung-keller-kernbohrung',
+    icon: 'drill',
+    date: '2026-11-23',
+    title: 'Hauseinführung im Keller: Kernbohrung für Strom und Wasser',
+    h1: 'Hauseinführung durch die Kellerwand: Kernbohrung und Abdichtung',
+    description: 'Hauseinführung für Strom, Wasser, Gas und Glasfaser: Kernbohrung durch die Kellerwand, Dichtungssysteme, Planung und Kosten. Dresden und Sachsen.',
+    short: 'Kernbohrung für Hauseinführungen im Keller: Dichtsysteme, Planung, Zuständigkeiten, Kosten.',
+    answer: 'Für die Hauseinführung von Strom, Wasser, Telekommunikation oder Glasfaser wird die Kellerwand mit einer Kernbohrung durchbohrt. Wichtig ist die richtige Abdichtung, vor allem bei erdberührten Wänden und drückendem Wasser. Das Dichtsystem wählt der Fachplaner oder Installateur, wir bohren die passende Öffnung und stimmen den Durchmesser mit dem System ab.',
+    sections: [
+      { h: 'Was ist eine Hauseinführung?', p: [
+        'Eine Hauseinführung bringt Leitungen von außen ins Gebäude, zum Beispiel für Strom, Wasser, Telekommunikation, Glasfaser oder Fernwärme. Bei Mehrspartenhauseinführungen laufen mehrere Leitungen durch eine gemeinsame, gedichtete Öffnung. Bei Gas und Wasser arbeitet immer der zugelassene Installationsbetrieb nach den Vorgaben des Versorgers.',
+      ] },
+      { h: 'Warum die Abdichtung entscheidend ist', ul: [
+        'Erdberührte Wände müssen gegen Bodenfeuchte und Wasser abgedichtet werden.',
+        'Bei drückendem Wasser oder Wänden aus wasserundurchlässigem Beton gelten besondere Anforderungen an die Durchführung.',
+        'Üblich sind Futterrohre, Dichteinsätze oder Ringraumdichtungen, die zum Bohrdurchmesser passen.',
+        'Die Abdichtung ist ein eigener Arbeitsschritt nach der Bohrung und gehört zum Gewerk des Fachbetriebs.',
+      ] },
+      { h: 'Welcher Durchmesser?', p: [
+        'Der Durchmesser ergibt sich aus dem Dichtsystem oder Futterrohr des Herstellers. Bei Mehrspartenhauseinführungen liegt er häufig im mittleren Bereich, bei einzelnen Leitungen kleiner. Entscheidend ist das Datenblatt des gewählten Systems. Wir bohren auf das genannte Maß und halten die Öffnung glatt, damit Dichtung und Rohr sauber sitzen.',
+      ] },
+      { h: 'Ablauf der Bohrung', ol: [
+        'Foto der Wand von innen und außen sowie Maße (Wandstärke, Material) senden',
+        'Durchmesser und Dichtsystem mit dem Installateur oder Fachplaner abstimmen',
+        'Lage der Bohrung festlegen und auf Leitungen, Bewehrung und Spartenpläne prüfen',
+        'Nass bohren, Bohrkern entnehmen, Öffnung sauber übergeben',
+        'Abdichtung und Montage durch den Fachbetrieb',
+      ] },
+      { h: 'Was ist vor der Bohrung zu klären?', ul: [
+        'Verlauf erdverlegter Leitungen vor der Wand (Spartenauskunft)',
+        'Wandaufbau: Mauerwerk, Beton, Stahlbeton oder wasserundurchlässiger Beton',
+        'Zustimmung des Eigentümers, bei Wohnungseigentum der Hausverwaltung',
+        'Bei Neubau: Vorgaben des Planers und der Bauleitung',
+      ] },
+      { h: 'Was kostet die Bohrung?', p: [
+        'Die Kosten richten sich nach Durchmesser, Wandstärke und Material. Als Beispiel: Ø 150 mm, 30 cm Beton kosten nach Preisliste ' + eur(berechne({ d: 150, tiefe: 30 }).total) + ' brutto inklusive Anfahrt und Pilotbohrung (Mindestauftragswert ' + eur(regeln.mindestpreis) + '). Dichtsystem und Montage sind nicht enthalten. Ihren Richtpreis rechnen Sie im <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a> aus.',
+      ] },
+    ],
+    faqs: [
+      ['Wer legt Durchmesser und Dichtsystem fest?', 'Das legt der Installateur oder Fachplaner nach Datenblatt des Systems fest. Wir bohren das genannte Maß.'],
+      ['Können Sie Wände mit Wasserdruck bohren?', 'Bei wasserdruckbelasteten Wänden ist die Planung der Durchführung Sache des Fachplaners. Sprechen Sie vorher mit uns über Bauteil und Lage, wir sagen, was bohrtechnisch möglich ist.'],
+      ['Brauche ich vorher eine Leitungsauskunft?', 'Bei Bohrungen in erdberührten Wänden ist es sinnvoll, den Verlauf erdverlegter Leitungen vorher zu klären. Das ist Aufgabe des Auftraggebers.'],
+      ['Reicht ein Foto für das Angebot?', 'Ja, meist genügen ein Foto der Wand mit Maßband sowie Angabe von Wandstärke, Material und gewünschtem Durchmesser.'],
+    ],
+  },
+  {
+    slug: 'leitungen-bewehrung-orten-kernbohrung',
+    icon: 'drill',
+    date: '2026-11-23',
+    title: 'Leitungen und Bewehrung orten vor der Kernbohrung',
+    h1: 'Vor dem Bohren orten: Leitungen und Bewehrung finden',
+    description: 'Wie Leitungen und Bewehrung vor der Kernbohrung gefunden werden: Ortungsgeräte, Pläne, Markierung und was passiert, wenn die Bohrkrone auf Stahl trifft.',
+    short: 'Ortung von Leitungen und Bewehrung vor der Kernbohrung: Verfahren, Grenzen, Zuständigkeiten.',
+    answer: 'Vor einer Kernbohrung werden Leitungen und Bewehrung so gut wie möglich geortet, mit Plänen, Sichtprüfung und Ortungsgerät. Eine Ortung zeigt viel, aber nicht alles. Die Bohrstelle wird gemeinsam markiert, die Lage von Leitungen, Bewehrung und Statik klärt letztlich der Auftraggeber bzw. der Planer. Trifft die Bohrkrone auf Bewehrungsstahl, wird das nach Preisliste berechnet.',
+    sections: [
+      { h: 'Warum Ortung vor der Bohrung wichtig ist', p: [
+        'Eine Kernbohrung schneidet alles durch, was im Weg liegt. Elektro- und Wasserleitungen und tragende Bewehrung sollen dabei nicht beschädigt werden. Deshalb wird die Stelle vor dem Bohren geprüft und der Bohrpunkt bei Bedarf verschoben.',
+      ] },
+      { h: 'Wie Leitungen und Bewehrung gefunden werden', table: {
+        head: ['Methode', 'Wofür', 'Grenzen'],
+        rows: [
+          ['Pläne und Bestandsunterlagen', 'Lage von Leitungen und Bauteilen', 'Nicht immer aktuell oder vollständig'],
+          ['Sichtprüfung', 'Hinweise aus Schaltern, Steckdosen, Kästen', 'Altbau und Umbauten weichen oft ab'],
+          ['Bewehrungssuchgerät', 'Findet Stahl nahe der Oberfläche', 'Tiefe und Dichte nur eingeschränkt'],
+          ['Radar', 'Zeigt Bewehrung, Rohre und Hohlräume in der Tiefe', 'Auswertung braucht Erfahrung'],
+        ],
+      }, p: ['Welches Verfahren sinnvoll ist, hängt vom Bauteil und vom Risiko ab. Ortung ist ein Hilfsmittel, keine Garantie.'] },
+      { h: 'Wer ist wofür zuständig?', ul: [
+        'Auftraggeber bzw. Planer: Lage von Leitungen, Bewehrung und Statik klären und die Bohrstelle freigeben.',
+        'Wir: Bohrstelle gemeinsam markieren, mit Ortungsgerät prüfen und sauber bohren.',
+        'Bei Spannbeton, Spannstahl oder tragenden Bauteilen: Rücksprache mit dem Statiker, bevor gebohrt wird.',
+      ] },
+      { h: 'Was passiert, wenn die Bohrkrone auf Bewehrung trifft?', p: [
+        'In Stahlbeton ist Bewehrung üblich. Trifft die Bohrkrone auf Stahl, wird der Stahl durchbohrt, was länger dauert und die Krone stärker beansprucht. Bewehrungsstahl ab 1,5 cm Durchmesser berechnen wir laut Preisliste mit ' + eur(regeln.stahlProCm) + ' je cm Stahl zusätzlich. Wo die Lage der Bewehrung bekannt ist, lässt sich der Bohrpunkt oft anpassen.',
+      ] },
+      { h: 'So bereiten Sie die Bohrstelle vor', ol: [
+        'Bohrstelle mit Kreide oder Klebeband markieren',
+        'Pläne zu Elektro, Wasser und Statik bereithalten, falls vorhanden',
+        'Mitteilen, ob in der Nähe Leitungen oder Rohre bekannt sind',
+        'Foto der Stelle und der Nachbarflächen senden',
+      ] },
+    ],
+    faqs: [
+      ['Kann man Leitungen und Bewehrung sicher finden?', 'Nicht zu 100 Prozent. Ortungsgeräte liefern gute Hinweise, aber Tiefe, Material und Umbauten begrenzen die Genauigkeit. Deshalb bleibt die Freigabe der Bohrstelle beim Auftraggeber.'],
+      ['Wer haftet, wenn eine Leitung getroffen wird?', 'Das hängt vom Einzelfall und von der Freigabe der Bohrstelle ab. Klären Sie das vor Auftragsbeginn mit uns und halten Sie vorhandene Pläne bereit.'],
+      ['Verschieben Sie die Bohrstelle, wenn Stahl gefunden wird?', 'Wo es das Bauteil und der Zweck zulassen, ja. Oft genügt eine kleine Verschiebung.'],
+      ['Wie berechnen Sie Bewehrungsstahl?', 'Stahl ab 1,5 cm Durchmesser berechnen wir je cm Stahl zusätzlich, laut Preisliste.'],
+    ],
+  },
+  {
+    slug: 'photovoltaik-speicher-kabeldurchfuehrung',
+    icon: 'drill',
+    date: '2026-11-23',
+    title: 'Photovoltaik und Speicher: Kabeldurchführung durch Wand und Decke',
+    h1: 'Photovoltaik und Batteriespeicher: Kabeldurchführung per Kernbohrung',
+    description: 'Kernbohrung für PV-Anlage und Batteriespeicher: Kabel durch Außenwand und Decke, Abdichtung, Brandschutz, Durchmesser und Kosten in Dresden.',
+    short: 'Kabeldurchführung für PV-Anlage und Speicher: Wand und Decke, Abdichtung, Brandschutz, Kosten.',
+    answer: 'Für Photovoltaik und Batteriespeicher werden Kabel häufig durch Außenwand oder Geschossdecke geführt, zum Beispiel vom Dach zum Wechselrichter oder vom Technikraum zum Speicher. Eine Kernbohrung liefert dafür eine passgenaue, saubere Öffnung. Dichtung, Brandschutz und Verlegung übernimmt der Elektrofachbetrieb. Die Dachdurchführung selbst macht der Dachdecker.',
+    sections: [
+      { h: 'Wo bei der PV-Anlage gebohrt wird', ul: [
+        'Außenwand: Kabel vom Dach oder von der Fassade ins Gebäude',
+        'Geschossdecke oder Wand: Leitungsweg zum Wechselrichter und Zählerschrank',
+        'Technikraum oder Keller: Durchführung zum Batteriespeicher',
+      ] },
+      { h: 'Abdichtung und Brandschutz', ul: [
+        'Außen: Fuge zwischen Kabelschutzrohr und Wand gegen Wasser abdichten, bei Bedarf mit Dichtmanschette.',
+        'Bei Durchdringung von Brandschutzbauteilen (zum Beispiel Decke oder Wand zwischen Brandabschnitten) ist eine geeignete Abschottung nötig.',
+        'Planung und Ausführung gehören zum Elektrogewerk; Vorgaben des Herstellers und des Netzbetreibers beachten.',
+      ] },
+      { h: 'Welcher Durchmesser?', p: [
+        'Der Durchmesser richtet sich nach Kabelbündel, Schutzrohr und Dichtsystem. Das Maß legt der Elektrofachbetrieb fest, wir bohren darauf. Mehrere Kabel lassen sich oft in einem größeren Durchbruch bündeln, statt viele kleine zu bohren.',
+      ] },
+      { h: 'Dach oder Wand: Wer macht was?', p: [
+        'Durchführungen im Dachbereich übernimmt der Dachdecker mit passenden Dachdurchführungen. Wir bohren Wände und Decken im Gebäude, auch in Beton und Stahlbeton. Wenn mehrere Gewerke zusammenarbeiten, stimmen wir uns mit Ihrem Betrieb ab.',
+      ] },
+      { h: 'Was kostet die Bohrung?', p: [
+        'Die Kosten richten sich nach Durchmesser, Wandstärke und Material. Als Beispiel: Ø 82 mm, 25 cm Beton kosten nach Preisliste ' + eur(berechne({ d: 82, tiefe: 25 }).total) + ' brutto inklusive Anfahrt und Pilotbohrung (Mindestauftragswert ' + eur(regeln.mindestpreis) + '). Ihren Richtpreis rechnen Sie im <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a> aus.',
+      ] },
+    ],
+    faqs: [
+      ['Bohren Sie auch Dächer?', 'Wir bohren Wände und Decken im Gebäude. Dachdurchführungen übernimmt der Dachdecker.'],
+      ['Wer legt den Durchmesser fest?', 'Der Elektrofachbetrieb nach Kabelbündel, Schutzrohr und Dichtsystem. Wir bohren auf das genannte Maß.'],
+      ['Ist die Abdichtung im Preis enthalten?', 'Nein. Dichtsystem und Montage gehören zum Gewerk des Fachbetriebs und sind in der Bohrung nicht enthalten.'],
+      ['Wie bekomme ich ein Angebot?', 'Foto der Stelle mit Maßband und Angabe von Wandstärke, Material und Durchmesser senden, wir melden uns mit dem Angebot.'],
+    ],
+  },
 ];

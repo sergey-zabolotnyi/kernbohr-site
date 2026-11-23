@@ -29,7 +29,9 @@ export const articleSchema = (a) => ({
   datePublished: a.date,
   dateModified: a.date,
   inLanguage: 'de-DE',
-  author: { '@type': 'Person', '@id': `${site.url}/#inhaber`, name: site.owner, url: `${site.url}/ueber-uns/` },
+  author: a.autor
+    ? { '@type': 'Person', name: a.autor.name, ...(a.autor.url ? { url: a.autor.url } : {}) }
+    : { '@type': 'Person', '@id': `${site.url}/#inhaber`, name: site.owner, url: `${site.url}/ueber-uns/` },
   publisher: { '@id': `${site.url}/#business` },
   mainEntityOfPage: `${site.url}/ratgeber/${a.slug}/`,
 });

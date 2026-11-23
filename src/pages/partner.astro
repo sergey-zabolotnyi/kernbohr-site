@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Partner from '../components/Partner.astro';
+import { site } from '../data/site.js';
+import { crumbSchema } from '../lib/schema.js';
+const betreff = 'Partnerschaft / Fachbeitrag bei Kernbohr-Expert';
+const text = 'Firma:\nAnsprechpartner:\nWebsite:\nTätigkeit (z. B. Heizungsbau, Elektro, Dach):\nIdee für Zusammenarbeit oder Fachbeitrag (Thema):\n';
+const mailto = `mailto:${site.email}?subject=${encodeURIComponent(betreff)}&body=${encodeURIComponent(text)}`;
+---
+<Base
+  title="Partner werden und Fachbeiträge | Kernbohr-Expert Dresden"
+  description="Zusammenarbeit mit Kernbohr-Expert: Fachbeiträge für den Ratgeber, gegenseitige Empfehlung und Eintrag als Partner. Für Betriebe in Dresden und Sachsen."
+  path="/partner/"
+  schema={[crumbSchema([['Partner', '/partner/']])]}
+>
+  <Breadcrumbs items={[['Partner']]} />
+  <section class="hero small">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Zusammenarbeit</span>
+        <h1>Partner werden: Fachbeiträge und gegenseitige Empfehlung</h1>
+        <p class="lead">Wir arbeiten mit Heizungsbauern, Elektrobetrieben, Dachdeckern, Bauunternehmen, Planungsbüros und Hausverwaltungen in Dresden und Sachsen zusammen. Wenn Sie regelmäßig Bohrungen, Schlitze oder Durchbrüche für Ihre Projekte brauchen, sprechen wir gern.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="prose wide">
+        <h2>Was wir Partnern anbieten</h2>
+        <ul>
+          <li><strong>Eintrag unter „Partner und Auftraggeber“</strong> mit Firmenname, Ort und Link zu Ihrer Website, wenn wir bereits zusammengearbeitet haben und Sie zustimmen.</li>
+          <li><strong>Fachbeitrag im Ratgeber:</strong> Sie schreiben einen Beitrag aus Ihrem Fachgebiet, der Hausbesitzern, Bauherren oder Betrieben konkret weiterhilft. Wir prüfen, redigieren und veröffentlichen ihn mit Autorenhinweis und Link zu Ihrer Website.</li>
+          <li><strong>Gegenseitige Empfehlung:</strong> Auf Wunsch verweisen wir bei passenden Anfragen auf Ihren Betrieb, und Sie nennen uns, wenn bei Ihren Kunden Bohrungen, Durchbrüche oder Schlitze anstehen.</li>
+          <li><strong>Konditionen für Dauerpartner:</strong> Für regelmäßige Aufträge und größere Projekte vereinbaren wir individuelle Konditionen nach Absprache. Mehr dazu auf der Seite <a href="/gewerbe/">Für Bauunternehmen und Gewerbe</a>.</li>
+        </ul>
+
+        <h2>Regeln für Fachbeiträge</h2>
+        <ul>
+          <li>Das Thema passt zu Bau, Haustechnik, Sanierung oder Energie in Dresden und Sachsen, zum Beispiel Wärmepumpe, Elektro, Lüftung, Abdichtung, Förderung oder Planung.</li>
+          <li>Der Text ist praxisnah, sachlich richtig und nicht schon anderswo veröffentlicht. Richtwert: mindestens 500 Wörter, mit Beispielen aus Ihrem Alltag.</li>
+          <li>Keine Werbetexte, keine reinen Produktseiten und keine Preisversprechen, die Sie nicht einhalten können.</li>
+          <li>Pro Beitrag ein Link zu Ihrer Website im Autorenhinweis. Wir nehmen keine Beiträge gegen Bezahlung an und bezahlen auch nicht für Links.</li>
+          <li>Wir behalten uns Kürzungen, Korrekturen und die Ablehnung eines Beitrags vor. Für die fachliche Richtigkeit bleibt der Autor verantwortlich.</li>
+        </ul>
+
+        <h2>Themenideen</h2>
+        <ul>
+          <li>Wärmepumpe: Aufstellort, Förderung, Ablauf einer Installation</li>
+          <li>Elektro: Wallbox, Zählerschrank, Leitungswege im Altbau</li>
+          <li>Lüftung und Klima: Planung von Durchführungen</li>
+          <li>Abdichtung und Dach: Durchdringungen richtig abdichten</li>
+          <li>Hausverwaltung und WEG: Zustimmung zu Umbauten, Ladestationen, Technik</li>
+        </ul>
+
+        <p class="note"><strong>Hinweis:</strong> Wir tauschen keine Links gegen Geld und betreiben keine Massen-Linktausche. Empfehlungen und Links entstehen nur zwischen Betrieben, die fachlich zusammenpassen und zusammenarbeiten.</p>
+
+        <p><a class="btn" href={mailto}>Partner-Anfrage per E-Mail senden</a></p>
+        <p>Oder direkt: <a href={`mailto:${site.email}`}>{site.email}</a> oder <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a> (Mo bis Sa, 7 bis 19 Uhr).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <span class="eyebrow">Aktuelle Partner</span>
+      <h2>Partner und Auftraggeber</h2>
+      <p class="lead">Diese Firmen haben der Nennung samt Link zugestimmt.</p>
+      <Partner />
+    </div>
+  </section>
+</Base>
