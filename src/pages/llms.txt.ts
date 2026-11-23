@@ -33,6 +33,7 @@ Kurzfakten:
 - [Leistungen](${u}/leistungen/)
 - [Kernbohrung in Beton und Stahlbeton](${u}/kernbohrung-beton-stahlbeton/)
 - [Für Bauunternehmen und Gewerbe](${u}/gewerbe/): Nacht-/Wochenendeinsätze, Dokumentation, Rahmenkonditionen
+- [Partner werden und Fachbeiträge](${u}/partner/): Zusammenarbeit, Gastbeiträge, Partner und Auftraggeber
 ${gewerbeSeiten.map((g) => `- [${g.nav}](${u}/gewerbe/${g.slug}/)`).join('\n')}
 - [Einsatzgebiet](${u}/einsatzgebiet/)
 - [Häufige Fragen](${u}/faq/)

@@ -30,6 +30,7 @@ export function GET() {
     ['/kernbohrung-rechner/', preiseDate],
     ['/kernbohrung-beton-stahlbeton/', preiseDate],
     ['/gewerbe/', gitDate('src/pages/gewerbe.astro')],
+    ['/partner/', gitDate('src/pages/partner.astro')],
     ['/ratgeber/', gitDate('src/pages/ratgeber/index.astro')],
     ['/glossar/', gitDate('src/data/glossar.js')],
     ['/bohrdurchmesser/', gitDate('src/data/durchmesser.js')],
