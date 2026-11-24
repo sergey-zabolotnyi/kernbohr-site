@@ -15,9 +15,9 @@ const zeilen = durchmesser.map((mm) => ({ mm, s: satz(mm, 'beton'), b30: berechn
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hallo, ich brauche eine Kernbohrung in Beton/Stahlbeton. Foto der Baustelle sende ich gleich mit.')}`;
 const faqs = [
   ['Was kostet eine Kernbohrung in Beton?', `Die Preise richten sich nach Durchmesser und Bohrtiefe. Ø 150 mm kostet in Beton oder Stahlbeton ${eur(satz(150, 'beton'))} je cm Bohrtiefe (Preisliste 2026, brutto). Dazu kommen Anfahrt (${eur(regeln.anfahrt)} im Umkreis bis ca. 30 km um Dresden) und Pilotbohrung. Der Mindestauftragswert beträgt ${eur(regeln.mindestpreis)}.`],
-  ['Kostet Stahlbeton mehr als Beton?', `Beton und Stahlbeton haben bei uns denselben Preis je cm Bohrtiefe. Trifft die Bohrkrone Bewehrungsstahl ab 1,5 cm Durchmesser, berechnen wir ${eur(regeln.stahlProCm)} je cm Stahl (Einzelschnitt) zusätzlich.`],
+  ['Kostet Stahlbeton mehr als Beton?', `Beton und Stahlbeton haben bei uns denselben Preis je cm Bohrtiefe. Trifft die Bohrkrone Bewehrungsstahl ab Ø 10 mm, berechnen wir ${eur(regeln.stahlProCm)} je cm Stahl (Einzelschnitt) zusätzlich.`],
   ['Wie tief können Sie in Beton bohren?', 'Wir bohren bis zu 2 m tief. Bei großen Durchmessern und großen Tiefen planen wir Bohrständer, Wasser und Strom vorab mit Ihnen ab.'],
-  ['Wie groß kann eine Kernbohrung in Beton sein?', 'Unsere Preisliste deckt Durchmesser von 14 bis 500 mm ab. Typische Größen sind Ø 68 mm für Dosen, Ø 82 bis 125 mm für Leitungen und Abwasser sowie Ø 150 bis 200 mm für Lüftung und Wärmepumpen.'],
+  ['Wie groß kann eine Kernbohrung in Beton sein?', 'Unsere Preisliste deckt Durchmesser von 20 bis 500 mm ab. Typische Größen sind Ø 68 mm für Dosen, Ø 82 bis 125 mm für Leitungen und Abwasser sowie Ø 150 bis 200 mm für Lüftung und Wärmepumpen.'],
   ['Brauchen Sie Wasser und Strom?', 'Ja, zum Nassbohren. Wasser kann unser Team in Kanistern selbst mitbringen, Strom nutzen wir vor Ort. Wo das nicht möglich ist, klären wir es im Vorfeld, zum Beispiel mit Wassersauger und Bediener.'],
   ['Darf ich in eine tragende Betonwand oder Decke bohren?', 'Bei tragenden Bauteilen ist vorab eine statische Prüfung nötig. Das klären Sie bitte mit Ihrem Statiker oder Planer. Wir stimmen uns auf Wunsch gern mit ihm ab.'],
   ['Wie läuft eine Bohrung über Kopf oder schräg?', 'Das ist möglich. Für Überkopf- und Schrägbohrungen berechnen wir einen Zuschlag von 50 % auf den Bohrpreis.'],
@@ -68,7 +68,7 @@ const schema = [
         <h2>Was ist im Preis enthalten, was kostet extra?</h2>
         <ul class="checks">
           <li><Icon name="check" size={18} /><span><strong>Enthalten:</strong> Bohrung mit Diamantkrone, Nassbohren und Pilotbohrung für den Bohrständer. Anfahrt und Baustelleneinrichtung ({eur(regeln.anfahrt)}) einmal je Einsatz.</span></li>
-          <li><Icon name="check" size={18} /><span><strong>Extra:</strong> Bewehrungsstahl ab 1,5 cm ({eur(regeln.stahlProCm)} je cm), Überkopf- und Schrägbohrung (+50 %), Wassersauger mit Bediener ({eur(regeln.wassersaugerTag)} je Tag), Gerüststellung ({eur(regeln.gerueststellungTag)} je Tag).</span></li>
+          <li><Icon name="check" size={18} /><span><strong>Extra:</strong> Bewehrungsstahl ab Ø 10 mm ({eur(regeln.stahlProCm)} je cm), Überkopf- und Schrägbohrung (+50 %), Wassersauger mit Bediener ({eur(regeln.wassersaugerTag)} je Tag), Gerüststellung ({eur(regeln.gerueststellungTag)} je Tag).</span></li>
           <li><Icon name="check" size={18} /><span><strong>Zeitzuschläge:</strong> nachts +75 %, Samstag, Sonntag und Feiertag +100 % auf den Bohrpreis.</span></li>
         </ul>
 

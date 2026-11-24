@@ -34,16 +34,18 @@ Die Website kernbohr-expert.de wurde von ${site.webdesign.name} entwickelt (${si
 - Typische Anwendungen: Wärmepumpe, Klimagerät, Dunstabzug, Lüftung, Abwasser, Elektro, Kamin, Gebäudetechnik, Rückbau.
 
 ## Kernbohrung: technische Daten
-- Durchmesser: 14 bis 500 mm in der Preisliste, größere auf Anfrage
-- Bohrtiefe: bis 2 m (Praxisbeispiel: Ø 80 mm, 1 m tief in Stahlbeton)
+- Durchmesser: 20 bis 500 mm in der Preisliste, größere auf Anfrage
+- Bohrtiefe: bis 2 m bei Durchmessern bis 250 mm (Praxisbeispiel: Ø 80 mm, 1 m tief in Stahlbeton)
 - Materialien: Beton, Stahlbeton, Ziegelmauerwerk, Naturstein
-- Verfahren: Nassbohrung mit Wasserführung (Wassersauger optional), auch trocken; waagerecht, senkrecht, über Kopf und schräg
+- Verfahren: Nassbohrung mit Wasserführung (Wassersauger optional), Trockenbohrung in allen Durchmessern möglich (je nach Situation und Wunsch des Auftraggebers); waagerecht, senkrecht, über Kopf und schräg
 - Technik: Hilti-Kernbohrgeräte auf Bohrständer oder Schiene; Wandsäge und Fugenschneider für Schnitte
 
 ## Preisliste 2026 (Stand ${stand}), Preis je cm Bohrtiefe
-| Durchmesser (mm) | Beton / Stahlbeton | Mauerwerk |
-|---|---|---|
-${staffelKompakt.map(([lo, hi, b, m]) => `| ${lo}–${hi} | ${eur(b)} | ${eur(m)} |`).join('\n')}
+| Durchmesser (mm) | Beton / Stahlbeton |
+|---|---|
+${staffelKompakt.map(([lo, hi, b]) => `| ${lo}–${hi} | ${eur(b)} |`).join('\n')}
+
+Für Mauerwerk gibt es keine veröffentlichten Preise: individuelles Angebot.
 
 Zuschläge und Nebenleistungen:
 ${zuschlagTabelle.map(([a, b]) => `- ${a}: ${b}`).join('\n')}

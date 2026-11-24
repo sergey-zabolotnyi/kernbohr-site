@@ -72,12 +72,12 @@ export const gewerbeSeiten = [
     slug: 'kernbohrung-haustechnik',
     nav: 'Kernbohrung für Elektro und Haustechnik',
     titel: 'Kernbohrung für Haustechnikbetriebe | Kernbohr-Expert',
-    beschreibung: 'Kernbohrung für Elektro-, Sanitär-, Heizungs- und Lüftungsbetriebe: Serienbohrungen nach Bohrliste, Ø 14–500 mm, Preisliste online.',
+    beschreibung: 'Kernbohrung für Elektro-, Sanitär-, Heizungs- und Lüftungsbetriebe: Serienbohrungen nach Bohrliste, Ø 20–500 mm, Preisliste online.',
     h1: 'Kernbohrung für Elektro- und Haustechnikbetriebe',
     eyebrow: 'Für Bauunternehmen und Gewerbe',
     lead: 'Wenn Ihre Gewerke Durchführungen brauchen, bohren wir nach Bohrliste und Plan: sauber, in Serie und mit nachvollziehbarer Dokumentation.',
     hero: 'werk-bohrstaender',
-    kurzgesagt: 'Wir bohren Ø 14 bis 500 mm, bis 2 m tief, in Beton, Stahlbeton, Ziegelmauerwerk und Naturstein, nass oder trocken, in allen Lagen. Für Serienbohrungen erstellen wir nach Bohrliste ein Angebot. Wasser bringen wir bei Bedarf selbst mit.',
+    kurzgesagt: 'Wir bohren Ø 20 bis 500 mm, bis 2 m tief, in Beton, Stahlbeton, Ziegelmauerwerk und Naturstein, nass oder trocken, in allen Lagen. Für Serienbohrungen erstellen wir nach Bohrliste ein Angebot. Wasser bringen wir bei Bedarf selbst mit.',
     typisch: [
       'Durchführungen für Elektro, Sanitär, Heizung und Lüftung',
       'Serienbohrungen mit gleichen oder wechselnden Durchmessern',
@@ -96,7 +96,7 @@ export const gewerbeSeiten = [
     faq: [
       ['Gibt es Preise je Bohrung online?', 'Ja. Unsere Preisliste und der Kernbohr-Rechner zeigen die Preise je cm Bohrtiefe nach Durchmesser und Material. Für Serien und große Projekte erstellen wir ein Angebot nach Bohrliste.'],
       ['Wie wird die Anfahrt berechnet?', 'Die Anfahrt wird einmal je Einsatz berechnet, nicht je Bohrung. Im Umkreis von ca. 30 km um Dresden ist sie im festen Betrag enthalten, darüber hinaus nach Absprache.'],
-      ['Was passiert, wenn die Bohrkrone Bewehrung trifft?', 'Bewehrungsstahl ab 1,5 cm Durchmesser berechnen wir je cm Stahl zusätzlich, laut Preisliste. Wo die Lage der Bewehrung bekannt ist, lässt sich der Bohrpunkt oft anpassen.'],
+      ['Was passiert, wenn die Bohrkrone Bewehrung trifft?', 'Bewehrungsstahl ab Ø 10 mm berechnen wir je cm Stahl zusätzlich, laut Preisliste. Wo die Lage der Bewehrung bekannt ist, lässt sich der Bohrpunkt oft anpassen.'],
       ['Brauchen Sie Wasser und Strom vor Ort?', 'Strom muss vor Ort vorhanden sein. Fehlt der Wasseranschluss, bringen wir das Wasser in Kanistern selbst mit.'],
     ],
     dienst: { name: 'Kernbohrungen', href: '/kernbohrung/' },

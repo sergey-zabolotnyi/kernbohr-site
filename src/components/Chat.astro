@@ -363,12 +363,12 @@ const url = import.meta.env.PUBLIC_CHAT_URL;
         + `<label>${esc(t.dia)}<input class="kc-pd" type="number" inputmode="numeric" min="${regeln.minDurchmesser}" max="${regeln.maxDurchmesser}" value="${pre.d || 100}"></label>`
         + `<label>${esc(t.depth)}<input class="kc-pe" type="number" inputmode="numeric" min="1" max="${regeln.maxTiefeCm}" value="${pre.tiefe || 30}"></label>`
         + `<label>${esc(t.count)}<input class="kc-pc" type="number" inputmode="numeric" min="1" max="200" value="${pre.anzahl || 1}"></label>`
-        + `<label>${esc(t.material)}<select class="kc-pm"><option value="beton">${esc(t.beton)}</option><option value="mauerwerk">${esc(t.mauer)}</option></select></label></div>`
+        + `<label>${esc(t.material)}<select class="kc-pm"><option value="beton">${esc(t.beton)}</option></select></label></div>`
         + '<div class="kc-pt" aria-live="polite"></div><ul class="kc-pl"></ul>'
         + `<p class="kc-pn">${esc(t.priceNote)}</p><button type="button" class="kc-pdf">${esc(t.pdf)}</button>`;
       log.appendChild(box); requestAnimationFrame(() => { log.scrollTop = Math.max(0, log.scrollTop + box.getBoundingClientRect().top - log.getBoundingClientRect().top - 8); });
       const q = (c) => box.querySelector(c);
-      q('.kc-pm').value = pre.material === 'mauerwerk' ? 'mauerwerk' : 'beton';
+      q('.kc-pm').value = 'beton';
       let last = null;
       const num = (el, min, max, def) => { const v = Math.round(Number(el.value)); return Number.isNaN(v) || el.value === '' ? def : Math.min(max, Math.max(min, v)); };
       const update = () => {

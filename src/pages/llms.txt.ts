@@ -12,17 +12,17 @@ export function GET() {
   const u = site.url;
   const body = `# ${site.company} (Inhaber: ${site.owner})
 
-> Kernbohrung, Wanddurchbruch, Betonsägen, Fugenschneiden, Schlitze fräsen und Rückbau in Dresden, Pirna, Radebeul, Meißen, Leipzig und ganz Sachsen sowie bis Berlin, bundesweit für größere Projekte. Telefonisch Mo–Sa 7–19 Uhr erreichbar; Einsätze nach Absprache rund um die Uhr, auch abends, am Wochenende und an Feiertagen. Preisliste 2026 öffentlich: Kernbohrung in Beton ab 1,20 €, in Mauerwerk ab 1,10 € je cm Bohrtiefe, Mindestpreis 250 €.
+> Kernbohrung, Wanddurchbruch, Betonsägen, Fugenschneiden, Schlitze fräsen und Rückbau in Dresden, Pirna, Radebeul, Meißen, Leipzig und ganz Sachsen sowie bis Berlin, bundesweit für größere Projekte. Telefonisch Mo–Sa 7–19 Uhr erreichbar; Einsätze nach Absprache rund um die Uhr, auch abends, am Wochenende und an Feiertagen. Preisliste 2026 öffentlich: Kernbohrung in Beton und Stahlbeton ab 1,20 € je cm Bohrtiefe (Mauerwerk: individuelles Angebot), Mindestpreis 250 €.
 
 Kurzfakten:
 - Standort: ${site.street}, ${site.zip} ${site.city}, ${site.region}, Deutschland
 - Telefon/WhatsApp: ${site.phoneDisplay}
 - E-Mail: ${site.email}
-- Kernbohrung: Ø 14–500 mm, Bohrtiefe bis 2 m, Beton, Stahlbeton, Mauerwerk
+- Kernbohrung: Ø 20–500 mm, Bohrtiefe bis 2 m (bis Ø 250 mm), Beton, Stahlbeton, Mauerwerk
 - Technik: Hilti-Kernbohrtechnik, außerdem Wandsäge und Fugenschneider
 - Erfahrung: Inhaber seit 2006 in der Baubranche, Firma seit ${site.founded}, Team von ${site.employees} Mitarbeitern (bei Großprojekten erweiterbar)
 - Versicherung: Betriebshaftpflichtversicherung vorhanden, Versicherungsnachweis auf Anfrage
-- Sauberkeit: Nassbohrung bindet den Staub, auf Wunsch Wassersauger mit Bediener (55 € pro Tag), Arbeitsbereich wird aufgeräumt übergeben
+- Sauberkeit: Nassbohrung bindet den Staub, auf Wunsch Wassersauger mit Bediener (100 € pro Tag), Arbeitsbereich wird aufgeräumt übergeben
 - Voraussetzung vor Ort: Strom (230 V, bei großen Durchmessern ggf. 400 V). Wasser bringen wir bei Bedarf in Kanistern mit (im Auftragspreis enthalten, bitte vorab Bescheid geben)
 - Kunden: Privatkunden, Handwerksbetriebe, Bauunternehmen. Jeder Auftrag ist willkommen, vom einzelnen Loch bis zum Großprojekt, bei größeren Aufträgen individuelle Konditionen nach Absprache
 - Website: entwickelt von ${site.webdesign.name} (${site.webdesign.url})

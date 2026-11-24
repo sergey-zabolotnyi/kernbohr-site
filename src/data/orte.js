@@ -6,7 +6,7 @@ export const orte = [
     name: 'Radebeul',
     lage: 'Lößnitz, Radebeul-Ost und -West, Kötzschenbroda, Oberlößnitz, Serkowitz',
     intro: 'Kernbohrungen und Wanddurchbrüche in Radebeul, direkt am Dresdner Stadtrand: von der Gründerzeitvilla in der Lößnitz bis zum Neubau.',
-    kurz: 'Wir bohren in Radebeul Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Die Preise folgen unserer Preisliste 2026 (ab 1,20 € je cm Bohrtiefe in Beton), dazu Anfahrt und Baustelleneinrichtung. Mindestpreis 250 € je Auftrag.',
+    kurz: 'Wir bohren in Radebeul Ø 20–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Die Preise folgen unserer Preisliste 2026 (ab 1,20 € je cm Bohrtiefe in Beton), dazu Anfahrt und Baustelleneinrichtung. Mindestpreis 250 € je Auftrag.',
     typisch: [
       ['Villen und Altbau', 'In vielen älteren Häusern sind dicke Ziegel- und Mischmauerwerkswände üblich. Wir bohren erschütterungsarm, damit Putz und Bestand geschont werden.'],
       ['Denkmalgeschützte Gebäude', 'In Radebeul stehen zahlreiche Kulturdenkmale. Bei Eingriffen in die Fassade klären Sie bitte vorab die Zustimmung der Denkmalbehörde, wir stimmen die Bohrstelle gerne mit Ihnen ab.'],
@@ -22,7 +22,7 @@ export const orte = [
     name: 'Pirna',
     lage: 'Pirna-Altstadt, Copitz, Sonnenstein, Heidenau und Umgebung',
     intro: 'Kernbohrung, Durchbrüche und Betonarbeiten in Pirna und im Raum Sächsische Schweiz, mit Sitz in Dresden, schnell erreichbar über die B 172.',
-    kurz: 'Wir bohren in Pirna und Umgebung Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe, zuzüglich Anfahrt (85 €). Mindestpreis 250 € je Auftrag.',
+    kurz: 'Wir bohren in Pirna und Umgebung Ø 20–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe, zuzüglich Anfahrt (85 €). Mindestpreis 250 € je Auftrag.',
     typisch: [
       ['Historische Altstadt', 'In der Pirnaer Altstadt treffen wir häufig auf dicke Sandstein- und Ziegelwände. Hierfür verwenden wir passende Diamantbohrkronen und bohren nass, um Staub zu vermeiden.'],
       ['Sanierung und Umbau', 'Leitungs-, Lüftungs- und Heizungsdurchführungen bei Sanierungen, auch mit mehreren Bohrungen in einem Termin.'],
@@ -38,7 +38,7 @@ export const orte = [
     name: 'Meißen',
     lage: 'Meißner Altstadt, Triebischtal, Cölln, Bohnitzsch, Umgebung',
     intro: 'Kernbohrungen und Durchbrüche in Meißen: auch in engen Gassen, an Hanglagen und in historischen Gebäuden der Altstadt.',
-    kurz: 'Wir bohren in Meißen Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe, zuzüglich Anfahrt (85 €). Mindestpreis 250 € je Auftrag.',
+    kurz: 'Wir bohren in Meißen Ø 20–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe, zuzüglich Anfahrt (85 €). Mindestpreis 250 € je Auftrag.',
     typisch: [
       ['Enge Zugänge', 'In der Meißner Altstadt sind Zugänge oft eng und Treppen steil. Unsere Geräte sind für den Einsatz auf Ständer und Schiene ausgelegt. Bitte senden Sie uns vorab Fotos vom Zugang.'],
       ['Denkmalschutz', 'In der Altstadt gelten besondere Auflagen. Klären Sie Eingriffe in die Fassade bitte vorab mit der Denkmalbehörde.'],
@@ -54,7 +54,7 @@ export const orte = [
     name: 'Freital',
     lage: 'Freital-Deuben, Potschappel, Döhlen, Zauckerode, Hainsberg, Umgebung',
     intro: 'Kernbohrung und Betonbearbeitung in Freital, nur wenige Minuten vom Dresdner Westen entfernt.',
-    kurz: 'Wir bohren in Freital Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe, zuzüglich Anfahrt (85 €). Mindestpreis 250 € je Auftrag.',
+    kurz: 'Wir bohren in Freital Ø 20–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe, zuzüglich Anfahrt (85 €). Mindestpreis 250 € je Auftrag.',
     typisch: [
       ['Wohnungsbau und Bestand', 'Durchführungen für Heizung, Lüftung, Abwasser und Elektro in Wohngebäuden.'],
       ['Gewerbe und Industrie', 'Größere Durchmesser und tiefe Bohrungen in Gewerbe- und Industrieobjekten.'],
@@ -62,7 +62,7 @@ export const orte = [
     ],
     faq: [
       ['Wie schnell sind Sie in Freital?', 'Freital liegt im Kernbereich unseres Einsatzgebiets. Sie erreichen uns Mo–Sa 7–19 Uhr telefonisch und jederzeit per WhatsApp, Einsatztermine nach Absprache auch nachts oder am Wochenende.'],
-      ['Welche Durchmesser bohren Sie?', 'Von Ø 14 mm bis Ø 500 mm, größere Durchmesser auf Anfrage.'],
+      ['Welche Durchmesser bohren Sie?', 'Von Ø 20 mm bis Ø 500 mm, größere Durchmesser auf Anfrage.'],
     ],
   },
   {
@@ -70,7 +70,7 @@ export const orte = [
     name: 'Radeberg',
     lage: 'Radeberg, Liegau-Augustusbad, Wachau, Umgebung',
     intro: 'Kernbohrungen und Wanddurchbrüche in Radeberg und im Dresdner Nordosten, für Privatkunden, Handwerksbetriebe und Gewerbe.',
-    kurz: 'Wir bohren in Radeberg Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe, zuzüglich Anfahrt (85 €). Mindestpreis 250 € je Auftrag.',
+    kurz: 'Wir bohren in Radeberg Ø 20–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe, zuzüglich Anfahrt (85 €). Mindestpreis 250 € je Auftrag.',
     typisch: [
       ['Gewerbe und Industrie', 'Für Betriebe in Radeberg und den umliegenden Gewerbegebieten führen wir Bohrungen für Leitungen, Lüftung und Anlagentechnik aus.'],
       ['Einfamilienhäuser', 'Mauerdurchführungen für Wärmepumpe, Klimagerät, Dunstabzug und Hausanschlüsse.'],
@@ -86,7 +86,7 @@ export const orte = [
     name: 'Leipzig',
     lage: 'Leipzig-Mitte, Plagwitz, Lindenau, Südvorstadt, Connewitz, Gohlis, Schleußig und Grünau',
     intro: 'Kernbohrungen, Wanddurchbrüche und Betonarbeiten in Leipzig: vom Gründerzeit-Altbau bis zum Plattenbau, von der einzelnen Bohrung bis zum größeren Projekt. Wir sind regelmäßig in Leipzig im Einsatz.',
-    kurz: 'Wir bohren in Leipzig Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe (ab 1,20 € in Beton). Da Leipzig außerhalb unseres Dresdner Umkreises liegt, berechnen wir die Anfahrt nach Entfernung und nennen sie vorab im Angebot. Mindestpreis 250 € je Auftrag.',
+    kurz: 'Wir bohren in Leipzig Ø 20–500 mm bis 2 m Tiefe in Beton, Stahlbeton und Mauerwerk. Abrechnung nach Preisliste 2026 je cm Bohrtiefe (ab 1,20 € in Beton). Da Leipzig außerhalb unseres Dresdner Umkreises liegt, berechnen wir die Anfahrt nach Entfernung und nennen sie vorab im Angebot. Mindestpreis 250 € je Auftrag.',
     typisch: [
       ['Gründerzeit-Altbau', 'In Plagwitz, Connewitz, der Südvorstadt oder Gohlis stehen viele Altbauten mit dicken Ziegelwänden. Wir bohren erschütterungsarm und nass, damit Putz und Bestand geschont werden.'],
       ['Plattenbau und Wohnungsbau', 'In Grünau und anderen Wohngebieten bohren wir für Lüftung, Abluft, Leitungen und Wärmepumpen durch Beton- und Plattenwände.'],
