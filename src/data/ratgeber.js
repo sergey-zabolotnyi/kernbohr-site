@@ -101,7 +101,7 @@ export const artikel = [
         h2: 'Die Verfahren im Überblick',
         table: [
           ['Verfahren', 'Ergebnis', 'Typische Anwendung'],
-          ['Kernbohren', 'Runde Öffnung (Ø 14–500 mm)', 'Leitungen, Lüftung, Wärmepumpe, Klimagerät, Dunstabzug, Abwasser'],
+          ['Kernbohren', 'Runde Öffnung (Ø 20–500 mm)', 'Leitungen, Lüftung, Wärmepumpe, Klimagerät, Dunstabzug, Abwasser'],
           ['Betonsägen', 'Gerade Schnitte, rechteckige Öffnungen', 'Türdurchbrüche, Wand- und Deckenöffnungen, Teilrückbau'],
           ['Fugenschneiden', 'Schmale Trennfugen in Flächen', 'Dehn- und Scheinfugen in Bodenplatten'],
           ['Schlitzfräsen', 'Längliche Rinne in der Wand', 'Kabel und Rohre unter Putz in Beton und Mauerwerk'],

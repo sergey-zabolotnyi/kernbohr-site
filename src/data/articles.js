@@ -87,7 +87,7 @@ export const articles = [
         'In nichttragenden Wänden ist eine einzelne Bohrung meist unkritisch. Bei tragenden Wänden, mehreren Bohrungen dicht beieinander, Bohrungen nahe an Stürzen, Stützen oder Auflagern sowie in Bodenplatten empfehlen wir die Abstimmung mit Statiker oder Tragwerksplaner.' ] },
       { h: 'Ablauf in sechs Schritten', ol: [
         'Anfrage mit Foto und Gerätedatenblatt senden',
-        'Position festlegen und Wand orten (Leitungen, Bewehrung)',
+        'Position festlegen und Wand orten lassen (durch Statiker oder Bauleiter: Leitungen, Bewehrung)',
         'Verbindliches Angebot erhalten',
         'Termin vereinbaren: Strom, Wasser und Zugang klären',
         'Kernbohrung durchführen, Bohrwasser auffangen, Bohrkern entfernen',
@@ -127,7 +127,7 @@ export const articles = [
       { h: 'Statik und Nachweis', p: [
         'Für Durchbrüche in tragenden Wänden berechnet ein Statiker, ob und wie die Öffnung abgefangen werden muss. Üblich sind Stahlträger oder Stürze, teils mit temporärer Abstützung. Die Ausführung erfolgt nach dieser Planung.' ] },
       { h: 'Verfahren: Bohren, Sägen oder Stemmen', ul: [
-        '<strong>Kernbohren:</strong> für runde Öffnungen, Ø 14–500 mm, präzise und erschütterungsarm',
+        '<strong>Kernbohren:</strong> für runde Öffnungen, Ø 20–500 mm, präzise und erschütterungsarm',
         '<strong>Wand- und Betonsägen:</strong> für rechteckige Öffnungen wie Türen oder Fenster, mit sauberen Kanten',
         '<strong>Stemmen:</strong> erzeugt deutlich mehr Erschütterung, Staub und Lärm und wird bei empfindlichem Bestand eher vermieden' ] },
       { h: 'Ablauf eines Durchbruchs', ol: [
@@ -220,15 +220,15 @@ export const articles = [
     h1: 'Was kostet eine Kernbohrung? Preise und Beispiele für Dresden',
     description: 'Kernbohrung Kosten 2026: ab 1,20 € je cm. Preis nach Durchmesser, Mindestauftrag 250 €, Anfahrt, Zuschläge und echte Rechenbeispiele aus Dresden.',
     short: 'Preis je cm, Mindestauftragswert, Zuschläge und Rechenbeispiele nach Preisliste 2026.',
-    answer: `Eine Kernbohrung wird nach Durchmesser und Bohrtiefe berechnet: Bei Ø 14 bis 101 mm in Beton kostet sie ${eur(staffelKompakt[0][2])} je cm Bohrtiefe (brutto). Hinzu kommen die Anfahrt mit ${eur(regeln.anfahrt)} und eine Pilotbohrung mit ${eur(regeln.pilotbohrung)}. Der Mindestauftragswert liegt bei ${eur(regeln.mindestpreis)}, sodass auch eine einzelne kleine Bohrung dort beginnt.`,
+    answer: `Eine Kernbohrung wird nach Durchmesser und Bohrtiefe berechnet: Bei Ø 20 bis 101 mm in Beton kostet sie ${eur(staffelKompakt[0][2])} je cm Bohrtiefe (brutto). Hinzu kommen die Anfahrt mit ${eur(regeln.anfahrt)} und eine Pilotbohrung mit ${eur(regeln.pilotbohrung)}. Der Mindestauftragswert liegt bei ${eur(regeln.mindestpreis)}, sodass auch eine einzelne kleine Bohrung dort beginnt.`,
     sections: [
       { h: 'So setzt sich der Preis zusammen', p: [
         `Der Bohrpreis ergibt sich aus dem Preis je cm Bohrtiefe (abhängig vom Durchmesser und vom Material) mal Bohrtiefe mal Anzahl der Bohrungen. Dazu kommen die Anfahrt und Baustelleneinrichtung für ${eur(regeln.anfahrt)} (Umkreis bis ca. 30 km um Dresden) sowie je Bohrung ${eur(regeln.pilotbohrung)} für die Pilotbohrung, mit der der Bohrständer an der Wand befestigt wird.`,
         `Liegt die Summe unter ${eur(regeln.mindestpreis)}, gilt der Mindestauftragswert von ${eur(regeln.mindestpreis)}. Alle Preise sind Bruttopreise nach unserer Preisliste (Stand ${stand}).`,
       ] },
       { h: 'Preis je cm Bohrtiefe nach Durchmesser', table: {
-        head: ['Durchmesser', 'Beton / Stahlbeton', 'Mauerwerk'],
-        rows: staffelKompakt.map(([lo, hi, b, m]) => [`Ø ${lo}–${hi} mm`, `${eur(b)} je cm`, `${eur(m)} je cm`]),
+        head: ['Durchmesser', 'Beton / Stahlbeton'],
+        rows: staffelKompakt.map(([lo, hi, b]) => [`Ø ${lo}–${hi} mm`, `${eur(b)} je cm`]),
       } },
       { h: 'Rechenbeispiele aus der Praxis', p: ['Die Beispiele zeigen den Gesamtpreis einschließlich Anfahrt und Pilotbohrung. Die Werte stammen aus demselben Rechner wie der Kernbohr-Rechner auf der Startseite.'], table: {
         head: ['Beispiel', 'Rechnerische Summe', 'Gesamtpreis (brutto)'],
@@ -393,13 +393,13 @@ export const articles = [
     h1: 'Betonbohrung in Dresden: Welches Verfahren passt?',
     description: 'Betonbohrung in Dresden: Wann reicht der Bohrhammer, wann braucht es eine Kernbohrung oder Wandsäge? Durchmesser, Staub, Kosten und Auswahlhilfe vom Fachbetrieb.',
     short: 'Bohrhammer, Kernbohrung oder Wandsäge: Das passende Verfahren für Ihre Öffnung.',
-    answer: `Für kleine Dübellöcher genügt bei einer Betonbohrung ein Bohrhammer. Sobald eine saubere, runde Öffnung für Rohre, Kabel oder Lüftung nötig ist, ist die Kernbohrung mit diamantbesetzter Krone das passende Verfahren: Ø 14 bis 500 mm, bis 2 m Tiefe, staubarm und erschütterungsarm. Für große, eckige Öffnungen setzt man die Wandsäge ein.`,
+    answer: `Für kleine Dübellöcher genügt bei einer Betonbohrung ein Bohrhammer. Sobald eine saubere, runde Öffnung für Rohre, Kabel oder Lüftung nötig ist, ist die Kernbohrung mit diamantbesetzter Krone das passende Verfahren: Ø 20 bis 500 mm, bis 2 m Tiefe, staubarm und erschütterungsarm. Für große, eckige Öffnungen setzt man die Wandsäge ein.`,
     sections: [
       { h: 'Drei Verfahren im Überblick', table: {
         head: ['Verfahren', 'Typischer Einsatz', 'Ergebnis'],
         rows: [
           ['Bohrhammer', 'Dübel, Schrauben, kleine Löcher', 'kleines Loch, bei Stahlbeton begrenzt'],
-          ['Kernbohrung', 'Rohre, Leitungen, Lüftung, Wärmepumpe (Ø 14–500 mm)', 'rundes, sauberes Bohrloch, Bohrkern'],
+          ['Kernbohrung', 'Rohre, Leitungen, Lüftung, Wärmepumpe (Ø 20–500 mm)', 'rundes, sauberes Bohrloch, Bohrkern'],
           ['Wandsäge / Betonschneiden', 'Türen, Fenster, große Durchbrüche, Treppenöffnungen', 'gerade Schnitte, exakte Kanten'],
         ],
       } },
@@ -407,7 +407,7 @@ export const articles = [
         'Bei der Kernbohrung schneidet eine rotierende Diamantkrone einen runden Zylinder aus dem Beton und lässt ihn als Bohrkern stehen. Das ist präziser und erschütterungsärmer als Schlagbohren oder Stemmen und schont angrenzende Bauteile. Die Bohrung wird in der Regel nass ausgeführt, mit Abdeckung und auf Wunsch Wassersauger bleibt es sauber.',
       ] },
       { h: 'Welcher Durchmesser für welchen Zweck?', p: ['Die Wahl des Durchmessers hängt vom Rohr oder der Leitung ab, plus Platz für Dämmung oder Dichtung. Eine Übersicht finden Sie in unserem Ratgeber zur Wahl des Bohrdurchmessers.'] },
-      { h: 'Was kostet eine Betonbohrung?', p: ['Der Preis richtet sich nach Durchmesser und Bohrtiefe, ab 1,20 € je cm Bohrtiefe (brutto, Ø 14–101 mm in Beton). Dazu kommen Anfahrt und Pilotbohrung, der Mindestauftragswert beträgt 250 €. Details und Beispiele stehen im Kostenratgeber und im Kernbohr-Rechner.'] },
+      { h: 'Was kostet eine Betonbohrung?', p: ['Der Preis richtet sich nach Durchmesser und Bohrtiefe, ab 1,20 € je cm Bohrtiefe (brutto, Ø 20–101 mm in Beton). Dazu kommen Anfahrt und Pilotbohrung, der Mindestauftragswert beträgt 250 €. Details und Beispiele stehen im Kostenratgeber und im Kernbohr-Rechner.'] },
       { h: 'Vorher klären', ul: [
         'Leitungen, Rohre und Bewehrung an der Bohrstelle klären und freigeben.',
         'Bei tragenden Bauteilen den Statiker einbeziehen.',
@@ -418,7 +418,7 @@ export const articles = [
     faqs: [
       ['Ist Betonbohrung dasselbe wie Kernbohrung?', 'Betonbohrung ist der Oberbegriff für Bohrungen in Beton. Die Kernbohrung ist das Verfahren mit Diamantkrone für runde, saubere Öffnungen größerer Durchmesser.'],
       ['Wann reicht ein Bohrhammer nicht aus?', 'Bei größeren Durchmessern, Stahlbeton mit Bewehrung und überall dort, wo Erschütterungen und Ausbrüche vermieden werden sollen, ist eine Kernbohrung die bessere Wahl.'],
-      ['Wie groß kann eine Betonbohrung werden?', 'Wir bohren Ø 14 bis 500 mm, bis zu 2 m tief. Größere Durchmesser auf Anfrage.'],
+      ['Wie groß kann eine Betonbohrung werden?', 'Wir bohren Ø 20 bis 500 mm, bis zu 2 m tief. Größere Durchmesser auf Anfrage.'],
       ['Machen Sie auch Betonbohrungen über Kopf und in Wohnungen?', 'Ja, horizontal, vertikal und über Kopf, in bewohnten Gebäuden staubarm im Nassverfahren, auf Wunsch mit Wassersauger.'],
     ],
   },
@@ -450,7 +450,7 @@ export const articles = [
         'Bei einer einzelnen kleinen Bohrung in einfachem Mauerwerk, ohne Bewehrung und ohne tragende Funktion, ist Selbermachen denkbar, wenn Sie Gerät, Wasser und Schutz organisiert haben. Sobald Stahlbeton, große Durchmesser, Überkopfbohrungen oder mehrere Bohrungen anstehen, spricht fast alles für den Fachbetrieb.',
       ] },
       { h: 'Kosten im Vergleich', p: [
-        'Bei uns gilt die Preisliste: ab ' + eur(1.2) + ' je cm Bohrtiefe in Beton (Ø 14–101 mm), in Mauerwerk ab ' + eur(1.1) + ', dazu Anfahrt (' + eur(regeln.anfahrt) + ' im Umkreis bis ca. 30 km um Dresden) und Pilotbohrung. Der Mindestauftragswert beträgt ' + eur(regeln.mindestpreis) + '. Beispiel: Eine Bohrung Ø 82 mm, 30 cm Beton kostet bei uns ' + eur(berechne({ d: 82, tiefe: 30 }).total) + ' brutto. Die Mietkosten eines Geräts, Krone, Wasserversorgung und Ihre eigene Zeit sollten Sie dagegen rechnen, außerdem das Risiko eines Fehlers.',
+        'Bei uns gilt die Preisliste: ab ' + eur(1.2) + ' je cm Bohrtiefe in Beton (Ø 20–101 mm), für Mauerwerk erstellen wir ein individuelles Angebot, dazu Anfahrt (' + eur(regeln.anfahrt) + ' im Umkreis bis ca. 30 km um Dresden) und Pilotbohrung. Der Mindestauftragswert beträgt ' + eur(regeln.mindestpreis) + '. Beispiel: Eine Bohrung Ø 82 mm, 30 cm Beton kostet bei uns ' + eur(berechne({ d: 82, tiefe: 30 }).total) + ' brutto. Die Mietkosten eines Geräts, Krone, Wasserversorgung und Ihre eigene Zeit sollten Sie dagegen rechnen, außerdem das Risiko eines Fehlers.',
         'Mehrere Bohrungen in einem Termin sind am günstigsten, weil Anfahrt und Einrichtung nur einmal anfallen. Probieren Sie den <a href="/kernbohrung-rechner/">Kernbohr-Rechner</a> aus.',
       ] },
       { h: 'Checkliste: Das sollten Sie vor der Entscheidung wissen', checks: [
@@ -466,7 +466,7 @@ export const articles = [
       ['Vermieten Sie Kernbohrgeräte?', 'Nein. Wir führen die Kernbohrung selbst aus und kommen mit Gerät, Wasser und Staubschutz zu Ihnen.'],
       ['Wie finde ich den passenden Bohrdurchmesser?', 'Messen Sie den Außendurchmesser des Rohrs oder der Hülse, rechnen Sie Dämmung und 5 bis 15 mm Luft dazu. Unsere Seite zum Bohrdurchmesser nennt Richtwerte.'],
       ['Wie bekomme ich schnell einen Preis?', 'Rechnen Sie im Kernbohr-Rechner oder schicken Sie uns ein Foto der Bohrstelle mit Maßband per WhatsApp. Wir nennen Ihnen Preis und Termin.'],
-      ['Was passiert, wenn die Krone auf Stahl trifft?', 'Stahl ab 1,5 cm Dicke berechnen wir je cm als Einzelschnitt, siehe Preisliste. Die Bewehrung lässt sich vorab nicht immer erkennen, deshalb planen wir mit passenden Kronen und Erfahrung.'],
+      ['Was passiert, wenn die Krone auf Stahl trifft?', 'Bewehrungsstahl ab Ø 10 mm berechnen wir je cm als Einzelschnitt, siehe Preisliste. Die Bewehrung lässt sich vorab nicht immer erkennen, deshalb planen wir mit passenden Kronen und Erfahrung.'],
     ],
   },
   {
@@ -735,10 +735,10 @@ export const articles = [
     h1: 'Vor dem Bohren orten: Leitungen und Bewehrung finden',
     description: 'Wie Leitungen und Bewehrung vor der Kernbohrung gefunden werden: Ortungsgeräte, Pläne, Markierung und was passiert, wenn die Bohrkrone auf Stahl trifft.',
     short: 'Ortung von Leitungen und Bewehrung vor der Kernbohrung: Verfahren, Grenzen, Zuständigkeiten.',
-    answer: 'Vor einer Kernbohrung werden Leitungen und Bewehrung so gut wie möglich geortet, mit Plänen, Sichtprüfung und Ortungsgerät. Eine Ortung zeigt viel, aber nicht alles. Die Bohrstelle wird gemeinsam markiert, die Lage von Leitungen, Bewehrung und Statik klärt letztlich der Auftraggeber bzw. der Planer. Trifft die Bohrkrone auf Bewehrungsstahl, wird das nach Preisliste berechnet.',
+    answer: 'Vor einer Kernbohrung werden Leitungen und Bewehrung so gut wie möglich geortet, mit Plänen, Sichtprüfung und Ortungsgerät. Das übernehmen Statiker, Bauleiter oder Fachfirmen. Sie markieren auch die Bohrpunkte, wir bohren an den markierten und freigegebenen Stellen. Eine Ortung zeigt viel, aber nicht alles. Trifft die Bohrkrone auf Bewehrungsstahl, wird das nach Preisliste berechnet.',
     sections: [
       { h: 'Warum Ortung vor der Bohrung wichtig ist', p: [
-        'Eine Kernbohrung schneidet alles durch, was im Weg liegt. Elektro- und Wasserleitungen und tragende Bewehrung sollen dabei nicht beschädigt werden. Deshalb wird die Stelle vor dem Bohren geprüft und der Bohrpunkt bei Bedarf verschoben.',
+        'Eine Kernbohrung schneidet alles durch, was im Weg liegt. Elektro- und Wasserleitungen und tragende Bewehrung sollen dabei nicht beschädigt werden. Deshalb wird die Stelle vor dem Bohren vom Statiker, Bauleiter oder einer Fachfirma geprüft und der Bohrpunkt bei Bedarf verschoben.',
       ] },
       { h: 'Wie Leitungen und Bewehrung gefunden werden', table: {
         head: ['Methode', 'Wofür', 'Grenzen'],
@@ -750,25 +750,25 @@ export const articles = [
         ],
       }, p: ['Welches Verfahren sinnvoll ist, hängt vom Bauteil und vom Risiko ab. Ortung ist ein Hilfsmittel, keine Garantie.'] },
       { h: 'Wer ist wofür zuständig?', ul: [
-        'Auftraggeber bzw. Planer: Lage von Leitungen, Bewehrung und Statik klären und die Bohrstelle freigeben.',
-        'Wir: Bohrstelle gemeinsam markieren, mit Ortungsgerät prüfen und sauber bohren.',
+        'Statiker, Bauleiter oder Planer: Leitungen und Bewehrung orten, Statik klären, die Bohrpunkte markieren und freigeben.',
+        'Wir: sauber an den markierten und freigegebenen Punkten bohren. Wir setzen keine Markierungen am Objekt und suchen weder Leitungen noch Bewehrung selbst.',
         'Bei Spannbeton, Spannstahl oder tragenden Bauteilen: Rücksprache mit dem Statiker, bevor gebohrt wird.',
       ] },
       { h: 'Was passiert, wenn die Bohrkrone auf Bewehrung trifft?', p: [
-        'In Stahlbeton ist Bewehrung üblich. Trifft die Bohrkrone auf Stahl, wird der Stahl durchbohrt, was länger dauert und die Krone stärker beansprucht. Bewehrungsstahl ab 1,5 cm Durchmesser berechnen wir laut Preisliste mit ' + eur(regeln.stahlProCm) + ' je cm Stahl zusätzlich. Wo die Lage der Bewehrung bekannt ist, lässt sich der Bohrpunkt oft anpassen.',
+        'In Stahlbeton ist Bewehrung üblich. Trifft die Bohrkrone auf Stahl, wird der Stahl durchbohrt, was länger dauert und die Krone stärker beansprucht. Bewehrungsstahl ab Ø 10 mm berechnen wir laut Preisliste mit ' + eur(regeln.stahlProCm) + ' je cm Stahl zusätzlich. Wo die Lage der Bewehrung bekannt ist, kann der Statiker den Bohrpunkt anpassen.',
       ] },
       { h: 'So bereiten Sie die Bohrstelle vor', ol: [
-        'Bohrstelle mit Kreide oder Klebeband markieren',
+        'Bohrstelle vom Statiker oder Bauleiter markieren lassen (oder Markierung vom Planer übernehmen)',
         'Pläne zu Elektro, Wasser und Statik bereithalten, falls vorhanden',
         'Mitteilen, ob in der Nähe Leitungen oder Rohre bekannt sind',
         'Foto der Stelle und der Nachbarflächen senden',
       ] },
     ],
     faqs: [
-      ['Kann man Leitungen und Bewehrung sicher finden?', 'Nicht zu 100 Prozent. Ortungsgeräte liefern gute Hinweise, aber Tiefe, Material und Umbauten begrenzen die Genauigkeit. Deshalb bleibt die Freigabe der Bohrstelle beim Auftraggeber.'],
+      ['Kann man Leitungen und Bewehrung sicher finden?', 'Nicht zu 100 Prozent. Ortungsgeräte liefern gute Hinweise, aber Tiefe, Material und Umbauten begrenzen die Genauigkeit. Deshalb liegen Ortung, Markierung und Freigabe der Bohrstelle beim Statiker, Bauleiter bzw. Auftraggeber.'],
       ['Wer haftet, wenn eine Leitung getroffen wird?', 'Das hängt vom Einzelfall und von der Freigabe der Bohrstelle ab. Klären Sie das vor Auftragsbeginn mit uns und halten Sie vorhandene Pläne bereit.'],
-      ['Verschieben Sie die Bohrstelle, wenn Stahl gefunden wird?', 'Wo es das Bauteil und der Zweck zulassen, ja. Oft genügt eine kleine Verschiebung.'],
-      ['Wie berechnen Sie Bewehrungsstahl?', 'Stahl ab 1,5 cm Durchmesser berechnen wir je cm Stahl zusätzlich, laut Preisliste.'],
+      ['Verschieben Sie die Bohrstelle, wenn Stahl gefunden wird?', 'Die Bohrstelle legen Statiker bzw. Bauleiter fest. Wir bohren an den markierten Punkten. Oft genügt eine kleine Verschiebung, die der Statiker vorgibt.'],
+      ['Wie berechnen Sie Bewehrungsstahl?', 'Bewehrungsstahl ab Ø 10 mm berechnen wir je cm Stahl zusätzlich, laut Preisliste.'],
     ],
   },
   {
@@ -806,6 +806,45 @@ export const articles = [
       ['Wer legt den Durchmesser fest?', 'Der Elektrofachbetrieb nach Kabelbündel, Schutzrohr und Dichtsystem. Wir bohren auf das genannte Maß.'],
       ['Ist die Abdichtung im Preis enthalten?', 'Nein. Dichtsystem und Montage gehören zum Gewerk des Fachbetriebs und sind in der Bohrung nicht enthalten.'],
       ['Wie bekomme ich ein Angebot?', 'Foto der Stelle mit Maßband und Angabe von Wandstärke, Material und Durchmesser senden, wir melden uns mit dem Angebot.'],
+    ],
+  },
+  {
+    slug: 'pruefkerne-bohrkerne-beton-entnahme',
+    icon: 'drill',
+    date: '2026-11-24',
+    title: 'Prüfkerne aus Beton: Bohrkernentnahme in Dresden',
+    h1: 'Prüfkerne aus Beton entnehmen: Ablauf und Hinweise',
+    description: 'Bohrkerne aus Beton zur Prüfung entnehmen: Wann Prüfkerne sinnvoll sind, wie die Entnahme abläuft und was vorab geklärt werden muss. In Dresden und Sachsen.',
+    short: 'Bohrkernentnahme zur Betonprüfung: Anlässe, Ablauf, Zuständigkeiten.',
+    answer: 'Prüfkerne sind zylindrische Bohrkerne, die mit einer Diamant-Bohrkrone aus Bauteilen aus Beton entnommen werden, um den Beton im Labor oder durch einen Sachverständigen zu prüfen. Wir übernehmen die Entnahme der Kerne an den Stellen, die der Prüfer oder Statiker festlegt. Die Auswertung (zum Beispiel Druckfestigkeit) erfolgt durch ein Prüflabor oder einen Sachverständigen. Preise für die Entnahme nennen wir auf Anfrage.',
+    sections: [
+      { h: 'Wann werden Prüfkerne entnommen?', ul: [
+        'Bei Zweifeln an der Betonqualität, zum Beispiel nach Schäden oder bei auffälligen Prüfergebnissen',
+        'Vor Umbau, Aufstockung oder Nutzungsänderung, wenn die Festigkeit im Bestand geprüft werden soll',
+        'Zur Beurteilung von Schäden, etwa bei Feuchte, Rissen oder Frost',
+        'Wenn Unterlagen zum Bauteil fehlen oder unvollständig sind',
+      ] },
+      { h: 'Wie läuft die Entnahme ab?', ol: [
+        'Der Prüfer, Statiker oder Bauleiter legt fest, wo und wie viele Kerne entnommen werden.',
+        'Wir bohren die Kerne mit Diamant-Bohrkrone und Wasserkühlung aus dem Bauteil.',
+        'Die Kerne werden beschriftet, geschützt und an das Prüflabor oder den Sachverständigen übergeben.',
+        'Die Bohrlöcher werden auf Wunsch von Ihnen oder einer Fachfirma verschlossen.',
+      ] },
+      { h: 'Wer macht was?', ul: [
+        'Statiker, Prüfer oder Bauleiter: Entnahmestellen festlegen, Leitungen und Bewehrung orten, Bohrstellen markieren und freigeben.',
+        'Kernbohr-Expert: Kerne sauber aus dem Bauteil bohren. Wir setzen keine Markierungen am Objekt und suchen nicht selbst nach Leitungen oder Bewehrung.',
+        'Prüflabor oder Sachverständiger: Kerne untersuchen, zum Beispiel die Druckfestigkeit, und das Ergebnis bewerten.',
+      ] },
+      { h: 'Worauf Sie achten sollten', p: [
+        'Bohrkerne aus Stahlbeton können Bewehrung enthalten. Das beeinflusst die Prüfung und wird deshalb vorab mit dem Prüfer besprochen. Je nach Bauteil sind Statik und Tragfähigkeit zu beachten, besonders bei tragenden Teilen.',
+        'Schicken Sie uns vorab Angaben zu Bauteil, Dicke, Anzahl der Kerne und Zugang, am besten mit Foto. Dann erstellen wir ein Angebot. Preise für die Entnahme nennen wir auf Anfrage.',
+      ] },
+    ],
+    faqs: [
+      ['Was ist ein Prüfkern?', 'Ein Prüfkern ist ein zylindrischer Bohrkern aus Beton, der zur Untersuchung der Betoneigenschaften, zum Beispiel der Druckfestigkeit, entnommen wird.'],
+      ['Prüfen Sie die Kerne auch selbst?', 'Nein. Wir entnehmen die Kerne. Die Prüfung und Bewertung übernimmt ein Prüflabor oder ein Sachverständiger.'],
+      ['Wer legt die Entnahmestellen fest?', 'Der Prüfer, Statiker oder Bauleiter. Wir bohren an den markierten und freigegebenen Stellen.'],
+      ['Was kostet die Entnahme von Prüfkernen?', 'Die Preise für die Bohrkernentnahme nennen wir auf Anfrage. Senden Sie uns Angaben zum Bauteil und die Anzahl der Kerne, dann erhalten Sie ein Angebot.'],
     ],
   },
 ];

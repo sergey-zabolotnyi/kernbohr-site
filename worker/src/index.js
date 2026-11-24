@@ -8,14 +8,14 @@ import { faqs } from '../../src/data/services.js';
 const wissen = () => `
 FIRMA: ${site.company}, Inhaber Ion Salcutan, ${site.address?.street ?? 'Burkersdorfer Weg 19'}, 01189 Dresden. Branche seit 2006, 8 Mitarbeiter.
 TELEFON: ${site.phoneDisplay} (Mo–Sa 7–19 Uhr). WhatsApp und E-Mail (${site.email}) jederzeit, Antwort in den Telefonzeiten.
-EINSÄTZE: nach Absprache rund um die Uhr, auch abends, nachts, Wochenende, Feiertage, soweit Ruhezeiten/Hausordnung es zulassen. Meist schon am nächsten oder übernächsten Tag möglich. Bundesweit auf Anfrage.
+EINSÄTZE: nach Absprache rund um die Uhr, auch abends, nachts, Wochenende, Feiertage, soweit Ruhezeiten/Hausordnung es zulassen. Meist schon am nächsten Tag möglich, bei Anruf oft sehr kurzfristig. Bundesweit auf Anfrage.
 WEBSITE: Die Website wurde von ${site.webdesign.name} entwickelt (${site.webdesign.url}). Fragt jemand, wer die Website oder den Assistenten erstellt hat, nenne das und den Link. Das ist eine erlaubte Antwort.
 AUFTRÄGE: Kernbohr-Expert freut sich über jeden Auftrag, vom einzelnen Loch bis zum Großprojekt. Bei größeren Aufträgen sind individuelle Konditionen nach Absprache möglich. Schicken Sie Unterlagen, Plan oder Foto, dann erstellt der Inhaber ein konkretes Angebot.
-LEISTUNGEN: Kernbohrung Ø 14–500 mm bis 2 m Tiefe in Beton, Stahlbeton, Mauerwerk; Wanddurchbruch; Betonsägen; Fugenschneiden; Schlitze fräsen; Rückbau/Teilabbruch; Wärmepumpe/Klima-Durchführungen; Dunstabzug; Kamin/Sanitär.
-ABLAUF: Foto per WhatsApp/Formular, verbindliches Angebot, Auftraggeber markiert die Bohrpunkte und gibt frei (Leitungen, Bewehrung, Statik vorab klären, bei tragenden Teilen mit Statiker). Ortungsgerät ist vorhanden, gebohrt wird nur an freigegebenen Punkten.
-BAUSTELLE: normaler Wasseranschluss und Strom nötig (230 V oder 400 V per Adapter auf 16 A).
-PREISE (Stand ${stand}, Endpreise brutto, € je cm Bohrtiefe, Beton/Stahlbeton | Mauerwerk):
-${staffelKompakt.map(([a, b, x, y]) => `Ø ${a}–${b} mm: ${eur(x)} | ${eur(y)}`).join('\n')}
+LEISTUNGEN: Kernbohrung Ø 20–500 mm, bis 2 m Tiefe bei Ø bis 250 mm (bei größeren Durchmessern Tiefe nach Absprache), in Beton, Stahlbeton, Mauerwerk; auch Trockenbohrung (je nach Situation); Prüfkerne (Bohrkerngewinnung zur Betonprüfung, Preise auf Anfrage); Wanddurchbruch; Betonsägen; Fugenschneiden; Schlitze fräsen; Rückbau/Teilabbruch; Wärmepumpe/Klima-Durchführungen; Dunstabzug; Kamin/Sanitär.
+ABLAUF: Foto per WhatsApp/Formular, verbindliches Angebot; Statiker, Bauleiter oder Auftraggeber orten Leitungen und Bewehrung und markieren die Bohrpunkte; Kernbohr-Expert markiert nicht selbst und sucht keine Leitungen oder Bewehrung. Gebohrt wird nur an den markierten und freigegebenen Punkten (bei tragenden Teilen mit Statiker).
+BAUSTELLE: Strom 230 V (Kabeltrommel 16 A vorhanden). Wasser: Anschluss vor Ort oder Kanister. Der Wassersauger (100 € pro Tag) wird auf Wunsch eingesetzt; auf großen Baustellen wird bei Zustimmung des Auftraggebers auch ohne Wassersauger gebohrt. Trockenbohrung ist in allen Durchmessern möglich, je nach Situation und Wunsch des Auftraggebers.
+PREISE (Stand ${stand}, Endpreise brutto, € je cm Bohrtiefe, Beton und Stahlbeton gleicher Preis; für Mauerwerk keine Preise nennen, individuelles Angebot):
+${staffelKompakt.map(([a, b, x]) => `Ø ${a}–${b} mm: ${eur(x)}`).join('\n')}
 ZUSCHLÄGE UND NEBENKOSTEN:
 ${zuschlagTabelle.map(([a, b]) => `${a}: ${b}`).join('\n')}
 Mindestauftragswert ${regeln.mindestpreis} €. Anfahrt ${regeln.anfahrt} € im Umkreis bis ca. 30 km um Dresden, weiter nach Vereinbarung. Nacht = 23–6 Uhr (+75 %), Sa/So/Feiertag +100 %.

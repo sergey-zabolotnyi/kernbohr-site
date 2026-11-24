@@ -26,7 +26,7 @@ export const serviceSections = {
       tabelle: {
         kopf: ['Verfahren', 'Geeignet für', 'Besonderheit'],
         zeilen: [
-          ['Kernbohrung', 'Runde Durchführungen für Rohre, Lüftung, Wärmepumpe', 'Schnell und günstig, Ø 14–500 mm, auch zum Vorbohren der Ecken'],
+          ['Kernbohrung', 'Runde Durchführungen für Rohre, Lüftung, Wärmepumpe', 'Schnell und günstig, Ø 20–500 mm, auch zum Vorbohren der Ecken'],
           ['Wandsäge (Betonschneiden)', 'Türen, Fenster, große eckige Öffnungen in Wand und Decke', 'Gerade, exakte Schnitte, wenig Vibration, Wasserkühlung'],
           ['Stemmen und Meißeln', 'Kleine Korrekturen in weichem Mauerwerk', 'Mehr Erschütterung und Staub, ungenauere Kanten'],
         ],

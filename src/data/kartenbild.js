@@ -33,4 +33,5 @@ export const artikelBild = {
   'fugenschneiden-beton-ratgeber': 'werk-schlitz-deckenbogen',
   'entkernung-altbau-dresden': 'werk-schlitz-wand',
   'handwerkerleistungen-steuer-absetzen-35a': 'werk-schlitz-bogen',
+  'pruefkerne-bohrkerne-beton-entnahme': 'neustadt-bohrkern-ziegel',
 };

@@ -14,5 +14,5 @@ export const durchmesserTabelle = [
 export const durchmesserFaq = [
   ['Wie finde ich den richtigen Bohrdurchmesser?', 'Messen Sie den Außendurchmesser des Rohrs oder der Hülse, die durch die Wand soll, und addieren Sie Dämmung oder Futterrohr sowie 5 bis 15 mm Luft. Bei Unsicherheit senden Sie uns ein Foto mit Maßband, wir nennen den passenden Durchmesser.'],
   ['Kann man die Bohrung später vergrößern?', 'Ja, aber das kostet einen zweiten Einsatz. Besser vorab sauber messen und lieber etwas größer bohren, wenn ein Mauerkasten, eine Hülse oder eine Dämmung hinein soll.'],
-  ['Bis zu welchem Durchmesser bohren Sie?', 'Wir bohren von Ø 14 bis Ø 500 mm, bis zu 2 m tief. Größere Durchmesser sind auf Anfrage möglich.'],
+  ['Bis zu welchem Durchmesser bohren Sie?', 'Wir bohren von Ø 20 bis Ø 500 mm, bis zu 2 m tief. Größere Durchmesser sind auf Anfrage möglich.'],
 ];

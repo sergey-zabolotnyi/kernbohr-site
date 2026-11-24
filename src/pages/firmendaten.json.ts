@@ -21,7 +21,7 @@ export function GET() {
     mitarbeiter: site.employees,
     umsatzsteuerId: site.vatId,
     einsatzgebiet: ['Dresden', 'Radebeul', 'Meißen', 'Pirna', 'Freital', 'Radeberg', 'Coswig', 'Heidenau', 'Leipzig', 'Sachsen', 'Berlin', 'bundesweit für größere Projekte'],
-    kernbohrung: { durchmesserMm: [regeln.minDurchmesser, regeln.maxDurchmesser], maxTiefeCm: regeln.maxTiefeCm, materialien: ['Beton', 'Stahlbeton', 'Mauerwerk'] },
+    kernbohrung: { durchmesserMm: [regeln.minDurchmesser, regeln.maxDurchmesser], maxTiefeCm: regeln.maxTiefeCm, maxTiefeBisDurchmesserMm: regeln.maxTiefeBisDurchmesser, trockenbohrung: 'in allen Durchmessern möglich', strom: '230 V, Kabeltrommel 16 A', materialien: ['Beton', 'Stahlbeton', 'Mauerwerk'] },
     preisliste: {
       stand,
       waehrung: 'EUR',
@@ -29,7 +29,7 @@ export function GET() {
       mindestpreisJeAuftrag: regeln.mindestpreis,
       anfahrt: regeln.anfahrt,
       anfahrtUmkreisKm: 'bis 30 um Dresden, darüber hinaus nach Vereinbarung',
-      staffel: staffel.map(([von, bis, beton, mauerwerk]) => ({ durchmesserVonMm: von, durchmesserBisMm: bis, betonStahlbeton: beton, mauerwerk })),
+      staffel: staffel.map(([von, bis, beton]) => ({ durchmesserVonMm: von, durchmesserBisMm: bis, betonStahlbeton: beton })),
       zuschlaege: Object.fromEntries(zuschlagTabelle),
     },
     leistungen: services.map((s) => ({ name: s.name, url: `${site.url}/${s.slug}/` })),

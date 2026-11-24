@@ -49,7 +49,7 @@ export const preisAngebot = (slug) =>
           minPrice: 1.1,
           maxPrice: 11,
           unitText: 'cm Bohrtiefe',
-          description: 'Preisliste 2026: je nach Durchmesser (14–500 mm) und Material. Mindestauftragswert 250 €, Anfahrt 85 € im Umkreis bis ca. 30 km um Dresden.',
+          description: 'Preisliste 2026: je nach Durchmesser (20–500 mm) und Material. Mindestauftragswert 250 €, Anfahrt 85 € im Umkreis bis ca. 30 km um Dresden.',
         },
         seller: { '@id': site.url + '/#business' },
       }
