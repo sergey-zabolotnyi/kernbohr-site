@@ -63,7 +63,7 @@ export const videoSchema = (v, base = site.url) => ({
   thumbnailUrl: `${base}/posters/${v.id}.jpg`,
   contentUrl: `${base}/videos/${v.id}.mp4`,
   // ISO 8601 mit Uhrzeit und Zeitzone (Google verlangt das), Dresden im November = +01:00
-  uploadDate: v.id?.startsWith('ikea-') ? '2026-11-17T18:00:00+01:00' : v.id?.startsWith('neustadt-') ? '2026-11-19T17:00:00+01:00' : '2026-11-07T12:00:00+01:00',
+  uploadDate: v.id?.startsWith('ikea-') ? '2026-11-17T18:00:00+01:00' : v.id?.startsWith('neustadt-') ? '2026-11-19T17:00:00+01:00' : v.id?.startsWith('pieschen-') ? '2026-11-24T19:15:00+01:00' : '2026-11-07T12:00:00+01:00',
 });
 
 // HowTo-Schema für den Ablauf (Schritte als [Name, Text]).

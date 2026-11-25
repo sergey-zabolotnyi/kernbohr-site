@@ -219,6 +219,106 @@
       "h": 2048,
       "alt": "Ausgebohrter Kern aus Ziegelmauerwerk neben der Diamant-Bohrkrone Ø 200 mm",
       "caption": "Bohrkern aus Ziegelmauerwerk"
+    },
+    "pieschen-01": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Hilti-Kernbohrgerät auf Schiene an einer Wand im Altbau beim Nassbohren, Wasserschlauch angeschlossen",
+      "caption": "Nassbohren mit Schienengerät im Altbau"
+    },
+    "pieschen-02": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Fertige Kernbohrung in der Wand unter der Decke, daneben ein Dübel mit Gewindestange für das Bohrgerät",
+      "caption": "Fertige Bohrung, daneben der Befestigungsdübel"
+    },
+    "pieschen-03": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Nahaufnahme eines Hilti-Kernbohrgeräts mit Bohrkrone an der Wand in einer Raumecke",
+      "caption": "Bohrkrone im Einsatz"
+    },
+    "pieschen-04": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Fertige Kernbohrung an der Wand über einer Tür, daneben eine blaue Markierung",
+      "caption": "Fertige Bohrung neben der Markierung"
+    },
+    "pieschen-05": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Hilti-Bohrständer in einer Raumecke mit Wasserauffangring an der Bohrstelle",
+      "caption": "Bohrständer mit Wasserauffangring"
+    },
+    "pieschen-06": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Kernbohrgerät auf Schiene im Raum, links daneben eine Türöffnung mit sichtbarem Ziegelmauerwerk",
+      "caption": "Schienengerät im Altbauraum"
+    },
+    "pieschen-07": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Hilti-Kernbohrgerät mit Wasserschlauch an der Wand unter der Decke, Bohrkrone in der Bohrung",
+      "caption": "Bohren unter der Decke"
+    },
+    "pieschen-08": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Altbauraum mit Kernbohrgerät auf Schiene an der Wand, blaue Markierungen an den Wänden",
+      "caption": "Bohrstellen markiert, Gerät an der Wand"
+    },
+    "pieschen-09": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1200,
+      "h": 1600,
+      "alt": "Flur im Altbau mit Kernbohrgerät auf Schiene, im Vordergrund ein Gerüst",
+      "caption": "Arbeit im Flur"
+    },
+    "schlitz-01": {
+      "widths": [
+        800,
+        1600
+      ],
+      "w": 1536,
+      "h": 1788,
+      "alt": "Frisch gefräster Schlitz, 10 cm tief und 7 cm breit, in einer Betonfläche im Außenbereich",
+      "caption": "Gefräster Schlitz für ein Elektrokabel"
     }
   },
   "videos": {
@@ -266,6 +366,16 @@
       "alt": "Nahaufnahme eines Hilti-Kernbohrgeräts auf Schiene beim Bohren mit Wasserzufuhr",
       "caption": "Nassbohren mit Wasserzufuhr",
       "size": 4362614
+    },
+    "pieschen-video-1": {
+      "alt": "Kernbohrgerät auf Schiene bohrt in einem Altbauraum in Dresden-Pieschen",
+      "caption": "Kernbohrung im Altbau, Dresden-Pieschen",
+      "size": 5783493
+    },
+    "pieschen-video-2": {
+      "alt": "Kernbohrgerät mit Wasserzufuhr beim Bohren an der Wand, Dresden-Pieschen",
+      "caption": "Nassbohren an der Wand, Dresden-Pieschen",
+      "size": 5819170
     }
   }
 }
