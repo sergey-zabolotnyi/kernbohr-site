@@ -50,7 +50,7 @@ export const gewerbeSeiten = [
       'Vorbereitende Arbeiten im Rückbau und bei Sanierung im Bestand',
       'Serien gleicher Schlitze über mehrere Räume oder Etagen',
       'Arbeiten nach Leitungsplan und Markierung',
-      'Schlitz für Elektrokabel in einer Betonfläche, 10 cm tief und 7 cm breit, in einem Gewerbeobjekt in Dresden',
+      'Schlitz für Elektrokabel in einer Betonfläche, 10 cm tief und 7 cm breit, bei ESMS Dresden',
     ],
     brauchen: [
       'Leitungsplan oder Markierung der Schlitzverläufe',
@@ -84,7 +84,7 @@ export const gewerbeSeiten = [
       'Serienbohrungen mit gleichen oder wechselnden Durchmessern',
       'Bohrungen für E-Ladeinfrastruktur, zum Beispiel bei IKEA Dresden (11 Bohrungen Ø 150 mm in Stahlbeton)',
       'Durchführungen für Wärmepumpen, zum Beispiel Ø 200 mm in Neustadt in Sachsen',
-      'Durchführungen für die Elektroinstallation im Altbau, zum Beispiel 22 × Ø 100 mm und 6 × Ø 200 mm in Dresden-Pieschen',
+      'Durchführungen für die Elektroinstallation bei der Sanierung eines Mehrfamilienhauses, zum Beispiel 22 × Ø 100 mm und 6 × Ø 200 mm in Dresden-Pieschen',
     ],
     brauchen: [
       'Bohrliste mit Position, Durchmesser, Tiefe und Material',
