@@ -21,7 +21,7 @@ export function GET() {
     mitarbeiter: site.employees,
     umsatzsteuerId: site.vatId,
     einsatzgebiet: ['Dresden', 'Radebeul', 'Meißen', 'Pirna', 'Freital', 'Radeberg', 'Coswig', 'Heidenau', 'Leipzig', 'Sachsen', 'Berlin', 'bundesweit für größere Projekte'],
-    kernbohrung: { durchmesserMm: [regeln.minDurchmesser, regeln.maxDurchmesser], maxTiefeCm: regeln.maxTiefeCm, maxTiefeBisDurchmesserMm: regeln.maxTiefeBisDurchmesser, trockenbohrung: 'in allen Durchmessern möglich', strom: '230 V, Kabeltrommel 16 A', materialien: ['Beton', 'Stahlbeton', 'Mauerwerk'] },
+    kernbohrung: { durchmesserMm: [regeln.minDurchmesser, regeln.maxDurchmesser], maxTiefeCm: regeln.maxTiefeCm, maxTiefeBisDurchmesserMm: regeln.maxTiefeBisDurchmesser, trockenbohrung: 'in allen Durchmessern möglich', strom: '230 V, Kabeltrommel 16 A oder 400 V (universell)', materialien: ['Beton', 'Stahlbeton', 'Mauerwerk'] },
     preisliste: {
       stand,
       waehrung: 'EUR',

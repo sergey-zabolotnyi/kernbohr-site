@@ -48,6 +48,30 @@ export const entries = [
   { id: 'neustadt-bohrkern-ziegel', file: 'neustadt-06', type: 'image',
     alt: 'Ausgebohrter Kern aus Ziegelmauerwerk neben der Diamant-Bohrkrone Ø 200 mm', caption: 'Bohrkern aus Ziegelmauerwerk' },
 
+  // ===== Referenz Dresden-Pieschen (Elektroinstallation, November 2026) =====
+  { id: 'pieschen-01', file: 'pieschen-01', type: 'image',
+    alt: 'Hilti-Kernbohrgerät auf Schiene an einer Wand im Altbau beim Nassbohren, Wasserschlauch angeschlossen', caption: 'Nassbohren mit Schienengerät im Altbau' },
+  { id: 'pieschen-02', file: 'pieschen-02', type: 'image',
+    alt: 'Fertige Kernbohrung in der Wand unter der Decke, daneben ein Dübel mit Gewindestange für das Bohrgerät', caption: 'Fertige Bohrung, daneben der Befestigungsdübel' },
+  { id: 'pieschen-03', file: 'pieschen-03', type: 'image',
+    alt: 'Nahaufnahme eines Hilti-Kernbohrgeräts mit Bohrkrone an der Wand in einer Raumecke', caption: 'Bohrkrone im Einsatz' },
+  { id: 'pieschen-04', file: 'pieschen-04', type: 'image',
+    alt: 'Fertige Kernbohrung an der Wand über einer Tür, daneben eine blaue Markierung', caption: 'Fertige Bohrung neben der Markierung' },
+  { id: 'pieschen-05', file: 'pieschen-05', type: 'image',
+    alt: 'Hilti-Bohrständer in einer Raumecke mit Wasserauffangring an der Bohrstelle', caption: 'Bohrständer mit Wasserauffangring' },
+  { id: 'pieschen-06', file: 'pieschen-06', type: 'image',
+    alt: 'Kernbohrgerät auf Schiene im Raum, links daneben eine Türöffnung mit sichtbarem Ziegelmauerwerk', caption: 'Schienengerät im Altbauraum' },
+  { id: 'pieschen-07', file: 'pieschen-07', type: 'image',
+    alt: 'Hilti-Kernbohrgerät mit Wasserschlauch an der Wand unter der Decke, Bohrkrone in der Bohrung', caption: 'Bohren unter der Decke' },
+  { id: 'pieschen-08', file: 'pieschen-08', type: 'image',
+    alt: 'Altbauraum mit Kernbohrgerät auf Schiene an der Wand, blaue Markierungen an den Wänden', caption: 'Bohrstellen markiert, Gerät an der Wand' },
+  { id: 'pieschen-09', file: 'pieschen-09', type: 'image',
+    alt: 'Flur im Altbau mit Kernbohrgerät auf Schiene, im Vordergrund ein Gerüst', caption: 'Arbeit im Flur' },
+
+  // ===== Referenz Schlitzfräsen Gewerbeobjekt Dresden (24.11.2026) =====
+  { id: 'schlitz-01', file: 'schlitz-01', type: 'image',
+    alt: 'Frisch gefräster Schlitz, 10 cm tief und 7 cm breit, in einer Betonfläche im Außenbereich', caption: 'Gefräster Schlitz für ein Elektrokabel' },
+
   // ===== Videos =====
   { id: 'video-markierung', file: 'video001', type: 'video',
     alt: 'Markierte Schnitt- und Bohrstellen an Wand und Decke in einem Altbauraum', caption: 'Vorbereitung: Bohr- und Schnittstellen markieren' },
@@ -67,4 +91,9 @@ export const entries = [
     alt: 'Hilti-Kernbohrgerät auf Schiene bohrt in einer Wand, daneben Bohrkern und Werkzeug', caption: 'Bohrung mit Schienengerät' },
   { id: 'neustadt-video-bohrung-2', file: 'neustadt-video-bohrung-2', type: 'video',
     alt: 'Nahaufnahme eines Hilti-Kernbohrgeräts auf Schiene beim Bohren mit Wasserzufuhr', caption: 'Nassbohren mit Wasserzufuhr' },
+
+  { id: 'pieschen-video-1', file: 'pieschen-video-1', type: 'video',
+    alt: 'Kernbohrgerät auf Schiene bohrt in einem Altbauraum in Dresden-Pieschen', caption: 'Kernbohrung im Altbau, Dresden-Pieschen' },
+  { id: 'pieschen-video-2', file: 'pieschen-video-2', type: 'video',
+    alt: 'Kernbohrgerät mit Wasserzufuhr beim Bohren an der Wand, Dresden-Pieschen', caption: 'Nassbohren an der Wand, Dresden-Pieschen' },
 ];

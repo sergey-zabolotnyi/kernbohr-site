@@ -23,7 +23,7 @@ Kurzfakten:
 - Erfahrung: Inhaber seit 2006 in der Baubranche, Firma seit ${site.founded}, Team von ${site.employees} Mitarbeitern (bei Großprojekten erweiterbar)
 - Versicherung: Betriebshaftpflichtversicherung vorhanden, Versicherungsnachweis auf Anfrage
 - Sauberkeit: Nassbohrung bindet den Staub, auf Wunsch Wassersauger mit Bediener (100 € pro Tag), Arbeitsbereich wird aufgeräumt übergeben
-- Voraussetzung vor Ort: Strom (230 V, bei großen Durchmessern ggf. 400 V). Wasser bringen wir bei Bedarf in Kanistern mit (im Auftragspreis enthalten, bitte vorab Bescheid geben)
+- Voraussetzung vor Ort: Strom (230 V, Kabeltrommel 16 A oder 400 V, wir arbeiten universell). Wasser bringen wir bei Bedarf in Kanistern mit (im Auftragspreis enthalten, bitte vorab Bescheid geben)
 - Kunden: Privatkunden, Handwerksbetriebe, Bauunternehmen. Jeder Auftrag ist willkommen, vom einzelnen Loch bis zum Großprojekt, bei größeren Aufträgen individuelle Konditionen nach Absprache
 - Website: entwickelt von ${site.webdesign.name} (${site.webdesign.url})
 

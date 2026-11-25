@@ -157,7 +157,7 @@ export const articles = [
     h1: 'Checkliste: So bereiten Sie den Kernbohr-Termin vor',
     description: 'Strom, Wasser, Zugang, Schutz und Fotos: Diese Checkliste hilft Ihnen, den Termin für Kernbohrung oder Betonsägen reibungslos vorzubereiten.',
     short: 'Strom, Wasser, Zugang, Fotos: In zehn Minuten sind Sie startklar.',
-    answer: 'Für einen reibungslosen Termin brauchen wir Zugang zur Bohrstelle, Strom (in der Regel 230 V, bei großen Durchmessern eventuell 400 V), Wasser, einen freien Arbeitsbereich und Informationen zu Leitungen in der Wand. Mit dieser Checkliste sind Sie in zehn Minuten vorbereitet.',
+    answer: 'Für einen reibungslosen Termin brauchen wir Zugang zur Bohrstelle, Strom (230 V, Kabeltrommel 16 A oder 400 V, wir arbeiten universell), Wasser, einen freien Arbeitsbereich und Informationen zu Leitungen in der Wand. Mit dieser Checkliste sind Sie in zehn Minuten vorbereitet.',
     sections: [
       { h: 'Vor dem Angebot', checks: [
         'Fotos der Bohrstelle aus der Nähe und aus der Entfernung',
@@ -166,7 +166,7 @@ export const articles = [
         'Grundriss oder Leitungsplan bereitlegen, falls vorhanden',
         'Bei tragenden Wänden: Statik oder Freigabe bereithalten' ] },
       { h: 'Vor dem Termin', checks: [
-        'Stromanschluss in der Nähe: 230-V-Steckdose, alternativ 400 V (Adapter auf 16 A)',
+        'Stromanschluss in der Nähe: 230 V, Kabeltrommel (16 A) oder 400 V',
         'Wasser: Anschluss in der Nähe der Bohrstelle, ohne Anschluss bringen wir es in Kanistern mit (bitte vorab Bescheid geben)',
         'Bohrstelle und Umgebung freiräumen, Möbel und Böden abdecken',
         'Bohrstelle markieren, genaue Position und Höhe abstimmen',
@@ -183,7 +183,7 @@ export const articles = [
     ],
     faqs: [
       ['Brauchen Sie Wasser vor Ort?', 'Für die Nassbohrung brauchen wir Wasser. Ist kein Wasseranschluss vorhanden, ist das kein Problem: Sagen Sie uns vorab Bescheid, dann bringen wir das Wasser in Kanistern mit, das ist im Auftragspreis enthalten. Strom muss dagegen vor Ort vorhanden sein.'],
-      ['Welchen Strom brauchen Sie?', 'Wir arbeiten mit 230 V oder 400 V (Drehstrom, per Adapter auf 16 A). Meist genügt eine 230-V-Steckdose. Wir klären das vorab mit Ihnen.'],
+      ['Welchen Strom brauchen Sie?', 'Wir arbeiten universell: mit 230 V, Kabeltrommel (16 A) oder 400 V. Wir klären das vorab mit Ihnen.'],
     ],
   },
   {
@@ -437,7 +437,7 @@ export const articles = [
         '<strong>Diamantbohrkrone im passenden Durchmesser:</strong> Für Mauerwerk, Beton und Stahlbeton gibt es unterschiedliche Kronen. Die falsche Krone verschleißt schnell oder schneidet schlecht.',
         '<strong>Wasser:</strong> Die Nassbohrung kühlt die Krone und bindet Staub. Wasser muss zugeführt und Schlamm aufgefangen werden.',
         '<strong>Absaugung und Abdeckung:</strong> Folie, Abdeckung und auf Wunsch der Wassersauger schützen Boden und Möbel.',
-        '<strong>Strom:</strong> 230 V, bei großen Durchmessern eventuell 400 V.',
+        '<strong>Strom:</strong> 230 V, Kabeltrommel (16 A) oder 400 V, wir arbeiten universell.',
       ] },
       { h: 'Typische Risiken beim Selbermachen', ul: [
         '<strong>Bewehrung:</strong> Trifft die Krone Stahl, wird es schwer. Krone und Motor können Schaden nehmen, und die Bohrung bleibt stecken.',

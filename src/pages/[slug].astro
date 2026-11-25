@@ -87,7 +87,7 @@ const schema = [
         {sections.map((sec) => (
           <>
             <h2>{sec.h}</h2>
-            {sec.p && sec.p.map((t) => <p>{t}</p>)}
+            {sec.p && sec.p.map((t) => <p set:html={t} />)}
             {sec.tabelle && (
               <div class="table-scroll" tabindex="0" role="group" aria-label="Tabelle (seitlich scrollbar)">
                 <table class="facts">

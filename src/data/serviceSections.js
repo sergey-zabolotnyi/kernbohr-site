@@ -64,7 +64,7 @@ export const serviceSections = {
     {
       h: 'Das sollten Sie vorbereiten',
       liste: [
-        'Strom (230 V, bei großen Geräten eventuell 400 V) und Zugang zur Wand',
+        'Strom (230 V, Kabeltrommel 16 A oder 400 V) und Zugang zur Wand',
         'Wasser: Ist keines vorhanden, bringen wir es in Kanistern mit. Sagen Sie uns vorab Bescheid.',
         'Wertvolles und Möbel aus dem Arbeitsbereich entfernen',
         'Freie Wege für Abtransport, bei Obergeschossen Hinweis auf Treppen oder Aufzug',
@@ -173,7 +173,7 @@ export const serviceSections = {
     },
     {
       h: 'Wie bekomme ich ein Angebot?',
-      p: ['Senden Sie uns einen Grundriss oder Foto mit der Streckenlänge. Wir nennen Ihnen den Preis nach Länge, Tiefe und Material. Schlitze lassen sich gut mit Kernbohrungen für Dosen im selben Termin kombinieren.'],
+      p: ['Senden Sie uns einen Grundriss oder Foto mit der Streckenlänge. Wir nennen Ihnen den Preis nach Länge, Tiefe und Material. Schlitze lassen sich gut mit Kernbohrungen für Dosen im selben Termin kombinieren. Ein Beispiel aus der Praxis: <a href="/referenzen/schlitz-elektrokabel-gewerbeobjekt-dresden/">Schlitz für ein Elektrokabel, 10 cm tief und 7 cm breit</a>.'],
     },
   ],
 
