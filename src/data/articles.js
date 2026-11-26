@@ -216,9 +216,9 @@ export const articles = [
     slug: 'kernbohrung-kosten-dresden',
     icon: 'euro',
     date: '2026-11-11',
-    title: 'Was kostet eine Kernbohrung? Ab 1,20 € je cm (2026)',
+    title: 'Was kostet eine Kernbohrung? Preise ab 1,20 € je cm 2026',
     h1: 'Was kostet eine Kernbohrung? Preise und Beispiele für Dresden',
-    description: 'Kernbohrung Kosten 2026: ab 1,20 € je cm. Preis nach Durchmesser, Mindestauftrag 250 €, Anfahrt, Zuschläge und echte Rechenbeispiele aus Dresden.',
+    description: 'Kernbohrung Kosten 2026 im Überblick: ab 1,20 € je cm, Preis nach Durchmesser, Mindestauftrag 250 €, Anfahrt und Zuschläge. Mit Rechenbeispielen aus Dresden.',
     short: 'Preis je cm, Mindestauftragswert, Zuschläge und Rechenbeispiele nach Preisliste 2026.',
     answer: `Eine Kernbohrung wird nach Durchmesser und Bohrtiefe berechnet: Bei Ø 20 bis 101 mm in Beton kostet sie ${eur(staffelKompakt[0][2])} je cm Bohrtiefe (brutto). Hinzu kommen die Anfahrt mit ${eur(regeln.anfahrt)} und eine Pilotbohrung mit ${eur(regeln.pilotbohrung)}. Der Mindestauftragswert liegt bei ${eur(regeln.mindestpreis)}, sodass auch eine einzelne kleine Bohrung dort beginnt.`,
     sections: [

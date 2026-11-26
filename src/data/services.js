@@ -154,8 +154,8 @@ export const services = [
     slug: 'wanddurchbruch-dunstabzugshaube',
     group: 'Anwendung',
     name: 'Dunstabzugshaube',
-    title: 'Wanddurchbruch für Dunstabzugshaube in Dresden',
-    description: 'Wanddurchbruch für Abluft und Dunstabzugshaube in Dresden und Umgebung. Sauber gebohrt, passender Durchmesser, schnelle Terminvergabe.',
+    title: 'Kernbohrung Dunstabzugshaube: Ø 125 oder 150 mm, Dresden',
+    description: 'Kernbohrung für die Dunstabzugshaube in Dresden: üblich Ø 125 mm (DN 125) oder 150 mm (DN 150), sauber gebohrt mit Gefälle nach außen. Jetzt anfragen.',
     h1: 'Wanddurchbruch für die Dunstabzugshaube',
     intro: 'Eine Abluft-Dunstabzugshaube braucht einen Durchbruch nach draußen. Mit der Kernbohrung entsteht ein exakt runder, glatter Durchbruch ohne Risse und ohne großen Schutt.',
     facts: [
