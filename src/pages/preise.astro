@@ -17,8 +17,8 @@ const beispiele = [
 ].map(([t, p]) => ({ t, r: berechne(p), desc: `${p.anzahl}× Ø ${p.d} mm, ${p.tiefe} cm ${p.material === 'mauerwerk' ? 'Mauerwerk' : 'Beton'}${p.richtung ? ', Überkopf' : ''}` }));
 ---
 <Base
-  title="Kernbohrung Preise 2026 ab 1,20 € je cm | Dresden"
-  description="Preisliste Kernbohrung 2026: ab 1,20 € je cm Bohrtiefe, Anfahrt 85 €, Mindestpreis 250 €. Preise nach Durchmesser, Beispiele und Rechner. Dresden."
+  title="Kernbohrung Preisliste 2026: ab 1,20 € je cm | Dresden"
+  description="Kernbohrung Preisliste 2026 mit Preisen je cm nach Durchmesser: ab 1,20 € je cm, Anfahrt 85 € einmal je Auftrag, Mindestpreis 250 €. Mit Rechner und Beispielen."
   path="/preise/"
   schema={[crumbSchema([['Kosten & Preise', '/preise/']]), faqSchema(preisFaqs), { '@context': 'https://schema.org', '@type': 'Service', name: 'Kernbohrung', serviceType: 'Kernbohrung', provider: { '@id': 'https://kernbohr-expert.de/#business' }, areaServed: { '@type': 'City', name: 'Dresden' }, offers: preisAngebot('kernbohrung') }]}
 >
