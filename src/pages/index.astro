@@ -16,6 +16,8 @@ import { articles } from '../data/articles.js';
 import { orte } from '../data/orte.js';
 import Partner from '../components/Partner.astro';
 import Bewertungen from '../components/Bewertungen.astro';
+import ProjektCard from '../components/ProjektCard.astro';
+import { projekte } from '../data/projekte.js';
 import { image, heroStyle } from '../lib/media.js';
 import { faqSchema, howToSchema, videoSchema } from '../lib/schema.js';
 
@@ -40,6 +42,7 @@ const werte = [
   ['shield', 'Saubere Arbeit', 'Wir verlassen Ihre Baustelle aufgeräumt.'],
   ['user', 'Erreichbarkeit', 'Telefon Mo–Sa 7–19 Uhr, Einsätze nach Absprache rund um die Uhr.'],
 ];
+const neueste = [...projekte].sort((a, b) => (b.datum ?? b.veroeffentlicht).localeCompare(a.datum ?? a.veroeffentlicht)).slice(0, 3);
 ---
 <Base
   title="Kernbohrung Dresden ab 1,20 €/cm | Kernbohr-Expert"
@@ -283,6 +286,18 @@ const werte = [
       <div class="btns"><a class="btn btn-main" href="/faq/">Alle Fragen ansehen</a></div>
     </div>
   </section>
+
+  {neueste.length > 0 && (
+    <section>
+      <div class="wrap">
+        <span class="eyebrow">Aktuelle Einsätze</span>
+        <h2>Zuletzt für Kunden in Dresden und Umgebung</h2>
+        <p class="lead">Echte Baustellen der letzten Wochen, mit Fotos und Eckdaten.</p>
+        <div class="projekte">{neueste.map((p) => <ProjektCard p={p} />)}</div>
+        <p><a class="btn btn-line" href="/referenzen/">Alle Referenzen ansehen</a></p>
+      </div>
+    </section>
+  )}
 
   <section>
     <div class="wrap">
